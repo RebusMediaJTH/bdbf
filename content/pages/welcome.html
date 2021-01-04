@@ -7,9 +7,19 @@
     #overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
     #overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
 
-    .circle-btn { position: relative; padding: 0; border: 2px solid #590d2b; background: #fff; color: #590d2b; border-radius: 50%; width: 8rem; font-weight: bold; }
+    .circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: bold; }
     .circle-btn > div {  height: 0; padding-top: 100%; }
-    .circle-btn > div > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: center; }
+    .circle-btn > div { transition: transform .25s ease-in-out; transform-origin: 50% 50%; transform-style: preserve-3d; }
+    .circle-btn > div { transition: transform 1s ease-in-out; transform-origin: 50% 50%; transform-style: preserve-3d; }
+    .circle-btn:hover > div { transform: rotateY(180deg); }
+    .circle-btn > div > div { 
+        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 50%;
+        backface-visibility: hidden;
+    }
+    .circle-btn .front { border: 2px solid #590d2b; background: #fff; color: #590d2b; }
+    .circle-btn .back { border: 2px solid #fff; background: #590d2b; color: #fff; transform: rotateY(180deg); }
 </style>
 <div class="img-and-overlay">
     <img src="content/images/main_intro1_bg.jpg" alt="" />
@@ -22,7 +32,12 @@
                 <p>At Australia Post Group (Group), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
             </div>
             <div>
-                <button class="circle-btn"><div><div>Begin</div></div></button>
+                <button class="circle-btn">
+                    <div>
+                        <div class="front">Begin</div>
+                        <div class="back" aria-hidden="true">Begin</div>
+                    </div>
+                </button>
             </div>
         </div>
     </div>
