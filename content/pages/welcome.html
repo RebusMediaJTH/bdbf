@@ -1,57 +1,29 @@
 <style>
-    #panel { padding: 20px; margin-bottom: 20px; background: url('content/images/main_intro1_bg.jpg'); background-size: cover; }
-    #menu-cloud { position: relative; display: block; width: 308px; margin: 30px auto;  }
-    #menu-cloud img { width: 100%; }
-    #menu-cloud p { font-size: 22px; font-size: 2.2rem; font-weight: bold; text-align: center; }
-    #panel-how-to-complete { position: relative; }
-    @media (min-width:768px) {
-        #menu-cloud p { position: absolute; top: 30px; left: -100px;  }
-        #panel-how-to-complete p { padding-right: 10px; }
-        #panel-how-to-complete .btn { position: absolute; right: 10px; top: 50%;  -ms-transform: translateY(-50%); -moz-transform: translateY(-50%); -webkit-transform: translateY(-50%); transform: translateY(-50%); }
-    }
-
+    .img-and-overlay > div { padding: 80px 0 0 125px; }
     h1, h2 { color: #fff; }
     h1 { font-size: 4.5rem; font-weight: bold; }
+    h2 { margin-top: 40px; }
+    #overlay { position: absolute; bottom: 0; right: 60px; background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; width: 357px; }
+    #overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
+    #overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
+
+    .circle-btn { position: relative; padding: 0; border: 2px solid #590d2b; background: #fff; color: #590d2b; border-radius: 50%; width: 8rem; font-weight: bold; }
+    .circle-btn > div {  height: 0; padding-top: 100%; }
+    .circle-btn > div > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: center; }
 </style>
-<div class="row">
-	<div class="col-sm-12">
-        <div id="panel" class="margin-top-xl">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>Better decisions <br>for a better future</h1>
-                    <h2>Retail - Part 1</h2>
-                    <div id="menu-cloud" aria-hidden="true">
-                        <p>Welcome to ...</p>
-                        <img src="content/images/menu_cloud.png" alt="" />
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="panel translucent">
-                        <h3>Audio</h3>
-                        <p>This course contains audio. <strong>Select</strong> the icon below to check that you can hear us.</p>
-                        <div class="audio-control basic large" data-audio-file="t0_listen"></div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="panel translucent">
-                        <h3>In your own time</h3>
-                        <p>There are five modules in this course ranging from 10 to 30 minutes in duration. Overall the course might take you anywhere from one to two hours to complete.</p>
-                        <p>You don't have to do it all at once. Take your time. You can <strong>Save and Exit</strong> and then return to where you left off at any time.</p>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div id="panel-how-to-complete" class="panel translucent">
-                        <div class="row">
-                            <div class="col-sm-7">
-                                <h3>How to complete</h3>
-                                <p>You must complete all modules to register as having completed the course.</p>
-                            </div>
-                            <div class="col-sm-5"></div>
-                        </div>
-                        <button type="button" role="navigation" data-navigate="next" class="btn btn-lg btn-red">Got it. Let's continue</button>
-                    </div>
-                </div>
+<div class="img-and-overlay">
+    <img src="content/images/main_intro1_bg.jpg" alt="" />
+    <div>
+        <h1>Better decisions <br>for a better future</h1>
+        <h2>Retail - Part 1</h2>
+        <div id="overlay">
+            <div>
+                <h3>Welcome</h3>
+                <p>At Australia Post Group (Group), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
+            </div>
+            <div>
+                <button class="circle-btn"><div><div>Begin</div></div></button>
             </div>
         </div>
-	</div>
+    </div>
 </div>

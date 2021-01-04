@@ -2068,3 +2068,11 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
     .side-img-panel > img { display: block; }
     .side-img-panel h2 { margin-bottom: 30px; }
 }
+
+/***************************************************************************************************************************************
+    NEW 2
+***************************************************************************************************************************************/
+
+.img-and-overlay { position: relative; }
+.img-and-overlay > img { display: block; width: 100%; }
+.img-and-overlay > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
