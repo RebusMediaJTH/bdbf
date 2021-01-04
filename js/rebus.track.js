@@ -241,7 +241,7 @@ rebus._private.lms = (function () {
             this.log('type=lms', 'rebus._private.lms.debug', msg);
         },
         'throwError': function (msg) {
-            $('#content-page > .container').empty().append([
+            $('#main-content').empty().append([
                 '<h1 style="margin-top:60px;">A proplem has occurred with the LMS API</h1>',
                 '<p>Please exit the course and try launching it again.</p>',
                 '<h3 style="margin-top:20px;">Details:</h2>',

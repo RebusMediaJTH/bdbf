@@ -739,7 +739,7 @@ article.content {
 #pdf-viewer { display: none; width: 100%; margin-top: 55px; }
 .pdf-viewer-in.isNotApp section.main { display: none; }
 .pdf-viewer-in.isNotApp.use-default-pdf-viewer-for-browser #pdf-viewer { display: block; }
-.pdf-viewer-in.isNotApp .container { padding-left: 0; padding-right: 0; }
+/* .pdf-viewer-in.isNotApp .container { padding-left: 0; padding-right: 0; } */
 #pdf-viewer-body { width: 100%; height: calc(100vh - 100px); }
 .iOS.isNotApp #pdf-viewer-body { height: calc(100vh - 170px); }
 .windows-phone.isNotApp #pdf-viewer-body { height: calc(100vh - 100px); }
@@ -783,7 +783,8 @@ article.content {
 #app-pdf { display: none; width: 100%; }
 .pdf-viewer-in.not-iOS body { padding-top: 42px; }
 .not-iOS #app-pdf-toolbar { position: fixed; top: 0; left: 0; right: 0; }
-.pdf-viewer-in.isApp #content-page > .container { display: none; }
+/* .pdf-viewer-in.isApp #content-page > .container { display: none; } */
+.pdf-viewer-in.isApp #main-content { display: none; } 
 .pdf-viewer-in.isApp #app-pdf { display: block; }
 .pdf-viewer-in.isApp body { background: #d8d8d8 !important; background: #404040 !important; }
 #app-pdf-body, #app-pdf-toolbar { background: #404040; }

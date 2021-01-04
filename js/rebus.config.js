@@ -45,7 +45,7 @@ rebus.config = {
                                   folder: 't1',
                                   title: 'Diversity and Inclusion',
                                   pages: [
-                                      { path: 'p1', title: 'Diversity and Inclusion', hideHeader: true }
+                                      { path: 'p1', title: 'Diversity and Inclusion', hideHeader: false }
                                   ]
                               },
                               {
