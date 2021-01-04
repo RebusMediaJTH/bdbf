@@ -1,62 +1,36 @@
 <style>
-    .img-and-overlay > div { padding: 80px 0 0 125px; }
+    .img-and-overlay > div { padding: 7.8125% 0 0 12.207%; }
     h1, h2 { color: #fff; }
     h1 { font-size: 4.5rem; font-weight: bold; }
-    h2 { margin-top: 40px; }
-    #overlay { position: absolute; bottom: 0; right: 60px; background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; width: 357px; }
+    h2 { margin-top: 40px; font-size: 3rem; }
+    #overlay { position: absolute; bottom: 0; right: 5.8594%; background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; width: 357px; }
     #overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
     #overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
-
-    .circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: bold; perspective: 1000px; }
-    .circle-btn > div { height: 0; padding-top: 100%; }
-    .flip-container {
-        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-        perspective: 1000px;
-	    transform-style: preserve-3d;
+    @media (min-width: 768px) {
+        #overlay { position: absolute; bottom: 0; right: 5.8594%; width: 357px; }
     }
-    .circle-btn:hover .back,
-    .circle-btn:active .back,
-    .circle-btn:focus .back { transform: rotateY(0deg); }
-
-    .circle-btn:hover .front,
-    .circle-btn:active .front,
-    .circle-btn:focus .front { transform: rotateY(180deg); }
-
-    .flipper { position: absolute; top: 0; right: 0; bottom: 0; left: 0; transition: 0.6s; transform-style: preserve-3d; }
-
-    .circle-btn:hover .inner,
-    .circle-btn:active .inner,
-    .circle-btn:focus .inner { transform: rotateY(180deg); }
-    .circle-btn .face { 
-        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-        display: flex; align-items: center; justify-content: center;
-        border-radius: 50%;
-        backface-visibility: hidden; transition: 0.6s; transform-style: preserve-3d;
-    }
-    .circle-btn .front { border: 2px solid #590d2b; background: #fff; color: #590d2b; z-index: 2; transform: rotateY(0deg); }
-    .circle-btn .back { border: 2px solid #fff; background: #590d2b; color: #fff; transform: rotateY(-180deg); }
 </style>
-<div class="img-and-overlay">
-    <img src="content/images/main_intro1_bg.jpg" alt="" />
-    <div>
-        <h1>Better decisions <br>for a better future</h1>
-        <h2>Retail - Part 1</h2>
-        <div id="overlay">
-            <div>
-                <h3>Welcome</h3>
-                <p>At Australia Post Group (Group), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
-            </div>
-            <div>
-                <button class="circle-btn">
-                    <div>
-                        <div class="flip-container">
-                            <div class="flipper">
+<div class="row">
+    <div class="img-and-overlay">
+        <img src="content/images/main_intro1_bg.jpg" alt="" />
+        <div>
+            <h1>Better decisions <br>for a better future</h1>
+            <h2>Retail - Part 1</h2>
+            <div id="overlay">
+                <div>
+                    <h3>Welcome</h3>
+                    <p>At Australia Post Group (Group), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
+                </div>
+                <div>
+                    <button class="circle-btn">
+                        <div>
+                            <div class="faces">
                                 <div class="face front">Begin</div>
                                 <div class="face back" aria-hidden="true">Begin</div>
                             </div>
                         </div>
-                    </div>
-                </button>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

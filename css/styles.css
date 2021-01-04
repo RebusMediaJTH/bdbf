@@ -2076,3 +2076,21 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 .img-and-overlay { position: relative; }
 .img-and-overlay > img { display: block; width: 100%; }
 .img-and-overlay > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+
+.circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: bold; perspective: 1000px; }
+.circle-btn > div { height: 0; padding-top: 100%; perspective: 1000px; transform-style: preserve-3d; }
+.circle-btn .faces { position: absolute; top: 0; right: 0; bottom: 0; left: 0; transition: transform 0.6s; transform-style: preserve-3d; }
+.circle-btn .face { 
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    backface-visibility: hidden; transition: transform 0.6s; transform-style: preserve-3d;
+}
+.circle-btn .front { border: 2px solid #590d2b; background: #fff; color: #590d2b; z-index: 2; transform: rotateY(0deg); }
+.circle-btn .back { border: 2px solid #fff; background: #590d2b; color: #fff; transform: rotateY(-180deg); }
+.circle-btn:hover .back,
+.circle-btn:active .back,
+.circle-btn:focus .back { transform: rotateY(0deg); }
+.circle-btn:hover .front,
+.circle-btn:active .front,
+.circle-btn:focus .front { transform: rotateY(180deg); }
