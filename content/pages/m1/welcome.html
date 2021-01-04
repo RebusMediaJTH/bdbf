@@ -1,21 +1,4 @@
-<style>
-    #title { padding: 7.8125% 0 0 12.207%; font-size: 11vw; }
-    h1, h2 { color: #fff; }
-    h1 { font-size: 100%; font-weight: bold; }
-    h2 { margin-top: 3.9063%; font-size: 66.6%; }
-    .overlay { background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; }
-    .overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
-    .overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
-    .overlay.lg { display: none; }
-    @media (min-width: 410px) {
-        #title { font-size: 4.5rem; }
-    }
-    @media (min-width: 768px) {
-        .overlay.sm { display: none; }
-        .overlay.lg { display: block; position: absolute; bottom: 0; right: 5.8594%; width: 357px; }
-    }
-</style>
-<div class="row">
+<div class="row" id="welcome-page">
     <div class="img-and-overlay">
         <img src="content/images/main_intro1_bg.jpg" alt="" />
         <div>
@@ -29,7 +12,7 @@
                     <p>At Australia Post Group (Group), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
                 </div>
                 <div>
-                    <button class="circle-btn">
+                    <button class="circle-btn" role="navigation" data-mark-page-as-complete-and-continue>
                         <div>
                             <div class="faces">
                                 <div class="face front">Begin</div>
@@ -47,7 +30,7 @@
             <p>At Australia Post Group (Group), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
         </div>
         <div>
-            <button class="circle-btn">
+            <button class="circle-btn" role="navigation" data-mark-page-as-complete-and-continue>
                 <div>
                     <div class="faces">
                         <div class="face front">Begin</div>
