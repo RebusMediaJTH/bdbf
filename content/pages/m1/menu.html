@@ -2,9 +2,9 @@
     #menu-page .img-and-overlay > div { background: rgba(255,255,255, 0.5); }
     .topic-mnu-item button {
         position: relative;
-        margin: 0; height: 113px;
+        margin: 0; width: 100%; height: 113px;
         padding: 16px;
-        background: #590d2b; color: #fff; border: 2px solid #590d2b; border-radius: 4px;
+        background: #590d2b; color: #fff; border: 2px solid #590d2b; border-radius: 0;
         font-weight: bold;
         display: flex; align-items: flex-end; justify-content: flex-start;
         transition: background-color 0.3s, color 0.3s;
@@ -32,6 +32,7 @@
         #menu-page .img-and-overlay > div { display: flex; flex-direction: column; justify-content: center; }
         .topic-mnu { padding: 0 44px 0 44px; display: flex; flex-wrap: wrap; }
         .topic-mnu-item { margin: 11px; }
+        .topic-mnu-item button { width: auto; border-radius: 4px; }
     }
 </style>
 <script>
