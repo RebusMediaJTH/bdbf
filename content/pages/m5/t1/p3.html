@@ -1,0 +1,334 @@
+<style>
+    body { background-image: url('content/images/m5/m5_t1_s2_p1_IpadOffice_bg.jpg'); background-size: cover; background-attachment: fixed; }
+
+    .row.first .leader,
+    .row.first .leader span { font-family: 'dk_lemon_yellow_sunregular'; }
+    .row.first .leader { color: #4d4d4d; font-size: 96px; font-size: 9.6rem; line-height: 96px; line-height: 9.6rem; }
+    .row.first .leader span { color: #d91930; }
+
+    .people-image { margin-top: 20px; }
+
+    @media (min-width: 768px) {
+        .people-image { margin-top: 0; }
+    }
+
+    .row-3 .people-image  { max-width: 100px; margin: 20px auto 0 auto; }
+    @media (min-width: 768px) {
+        .row-3 .people-image { float: right; margin: 0; }
+    }
+    
+    #row-4-img img { display: block; margin: 0 auto; height: auto; width: 100%; max-width: 360px;  }
+    @media (min-width: 576px) {
+        #row-4-cols-1 > div { float: left; }
+        #row-4-cols-1 > div:first-child { width: calc(100% - 100px - 10px); }
+        #row-4-cols-1 > div:last-child { width: 100px; }
+        #row-4-img { width: 100%; }
+        #row-4-img img { display: block; float: right; margin: -280px 10px 0 0; width: auto; max-width: 100%; }
+    }
+
+    @media (min-width: 576px) {
+        .row-7 { background-image: url('content/images/m5/m5_t1s3_p3b_bg.jpg'); background-size: cover; }
+    }
+    @media (min-width: 768px) {
+        .row-7 { background-position: top right; }
+    }
+    @media (min-width: 992px) {
+        .row-7 .panel-wrap { padding-bottom: 200px; }
+    }
+
+    #cloud-panel { padding-right: 10px !important; }
+    #cloud-and-buttons { width: 100%; margin: 10px auto 0 auto; }
+    #cloud-container { position: relative; width: 100%; background: #fff; padding: 10px 20px 80px 20px; border-radius: 10px; }
+    #cloud-img { display: none; position: absolute; width: 625px; }
+    .cloud-msg {  text-align: center; font-size: 27px; font-size: 2.7rem; font-weight: bold; }
+    #final-cloud-msg .cloud-msg { font-size: 32px; font-size: 3.2rem; }
+    .cloud-msg-2 { text-align: center; }
+    .cloud-msg-2 span { display: inline-block; margin-top: 10px; }
+
+    img.done-indicator { position: absolute; bottom: 15px; left: 50%; -ms-transform: translateX(-50%); -moz-transform: translateX(-50%); -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+    #activity-click-btns > li div { position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; }
+    #cloud-nav { list-style: none; display: block; padding: 0; margin: 15px 0 0 15px; }
+    #cloud-nav li { display: block; float: left; margin: 0; padding: 0; }
+    #cloud-nav .btn-cloud-nav { background: none; border: none; padding: 0; -webkit-appearance: none; }
+    #cloud-nav .btn-cloud-nav div { overflow: hidden; position: relative; width: 47px; height: 41px; }
+    #cloud-nav .btn-cloud-nav div img { position: absolute; top: 0; left: 0; }
+    #cloud-nav .btn-cloud-nav[disabled] { opacity: 0.5; }
+    #cloud-nav  #btn-next-cloud-statement { margin-left: 10px; }
+    #cloud-nav  #btn-next-cloud-statement div img { left: -47px; }
+    #cloud-nav .btn-cloud-nav:not([disabled]):hover img, #cloud-nav .btn-cloud-nav:not([disabled]):focus img { top: -41px; }
+    #btn-cloud-finished { height: 41px; margin-left: 10px; }
+
+    .done-indicator { display: none; }
+    .item-done .done-indicator { display: block; }
+
+    #activity-click-btns { list-style: none; display: block; padding: 0; margin: 0; width: 100%; height: 100%; }
+    #cloud-container li { display: none; }
+    #cloud-container li.active { display: block; }
+    .item-done .click-btn { display: none; }
+    @media (max-width: 320px) {
+      #cloud-container .click-btn { left: 25%; }
+    }
+    @media (min-width: 768px) {
+        #cloud-nav { margin: 15px 0 0 235px; }
+        #cloud-and-buttons { width: 625px; }
+        #cloud-container { height: 378px; background: none; padding: 0; border-radius: 0; }
+        #cloud-img { display: block; }
+        .cloud-msg { position: absolute; top: 190px; left: 0; width: 100%; padding: 0 130px; margin: 0; }
+        li[data-idx="4"] .cloud-msg { top: 170px; }
+        li[data-idx="5"] .cloud-msg { top: 160px; }
+        #final-cloud-msg .cloud-msg { top: 65px; left: 205px; width: auto; padding: 0; text-align: left; }
+        .cloud-msg-2 { position: absolute; bottom: 40px; left: 0; width: 100%; padding: 0 70px; margin: 0;  }
+    }
+    @media (min-width: 992px) {
+        #cloud-and-buttons { float: right; margin: -80px 0 0 0; }
+    }
+</style>
+<div class="horizontal-panels">
+    <div class="row bg-grey first">
+        <h2 class="strip-header auto-width-sm">Fraud and Corruption</h2>
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="leader">Need to <br /><span>know</span></p>
+                        <img class="margin-top-md" src="content/images/icon_need_to_know_grey.png" alt="" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="margin-top-sm">Let's take a look at how fraud and corruption can affect our business.</p>
+                        <p class="lbl-scroll-down margin-top-sm">Scroll down to <br />learn more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-black">
+        <div class="col-sm-12">
+            <div class="video" data-transcript="M5_T1_S3_P2" data-activity="video" data-mandatory="true">
+                <div class="embed-responsive embed-responsive-4by3">
+                    <video controlsList="nodownload" src="content/video/M5_T1_S3_P2.mp4" controls="controls" poster="content/video/M5_T1_S3_P2.jpg">
+                        <track kind="subtitles" label="English subtitles" src="content/video/M5_T1_S3_P2.vtt" srclang="en" default />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-brown-light row-3">
+        <div class="col-sm-12">
+            <div class="panel-wrap zero-padding-bottom">
+                <div class="row">
+                    <div class="col-sm-8 zero-padding-bottom">
+                        <h2>How would you describe Genevieve's actions?</h2>
+                    </div>
+                    <div class="col-sm-4" aria-hidden="true"></div>
+                </div>
+            </div>
+            <div class="panel-wrap zero-padding-top">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p><strong>Select</strong> the best answer and then <strong>select</strong> Submit.</p>
+                        <form class="multiple-choice-quiz"  data-show-answer="true" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit">
+                            <ul class="multiple-choice-quiz-options">
+                                <li>Genevieve bent the rules a little but she saved an unnecessary doctor's visit and avoided exposing her co-workers to her illness. Overall she did the right thing.</li>
+                                <li data-required="true">Genevieve may have had good intentions however she changed the dates on the certificate to get some extra personal leave. This is fraud and is definitely illegal.</li>
+                            </ul>
+                            <div class="modal incorrect" data-audio-file="m5_t1_s3_p3_incorrect">
+                                <p>That's incorrect.</p>
+                                <p>Genevieve may have had good intentions however she changed the dates on the certificate to get some extra personal leave.</p>
+                                <p>This is fraud and is definitely illegal.</p>
+                            </div>
+                            <div class="modal correct" data-audio-file="m5_t1_s3_p3_correct">
+                                <p>That's right.</p>
+                                <p>We all all need to prevent fraud and work within all laws and regulations.</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4" aria-hidden="true">
+                        <img src="content/images/m5/-media-365740-staff-cath-the-admin-worker-2_rgb.png" class="img-responsive people-image hidden-xs" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-white row-4">
+        <div class="col-sm-12">
+            <div class="panel-wrap zero-padding-right">
+                <div class="audio-control outset grey" data-audio-file="m5_t1_s3_p3a"></div>
+                <div id="row-4-cols-1" class="clearfix">
+                    <div>
+                        <p>The actions of one person or a few can impact all of us, our business, our customers, and the community. This is why we're committed to:</p>
+                        <ul class="icon-list tick red">
+                            <li>preventing</li>
+                            <li>detecting, and</li>
+                            <li>investigating</li>
+                        </ul>
+                        <p>any reports of fraud or corruption.</p>
+                    </div>
+                    <div aria-hidden="true"></div>
+                </div>
+                
+            </div>
+            <div id="row-4-img" class="clearfix" aria-hidden="true">
+                <img src="content/images/m5/m5_t1s3_p3a_img.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="row bg-orange-bright">
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="quote-panel xl">
+                    <blockquote class="styled xxxl text-center">We don't make, and won't accept, facilitation payments or 'kickbacks'.</blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-leaf">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <p>We always minimise any possibility of fraud and corruption activity...</p>
+                <div class="audio-control outset grey" data-audio-file="m5_t1_s3_p3a2"></div>
+                <p>... by completing risk assessments for all major business initiatives, projects, business as usual activities, and significant changes. We also highlight any areas that may be exposed to fraud and corruption in a risk register or fraud management plan.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row row-7 bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="row">
+                    <div class="col-smr-6">
+                        <h2>Think about it this way...</h2>
+                        <div class="audio-control outset grey full-width" data-audio-file="m5_t1_s3_p3b"></div>
+                        <p>If you're found to be committing fraud or corruption, it could lead to:</p>
+                        <ul class="icon-list tick red">
+                            <li>recouping any damage or loss</li>
+                            <li>legal prosecution</li>
+                            <li>as well as our own disciplinary process.</li>
+                        </ul>
+                        <p class="fs-xl">Is it worth it?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-blue">
+        <div class="col-sm-12">
+            <div class="panel-wrap zero-padding-bottom">
+                <div class="col-md-6">
+                    <h2>Understanding your responsibilities</h2>
+                    <div class="audio-control outset full-width" data-audio-file="m5_t1_s3_p4"></div>
+                    <p><strong>Read</strong> each statement and then <strong>select</strong> "I understand". If you are unsure about any of these requirements you should speak with your People Leader.</p>
+                    <p>You can review these requirements at any time by <strong>selecting</strong> the arrows below.</p>
+                </div>
+            </div>
+            <div id="cloud-panel" class="panel-wrap zero-padding-top clearfix">
+                <div id="cloud-and-buttons">
+                    <div id="cloud-container">
+                        <img id="cloud-img" src="content/images/m5/t1s3_panel4.png" alt="" />
+                        <ul id="activity-click-btns" data-activity="click-btns">
+                            <li class="active">
+                                <p tabindex="-1" class="cloud-msg">We don't act fraudulently, dishonestly or corruptly.</p>
+                                <img class="done-indicator" src="images/green_tick.png" alt="" />
+                                <div><button type="button" class="btn btn-red click-btn cloud-nav-next">I understand</button></div>
+                            </li>
+                            <li>
+                                <p tabindex="-1" class="cloud-msg">We compete fairly.</p>
+                                <img class="done-indicator" src="images/green_tick.png" alt="" />
+                                <div><button type="button" class="btn btn-red click-btn cloud-nav-next">I understand</button></div>
+                            </li>
+                            <li>
+                                <p tabindex="-1" class="cloud-msg">We don't enter fake transactions.</p>
+                                <img class="done-indicator" src="images/green_tick.png" alt="" />
+                                <div><button type="button" class="btn btn-red click-btn cloud-nav-next">I understand</button></div>
+                            </li>
+                            <li>
+                                <p tabindex="-1" class="cloud-msg">We look after business resources.</p>
+                                <img class="done-indicator" src="images/green_tick.png" alt="" />
+                                <div><button type="button" class="btn btn-red click-btn cloud-nav-next">I understand</button></div>
+                            </li>
+                            <li>
+                                <p tabindex="-1" class="cloud-msg">We report all suspected, attempted or actual fraud or corruption incidents.</p>
+                                <img class="done-indicator" src="images/green_tick.png" alt="" />
+                                <div><button type="button" class="btn btn-red click-btn cloud-nav-next">I understand</button></div>
+                            </li>
+                            <li>
+                                <p tabindex="-1" class="cloud-msg">We declare in writing to our People Leaders if there is a possible or potential conflict of interest.</p>
+                                <img class="done-indicator" src="images/green_tick.png" alt="" />
+                                <div><button type="button" class="btn btn-red click-btn cloud-nav-next">I understand</button></div>
+                            </li>
+                            <li id="final-cloud-msg">
+                                <p tabindex="-1" class="cloud-msg">Thank you.</p>
+                                <p class="cloud-msg-2">We have many policies to help you make better decisions within our business. Should you want to know more, take a look at the core policy overviews at the end of this module. <span>When you're ready <strong>select</strong> Continue.</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul id="cloud-nav" class="clearfix" aria-label="Arrow buttons">
+                        <li>
+                            <button type="button" id="btn-prev-cloud-statement" class="btn-cloud-nav" disabled>
+                                <div><img src="content/images/m5/m5_t1_s3_p8_btns.png" alt="" /></div>
+                                <span class="sr-only">Previous statement</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" id="btn-next-cloud-statement" class="btn-cloud-nav cloud-nav-next" disabled>
+                                <div><img src="content/images/m5/m5_t1_s3_p8_btns.png" alt="" /></div>
+                                <span class="sr-only">Next statement</span>
+                            </button>
+                        </li>
+                        <li hidden>
+                            <button type="button" id="btn-cloud-finished" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red">Continue</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal intro-page" data-audio-file="m5_t1_s3_p1"></div>
+<script>
+    function pageLoaded() {
+        var $body = $('body'),
+            $btnPrev = $('#btn-prev-cloud-statement'),
+            $btnNext = $('#btn-next-cloud-statement'),
+            $btnNextContainer = $btnNext.closest('li'),
+            $btnContinueContainer = $('#btn-cloud-finished').parent(),
+            $clickBtns = $('#activity-click-btns');
+        var setNavButtonsState = function ($active) {
+            var finalPanel;
+            $active = $active || $('#activity-click-btns').find('.active');
+            $btnPrev.prop('disabled', $active.data('idx') === 0);
+            $btnNext.prop('disabled', !$active.hasClass('item-done'));
+            finalPanel = $active.attr('id') === 'final-cloud-msg';
+            if (finalPanel) {
+                $btnNextContainer.attr('hidden', true);
+                $btnContinueContainer.removeAttr('hidden');
+            }
+            else {
+                $btnNextContainer.removeAttr('hidden');
+                $btnContinueContainer.attr('hidden', true);
+            }
+        };
+        $('.cloud-nav-next').on('click', function () {
+            var $active = $clickBtns.find('.active'),
+                $next = $active.next();
+            var proceed = function () {
+                $active.removeClass('active');
+                $next.addClass('active').find('[tabindex="-1"]')[0].focus();
+                setNavButtonsState($next);
+            };
+            // Don't delay if keyboard - we assume it's a screen reader
+            if ($(this).hasClass('click-btn') && !$body.hasClass('keyboard-nav')) {
+                window.setTimeout(proceed, 1000);
+            }
+            else {
+                proceed();
+            }
+        });
+        $('#btn-prev-cloud-statement').on('click', function () {
+            var $active = $clickBtns.find('.active'),
+                $prev = $active.prev();
+            $active.removeClass('active');
+            $prev.addClass('active').find('[tabindex="-1"]')[0].focus();
+            setNavButtonsState($prev);
+        });
+        setNavButtonsState();
+    }
+</script>

@@ -1,0 +1,183 @@
+<style>
+    body { background-image: url('content/images/t1s2_bg_main.jpg'); background-size: cover; background-attachment: fixed; }
+
+    .row[data-idx="2"] { padding-bottom: 120px; padding-bottom: 160px; padding-bottom: 180px; }
+
+    .btn-img { overflow: hidden; position: relative; width: 150px; height: 130px; }
+    .btn-img img { position: absolute; top: 0; left: 0; }
+    
+    .click-btns {  
+        display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+        -webkit-justify-content: center; justify-content: center;
+        -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap;  flex-wrap: wrap;
+    }
+    .click-btns > li { margin: 10px 5px; }
+    .click-btn:hover .btn-img img { top: -130px; }
+    .click-btns .disabilities .btn-img img { left: -150px;  }
+    .click-btns .culture .btn-img img { left: -300px;  }
+    .click-btns .rap .btn-img img { left: -450px;  }
+    .click-btns .sexuality .btn-img img { left: -600px;  }
+    .click-btns .done-indicator { position: absolute; right: 7px; bottom: 5px; }
+
+    .popover.large-arrow { width: 100%; max-width: 360px; min-width: unset; border-radius: 0; }
+    .popover.large-arrow.bottom { margin-top: 48px; }
+        
+    @media (min-width: 367px) {
+        .click-btns { -webkit-justify-content: space-between; justify-content: space-between; }
+    }
+</style>
+<div class="horizontal-panels">
+    <div class="row first">
+        <h2 class="strip-header pos-abs-sm pos-top pos-left">We are diverse and inclusive (cont.)</h2>
+        <img src="content/images/t1s2_and_1s3p1.jpg" class="full-width" alt="" />
+        <div class="rounded-right-card with-outset-audio-control pos-bottom pos-left pos-abs-md margin-bottom-sm-md bg-blue-light">
+            <p class="fs-xl">Couldn't guess?<br />Neither could we.</p>
+            <div class="audio-control outset" data-audio-file="t1_s3_p1"></div>
+            <p>We value our people on the basis of merit, we don't discriminate, and we are proactive in removing the disadvantages and barriers that can prevent some people from shining in their roles.</p>
+            <p class="lbl-scroll-down margin-top-sm">Scroll down to <br />learn more</p>
+        </div>
+    </div>
+    <div class="row bg-grey">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>Think about the ways in which we can ensure we make the most of all of our people's skills and experience.</h2>
+                <div class="audio-control outset" data-audio-file="t1_s3_p2"></div>
+                <ul class="icon-list tick white margin-top-sm">
+                    <li>
+                        We treat everyone the same regardless of factors such as:
+                        <ul>
+                            <li>Race</li>
+                            <li>Gender</li>
+                            <li>Disability</li>
+                            <li>Cultural background</li>
+                        </ul>
+                    </li>
+                    <li>No one is denied an opportunity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-orange">
+        <div class="col-sm-12">
+            <div class="panel-wrap less-h">
+                <div class="panel-wrap zero-padding-bottom zero-padding-top">
+                    <h2>We remove barriers and disadvantages</h2>
+                    <div class="audio-control outset" data-audio-file="t1_s3_p2a"></div>
+                    <p><strong>Select</strong> each of the icons to learn more about how we are removing barriers and disadvantages in the APG workplace.</p>
+                </div>
+                <ul class="click-btns pos-rel margin-top-md" data-activity="click-btns" data-mandatory="1">
+                    <li class="women">
+                        <button type="button" class="click-btn" aria-label="Representing women" id="btn-respecting-women" data-target="#fb-respecting-women">
+                            <div class="btn-img" aria-hidden="true"><img src="content/images/m1t1p4-click-btns.png" alt="Representing women" /></div>
+                            <img class="done-indicator" aria-hidden="true" src="images/green_tick.png" alt="" />
+                        </button>
+                        
+                        
+                        <div class="modal modal-template activity-click-btns" id="fb-respecting-women" data-focus-on-closed="#btn-respecting-women">
+                            <p>Our commitment to improving the representation of women in our workplace and in leadership positions.</p>
+                        </div>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="disabilities">
+                        <button type="button" class="click-btn" aria-label="Representing disabilities" id="btn-representing-disabilities" data-target="#fb-representing-disabilities" >
+                            <div class="btn-img" aria-hidden="true"><img src="content/images/m1t1p4-click-btns.png" alt="Representing disabilities" /></div>
+                            <img class="done-indicator" aria-hidden="true" src="images/green_tick.png" alt="" />
+                        </button>
+                        
+                        <div class="modal modal-template activity-click-btns" id="fb-representing-disabilities" data-focus-on-closed="#btn-representing-disabilities">
+                            <p>Our vision to improve the employment experience for people with a disability.</p>
+                        </div>
+                        
+                        
+                        
+                    </li>
+                    <li class="culture">
+                        <button type="button" class="click-btn" aria-label="Representing culture" id="btn-representing-culture" data-target="#fb-representing-culture" >
+                            <div class="btn-img" aria-hidden="true"><img src="content/images/m1t1p4-click-btns.png" alt="Representing culture" /></div>
+                            <img class="done-indicator" aria-hidden="true" src="images/green_tick.png" alt="" />
+                        </button>
+                        
+                        <div class="modal modal-template activity-click-btns" id="fb-representing-culture" data-focus-on-closed="#btn-representing-culture">
+                            <p>Our programs to improve representation of workers from culturally and linguistically diverse (CALD) backgrounds as well as to develop their skills.</p>
+                        </div>
+                        
+                        
+                        
+                    </li>
+                    <li class="rap">
+                        <button type="button" class="click-btn" aria-label="Representing R A P" id="btn-representing-rap" data-target="#fb-representing-rap" >
+                            <div class="btn-img" aria-hidden="true"><img src="content/images/m1t1p4-click-btns.png" alt="Representing RAP" /></div>
+                            <img class="done-indicator" aria-hidden="true" src="images/green_tick.png" alt="" />
+                        </button>
+                        
+                        <div class="modal modal-template activity-click-btns" id="fb-representing-rap" data-focus-on-closed="#btn-representing-rap">
+                            <p>Our Reconciliation Action Plan (RAP) which aims to improve the social and economic wellbeing of Aboriginal and Torres Strait Islander Australians.</p>
+                        </div>
+                        
+                        
+                        
+                    </li>
+                    <li class="sexuality">
+                        <button type="button" class="click-btn" aria-label="Representing sexuality" id="btn-representing-sexuality" data-target="#fb-representing-sexuality" >
+                            <div class="btn-img" aria-hidden="true"><img src="content/images/m1t1p4-click-btns.png" alt="Representing sexuality" /></div>
+                            <img class="done-indicator" aria-hidden="true" src="images/green_tick.png" alt="" />
+                        </button>
+                        
+                        <div class="modal modal-template activity-click-btns" id="fb-representing-sexuality" data-focus-on-closed="#btn-representing-sexuality">
+                            <p>Our Lesbian, Gay, Bi-Sexual, Transsexual and Intersex (LGBTI) support network known as PostPride.</p>
+                        </div>
+                        
+                        
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/m1_t1s3_p2b_bg.jpg" alt="" />
+        <div class="bubble bubble-b-l align-bottom align-right">
+            <blockquote class="styled grey">We occasionally have programs in place to make sure our environment remains diverse and everyone feels included.</blockquote>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/t1s3p3_nan-laptop.jpg" alt="" />
+        <div class="bubble bubble-b-r align-bottom align-left">
+            <blockquote class="styled grey">There are some things NAN can't do as well these days, but she's determined to do as much as possible, so I do everything I can to help her live life to the fullest.</blockquote>
+        </div>
+    </div>
+    <div class="row bg-orange">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>It's the same <br />at work</h2>
+                <div class="audio-control outset" data-audio-file="t1_s3_p4"></div>
+                <p class="margin-top-sm">Nearly 20% of the population live with a disability, from issues of mobility, to sight and hearing impairments, that's almost one in five of us. To help everyone do their best work, we ensure that:</p>
+                <ul class="icon-list tick red margin-top-sm">
+                    <li>Our workplaces are accessible</li>
+                    <li>Our digital and online technologies are accessible</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/t1s3p5_woman-computer.jpg" alt="" />
+        <div class="bubble bubble-b-l align-bottom align-right">
+            <blockquote class="styled">My team works to ensure all of our people can access our digital assets.</blockquote>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>Need help ensuring you work in a way that's inclusive?</h2>
+                <p>We have many policies to help you make better decisions at work. Should you want to know more, take a look at the core policy overviews at the end of this module.</p> 
+                <p>&nbsp;</p>
+                <p class="fs-xl margin-top-xl">Did you catch all that?</p>
+                <button type="button" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red">Yep, got it!</button>
+                <p class="margin-top-sm">If not, have another read/listen before continuing.</p>
+            </div>
+        </div>
+    </div>
+</div>

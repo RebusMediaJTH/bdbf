@@ -1,0 +1,111 @@
+<style>
+    body { background-image: url('content/images/m3/m2_t1s3p1_gardeningCrew_main.jpg'); background-size: cover; background-attachment: fixed; }
+
+    .row-1 .bg-image { margin: 20px auto 0 auto; }
+
+    @media (min-width: 768px) {
+        .row-1 .bg-image-panel { padding-bottom: 0 !important; }
+        .row-1 .bg-image { float: right; position: relative; top: -50px; margin: 0; }
+    }
+
+    .dual-image-panel .original-img, .dual-image-panel .alt-img { width: 100%; }
+    .dual-image-panel .bubble p {  }
+    .dual-image-panel .alt-img, .dual-image-panel.switched .original-img { position: absolute; top: -20000px; left: -20000px; }
+    .dual-image-panel.switched  .alt-img { position: static; }
+    .btn-switch-image { background: none; border: none; padding: 0; margin: 10px 0; -webkit-appearance: none; }
+
+    @media (min-width: 1px) and (max-width: 767px) {
+        .row-4 .bubble { background: rgb(230, 237, 226); }
+    }
+</style>
+<div class="horizontal-panels">
+    <div class="row bg-leaf row-1">
+        <div class="col-sm-12">
+            <div class="panel-wrap zero-padding-bottom">
+                <h2>What do positive impacts look like?</h2>
+                <div class="audio-control outset" data-audio-file="m2_t1_s4_p1"></div>
+                <p>Explore this screen and have a think about what positive impacts look like in your community and your local environment.</p>
+                <p class="lbl-scroll-down">Scroll down to <br />learn more</p>
+            </div>
+            <div class="bg-image-panel panel-wrap zero-padding-top less-h" aria-hidden="true">
+                <img src="content/images/m3/t1s4p1_design.png" class="bg-image img-responsive" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="row dual-image-panel row-2">
+        <div>
+            <img src="content/images/m3/t1_s4_p2_default.jpg" class="original-img" alt="" />
+            <img src="content/images/m3/t1_s4_p2_mouseover.jpg" class="alt-img" alt="" />
+            <div class="bubble bubble-b-l align-top align-right">
+                <blockquote class="styled black">We actively support small business.</blockquote>
+                <p class="sr-only img-description" role="alert" aria-live="assertive" data-alt-text="You're now looking at a thriving strip of small businesses.">
+                    You're currently looking at a run down street with shops boarded up. Click the Switch button to see a difference.
+                </p>
+                <button class="btn-switch-image" type="button">
+                    <img src="content/images/m3/t1s4p2_eye_instruction.png" alt="" />
+                    <p class="sr-only">Switch</p>
+                </button>
+                <p class="f-default fs_default" aria-hidden="false">Tap the eye icon above to see a difference.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row dual-image-panel row-3">
+        <div>
+            <img src="content/images/m3/t1_s4_p3_default.jpg" class="original-img" alt="" />
+            <img src="content/images/m3/t1_s4_p3_mouseover.jpg" class="alt-img" alt="" />
+            <div class="bubble bubble-b-l align-top align-right">
+                <blockquote class="styled orange">We're actively pursuing renewable energy sources.</blockquote>
+                <p class="sr-only img-description" role="alert" aria-live="assertive" data-alt-text="You're now looking at a solar farm.">
+                    You're currently looking at a coal fired power station spewing pollution. Click the Switch button to see a difference.
+                </p>
+                <button class="btn-switch-image" type="button">
+                    <img src="content/images/m3/t1s4p2_eye_instruction.png" alt="" />
+                    <p class="sr-only">Switch</p>
+                </button>
+                <p class="f-default fs_default" aria-hidden="false">Tap the eye icon above to see a difference.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row dual-image-panel row-4">
+        <div>
+            <img src="content/images/m3/t1_s4_p4_default.jpg" class="original-img" alt="" />
+            <img src="content/images/m3/t1_s4_p4_mouseover.jpg" class="alt-img" alt="" />
+            <div class="bubble bubble-b-l align-top align-right">
+                <blockquote class="styled grey">We're enabling more people to participate in e-commerce and online shopping.</blockquote>
+                <p class="sr-only img-description" role="alert" aria-live="assertive" data-alt-text="You're now looking at an excited grandmother and grandaughter as they open up an iPad that has arrived in the post.">
+                    You're currently looking at an old TV and telephone. Click the Switch button to see a difference.
+                </p>
+                <button class="btn-switch-image" type="button">
+                    <img src="content/images/m3/t1s4p2_eye_instruction.png" alt="" />
+                    <p class="sr-only">Switch</p>
+                </button>
+                <p class="f-default fs_default" aria-hidden="false">Tap the eye icon above to see a difference.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <p class="margin-top-xl">We often ignore positive impacts because we're so bombarded with negative news.</p>
+                <p class="fs-xl">Remember to celebrate the positive impacts we make on the world around us.</p>
+                <button type="button" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function pageLoaded() {
+        $('body').on('click', '.btn-switch-image', function () {
+            var $container = $(this).closest('.dual-image-panel'),
+                $description = $container.find('.img-description'),
+                txt = $description.text();
+            if ($container.hasClass('switched')) {
+                $container.removeClass('switched');
+            }
+            else {
+                $container.addClass('switched');
+            }
+            $description.text($description.attr('data-alt-text')).attr('data-alt-text', txt);
+        });
+    }
+</script>

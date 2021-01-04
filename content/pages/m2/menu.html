@@ -1,0 +1,90 @@
+﻿<style>
+    body, .topic-menu-page { background: #f7bdf3; }
+    .topic-mnu-item.topic-1 .left-img-btn-img img { left: -47px; } 
+    .topic-mnu-item.topic-2 .left-img-btn-img img { left: -94px; } 
+    .topic-mnu-item.topic-3 .left-img-btn-img img { left: -141px; }
+    
+    @media (min-width: 576px) {
+        body { background: #edd7cd; }
+    }
+
+    @media (min-width: 768px) {
+        .topic-menu-page { background: url(content/images/m2_menu_bg.png); background-size: contain; background-repeat: repeat-x; }
+        .topic-menu-page .wrap { margin-top: 0; }
+        .topic-mnu-container { padding-right: 15px; }
+        .topic-menu-page .rewatch-video-link { margin-top: 10px; }
+        .rewatch-video-link > p { position: absolute; left: -20px; bottom: 10px; width: 200px; }
+        .left-img-btn-left-panel { padding: 10px 15px; }
+        .select-a-topic { margin-top: 10px; margin-bottom: 0; }
+    }
+
+    @media (min-width: 992px) {
+        .rewatch-video-link > p { left: 0; }
+    }
+</style>
+<div class="topic-menu-page">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="white-box">Better decisions<br /><span class="smaller">when helping</span> <span class="small red">Our Customers</span></h2>
+        </div>
+        <div class="col-sm-6">
+            <img class="clouds" src="content/images/menu_bg_gfx.png" alt="" />
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="select-a-topic"><strong>Select</strong> a topic to begin</p>
+                <div class="rewatch-video-link" data-navigate="module-video">
+                    <img src="content/images/button605823.png" alt="" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="topic-mnu-container">
+                    <ul class="topic-mnu">
+                        <li class="topic-mnu-item topic-0">
+                            <button type="button" role="navigation" class="left-img-btn bg-orange" data-navigate="topic 0">
+                                <div class="left-img-btn-left-panel">
+                                    <div class="left-img-btn-img" aria-hidden="true"><img src="content/images/topic-menu-1-btns.png" alt="" /></div>
+                                </div>
+                                <p class="left-img-btn-txt">We value our customers</p>
+                                <img class="done-indicator" src="images/icon_tick_black.png" alt="" />
+                                <span class="done-indicator sr-only">Completed</span>
+                            </button>
+                        </li>
+                        <li class="topic-mnu-item topic-1">
+                            <button type="button" role="navigation" class="left-img-btn bg-grey" data-navigate="topic 1">
+                                <div class="left-img-btn-left-panel">
+                                    <div class="left-img-btn-img" aria-hidden="true"><img src="content/images/topic-menu-1-btns.png" alt="" /></div>
+                                </div>
+                                <p class="left-img-btn-txt">We delight our customers</p>
+                                <img class="done-indicator" src="images/icon_tick_black.png" alt="" />
+                                <span class="done-indicator sr-only">Completed</span>
+                            </button>
+                        </li>
+                        <li class="topic-mnu-item topic-2">
+                            <button type="button" role="navigation" class="left-img-btn bg-brown" data-navigate="topic 2">
+                                <div class="left-img-btn-left-panel">
+                                    <div class="left-img-btn-img" aria-hidden="true"><img src="content/images/topic-menu-1-btns.png" alt="" /></div>
+                                </div>
+                                <p class="left-img-btn-txt">We protect our customers</p>
+                                <img class="done-indicator" src="images/icon_tick_black.png" alt="" />
+                                <span class="done-indicator sr-only">Completed</span>
+                            </button>
+                        </li>
+                        <li class="topic-mnu-item topic-3">
+                            <button type="button" role="navigation" class="left-img-btn bg-leaf" data-navigate="topic 3">
+                                <div class="left-img-btn-left-panel">
+                                    <div class="left-img-btn-img" aria-hidden="true"><img src="content/images/topic-menu-1-btns.png" alt="" /></div>
+                                </div>
+                                <p class="left-img-btn-txt">We are accountable</p>
+                                <img class="done-indicator" src="images/icon_tick_black.png" alt="" />
+                                <span class="done-indicator sr-only">Completed</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

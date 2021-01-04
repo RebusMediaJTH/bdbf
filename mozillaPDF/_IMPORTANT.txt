@@ -1,0 +1,5 @@
+﻿
+If the libray is updated:
+
+> Copy the logic, containing mozillaPDFViewerLinks, in viewer.js
+> Copy the last line of viewer.css

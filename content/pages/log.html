@@ -1,0 +1,48 @@
+﻿<style>
+    #log-container { margin-top: 5px; padding-bottom: 60px; }
+    #log-container h2 { position: relative; top: 6px; display: inline-block; font-size: 30px; font-size: 3rem; color: #000; margin-right: 10px; }
+    #log { margin-top: 30px; }
+    #txt-eval { display: block; width: 100%; margin-top: 5px; font-family: Courier New, Courier, monospace; font-size: 14px; font-size: 1.4rem; }
+    .course-unlocked #btn-unlock-course { display: none; }
+</style>
+<div id="log-container">
+    <h2>Admin</h2>
+    <button id="btn-go-back" type="button" class="btn btn-default">Back</button>
+    <button id="btn-clear-log" type="button" class="btn btn-default">Clear</button>
+    <button id="btn-unlock-course" type="button" class="btn btn-default">Unlock Course</button>
+    <button id="btn-toggle-logging" type="button" class="btn btn-default"></button>
+    <input id="txt-page" type="text" />
+    <button id="btn-goto-page" type="button" class="btn btn-default">Goto page</button>
+    <div id="log" class="log"></div>
+</div>
+<script>
+    function pageLoaded() {
+        var cookieId = rebus.config.id + '.loggingEnabled';
+        var load = function () {
+            $('#log').empty().append(rebus.logger.serializeLog());
+        };
+        var setToggleLoggingBtnText = function () {
+            $('#btn-toggle-logging').text('1' === sessionStorage.getItem(cookieId) ? 'Turn off logging' : 'Turn on logging');
+        };
+        $('#btn-clear-log').on('click', function () {
+            rebus.logger.clearLog();
+            load();
+        });
+        $('#btn-unlock-course').on('click', function () {
+            rebus.admin.unlockCourse();
+        });
+        $('#btn-go-back').on('click', function () {
+            window.location = 'index.html';
+        });
+        $('#btn-toggle-logging').on('click', function () {
+            sessionStorage.setItem(cookieId, '1' === sessionStorage.getItem(cookieId) ? '0' : '1');
+            setToggleLoggingBtnText();
+        });
+        $('#btn-goto-page').on('click', function () {
+            window.location = 'index.html?page=' + $('#txt-page').val() + '&initialised=true';
+        });
+        setToggleLoggingBtnText();
+        load();
+    }
+</script>
+

@@ -1,0 +1,165 @@
+<style>
+    body { background-image: url('content/images/t2s4_bg_main.jpg'); background-size: cover; background-attachment: fixed; }
+
+    .row.first .leader,
+    .row.first .leader span { font-family: 'dk_lemon_yellow_sunregular'; }
+    .row.first .leader { color: #4d4d4d; font-size: 96px; font-size: 9.6rem; line-height: 96px; line-height: 9.6rem; }
+    .row.first .leader span { color: #d91930; }
+    
+    .speech-list > div { float: left; }
+    .speech-list .vanessa, .speech-list .doctor { display: none; width: 118px; }
+    .speech-list .speech { width: 100%; padding: 0 20px; }
+    .speech-list .speech > div { margin-top: 20px; }
+    .person-container { overflow: hidden; position: relative; height: 192px; margin: 0 auto; }
+    .person-container img { position: absolute; top: 0; left: 0; }
+    .vanessa .person-container { width: 104px; }
+    .doctor .person-container { width: 118px; }
+    .doctor .person-container img { left: -107px; }
+
+    .speech-bubble .headshot, .speech-bubble .speech-bubble-text { float: left; }
+        
+    .speech-bubble .headshot { overflow: hidden; position: relative; height: 48px; }
+    .speech-bubble .headshot img { position: absolute; top: 0; left: 0; }
+    .speech-bubble-text { width: calc(100% - 48px); }
+    .speech-bubble .hs-vanessa { width: 36px; }
+    .speech-bubble .hs-doctor { width: 40px; }
+    .speech-bubble .hs-doctor img { left: -36px; }
+    .speech-bubble .hs-doctor { float: right; }
+
+    .speech-bubble.left .speech-bubble-text { padding-left: 10px; }
+    .speech-bubble.right .speech-bubble-text { padding-right: 10px; }
+
+    .speech-list .speech-bubble:after { display: none; }
+
+    .img-vanessa-tall { margin-top: 20px; }
+
+    @media (min-width: 768px) {
+        .speech-list .speech-bubble:after { display: block; }
+        .speech-bubble .headshot { display: none; }
+        .speech-bubble .headshot, .speech-bubble .speech-bubble-text { float: none; }
+        .speech-bubble-text { width: auto; padding: 0; }
+        .speech-list .vanessa, .speech-list .doctor { display: block; }
+        .speech-list .speech { width: calc(100% - 118px - 118px); }
+        .speech-bubble.left .speech-bubble-text, .speech-bubble.right .speech-bubble-text { padding: 0; }
+        .img-vanessa-tall { margin-top: 60px; }
+    }
+</style>
+<div class="horizontal-panels">
+    <div class="row bg-grey first">
+        <h2 class="strip-header auto-width-sm">Alcohol and other drugs</h2>
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="leader">Need to <br /><span>know</span></p>
+                        <img class="margin-top-md" src="content/images/icon_need_to_know_grey.png" alt="" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p>Let's take a moment to cover some important points all of us need to know about the risks associated with alcohol and other drugs at work.</p>
+                        <p class="lbl-scroll-down margin-top-sm">Scroll down to <br />learn more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/t2s4p3.jpg" alt="" />
+        <div class="bubble bubble-b-l align-top align-right">
+            <blockquote class="styled grey">The use of alcohol and other drugs presents a high risk in some of the work we do.</blockquote>
+        </div>
+    </div>
+    <div class="row bg-grey">
+        <div class="col-sm-12">
+            <div class="panel-wrap zero-padding-bottom">
+                <h2>Check your understanding</h2>
+                <p>Vanessa is a truck driver with StarTrack. She has recently injured her back and has been prescribed pain medication by her doctor.</p>
+                <div class="speech-list margin-top-md clearfix">
+                    <div class="vanessa" aria-hidden="true">
+                        <div class="person-container"><img src="content/images/vanessa_doctor_headshots.png" alt="" /></div>        
+                    </div>
+                    <div class="speech">
+                        <div class="speech-bubble left point-down">
+                            <div class="clearfix">
+                                <div class="headshot hs-vanessa" aria-hidden="true">
+                                    <img src="content/images/vanessa_doctor_headshots_small.png" alt="" />
+                                </div>
+                                <div class="speech-bubble-text">
+                                    <p class="sr-only">Vanessa says:</p>
+                                    <p>"I drive a truck in my job. Is there anything I need to know about this medication?"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speech-bubble right point-up">
+                            <div class="clearfix">
+                                <div class="headshot hs-doctor" aria-hidden="true">
+                                    <img src="content/images/vanessa_doctor_headshots_small.png" alt="" />
+                                </div>
+                                <div class="speech-bubble-text">
+                                    <p class="sr-only">The Doctor says:</p>
+                                    <p>"This medication is known to impair physical and mental performance. You should not take it before operating a vehicle or any machinery."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor" aria-hidden="true">
+                        <div class="person-container"><img src="content/images/vanessa_doctor_headshots.png" alt="" /></div>        
+                    </div>
+                </div>
+            </div>
+            <div class="panel-wrap zero-padding-top less-h margin-top-md">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="fs-xl margin-top-sm">How should Vanessa handle this situation?</p>
+                        <p><strong>Select</strong> the best answer.</p>
+                        <form class="multiple-choice-quiz"  data-show-answer="true" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial">
+                            <ul class="multiple-choice-quiz-options">
+                                <li>Vanessa should use energy drinks and coffee to keep her alert whilst driving under the influence of her pain medication.</li>
+                                <li data-required="true">Vanessa should discuss this issue with her People Leader before her next shift.</li>
+                                <li data-feedback=".incorrect.two">The warnings on pain medications are recommendations only. Vanessa should carry on with her job as normal and reassess the situation if she experiences drowsiness while driving.</li>
+                            </ul>
+                            <div class="modal correct" data-audio-file="t2_s6_fb2">
+                                <p>Correct.</p>
+                                <p>As a driver, Vanessa's work would create a high risk of causing harm were she to drive under the influence of her pain medications.</p>
+                                <p>By discussing the issue with her People Leader they can work out a way to get her back to work as soon as possible without creating a risk to safety.</p>
+                            </div>
+                            <div class="modal incorrect" data-audio-file="t2_s6_fb1">
+                                <p>This is not a good idea.</p>
+                                <p>As a driver, Vanessa's work would create a high risk of causing harm were she to drive under the influence of her pain medications.</p>
+                                <p>Also, the effects of mixing medications and stimulants can be unpredictable.</p>
+                                <p>Revise the information on this screen and then try gain.</p>
+                            </div>
+                            <div class="modal incorrect two" data-audio-file="t2_s6_fb3">
+                                <p>This is not a good idea.</p>
+                                <p>As a driver, Vanessa's work would create a high risk of causing harm were she to drive under the influence of her pain medications.</p>
+                                <p>By the time she experiences drowsiness it may be too late to prevent an accident.</p>
+                                <p>Revise the information on this screen and then try gain.</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4" aria-hidden="true">
+                        <img src="content/images/vanessa.png" class="img-vanessa-tall img-responsive center-block hidden-xs" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/m1_t2s4_p5a_bg.jpg" alt="" />
+        <div class="bubble bubble-b-l align-bottom align-right">
+            <blockquote class="styled grey">APG helped me through some really difficult times. It doesn't matter if you've got an addiction to alcohol, drugs or gambling. You could even have anxiety, depression or some other mental health issue. There's a support service here to get you through.</blockquote>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>Want to know more?</h2>
+                <p>We have many policies to help you make better decisions at work. Should you want to know more, take a look at the core policy overviews at the end of this module.</p>
+
+                <h2 class="margin-top-xl">Did you catch all that?</h2>
+                <button type="button" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red">Yep, got it!</button>
+                <p class="margin-top-sm">If not, have another read/listen before continuing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal intro-page" data-audio-file="t2_s6_intro"></div>

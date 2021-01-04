@@ -1,0 +1,335 @@
+<style>
+    body { background-image: url('content/images/m2/m3_t3_s1_p1_PorchLaptop_main.jpg'); background-size: cover; background-attachment: fixed; }
+
+    .row.first .leader,
+    .row.first .leader span { font-family: 'dk_lemon_yellow_sunregular'; }
+    .row.first .leader { color: #4d4d4d; font-size: 96px; font-size: 9.6rem; line-height: 96px; line-height: 9.6rem; }
+    .row.first .leader span { color: #d91930; }
+
+    .people-image { margin-top: 20px; }
+
+    .row-4 .panel-wrap { padding-right: 15px !important; padding-bottom: 80px !important; }
+
+    @media (min-width: 768px) {
+        .people-image { margin-top: 0; }
+        .row-2 .people-image { position: relative; top: -80px; }
+        .row-6 .people-image { float: right; margin-right: 50px; }
+    }
+
+    #worker-tabs { list-style: none; display: block; padding: 0; margin: 0; }
+    #worker-tabs li { float: left; width: 33% }
+    #worker-tabs li button{
+      -webkit-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    #worker-tabs li button:hover,
+    #worker-tabs li button:focus{
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+
+    }
+    .btn-worker { width: 100%; background: none; border: none; padding: 10px 0 0 0; margin: 0; -webkit-appearance: none; }
+    .btn-worker p { font-weight: bold; }
+    .btn-worker[aria-selected="true"],
+    .worker-tab-panel { background: rgb(253, 233, 161); }
+    .worker-tab-panel { padding: 10px; }
+    @media (min-width: 576px) {
+        .worker-tab-panel { padding: 20px; }
+    }
+    @media (min-width: 768px) {
+        .worker-tab-panel { padding: 20px 60px; }
+    }
+</style>
+<div class="horizontal-panels">
+    <div class="row bg-grey first">
+        <h2 class="strip-header auto-width-sm">Privacy</h2>
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="leader">Need to <br /><span>know</span></p>
+                        <img class="margin-top-md" src="content/images/icon_need_to_know_grey.png" alt="" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="margin-top-sm">Let's take a moment to cover some important points all of us need to know about Privacy and our handling of Personal Information.</p>
+                        <p class="lbl-scroll-down margin-top-sm">Scroll down to <br />learn more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-pink row-2">
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="row">
+                    <h2>What is Personal Information?</h2>
+                    <div class="audio-control outset" data-audio-file="m3_t3_s2_p2"></div>
+                    <div class="col-sm-6">
+                        <p>Personal Information can be anything such as a name, address, signature or photo that identifies or could identify someone.</p>
+                        <p>Even if someone's identity isn't obvious from a single piece of information - such as an address - it's still considered Personal Information because combining it with other pieces of information could identify someone.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="content/images/m2/m3_t3s2_panel2.png" class="img-responsive center-block people-image" alt="Person listing listing various forms of personal information: Name, Address, Signature, Date of birth, Phone number, Photo, Bank account details, Medicare number, License number." />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-blue-light row-3">
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <div class="row">
+                    <h2>Collecting Personal Information</h2>
+                    <div class="audio-control outset" data-audio-file="m3_t3_s2_p3"></div>
+                    <div class="col-sm-8">
+                        <p>When collecting Personal Information:</p>
+                        <ul class="icon-list tick white">
+                            <li>Explain why it's being collected and how it may be used</li>
+                            <li>Be clear that you're representing Australia Post Group</li>
+                            <li>Only ask for information that's necessary for our business or to complete your task</li>
+                            <li>Always make sure it's accurate, up-to-date, and complete</li>
+                            <li>Only get the information from the customer themselves</li>
+                        </ul>
+                        <p>Of course, we do all this fairly and within the law.</p>
+                    </div>
+                    <div class="col-sm-4" aria-hidden="true">
+                        <img src="content/images/m2/consumer-male-and_pete_driver.png" class="img-responsive center-block people-image" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-orange row-4">
+        <div class="col-sm-12">
+            <div class="panel-wrap">
+                <h2>Using Personal Information</h2>
+                <div class="audio-control outset" data-audio-file="m3_t3_s2_p4_a"></div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>After collecting the Personal Information:</p>
+                        <ul class="icon-list tick white">
+                            <li>Be careful how you use it</li>
+                            <li>Make sure that you have the person's consent</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="bubble bubble-b-l static margin-top-sm">
+                            <div class="audio-control" data-audio-file="m3_t3_s2_p4_b"></div>
+                            <blockquote class="styled orange">ONLY USE Personal Information for the purpose it was collected.</blockquote>
+                            <p class="f-default fs_default margin-top-sm">If you need that same Personal Information for <strong>another</strong> reason, you need to explain this to the customer and ask for their permission to use it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-orange-light row-5">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl zero-padding-right">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2>Using Personal Information</h2>
+                        <div class="audio-control outset full-width" data-audio-file="m3_t3_s2_p5"></div>
+                        <p>Make sure that you protect Personal Information. Don't leave it:</p>
+                        <ul class="icon-list cross grey">
+                            <li>Lying around at work where anyone can pick it up</li>
+                            <li>Visible on a screen</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4" aria-hidden="true">
+                        <img src="content/images/m2/m3_t3s2_panel5.png" class="img-responsive center-block margin-top-sm" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-turquoise row-6">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl zero-padding-right">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h2>Be careful who you tell</h2>
+                        <div class="audio-control outset full-width" data-audio-file="m3_t3_s2_p6"></div>
+                        <ul class="icon-list tick white">
+                            <li>If somebody asks for Personal Information, always make sure that you get the right approvals.</li>
+                            <li>The general rule is, we don't tell or give anyone Personal Information and only use it for the purpose it was collected.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5" aria-hidden="true">
+                        <img src="content/images/m2/m3_media-365202-staff-auspost-contractor_driver_2_rgb.png" class="img-responsive center-block people-image" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/m2/m3_t3s2_p6a_bg_img.jpg" alt="" />
+        <div class="bubble bubble-b-l align-bottom align-right">
+            <blockquote class="styled">When customer information is no longer needed, dispose of it securely (not in the bin where anyone can pick it up).</blockquote>
+        </div>
+    </div>
+    <div class="row bg-turquoise-light">
+        <div class="col-sm-12">
+            <div class="panel-wrap zero-padding-bottom less-h">
+                <div class="quote-panel xl">
+                    <blockquote class="styled xxxl orange text-center">Always stop and think when handling Personal Information.</blockquote>
+                </div>
+                <img src="content/images/m2/m3_t3s2_panel7.png" class="img-responsive center-block" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="row bg-yellow" data-activity-completion="any">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl zero-padding-left zero-padding-right zero-padding-top">
+                <div class="panel-wrap xl zero-padding-bottom">
+                    <h2>Check your understanding</h2>
+                    <div class="audio-control outset" data-audio-file="m3_t3_s2_p8"></div>
+                    <p>When helping our customers it's important to stop and think every time we handle Personal Information.</p>
+                    <p>To check your understanding, <strong>select</strong> the character that relates most to the work you do (or feel free to explore each of their stories).</p>
+                    <ul id="worker-tabs" class="clearfix margin-top-md" aria-label="List of characters">
+                        <li>
+                            <button type="button" class="btn-worker" data-tab="0">
+                                <img src="content/images/m2/button606949.png" aria-hidden="true" class="img-responsive center-block" alt="" />
+                                <p>Tony</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-worker" data-tab="1">
+                                <img src="content/images/m2/button606939.png" aria-hidden="true" class="img-responsive center-block" alt="" />                                <p>Vanessa</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-worker" data-tab="2">
+                                <img src="content/images/m2/button606929.png" aria-hidden="true" class="img-responsive center-block" alt="" />
+                                <p>Graham</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="worker-tab-panel" hidden>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="audio-control full-width" data-audio-file="m2_t3_s2_p9_tony"></div>
+                            <p tabindex="-1">Tony works as a postie. While delivering mail to a block of flats a man approaches him and says:</p>
+                            <em>"Hi. I'm here visiting my friend. I know she lives in this building because she told me the address, but I've forgotten which apartment number is hers. Can you help me figure it out? Her name's Jane Smith."</em>
+                            <p>How should Tony respond?</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Select</strong> the best answer and then <strong>select</strong> Submit.</p>
+                            <form class="multiple-choice-quiz"  data-show-answer="true" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit">
+                                <ul class="multiple-choice-quiz-options">
+                                    <li>Tony should help the person because it's what we do. He can check the mail he's delivering and see if there's anything for Jane Smith then pass on the apartment number.</li>
+                                    <li data-required="true">Tony should politely inform the man that he is unable to help him because disclosing the Personal Information of one of our customers without their consent is against the law.</li>
+                                </ul>
+                                <div class="modal incorrect" data-audio-file="m3_t3_s2_p8_twrong">
+                                    <p>That's not right.</p>
+                                    <p>Tony should stop and think: "What if this person is lying and Jane Smith does not wish for him to know where she lives?"</p>
+                                    <p>By disclosing Jane Smith's Personal Information to another person Tony would be breaching our Privacy Policy and breaking the law, which could have serious consequences for both Tony and the Australia Post Group.</p>
+                                </div>
+                                <div class="modal correct" data-audio-file="m3_t3_s2_p8_tcorrect">
+                                    <p>That's correct.</p>
+                                    <p>We never disclose our customers' Personal Information to a third party without their consent.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-tab-panel" hidden>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="audio-control full-width" data-audio-file="m2_t3_s2_p9_jenny"></div>
+                            <p tabindex="-1">Jenny's applying to renew her passport. While Vanessa helps her fill out the application form, Jenny explains how much she loves travelling. When Jenny leaves, Vanessa wants to help Jenny out so she finds her email address on the passport renewal application form and adds it to the mailing list for a travel website she uses.</p>
+                            <p>Has Vanessa done anything wrong?</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Select</strong> the best answer and then <strong>select</strong> Submit.</p>
+                            <form class="multiple-choice-quiz"  data-show-answer="true" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit">
+                                <ul class="multiple-choice-quiz-options">
+                                    <li data-required="true">Yes. Vanessa has breached our Privacy Policy.</li>
+                                    <li>No. Vanessa has gone above and beyond for her customer. That's great customer service!</li>
+                                </ul>
+                                <div class="modal incorrect" data-audio-file="m3_t3_s2_p8_vwrong">
+                                    <p>That's not right.</p>
+                                    <p>Vanessa has in fact breached our Privacy Policy and in doing so has also broken the law.</p>
+                                    <p>Personal Information can only be used for the primary purpose for which it was collected.</p>
+                                    <p>If the same Personal Information is needed for another reason, this needs to be made clear to the customer and additional consent needs to be obtained.</p>
+                                </div>
+                                <div class="modal correct" data-audio-file="m3_t3_s2_p8_vcorrect">
+                                    <p>You're correct.</p>
+                                    <p>Vanessa has breached our Privacy Policy and in doing so has also broken the law.</p>
+                                    <p>Personal Information can only be used for the primary purpose for which it was collected.</p>
+                                    <p>If the same Personal Information is needed for another reason, this needs to be made clear to the customer and additional consent needs to be obtained.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-tab-panel" hidden>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="audio-control full-width" data-audio-file="m2_t3_s2_p9_graham"></div>
+                            <p tabindex="-1">Graham works at one of our contact centres. A customer named Richard has called to enquire about his PO Box account. Graham is required to confirm Richard's identity before discussing the account over the phone.</p>
+                            <p>What's the best way to confirm Richard's identity?</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Select</strong> the best answer and then <strong>select</strong> Submit.</p>
+                            <form class="multiple-choice-quiz"  data-show-answer="true" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit">
+                                <ul class="multiple-choice-quiz-options">
+                                    <li data-required="true">Graham should ask for appropriate personal details (e.g. name, date of birth and address) to verify Richard's identity before discussing the account.</li>
+                                    <li>To be more helpful and save time, Graham could read out the Personal Information he has on Richard's account and then ask Richard to confirm it is correct before proceeding.</li>
+                                </ul>
+                                <div class="modal incorrect" data-audio-file="m3_t3_s2_p8_gwrong">
+                                    <p>That's not right.</p>
+                                    <p>Graham should stop and think: "What if it's not Richard on the phone?"</p>
+                                    <p>By disclosing Richard's Personal Information to another person, Graham would be breaching our Privacy Policy and breaking the law, which could have serious consequences for both Graham and the Australia Post Group.</p>
+                                </div>
+                                <div class="modal correct" data-audio-file="m3_t3_s2_p8_gcorrect">
+                                    <p>You're correct.</p>
+                                    <p>We ask for personal details to verify a person's identity before discussing account information or any other kind of Personal Information with a customer.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>Why is this important for me in my work?</h2>
+                <div class="audio-control outset" data-audio-file="m3_t3_s2_p9"></div>
+                <ul class="icon-list tick red">
+                    <li>Make sure you know about customer privacy, what you need to do, and ask if you're not sure.</li>
+                    <li>If you're a People Leader, your responsibility's even greater in making sure that your team knows about privacy.</li>
+                </ul> 
+                <p>We have many policies to help you make better decisions when helping our customers. Should you want to know more about how we protect customer privacy, take a look at the core policy overviews at the end of this module.</p>
+                <p class="fs-xl margin-top-lg">Did that help you understand what you need to do?</p>
+                <button type="button" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red margin-top-sm">Yep, got it!</button>
+                <p class="margin-top-sm">If not, have another read/listen before continuing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal intro-page" data-audio-file="m3_t3_s2_p1"></div>
+<script>
+    function pageLoaded() {
+        var $panels = $('.worker-tab-panel');
+        $('.btn-worker').attr('aria-selected', false);
+        $('body').on('click', '.btn-worker', function () {
+            var $btn = $(this);
+            $('.btn-worker[aria-selected="true"]').attr('aria-selected', false);
+            $btn.attr('aria-selected', true);
+            $panels.filter('.active').attr('hidden', true).removeClass('active');
+            //$panels.eq($btn.data('tab')).removeAttr('hidden').addClass('active').find('[tabindex="-1"]')[0].focus();
+            $panels.eq($btn.data('tab')).removeAttr('hidden').addClass('active');
+            $('.btn-worker[aria-selected="false"]').attr('tabindex', -1);
+        }).on('focus', '.btn-worker', function () {
+            $('.btn-worker[tabindex="-1"]').removeAttr('tabindex');
+        });
+    }
+</script>
+

@@ -1,0 +1,132 @@
+<style>
+    body { background-image: url('content/images/m2/m3_t3_s1_p1_PorchLaptop_main.jpg'); background-size: cover; background-attachment: fixed; }
+        
+    #items-to-share { list-style: none; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+    .item-to-share { display: block; width: 180px; height: 74px; margin: 10px; }
+    .item-to-share button {
+        position: relative;
+        display: block;
+        width: 100%; height: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        text-align: center;
+        background: rgb(255, 206, 0);
+        box-shadow: rgba(0, 0, 0, 0.75) 1px 1px 2px 1px;
+        -moz-transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        -webkit-transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            -webkit-appearance: none;
+    }
+    .item-to-share button:hover, .item-to-share button:focus { box-shadow: none; }
+    .item-to-share button[aria-selected="true"] { background: rgb(181, 223, 216); }
+    #btn-submit-items-to-share { margin-top: 10px;}
+</style>
+<div class="horizontal-panels">
+    <div class="row first">
+        <h2 class="strip-header pos-abs-sm pos-top pos-left">We protect our customers' Personal Information and its use</h2>
+        <img src="content/images/m2/t3_s1_p1_porchlaptop.jpg" class="full-width" alt="" />
+        <div class="bubble bubble-b-r align-left align-bottom">
+            <blockquote class="styled">Our use of the Internet at home raises lots of questions for us around privacy and our Personal Information.</blockquote> 
+            <p class="lbl-scroll-down">Scroll down to <br />learn more</p>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl zero-padding-bottom">
+                <h2>Which of the following would you share with another person or business?</h2>
+                <div class="audio-control full-width outset" data-audio-file="m3_t3_s1_p2"></div>
+                <p>Most of us are experienced in protecting our own Personal Information. Reflecting on this can help you remember how important this is for our customers.</p>
+                <p><strong>Select</strong> the items below that you're happy to share with anyone and then <strong>select</strong> Submit.</p>
+            </div>
+            <div class="panel-wrap less-h zero-padding-top">
+                <div class="row">
+                    <div data-activity="generic" data-mandatory="true">
+                        <div class="col-sm-9">
+                            <ul id="items-to-share" aria-label="List of items I'm happy to share'">
+                                <li class="item-to-share"><button type="button">My Facebook login password</button></li>
+                                <li class="item-to-share"><button type="button">My home address</button></li>
+                                <li class="item-to-share"><button type="button">My date of birth</button></li>
+                                <li class="item-to-share"><button type="button">My wage/salary amount</button></li>
+                                <li class="item-to-share"><button type="button">My Tax File Number</button></li>
+                                <li class="item-to-share"><button type="button">My medical records</button></li>
+                                <li class="item-to-share"><button type="button">My bank card PIN number</button></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <button id="btn-submit-items-to-share" type="button" data-set-activity-complete="true" class="btn btn-red btn-block-lte-sm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-grey">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>We protect our customers' Personal Information and its use</h2>
+                <div class="audio-control outset" data-audio-file="m3_t3_s1_p3"></div>
+                <p>Our size and the nature of the work we do mean we handle more Personal Information than most large companies in Australia.</p>
+                <p>Our customers trust us with their Personal Information when they:</p>
+                <ul class="icon-list tick red">
+                    <li>Send or receive a letter or parcel</li>
+                    <li>Apply for a passport</li>
+                    <li>Register to use our online services</li>
+                    <li>Make a payment to us using a payment card (eg Credit Cards and EFTPOS)</li>
+                </ul>
+                <p>There are very specific guidelines that need to be followed when handling Personal Information. We'll cover these shortly.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row image-panel">
+        <img src="content/images/m2/t3_s1_p4_billpay.jpg" alt="" />
+        <div class="bubble bubble-b-r align-bottom align-left">
+            <blockquote class="styled red">Our customers trust us.</blockquote>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-sm-12">
+            <div class="panel-wrap xl">
+                <h2>Our business is built on trust. Get to know the issues that are important to our customers.</h2>
+
+                <p>We have many policies to help you make better decisions when helping our customers. Should you want to know more about how we protect customer information, take a look at the core policy overviews at the end of this module.</p>
+
+                <h2 class="margin-top-xl">Did you catch all that?</h2>
+                <button type="button" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red">Yep, got it!</button>
+                <p class="margin-top-sm">If not, have another read/listen before continuing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-template activity-items-to-share-modal correct" data-audio-file="m3_t3_s1_p2_feedback1" data-buttons="none" data-focus-on-closed="#btn-submit-items-to-share">
+    <p>Looks like you understand the risks of sharing your Personal Information quite well. <strong>Select</strong> continue and scroll down to learn more.</p>
+    <button type="button" class="btn btn-red margin-top-md" data-dismiss="modal">Continue</button>
+</div>
+<div class="modal modal-template activity-items-to-share-modal incorrect" data-audio-file="m3_t3_s1_p2_feedback2" data-buttons="none" data-focus-on-closed="#btn-submit-items-to-share">
+    <p>You might want to reconsider how you protect your Personal Information. Keep reading or listening to the content on this screen to learn more about the ways we come into contact with our customers' Personal Information.</p>
+    <p>On the next screen we'll provide you with some information to help you understand your responsibilities at work.</p>
+    <button type="button" class="btn btn-red margin-top-md" data-dismiss="modal">Continue</button>
+</div>
+<div class="modal intro-page" data-audio-file="m3_t3_s1_p1">
+    <p>Our customers have trusted us with their Personal Information since addressed letters were delivered on horseback.</p>
+    <p>In the digital age, with the large amounts of customer data we handle, our responsibility to maintain our customers' trust is even greater.</p>
+</div>
+<script>
+    function pageLoaded() {
+        $('#items-to-share .item-to-share').attr('aria-selected', false);
+        $('#items-to-share').on('click', 'button', function () {
+            var $this = $(this);
+            $this.attr('aria-selected', $this.attr('aria-selected') !== 'true');
+        });
+        $('#btn-submit-items-to-share').on('click', function () {
+            if ($('#items-to-share [aria-selected="true"]').length) {
+                $('.activity-items-to-share-modal.incorrect').modal();
+            }
+            else {
+                $('.activity-items-to-share-modal.correct').modal();
+            }
+        });
+    }
+</script>
+
+    

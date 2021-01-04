@@ -1,0 +1,31 @@
+[aria-hidden="true"] { visibility: hidden !important; }
+
+p[aria-hidden="true"],
+tr[aria-hidden="true"] { 
+    display: none; 
+}
+
+.screenreaderonly, .sr-only {
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: initial;
+}
+
+* {
+    background-image: none !important;
+    transform: none !important;
+}
+
+img {
+    xxxvisibility: hidden;
+}
+
+ul { list-style: circle !important; }
+li { position: static !important; width: auto !important; }
+
+/* Custom */
+article.content { padding-top: 60px; }
+#fixed-instructions { top: -90px !important; }

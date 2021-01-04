@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css?v=23" rel="stylesheet" media="screen">
+    <link href="css/styles.css?v=24" rel="stylesheet" media="screen">
+    <link href="css/theme.css?v=1" rel="stylesheet" media="screen">
+    <script src="js/jquery.libs.min.js"></script>
+    <script src="js/rebus.config.js?v=1"></script>
+    <script src="js/rebus.logger.js?v=2"></script>
+    <!-- 
+    screen reader debug only
+    link href="css/screen-reader.css?v=1" rel="stylesheet" media="screen">
+    <script src="js/screen-reader.js"></script>
+    -->
+</head>
+<body id="content-page" class="page-loading-mask-in">
+    <div class="container">
+        <header class="masthead navbar-fixed-top in" role="banner">
+            <ul class="components list-unstyled clearfix">
+                <li role="presentation" class="hide-when-audio-buffering" aria-hidden="true">
+                    <div class="module-logo">
+                        <img src="images/theme/nav_sprite.png" alt="" />
+                    </div>
+                </li>
+                <li class="show-when-audio-buffering" role="presentation">
+                    <img id="audio-buffering-spinner" src="mozillaPDF/web/images/loading-small@2x.png" alt="" />
+                    <span>Audio loading...</span>
+                </li>
+                <li id="page-title" role="presentation">
+                    <h1></h1>
+                </li>
+                <li role="presentation" id="dropdown-mnu-main" class="dropdown-mnu">
+                    <a href="#" class="toggle" aria-expanded="false">
+                        <span class="sr-only">Open menu</span>
+                        <img src="images/theme/nav_sprite.png" alt="" />
+                    </a>
+                    <ul class="dropdown-mnu-items">
+                        <li class="mnu-item-progress">
+                            <a href="#" data-action="show-progress">
+                                My Progress<div aria-hidden="true"><img src="images/theme/nav_sprite.png" alt="" /></div>
+                            </a>
+                        </li>
+                        <li class="mnu-item-location" aria-label="Current location"></li>
+                        <li class="mnu-item-resources">
+                            <a href="#" data-action="show-resources">
+                                Resources<div aria-hidden="true"><img src="images/theme/nav_sprite.png" alt="" /></div>
+                            </a>
+                        </li>
+                        <li class="mnu-item-help">
+                            <a href="#" data-action="show-help">
+                                Help<div aria-hidden="true"><img src="images/theme/nav_sprite.png" alt="" /></div>
+                            </a>
+                        </li>
+                        <li class="mnu-item-topics-menu">
+                          <a href="#" data-navigate="current-module-menu">
+                              Module Menu<div aria-hidden="true"><img src="images/theme/nav_sprite.png" alt="" /></div>
+                          </a>
+                        </li>
+                        <li class="mnu-item-module-menu">
+                            <a href="#" data-navigate="/course-menu">
+                                Course Menu<div aria-hidden="true"><img src="images/theme/nav_sprite.png" alt="" /></div>
+                            </a>
+                        </li>
+                        <li class="mnu-item-exit">
+                            <a href="#" data-action="exit">
+                                Save &amp; Exit<div aria-hidden="true"><img src="images/theme/nav_sprite.png" alt="" /></div>
+                            </a>
+                        </li>
+                        <li class="admin-only-list-item">
+                            <a href="index.html?page=log&initialised=true">Log</a>
+                        </li>
+                        <li class="admin-only-list-item">
+                            <a href="#" data-toggle="modal" data-target="#console-modal">Console</a>
+                        </li>
+                        <li class="debug-only-list-item">
+                            <a id="btn-reset-course" href="#">Reset Course</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="topic-page-nav" class="hide-when-audio-buffering" role="presentation">
+                    <button type="button" role="navigation" class="previous-page" data-navigate="previous">
+                        <img src="images/theme/nav_sprite.png" alt="" />
+                        <span class="sr-only">Previous page</span>
+                    </button>
+                    <p><span class="current-page"></span> of <span class="total-pages"></span></p>
+                    <button type="button" role="navigation" class="next-page" data-navigate="next">
+                        <img src="images/theme/nav_sprite.png" alt="" />
+                        <span class="sr-only">Next page</span>
+                    </button>
+                </li>
+            </ul>
+        </header>
+        <section class="main">
+            <article class="content" role="main"></article>
+        </section>
+        <div id="pdf-viewer">
+            <div id="pdf-viewer-body">
+            </div>
+            <div class="pdf-viewer-footer clearfix">
+                <button type="button" class="btn btn-default" data-dismiss="pdf-viewer">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="web-pdf">
+        <div id="web-pdf-inner">
+            <div id="web-pdf-header" class="clearfix">
+                <button type="button" class="app-pdf-btn pull-right" title="Close" data-dismiss="pdf-viewer">×</button>
+            </div>
+            <iframe></iframe>
+        </div>
+    </div>
+    <div id="app-pdf">
+        <div id="app-pdf-toolbar" class="clearfix">
+            <div>
+                <button type="button" class="app-pdf-btn" id="app-pdf-prev" title="Previous page" disabled>
+                    <img src="mozillaPDF/web/images/toolbarButton-pageUp.png" alt="" />
+                </button>
+                <button type="button" class="app-pdf-btn" id="app-pdf-next" title="Next page" disabled>
+                    <img src="mozillaPDF/web/images/toolbarButton-pageDown.png" alt="" />
+                </button>
+                <!--<input type="number" id="app-pdf-pageNumber" title="Page" size="4" min="1">-->
+                <span id="app-pdf-page-number"></span>
+                <span id="app-pdf-totalPages"></span>
+                <button type="button" class="app-pdf-btn btn-pdf-zoom out" title="Zoom out" disabled>
+                    <img src="mozillaPDF/web/images/toolbarButton-zoomOut.png" alt="" />
+                </button>
+                <button type="button" class="app-pdf-btn btn-pdf-zoom in" title="Zoom in">
+                    <img src="mozillaPDF/web/images/toolbarButton-zoomIn.png" alt="" />
+                </button>
+                <span id="app-pdf-zoom-level"></span>
+                <img id="app-pdf-loading-icon" src="mozillaPDF/web/images/loading-small@2x.png" alt="Please wait a moment, the document is loading" />
+            </div>
+            <div>
+                <button type="button" class="app-pdf-btn" id="app-pdf-next" title="Close" data-dismiss="pdf-viewer">
+                    &times;
+                </button>
+            </div>
+        </div>
+        <div id="app-pdf-body">
+            <div id="app-pdf-body-inner">
+            </div>
+        </div>
+    </div>
+    <div id="console-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <textarea rows="1" id="txt-eval"></textarea>
+                    <p class="console-help">
+                        Eval: $('#element > div').length -or- $('#element > div').css('width', '1px')<br />
+                        Get Style(s): 'ul.class > div' -or- 'ul.class > div | width'
+                    </p>
+                    <button type="button" class="btn btn-default btn-clear-console">Clear</button>
+                    <button type="button" class="btn btn-default" id="btn-eval">Eval</button>
+                    <button type="button" class="btn btn-default" id="btn-get-styles" title="Enter a selector">Get Style(s)</button>
+                </div>
+                <div class="modal-body">
+                    <div id="console-output" class="log"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-clear-console">Clear</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="environment-warning-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Unsupported browser</p>
+                    <p>You will need to install <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome</a> to ensure an optimal experience. Once installed, please relaunch this course.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="emergency-log" class="log">
+    </div>
+    <div id="pdf-loading-mask"></div>
+    <div id="page-loading-mask">
+        <img src="images/loader.gif" alt="" />
+        <p class="sr-only">The page is loading, please wait a moment.</p>
+    </div>
+    <!--<footer class="site-footer" id="site-footer" role="contentinfo"></footer>-->
+    <script type="text/javascript" src="js/bootstrap.min.js?v=0.1"></script>
+    <!--<script type="text/javascript" src="js/rebus.track.min.js?v=0.5"></script>-->
+    <script type="text/javascript" src="js/rebus.track.js?v=0.5"></script>
+    <!--<script type="text/javascript" src="js/rebus.navigation.min.js?v=0.2"></script>-->
+    <script type="text/javascript" src="js/rebus.navigation.js?v=0.2"></script>
+    <!--<script type="text/javascript" src="js/functions.min.js?v=0.3"></script>-->
+    <script type="text/javascript" src="js/functions.js?v=0.3"></script>
+    <script type="text/javascript" src="mozillaPDF/build/pdf.js"></script>
+    <script type="text/javascript" src="mozillaPDF/build/pdf.worker.js"></script>
+    <script>
+        $(function () {
+            try {
+                rebus.admin.init();
+                rebus.features.init();
+                if (!Track.init()) {
+                    return;
+                }
+                rebus.navigation.loadCurrentPage(function () {
+                    rebus.pageInit.init();
+                    rebus.navigation.addHandlers();
+                    if (Track.environmentCheck.isRequired() && !rebus.features.isSupportedEnvironment()) {
+                        $('#environment-warning-modal').modal();
+                    }
+                });
+            } catch (e) {
+                if (rebus.config.debug) {
+                    $('#page-loading-mask').remove();
+                    $('body').append('<p>Error: ' + e.message + '</p>');
+                    $('body').append('<p>' + JSON.stringify(e) + '</p>');
+                }
+                throw e;
+            }
+        });
+    </script>
+</body>
+</html>
