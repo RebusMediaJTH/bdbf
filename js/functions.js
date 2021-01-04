@@ -2751,7 +2751,8 @@ rebus.controls = (function ($) {
                     $(options.appendTo).append($modal);
                 }
                 else {
-                    $('body > .container').append($modal);
+                    //$('body > .container').append($modal);
+                    $('#main-content').append($modal);
                 }
                 $modal.on('show.bs.modal', function () {
                     rebus.appFixes.disableExternalLinksIfApp($modal);

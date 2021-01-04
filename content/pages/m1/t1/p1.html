@@ -1,10 +1,38 @@
 <style>
-  body {
+  /* body {
     background-image: url('content/images/t1s1_bg_main.jpg');
     background-size: cover;
     background-attachment: fixed;
+  } */
+  #banner { position: relative; max-width: 1920px; margin: 0 auto; }
+  #banner .container { position: relative; padding: 0; }
+  #banner img { display: block; width: 100%; }
+  #banner > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+  #banner-message { position: relative; width: 266px; font-size: 3.8rem; font-weight: bold; color: #a7627d; }
+  #banner-message span { color: #590d2b; }
+  #banner-message > div { height: 0; padding-top: 100%; }
+  #banner-message > div > div {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 0 0 38px;
+    background: #fff; border-radius: 50%;
+    display: flex; flex-direction: column; justify-content: center;
   }
+
+  #banner-message { position: absolute; top: 20px; right: 20px; }
 </style>
+<div id="banner">
+  <img src="content/images/m1/banner.jpg" alt="" />
+  <div>
+    <div class="container">
+      <div id="banner-message">
+        <div>
+          <div>
+            We value <br><span>difference</span>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 <div class="horizontal-panels container">
   <div class="row first">
     <h2 class="strip-header pos-abs-sm pos-top pos-left">We treat people with courtesy and respect</h2>
