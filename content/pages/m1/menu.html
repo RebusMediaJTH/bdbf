@@ -28,9 +28,12 @@
     .topic-mnu-item button:active {
         background: #fff !important; color: #590d2b;
     }
+    @media (max-width: 767px) {
+        body { background: url(content/images/m1/menu.jpg); background-size: cover; }
+    }
     @media (min-width: 768px) {
         #menu-page .img-and-overlay > div { display: flex; flex-direction: column; justify-content: center; }
-        .topic-mnu { padding: 0 44px 0 44px; display: flex; flex-wrap: wrap; }
+        .topic-mnu { padding: 0 110px 0 44px; display: flex; flex-wrap: wrap; }
         .topic-mnu-item { margin: 11px; }
         .topic-mnu-item button { width: auto; border-radius: 4px; border-color: #590d2b; border-width: 2px; }
         .topic-0-complete .topic-mnu-item.topic-0 button,
@@ -48,7 +51,7 @@
     });
 </script>
 <div class="row" id="menu-page">
-    <div class="img-and-overlay">
+    <div class="img-and-overlay lg">
         <img src="content/images/m1/menu.jpg" alt="" />
         <div>
             <ul class="topic-mnu">

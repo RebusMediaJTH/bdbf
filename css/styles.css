@@ -2074,8 +2074,14 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 ***************************************************************************************************************************************/
 
 .img-and-overlay { position: relative; }
-.img-and-overlay > img { display: block; width: 100%; }
-.img-and-overlay > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+.img-and-overlay:not(.lg) > img { display: block; width: 100%; }
+.img-and-overlay:not(.lg) > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+.img-and-overlay.lg > img { display: none; }
+
+@media (min-width: 768px) {
+    .img-and-overlay.lg > img { display: block; width: 100%; }
+    .img-and-overlay.lg > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+}
 
 .circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: bold; perspective: 1000px; }
 .circle-btn > div { height: 0; padding-top: 100%; perspective: 1000px; transform-style: preserve-3d; }
