@@ -2104,24 +2104,33 @@ section.main { padding-top: 65px; }
 .circle-btn:active .front,
 .circle-btn:focus .front { transform: rotateY(180deg); }
 
-/* Topic welcome */
+/* Landing page */
 
 #welcome-page #title { padding: 7.8125% 0 0 12.207%; font-size: 11vw; }
 #welcome-page h1, 
 #welcome-page h2 { color: #fff; }
 #welcome-page h1 { font-size: 100%; font-weight: 500; }
 #welcome-page h2 { margin-top: 3.9063%; font-size: 63%; }
-#welcome-page h3 { line-height: 1; margin-bottom: 10px; }
-#welcome-page .overlay { background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; }
-#welcome-page .overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
-#welcome-page .overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
+#welcome-page .overlay { /*background: rgba(0,0,0,0.5);*/ color: #fff; padding: 20px 20px 30px 20px; font-size: 2.5rem; }
+#welcome-page .overlay.sm { background: rgba(0,0,0,0.5); }
+#welcome-page h3 { font-size: 100%; line-height: 1; margin-bottom: 10px; }
+#welcome-page .overlay p { font-size: 72%; }
+#welcome-page .overlay.sm > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
+/* #welcome-page .overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; } */
 #welcome-page .overlay.lg { display: none; }
 @media (min-width: 410px) {
     #welcome-page #title { font-size: 4.5rem; }
 }
 @media (min-width: 768px) {
     #welcome-page .overlay.sm { display: none; }
-    #welcome-page .overlay.lg { display: block; position: absolute; bottom: 0; right: 5.8594%; width: 357px; }
+    #welcome-page .overlay.lg { display: block; position: absolute; top: 50%; left: 60%; width: 33.5%; padding: 0 1% 0 1%; font-size: 2.43vw; }
+    #welcome-page .circle-btn { position: absolute; bottom: 3%; right: 7%; }
+}
+@media (min-width: 1024px) {
+    #welcome-page .circle-btn { bottom: 4%; right: 9%; }
+}
+@media (min-width: 1029px) {
+    #welcome-page .overlay.lg { font-size: 2.5rem; }
 }
 
 /* Topic menu */
