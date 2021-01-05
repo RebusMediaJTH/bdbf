@@ -22,17 +22,24 @@
     <div id="main-content">
         <header class="masthead navbar-fixed-top in" role="banner">
             <ul class="components list-unstyled clearfix">
-                <li role="presentation" class="hide-when-audio-buffering" aria-hidden="true">
+                <!-- <li role="presentation" class="hide-when-audio-buffering" aria-hidden="true">
                     <div class="module-logo">
-                        <img src="images/theme/nav_sprite.png" alt="" />
+                        <img src="content/images/logo.png" alt="" />
                     </div>
                 </li>
                 <li class="show-when-audio-buffering" role="presentation">
                     <img id="audio-buffering-spinner" src="mozillaPDF/web/images/loading-small@2x.png" alt="" />
                     <span>Audio loading...</span>
-                </li>
+                </li> -->
                 <li id="page-title" role="presentation">
                     <h1></h1>
+                </li>
+                <li id="logo-and-audio-buffering" role="presentation">
+                    <img class="hide-when-audio-buffering" src="content/images/logo.png" alt="Austrailia post logo" />
+                    <div class="show-when-audio-buffering">
+                        <img id="audio-buffering-spinner" src="mozillaPDF/web/images/loading-icon.gif" alt="" />
+                        <span>Audio loading...</span>
+                    </div>
                 </li>
                 <li role="presentation" id="dropdown-mnu-main" class="dropdown-mnu">
                     <a href="#" class="toggle" aria-expanded="false">
