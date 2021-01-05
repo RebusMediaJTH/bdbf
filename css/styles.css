@@ -2070,9 +2070,18 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 ***************************************************************************************************************************************/
 
 header.masthead { height: 65px; background: #fff !important; }
-#page-title h1 { margin-left: 0; font-family: inherit; color: #590d2b; font-size: 2.3rem; line-height: 65px; }
+header.masthead ul.components { display: flex; align-items: center; justify-content: space-between; }
+header.masthead ul.components > li { float: none; }
+#page-title { flex: 1; padding: 0 15px; }
+@media (min-width: 768px) {
+    .show-header-title #page-title { overflow: hidden; }
+}
+#page-title h1 { 
+    margin: 0; font-family: inherit; color: #590d2b; font-size: 2.3rem; line-height: 65px;
+    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
 #dropdown-mnu-main { display: none; }
-#logo-and-audio-buffering { float: right; line-height: 65px; margin-right: 15px; }
+#logo-and-audio-buffering { line-height: 65px; margin-right: 15px; }
 .show-when-audio-buffering span { position: static; color: #590d2b; }
 #audio-buffering-spinner { margin: 0; }
 .audio-buffering .show-when-audio-buffering { display: flex !important; align-items: center; }
