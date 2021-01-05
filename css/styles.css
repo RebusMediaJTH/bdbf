@@ -2178,9 +2178,6 @@ section.main { padding-top: 65px; }
 .topic-mnu-item button:active {
     background: #fff !important; color: #590d2b;
 }
-@media (max-width: 767px) {
-    body { background: url(content/images/m1/menu.jpg); background-size: cover; }
-}
 @media (min-width: 768px) {
     #menu-page .img-and-overlay > div { display: flex; flex-direction: column; justify-content: center; }
     .topic-mnu { padding: 0 74px 0 44px; display: flex; flex-wrap: wrap; }
