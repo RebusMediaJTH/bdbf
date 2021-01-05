@@ -1,4 +1,25 @@
 @font-face {
+    font-family: "APLetter";
+    src: url("fonts/APLetter-Light.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "APLetter";
+    src: url("fonts/APLetter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "APLetter";
+    src: url("fonts/APLetter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
  font-family: "letter_one_light";
  src: url("fonts/letter-light-webfont.eot");
  src: url("fonts/letter-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-light-webfont.woff") format("woff"), url("fonts/letter-light-webfont.ttf") format("truetype"), url("fonts/letter-light-webfont.svg#letter_oneregular") format("svg");
@@ -2074,7 +2095,7 @@ header.masthead ul.components { display: flex; align-items: center; justify-cont
 header.masthead ul.components > li { float: none; }
 #page-title { flex: 1; padding: 0 15px; }
 #page-title h1 { 
-    margin: 0; font-family: inherit; color: #590d2b; font-size: 2.3rem; line-height: 65px;
+    margin: 0; font-family: inherit; color: #590d2b; font-size: 2rem; line-height: 65px;
     text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
 }
 .show-header-title #page-title { position: static; width: auto; height: auto; margin: 0; overflow: hidden; clip: auto; }
@@ -2124,7 +2145,7 @@ section.main { padding-top: 65px; }
 #welcome-page h1, 
 #welcome-page h2 { color: #fff; }
 #welcome-page h1 { font-size: 100%; font-weight: bold; }
-#welcome-page h2 { margin-top: 3.9063%; font-size: 66.6%; }
+#welcome-page h2 { margin-top: 3.9063%; font-size: 63%; }
 #welcome-page .overlay { background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; }
 #welcome-page .overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
 #welcome-page .overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
