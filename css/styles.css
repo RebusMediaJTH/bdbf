@@ -2146,16 +2146,15 @@ section.main { padding-top: 65px; }
     #welcome-page .overlay.lg { font-size: 2.5rem; }
 }
 
-/* Topic menu */
+/* Topics menu */
 
-#menu-page .img-and-overlay > div { background: rgba(255,255,255, 0.5); }
 .topic-mnu-item button {
     position: relative;
     margin: 0; width: 100%; height: 113px;
-    padding: 16px;
+    padding: 14px;
     background: #590d2b; color: #fff; border: 1px solid #d2d2d4; border-radius: 0;
-    font-size: 2rem; font-weight: 500;
-    display: flex; align-items: flex-end; justify-content: flex-start;
+    font-size: 2rem; /*font-weight: 500;*/ font-weight: 400;
+    display: flex; align-items: flex-end; text-align: left;
     transition: background-color 0.25s, color 0.25s;
 }
 
@@ -2184,7 +2183,7 @@ section.main { padding-top: 65px; }
 }
 @media (min-width: 768px) {
     #menu-page .img-and-overlay > div { display: flex; flex-direction: column; justify-content: center; }
-    .topic-mnu { padding: 0 110px 0 44px; display: flex; flex-wrap: wrap; }
+    .topic-mnu { padding: 0 74px 0 44px; display: flex; flex-wrap: wrap; }
     .topic-mnu-item { margin: 11px; }
     .topic-mnu-item button { width: auto; border-radius: 4px; border-color: #590d2b; border-width: 2px; }
     .topic-0-complete .topic-mnu-item.topic-0 button,
@@ -2194,5 +2193,8 @@ section.main { padding-top: 65px; }
     .topic-4-complete .topic-mnu-item.topic-4 button {
         border-color: #a7627d;
     }
+}
+@media (min-width: 1024px) {
+    #menu-page .img-and-overlay > div { display: block; padding-top: 22%; }
 }
 
