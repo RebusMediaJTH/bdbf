@@ -738,6 +738,12 @@ rebus.pageInit = (function ($, undefined) {
                 if ($modal) {
                     $modal.modal();
                 }
+                var $bannerMessage = $('#banner-message');
+                if ($bannerMessage.length) {
+                    window.setTimeout(function() {
+                        $bannerMessage.addClass('flipped');
+                    }, 500);
+                }
             }
         };
     })();
