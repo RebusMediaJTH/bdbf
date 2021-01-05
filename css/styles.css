@@ -1,76 +1,55 @@
 @font-face {
-    font-family: "APLetter";
-    src: url("fonts/APLetter-Light.ttf") format("truetype");
-    font-weight: 200;
-    font-style: normal
+ font-family: "APTypeProText";
+ src: url("fonts/letter-light-webfont.eot");
+ src: url("fonts/letter-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-light-webfont.woff") format("woff"), url("fonts/letter-light-webfont.ttf") format("truetype");
+ font-weight: 200;
+ font-style: normal
 }
 
 @font-face {
-    font-family: "APLetter";
-    src: url("fonts/APLetter-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal
+ font-family: "APTypeProText";
+ src: url("fonts/letter-lightitalic-webfont.eot");
+ src: url("fonts/letter-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-lightitalic-webfont.woff") format("woff"), url("fonts/letter-lightitalic-webfont.ttf") format("truetype");
+ font-weight: 200;
+ font-style: italic
 }
 
 @font-face {
-    font-family: "APLetter";
-    src: url("fonts/APLetter-Medium.ttf") format("truetype");
+ font-family: "APTypeProText";
+ src: url("fonts/letter-regular-webfont.eot");
+ src: url("fonts/letter-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-regular-webfont.woff") format("woff"), url("fonts/letter-regular-webfont.ttf") format("truetype");
+ font-weight: 400;
+ font-style: normal
+}
+
+@font-face {
+ font-family: "APTypeProText";
+ src: url("fonts/letter-regularitalic-webfont.eot");
+ src: url("fonts/letter-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-regularitalic-webfont.woff") format("woff"), url("fonts/letter-regularitalic-webfont.ttf") format("truetype");
+ font-weight: 400;
+ font-style: italic
+}
+
+@font-face {
+    font-family: "APTypeProText";
+    src: url("fonts/APLetter-Medium.eot");
+    src: url("fonts/APLetter-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/APLetter-Medium.woff") format("woff"), url("fonts/APLetter-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal
-}
+   }
 
 @font-face {
- font-family: "letter_one_light";
- src: url("fonts/letter-light-webfont.eot");
- src: url("fonts/letter-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-light-webfont.woff") format("woff"), url("fonts/letter-light-webfont.ttf") format("truetype"), url("fonts/letter-light-webfont.svg#letter_oneregular") format("svg");
- font-weight: 200;
- font-style: normal
-}
-
-@font-face {
- font-family: "letter_one_lightitalic";
- src: url("fonts/letter-lightitalic-webfont.eot");
- src: url("fonts/letter-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-lightitalic-webfont.woff") format("woff"), url("fonts/letter-lightitalic-webfont.ttf") format("truetype"), url("fonts/letter-lightitalic-webfont.svg#letter_oneregular") format("svg");
- font-weight: 200;
- font-style: italic
-}
-
-@font-face {
- font-family: "letter_one";
- src: url("fonts/letter-regular-webfont.eot");
- src: url("fonts/letter-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-regular-webfont.woff") format("woff"), url("fonts/letter-regular-webfont.ttf") format("truetype"), url("fonts/letter-regular-webfont.svg#letter_one") format("svg");
- font-weight: 400;
- font-style: normal
-}
-
-@font-face {
- font-family: "letter_one_italic";
- src: url("fonts/letter-regularitalic-webfont.eot");
- src: url("fonts/letter-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-regularitalic-webfont.woff") format("woff"), url("fonts/letter-regularitalic-webfont.ttf") format("truetype"), url("fonts/letter-regularitalic-webfont.svg#letter_one") format("svg");
- font-weight: 400;
- font-style: italic
-}
-
-@font-face {
- font-family: "letter_one_bold";
+ font-family: "APTypeProText";
  src: url("fonts/letter-bold-webfont.eot");
- src: url("fonts/letter-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-bold-webfont.woff") format("woff"), url("fonts/letter-bold-webfont.ttf") format("truetype"), url("fonts/letter-bold-webfont.svg#letter_one") format("svg");
+ src: url("fonts/letter-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/letter-bold-webfont.woff") format("woff"), url("fonts/letter-bold-webfont.ttf") format("truetype");
  font-weight: 700;
  font-style: normal
-}
-
-@font-face {
- font-family: 'dk_lemon_yellow_sunregular';
- src: url('fonts/dk_lemon_yellow_sun-webfont.eot');
- src: url('fonts/dk_lemon_yellow_sun-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/dk_lemon_yellow_sun-webfont.woff2') format('woff2'), url('fonts/dk_lemon_yellow_sun-webfont.woff') format('woff'), url('fonts/dk_lemon_yellow_sun-webfont.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
 }
 
 /* Override bootstrap to put fontsizes in rems */
 .h1, h1 { font-size: 3.6rem; }
 .h2, h2 { font-size: 3rem; }
-.h3, h3 { font-size: 2.4rem; }
+.h3, h3 { font-size: 2.5rem; }
 .h4, h4 { font-size: 1.8rem; }
 .h5, h5 { font-size: 1.4rem; }
 .h6, h6 { font-size: 1.2rem; }
@@ -174,10 +153,10 @@ body {
     height: 100%;
     padding: 0 0 60px;
     margin: 0;
-    font-size: 19px;
-    font-size: 1.9rem;
+    font-size: 1.8rem; line-height: 1.5556;
     color: #000;
     background: #d2d2d4;
+    font-family: APTypeProText;
     -ms-overflow-style: scrollbar; 
 }
 
@@ -241,10 +220,6 @@ legend > span {
     margin: 0 0 10px;
 }
 
-p, a, div, html, body, span, ul, li, input, label, form, select, option {
-    font-family: "letter_one_light", Arial, sans-serif;
-}
-
 legend {
     border: 0;
     margin: 0;
@@ -292,12 +267,6 @@ button, [role="button"] {
 ***************************************************************************************************************************/
 
 ul.list-style-none { list-style: none; }
-
-.strong { font-weight: bold; }
-.stronger { font-family: "letter_one_bold", Arial, sans-serif; }
-
-.f-default, f-default > span { font-family: "letter_one_light", Arial, sans-serif !important; }
-.f-lemon, .f-lemon > span { font-family: 'dk_lemon_yellow_sunregular' !important; }
 
 .full-width { width: 100% !important; }
 
@@ -601,7 +570,7 @@ header.masthead ul.components > li { display: inline-block; float: left; padding
     .show-header-title #page-title { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto;  }
 }
 
-#page-title h1 { font-family: 'dk_lemon_yellow_sunregular'; margin-left: 23px; font-size: 34px; font-size: 3.4rem; line-height: 50px; }
+#page-title h1 { margin-left: 23px; font-size: 34px; font-size: 3.4rem; line-height: 50px; }
 
 #dropdown-mnu-main { float: right; margin-right: 20px; margin-top: 10px; }
 
@@ -952,7 +921,6 @@ video { max-width: 100%; height: auto !important; }
 
 .video-options > span, 
 .video-options .break-point > span {
-    font-family: 'dk_lemon_yellow_sunregular'; 
     text-transform: uppercase; 
     font-size: 27px; font-size: 2.7rem;
 }
@@ -1164,7 +1132,7 @@ video { max-width: 100%; height: auto !important; }
     border-bottom-right-radius: 10px;
     line-height: 30px; line-height: 3rem;
 }
-.white-box, .white-box span  { font-family: 'dk_lemon_yellow_sunregular'; font-weight: normal; font-size: 30px; font-size: 3rem; }
+.white-box, .white-box span  { font-weight: normal; font-size: 30px; font-size: 3rem; }
 .white-box .small { font-size: 90%; }
 .white-box .smaller { font-size: 67%; }
 .white-box .red { color: #e71c24; }
@@ -1253,8 +1221,7 @@ video { max-width: 100%; height: auto !important; }
 blockquote.styled { 
     position: relative; 
     padding: 0;
-    border-left: none; 
-    font-family: 'dk_lemon_yellow_sunregular';
+    border-left: none;
 }
 blockquote.styled, blockquote.styled.lg, blockquote.styled.xl { font-size: 25px; font-size: 2.5rem; }
 blockquote.styled.xxl, blockquote.styled.xxxl { font-size: 30px; font-size: 3rem; }
@@ -1340,7 +1307,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 .bubble blockquote.styled + .lbl-scroll-down { margin-top: 20px; }
 
 .bubble > p:not(.lbl-scroll-down), 
-.bubble > p:not(.lbl-scroll-down) span { font-family: 'dk_lemon_yellow_sunregular'; font-size: 25px; font-size: 2.5rem; }
+.bubble > p:not(.lbl-scroll-down) span { font-size: 2.5rem; }
 
 .lbl-scroll-down {
     position: relative;
@@ -1439,7 +1406,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 .read-or-listen-modal-in .modal-backdrop { background: rgba(0,0,0,0.8); opacity: 1; }
 .modal.read-or-listen .modal-dialog { margin-top: 40px; }
 .modal.read-or-listen .modal-content { background: none; border: none; padding: 0; box-shadow: none !important; color: #fff; text-align: center; }
-.modal.read-or-listen p { font-family: 'dk_lemon_yellow_sunregular'; font-size: 37px; font-size: 3.7rem; }
+.modal.read-or-listen p { font-size: 3.7rem; }
 .modal.read-or-listen p.listen { font-size: 37px; font-size: 3.7rem; margin-top: 30px; }
 .modal.read-or-listen p.read { font-size: 32px; font-size: 3.2rem; margin-top: 40px; }
 .modal.read-or-listen p br { display: none; }
@@ -1458,7 +1425,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
     left: -212px; 
 }
 
-.modal.intro-page .modal-header { background: #f8d9a7; font-family: 'dk_lemon_yellow_sunregular'; border-top-left-radius: 6px; border-top-right-radius: 6px; }
+.modal.intro-page .modal-header { background: #f8d9a7; border-top-left-radius: 6px; border-top-right-radius: 6px; }
 .modal.intro-page .modal-header h1 { padding-right: 20px; font-size: 25px; font-size: 2.5rem;  }
 .modal.intro-page .modal-footer { border-top: none; }
 
@@ -1573,7 +1540,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 .left-img-btn-txt { 
     position: absolute; top: 50%; left: 95px;
     width: calc(100% - 145px);
-    font-family: 'dk_lemon_yellow_sunregular'; margin: 0; font-size: 26px; font-size: 2.6rem; 
+    margin: 0; font-size: 2.6rem; 
     -ms-transform: translateY(-50%); -moz-transform: translateY(-50%); -webkit-transform: translateY(-50%); transform: translateY(-50%);
 }
 
@@ -1608,8 +1575,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 
 .click-btns.standard .click-btn,
 .click-btns.standard .click-btn > span {
-    font-size: 18px; font-size: 1.8rem;
-	font-family: "letter_one_bold", Arial, sans-serif;
+    font-size: 18px; font-size: 1.8rem; font-weight: bold;
 }
 
 .click-btns.standard img.done-indicator { position: absolute; right: 10px; top: 7px; width: 26px; height: 26px; }
@@ -1691,8 +1657,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 [data-activity="assessment"] > .row.active { display: block; }
 
 .assessment-question-panel h3 { 
-    font-family: "letter_one_bold", Arial, sans-serif; 
-    font-weight: normal;
+    font-weight: bold;
     color: #e71c24; 
     font-size: 60px; font-size: 6rem; 
     line-height: 54px; line-height: 5.4rem;
@@ -1743,11 +1708,11 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 ***************************************************************************************************************************/
 
 .progress-modal .modal-content { background: #f3c8aa; }
-.progress-modal h1 { color: #DC1928; font-size: 24px; font-size: 2.4rem; font-family: "letter_one_bold", Arial, sans-serif; font-weight: bold; line-height: normal; margin-bottom: 10px; }
+.progress-modal h1 { color: #DC1928; font-size: 2.4rem; font-weight: bold; line-height: normal; margin-bottom: 10px; }
 
 .progress-item { margin: 8px 0; }
 .progress-item .title { display: block; }
-.progress-item.course .title { font-size: 19px; font-size: 1.9rem; color: #DC1928; font-family: "letter_one_bold", Arial, sans-serif; font-weight: bold; }
+.progress-item.course .title { font-size: 19px; font-size: 1.9rem; color: #DC1928; font-weight: bold; }
 .progress-item.module .title { font-size: 19px; font-size: 1.9rem; color: #546068; line-height: 18px; line-height: 1.8rem; margin-bottom: 3px; }
 .progress-item.topic .title { font-size: 18px; font-size: 1.8rem; color: #000; line-height: 18px; line-height: 1.8rem; margin-bottom: 3px; }
 
@@ -1979,7 +1944,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 .horizontal-panels > .row { position: relative; }
 .horizontal-panels h2, .horizontal-panels h3.h2 { margin-bottom: .8em; font-size: 24px; font-size: 2.4rem; font-weight: 700;  }
 
-.horizontal-panels .remember-panel h2 { font-family: 'dk_lemon_yellow_sunregular'; font-weight: normal; font-size: 48px; font-size: 4.8rem; color: #FFF; }
+.horizontal-panels .remember-panel h2 { font-weight: normal; font-size: 4.8rem; color: #FFF; }
 
 .horizontal-panels > .row.image-panel { }
 .horizontal-panels > .row.image-panel > img { width: 100%; }
@@ -2033,7 +1998,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
     .horizontal-panels .bubble.align-left { right: auto; left: 20px; }
     .horizontal-panels .bubble.align-top { bottom: auto; top: 40px; }
     .horizontal-panels h2, .horizontal-panels h3.h2 { font-size: 35px; font-size: 3.5rem; font-weight: normal;  }
-    .horizontal-panels h2.strip-header { padding: 15px 45px; font-family: "letter_one_bold", Arial, sans-serif; font-weight: normal; }
+    .horizontal-panels h2.strip-header { padding: 15px 45px; font-weight: bold; }
     .horizontal-panels h2.strip-header.pos-abs-sm,
     .horizontal-panels h2.strip-header.auto-width-sm { 
         margin-top: 40px; width: auto; border-top-right-radius: 10px; border-bottom-right-radius: 10px; 
@@ -2048,7 +2013,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
     .quote-panel.fixed-height blockquote.styled { margin-top: 30px;  }
     .quote-panel.fixed-height.two-lines blockquote.styled { margin-top: 10px;  }
 
-    .horizontal-panels .title-row h2 { position: absolute; top: 40px; left: 0; width: auto; padding: 25px 45px; font-family: "letter_one_bold", Arial, sans-serif; border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+    .horizontal-panels .title-row h2 { position: absolute; top: 40px; left: 0; width: auto; padding: 25px 45px; font-weight: bold; border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
     .horizontal-panels .title-row.align-title-right h2 { left: auto; right: 0; margin-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
     .horizontal-panels .title-row.prevent-bubble-title-overlap h2 { max-width: calc(100% - 430px); }
     .horizontal-panels .title-row.title-always-static h2 { position: static; display: inline-block; margin-top: 40px; }
@@ -2076,7 +2041,7 @@ blockquote.styled.brown:before { background-position: 0 -164px; }
 .side-img-panel { position: relative; padding: 20px; }
 .side-img-panel > img { display: none; position: absolute; top: 0; left: 0; height: 100%; width: auto; }
 .side-img-panel.img-right > img { left: auto; right: 0; }
-.side-img-panel h2, .side-img-panel h3 { font-family: 'dk_lemon_yellow_sunregular'; font-size: 35px; font-size: 3.5rem; margin: 0 0 10px 0; }
+.side-img-panel h2, .side-img-panel h3 { font-size: 3.5rem; margin: 0 0 10px 0; }
 
 @media (min-width: 768px) {
     .side-img-panel { padding-top: 30px; min-height: 330px; }
@@ -2121,7 +2086,7 @@ section.main { padding-top: 65px; }
     .img-and-overlay.lg > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 }
 
-.circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: bold; perspective: 1000px; }
+.circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: 500; perspective: 1000px; }
 .circle-btn > div { height: 0; padding-top: 100%; perspective: 1000px; transform-style: preserve-3d; }
 .circle-btn .faces { position: absolute; top: 0; right: 0; bottom: 0; left: 0; transition: transform 0.6s; transform-style: preserve-3d; }
 .circle-btn .face { 
@@ -2144,8 +2109,9 @@ section.main { padding-top: 65px; }
 #welcome-page #title { padding: 7.8125% 0 0 12.207%; font-size: 11vw; }
 #welcome-page h1, 
 #welcome-page h2 { color: #fff; }
-#welcome-page h1 { font-size: 100%; font-weight: bold; }
+#welcome-page h1 { font-size: 100%; font-weight: 500; }
 #welcome-page h2 { margin-top: 3.9063%; font-size: 63%; }
+#welcome-page h3 { line-height: 1; margin-bottom: 10px; }
 #welcome-page .overlay { background: rgba(0,0,0,0.5); color: #fff; padding: 20px 20px 30px 20px; }
 #welcome-page .overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
 #welcome-page .overlay > div:last-child { display: flex; justify-content: flex-end; margin-top: 30px; }
@@ -2166,7 +2132,7 @@ section.main { padding-top: 65px; }
     margin: 0; width: 100%; height: 113px;
     padding: 16px;
     background: #590d2b; color: #fff; border: 1px solid #d2d2d4; border-radius: 0;
-    font-weight: bold;
+    font-size: 2rem; font-weight: 500;
     display: flex; align-items: flex-end; justify-content: flex-start;
     transition: background-color 0.25s, color 0.25s;
 }

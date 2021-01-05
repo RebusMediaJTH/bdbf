@@ -95,10 +95,10 @@
 .page-completion #completion-header > img, .page-completion h2 { float: left; }
 .page-completion #completion-header > img { width: 124px; }
 .page-completion h2 br { display: none; }
-.page-completion h2 { font-family: 'dk_lemon_yellow_sunregular'; width: calc(100% - 124px - 10px); margin-left: 10px; font-size: 35px; font-size: 3.5rem; line-height: normal; }
+.page-completion h2 { width: calc(100% - 124px - 10px); margin-left: 10px; font-size: 35px; font-size: 3.5rem; line-height: normal; }
 .page-completion h3 { margin-bottom: 10px; font-size: 30px; font-size: 3rem; line-height: normal; }
 .page-completion .icon-list.tick { margin-top: 30px; margin-bottom: 30px; }
-.page-completion .icon-list.tick li { font-family: 'dk_lemon_yellow_sunregular'; font-size: 27px; font-size: 2.7rem; line-height: 27px; line-height: 2.7rem; }
+.page-completion .icon-list.tick li { font-size: 2.7rem; line-height: 27px; line-height: 2.7rem; }
 .page-completion #policies-list a { text-decoration: underline; color: #0000ff; }
 .page-completion #right-col > div { background: #fff; margin: 20px 0 50px 0; padding: 20px 40px; border-top-left-radius: 60px; }
     

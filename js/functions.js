@@ -244,6 +244,39 @@ rebus.progressModal = (function () {
     };
 })();
 
+// $.fn.svgInjector
+(function () {
+    var svg = {};
+    $.fn.svgInjector = function () {
+        return this.each(function () {
+            var $this = $(this),
+                id = $this.data('svg');
+            $this.replaceWith([
+                '<svg class="' + id + '" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="' + svg[id].viewbox + '">',
+                    svg[id].html,
+                '</svg>'
+            ].join('\n'));
+        });
+    };
+    $.fn.svgInjector.init = function (callback) {
+        $.get('content/images/icons.svg', function (data) {
+            var $svg = $('svg', data),
+                nodes = $svg[0].childNodes,
+                $node = $('<div />'),
+                id, html;
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].nodeName === 'g') {
+                    id = nodes[i].id;
+                    $node.html(nodes[i]);
+                    html = $node.html().replace(' xmlns="http://www.w3.org/2000/svg"', '').replace(' id="', ' data-id="');
+                    svg[id] = { html: html, viewbox: $(html).data('viewbox') };
+                }
+            }
+            callback();
+        });
+    };
+})();
+
 rebus.pageInit = (function ($, undefined) {
     var $body,
         page, state;
