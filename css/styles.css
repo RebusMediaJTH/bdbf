@@ -2137,12 +2137,14 @@ section.main { padding-top: 65px; }
     transition: background-color 0.25s, color 0.25s;
 }
 
-.topic-mnu-item button:hover .done-indicator,
-.topic-mnu-item button:focus .done-indicator,
-.topic-mnu-item button:active .done-indicator {
-    display: none !important;
+.topic-mnu-item button:hover .done-indicator path,
+.topic-mnu-item button:focus .done-indicator path,
+.topic-mnu-item button:active .done-indicator path {
+    fill: #a7627d;
 }
-.topic-mnu-item button .done-indicator { position: absolute; top: 9px; right: 0; }
+.topic-mnu-item button .done-indicator.svg { position: absolute; top: 9px; right: 0; }
+.topic-mnu-item button .done-indicator svg { width: 46.336px; height: 49.5px; }
+.topic-mnu-item button .done-indicator path { fill: #fff; transition: fill 0.25s; }
 .topic-0-complete .topic-mnu-item.topic-0 button,
 .topic-1-complete .topic-mnu-item.topic-1 button,
 .topic-2-complete .topic-mnu-item.topic-2 button,
