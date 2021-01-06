@@ -46,6 +46,8 @@
     MENU
 */
 
+.topic-mnu li[role="presentation"] { display: none; }
+
 .topic-mnu-item button {
     position: relative;
     margin: 0; width: 100%; height: 113px;
@@ -78,7 +80,8 @@
 }
 @media (min-width: 768px) {
     #menu-page .img-and-overlay > div { display: flex; flex-direction: column; justify-content: center; }
-    .topic-mnu { padding: 0 74px 0 44px; display: flex; flex-wrap: wrap; }
+    .topic-mnu { padding: 0 44px; display: flex; flex-wrap: wrap; }
+    .topic-mnu li[role="presentation"] { display: block; flex-basis: 100%; height: 0; }
     .topic-mnu-item { margin: 11px; }
     .topic-mnu-item button { width: auto; border-radius: 4px; border-color: #590d2b; border-width: 2px; }
     .topic-0-complete .topic-mnu-item.topic-0 button,
