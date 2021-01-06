@@ -921,7 +921,7 @@ video { max-width: 100%; height: auto !important; }
 .video-options .btn-read-transcript img { left: -77px; }
 .video-options .btn-read-transcript:hover img { left: -114px; }
 
-.horizontal-panels .video { margin-left: -15px; margin-right: -15px; }
+/* .horizontal-panels .video { margin-left: -15px; margin-right: -15px; } */
 .horizontal-panels .video-options { max-width: unset; max-width: none; /*width: calc(100% - 30px); margin-left: 15px;*/ }
 .horizontal-panels .video-wrapper { max-width: unset; max-width: none; width: 100%; margin: 0;  }
 
@@ -955,7 +955,7 @@ video { max-width: 100%; height: auto !important; }
 }
 .video-transcript-header { padding: 10px 15px; border-bottom: 1px solid #e5e5e5; }
 .video-transcript-header .close { margin-top: -2px; }
-.video-transcript-title { margin: 0; line-height: 1.42857143; font-weight: bold; }
+.video-transcript-title { margin: 0; line-height: 1.42857143; font-weight: 500; }
 .video-transcript-body { padding: 15px; }
 .video-transcript-footer { padding: 0 15px 10px 15px; }
 

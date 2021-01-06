@@ -50,7 +50,7 @@
   .button-default:active { background: #590d2b; color: #fff; }
 
   .horizontal-panels { font-weight: 200; color: #3E3E3E; }
-  .horizontal-panels .row { padding: 50px; }
+  .horizontal-panels .row { padding: 15px 0; }
   /* .horizontal-panels .row p { max-width: 528px; } */
   .horizontal-panels h2 { color: #590D2B; font-size: 3rem; font-weight: bold; }
   .scrolldown-learn-more { display: flex; flex-direction: column; align-items: center; text-align: center; width: 150px; color: #a1121e; font-size: 2.1rem; font-weight: 500; }
@@ -58,6 +58,7 @@
   .scrolldown-learn-more-panel > div:last-child { display: flex; align-items: flex-end; justify-content: center; }
 
   @media (min-width: 768px) {
+    .horizontal-panels .row { padding: 50px; }
     .scrolldown-learn-more-panel { display: flex;  }
     .scrolldown-learn-more-panel > div { float: none; }
   }
@@ -75,9 +76,9 @@
     </div> 
   </div>
   <div class="row bg-1">
-    <h2>It’s important to us</h2>
-    <p><strong>Select</strong> Play to watch this video of our people talking about what diversity and inclusion means at Australia Post.</p>
     <div class="col-sm-12">
+      <h2>It’s important to us</h2>
+      <p><strong>Select</strong> Play to watch this video of our people talking about what diversity and inclusion means at Australia Post.</p>
       <div class="video" data-transcript="ourcustomers_m2_t3_s3_p2" data-activity="video" data-mandatory="true">
           <div class="embed-responsive embed-responsive-16by9">
               <video controlsList="nodownload" src="content/video/M2_T3_S3_P2.mp4" controls="controls" poster="content/video/M2_T3_S3_P2.jpg">
@@ -85,8 +86,10 @@
               </video>
           </div>
       </div>
-      
     </div>
+  </div>
+  <div class="row bg-1">
+
   </div>
   <div class="row first">
     <h2 class="strip-header pos-abs-sm pos-top pos-left">We treat people with courtesy and respect</h2>

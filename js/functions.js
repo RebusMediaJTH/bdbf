@@ -1005,17 +1005,17 @@ rebus.pageInit = (function ($, undefined) {
             }
 
             $container.attr('data-video-idx', videoIdx).empty().append([
-                '<div class="video-options" class="clearfix">',
-                '<span>Check out this short video</span>',
-                '<div class="break-point">',
-                '<button class="btn btn-play-video"><span class="sr-only">Toggle video play</span><img src="images/video-player.png" alt="" /></button>',
-                '<span>Or</span>',
-                '<button class="btn btn-read-transcript"><span class="sr-only">Read video transcript</span><img src="images/video-player.png" alt="" /></button>',
-                '</div>',
-                btnContinue,
-                '</div>',
+                // '<div class="video-options" class="clearfix">',
+                //     '<span>Check out this short video</span>',
+                //     '<div class="break-point">',
+                //         '<button class="btn btn-play-video"><span class="sr-only">Toggle video play</span><img src="images/video-player.png" alt="" /></button>',
+                //         '<span>Or</span>',
+                //         '<button class="btn btn-read-transcript"><span class="sr-only">Read video transcript</span><img src="images/video-player.png" alt="" /></button>',
+                //     '</div>',
+                //     btnContinue,
+                // '</div>',
                 '<div class="video-wrapper"></div>'
-            ].join('\n')).find('.video-wrapper').append(html).append('<button type="button" class="button button-default">Read the transcript</button>');
+            ].join('\n')).find('.video-wrapper').append(html).append('<div class="margin-top-sm text-right"><button type="button" class="button button-default btn-read-transcript">Read the transcript</button></div>');
         });
 
         $('video').on('play', function () {
@@ -1065,8 +1065,8 @@ rebus.pageInit = (function ($, undefined) {
                             '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
                             '<span class="sr-only">Next</span>',
                             '</a>',
-                            '<button type="button" class="non-stacked btn btn-red" data-dismiss="transcript">Close</button>',
-                            '<button type="button" class="stacked btn btn-red" ' + (rebus.config.videosMustBePlayedThrough ? 'data-set-activity-complete ' : '') + 'data-dismiss="transcript">Close</button>',
+                            '<button type="button" class="non-stacked button button-default" data-dismiss="transcript">Close</button>',
+                            '<button type="button" class="stacked button button-default" ' + (rebus.config.videosMustBePlayedThrough ? 'data-set-activity-complete ' : '') + 'data-dismiss="transcript">Close</button>',
                             '</div>',
                             '</div>',
                             '</div>'

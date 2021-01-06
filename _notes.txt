@@ -1,3 +1,4 @@
 ﻿
+> Videos - play icon. Will need autoplay from sydney trains
 > From menu, remove: $('html').addClass('topic-0-complete');
 > 
