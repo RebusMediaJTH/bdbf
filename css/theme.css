@@ -116,7 +116,49 @@
 }
 
 /* NEW */
+/* NEW */
+/* NEW */
+/* NEW */
 
 .bg-white { background-color: #fff; }
 .bg-1 { background: #f8f2f4; }
 .bg-2 { background: #fafafa; }
+
+/* Footer */
+
+footer { display: none; max-width: 1920px; margin: 0 auto; padding: 30px 0; background: #590D2B; }
+.in-topic-page footer { display: block; }
+footer .primary { font-weight: 500; }
+footer ul { list-style: none; padding: 0; }
+footer li { margin: 8px 0; }
+footer,
+footer a,
+footer a:hover,
+footer a:focus,
+footer a:active { color: #fff; }
+footer .topic-links { padding-left: 10px; }
+footer .topic-link,
+footer .save-link { display: flex; align-items: center; }
+footer .topic-link svg,
+footer .save-link svg { width: 25.674px; height: 25.674px; }
+footer .topic-link a,
+footer .save-link a { xxxxxxxxxflex: 1; }
+footer .icon-topic-list,
+footer .icon-save { margin-right: 10px; }
+footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
+.topic-0-complete footer .topic-0 .icon-topic-list,
+.topic-1-complete footer .topic-1 .icon-topic-list,
+.topic-2-complete footer .topic-2 .icon-topic-list,
+.topic-3-complete footer .topic-3 .icon-topic-list,
+.topic-4-complete footer .topic-4 .icon-topic-list,
+.topic-5-complete footer .topic-5 .icon-topic-list { visibility: hidden; }
+.topic-0-complete footer .topic-0 .icon-topic-list-complete,
+.topic-1-complete footer .topic-1 .icon-topic-list-complete,
+.topic-2-complete footer .topic-2 .icon-topic-list-complete,
+.topic-3-complete footer .topic-3 .icon-topic-list-complete,
+.topic-4-complete footer .topic-4 .icon-topic-list-complete,
+.topic-5-complete footer .topic-5 .icon-topic-list-complete { visibility: visible; }
+
+@media (min-width: 768px) {
+    footer { padding: 50px; }
+}

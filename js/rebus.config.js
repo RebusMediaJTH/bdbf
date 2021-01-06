@@ -25,10 +25,6 @@ rebus.config = {
   useDefaultPDFViewerForBrowser: false,
   mozillaPDFViewerLinks: 'disabled', // 'disabled' | 'open-new-window'. If not set, they will be active and open in the current window.
   pages: [
-    //   { path: 'welcome', title: 'Welcome', hideHeader: true },
-    //   { path: 'helping-us-make-better-decisions', title: 'Helping us make better decisions', hideHeader: true },
-    //   { path: 'video', title: 'Video', type: 'video', hideHeader: true },
-      { path: 'course-menu', title: 'Course menu', hideHeader: true },
       {
           type: 'modules',
           modules: [
