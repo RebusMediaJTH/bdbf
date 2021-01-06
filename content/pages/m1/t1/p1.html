@@ -100,17 +100,30 @@
       </div>
     </div>
   </div>
-  <div class="row bg-1">
-    <div class="col-sm-7">
+  <style>
+    .text-and-img.reversed .img { margin-bottom: 15px; }
+    .text-and-img.reversed .text h2 { display: none; }
+    @media (min-width: 992px) {
+      .text-and-img.reversed { display: flex; flex-direction: row-reverse; }
+      .text-and-img.align-center { align-items: center; }
+      .text-and-img.reversed > h2 { display: none; }
+      .text-and-img.reversed > div { float: none; }
+      .text-and-img.reversed .text h2 { display: block; }
+      .text-and-img.reversed .img { margin-bottom: 0; }
+    }
+  </style>
+  <div class="row bg-1 text-and-img reversed align-center">
+    <h2>Everyone should have a voice</h2>
+    <div class="col-md-5 img">
+      <img class="img-responsive center-block" src="content/images/t1_s1_p4.jpg" alt="Smiling girl wearing a hearing aid" />
+    </div>
+    <div class="col-md-7 text">
       <h2>Everyone should have a voice</h2>
       <p><strong>Read</strong> the scenario to learn more.</p>
       <p>Sharon is deaf in one ear and hard of hearing in the other. </p>
       <p>While you can’t tell from looking at her, for Sharon to be able to communicate in the weekly team meetings, she needs a meeting room with a hearing loop so that she can connect her hearing aid. She also needs to be able to see people’s faces so that she can lip read.</p>
       <p>Last week, instead of the usual sit-down discussion in the meeting room, Sharon’s team organised a morning tea in the lunchroom to celebrate a birthday. Everyone was free to walk around, chat and eat.</p>
       <p><strong>Select</strong> Play to join in the celebrations.</p>
-    </div>
-    <div class="col-sm-5">
-      <img src="content/images/t1_s1_p4.jpg" alt="" />
     </div>
   </div>
   <div class="row first">
