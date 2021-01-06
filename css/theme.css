@@ -115,3 +115,8 @@
     .page-completion #right-col > div { margin: 0; margin-top: 20px; }
 }
 
+/* NEW */
+
+.bg-white { background-color: #fff; }
+.bg-1 { background: #f8f2f4; }
+.bg-2 { background: #C9C8C8; }

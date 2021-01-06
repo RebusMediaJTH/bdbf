@@ -36,9 +36,44 @@
     </div>
   </div>
 </div>
+<style>
+  .horizontal-panels { font-weight: 200; color: #3E3E3E; }
+  .horizontal-panels .row { padding: 50px; }
+  /* .horizontal-panels .row p { max-width: 528px; } */
+  .horizontal-panels h2 { color: #590D2B; font-size: 3rem; font-weight: bold; }
+  .scrolldown-learn-more { display: flex; flex-direction: column; align-items: center; text-align: center; width: 150px; color: #a1121e; font-size: 2.1rem; font-weight: 500; }
+  .scrolldown-learn-more svg { width: 36px; height: 21.41772px; fill: #a1121e; margin-top: 8px; }
+  .scrolldown-learn-more-panel > div:last-child { display: flex; align-items: flex-end; justify-content: center; }
+
+  @media (min-width: 768px) {
+    .scrolldown-learn-more-panel { display: flex;  }
+    .scrolldown-learn-more-panel > div { float: none; }
+  }
+</style>
 <div class="horizontal-panels container">
-  <div class="row">
-    
+  <div class="row bg-1 scrolldown-learn-more-panel">
+    <div class="col-sm-8">
+      <p>We work in teams that are as diverse as the communities in which we operate. We aim to create an inclusive environment where everyone feels safe, respected and able to be themselves at work. An environment where everyone can be their true self and feel like they belong.</p>
+    </div>
+    <div class="col-sm-4">
+      <div class="scrolldown-learn-more">
+        Scroll down to learn more
+        <div data-svg="icon-arrow-down"></div>
+      </div>
+    </div> 
+  </div>
+  <div class="row bg-1">
+    <h2>It’s important to us</h2>
+    <p><strong>Select</strong> Play to watch this video of our people talking about what diversity and inclusion means at Australia Post.</p>
+    <div class="col-sm-12">
+      <div class="video" data-transcript="ourcustomers_m2_t3_s3_p2" data-activity="video" data-mandatory="true">
+          <div class="embed-responsive embed-responsive-4by3">
+              <video controlsList="nodownload" src="content/video/M2_T3_S3_P2.mp4" controls="controls" poster="content/video/M2_T3_S3_P2.jpg">
+                  <track kind="subtitles" label="English subtitles" src="content/video/M2_T3_S3_P2.vtt" srclang="en" default />
+              </video>
+          </div>
+      </div>
+    </div>
   </div>
   <div class="row first">
     <h2 class="strip-header pos-abs-sm pos-top pos-left">We treat people with courtesy and respect</h2>

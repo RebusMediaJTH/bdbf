@@ -313,29 +313,6 @@ ul.list-style-none { list-style: none; }
 .fg-grey-dark { color: rgb(77, 77, 77); }
 .fg-green { color: #266e41; }
 
-.bg-black { background-color: #000; }
-.bg-white { background-color: #fff; }
-.bg-blue { background-color: rgb(0, 183, 236); }
-.bg-blue-light { background-color: rgb(177, 223, 244); }
-.bg-blue-navy { background-color: rgb(0, 55, 103); }
-.bg-blue-navy-light { background-color: rgb(161, 174, 194); }
-.bg-brown { background-color: rgb(197, 124, 89); }
-.bg-brown-light { background-color: rgb(237, 215, 205); }
-.bg-grey { background-color: rgb(194, 186, 182); }
-.bg-grey-dark { background-color: rgb(77, 77, 77); }
-.bg-grey-light { background-color: rgb(230, 237, 226); }
-.bg-leaf { background-color: rgb(63, 174, 41); }
-.bg-leaf-light { background-color: rgb(181, 225, 182); }
-.bg-orange { background-color: rgb(244, 160, 26); }
-.bg-orange-bright { background-color: rgb(255, 143, 0); }
-.bg-orange-light { background-color: rgb(248, 217, 167); }
-.bg-pink { background-color: rgb(235, 91, 125); }
-.bg-pink-light { background-color: rgb(247, 189, 203); }
-.bg-turquoise { background-color: rgb(51, 183, 167); }
-.bg-turquoise-light { background-color: rgb(181, 223, 216); }
-.bg-yellow { background-color: rgb(255, 206, 0); }
-.bg-yellow-light { background-color: rgb(253, 233, 161); }
-
 .zero-padding-top { padding-top: 0 !important; }
 .zero-padding-bottom { padding-bottom: 0 !important; }
 .zero-padding-left { padding-left: 0 !important; }
