@@ -714,6 +714,38 @@ rebus.pageInit = (function ($, undefined) {
         };
     })();
 
+    var scroller = (function () {
+        var isElementInView = function ($element, fullyInView) {
+            var pageTop = $(window).scrollTop(),
+                pageBottom = pageTop + $(window).height(),
+                elementTop = $element.offset().top,
+                elementBottom = elementTop + $element.height();
+                if (fullyInView) {
+                    return ((pageTop < elementTop) && (pageBottom > elementBottom));
+                }
+                return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+        };
+        return {
+            markPageAsCompleteWhenAtBottom: function () {
+                var $footer = $('footer');
+                    monitorLockedPanels = !!$('.locked-panel').length;
+                $(window).on('scroll.rebus.monitor', function () {
+                    if (monitorLockedPanels) {
+                        if ($('.locked-panel').length) {
+                            return;
+                        }
+                        monitorLockedPanels = false;
+                    }
+                    if (isElementInView($footer)) {
+                        $(window).off('scroll.rebus.monitor');
+                        rebus.stateHelper.setPageAsComplete(page).save();
+                        $('html').addClass('topic-' + page.topic.idx + '-complete');
+                    }
+                });
+            }
+        };
+    })();
+
     var pageIntro = (function () {
         var $modal;
         return {
@@ -776,6 +808,9 @@ rebus.pageInit = (function ($, undefined) {
                     window.setTimeout(function() {
                         $bannerMessage.addClass('flipped');
                     }, 500);
+                }
+                if (page.topic && !rebus.stateHelper.isPageComplete(page)) {
+                    scroller.markPageAsCompleteWhenAtBottom();
                 }
             }
         };
