@@ -37,6 +37,18 @@
   </div>
 </div>
 <style>
+  .button { background: none; border: none; padding: 0; margin: 0; border-radius: 0; }
+
+  .button-default {
+    padding: 13px 30px;
+    border: 2px solid #590d2b; border-radius: 4px; background: #fff; color: #590D2B;
+    font-size: 1.8rem; font-weight: 500;
+    transition: background-color 0.25s, color 0.25s;
+  }
+  .button-default:hover,
+  .button-default:focus,
+  .button-default:active { background: #590d2b; color: #fff; }
+
   .horizontal-panels { font-weight: 200; color: #3E3E3E; }
   .horizontal-panels .row { padding: 50px; }
   /* .horizontal-panels .row p { max-width: 528px; } */
@@ -54,6 +66,7 @@
   <div class="row bg-1 scrolldown-learn-more-panel">
     <div class="col-sm-8">
       <p>We work in teams that are as diverse as the communities in which we operate. We aim to create an inclusive environment where everyone feels safe, respected and able to be themselves at work. An environment where everyone can be their true self and feel like they belong.</p>
+      <button type="button" class="button button-default">Read the transcript</button>
     </div>
     <div class="col-sm-4">
       <div class="scrolldown-learn-more">
@@ -73,6 +86,7 @@
               </video>
           </div>
       </div>
+      
     </div>
   </div>
   <div class="row first">
