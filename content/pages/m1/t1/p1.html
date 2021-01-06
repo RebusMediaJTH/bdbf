@@ -1,10 +1,10 @@
 <style>
-  #banner { position: relative; max-width: 1920px; margin: 0 auto; }
-  #banner .container { position: relative; padding: 0; }
-  #banner img { display: block; width: 100%; }
-  #banner > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-  #banner-message { position: relative; width: 266px; font-size: 3.5rem; font-weight: bold; color: #a7627d; perspective: 1000px; }
-    #banner-message span { color: #590d2b; }
+  #banner { position: relative; max-width: 1920px; margin: 0 auto; height: 370px; }
+  #banner .container { padding: 0; }
+  #banner > img { display: none; }
+  
+  #banner-message { position: absolute; width: 266px; font-size: 3.5rem; font-weight: bold; color: #a7627d; perspective: 1000px; }
+  #banner-message span { color: #590d2b; }
   #banner-message > div { height: 0; padding-top: 100%; perspective: 1000px; transform-style: preserve-3d; }
   #banner-message .faces { position: absolute; top: 0; right: 0; bottom: 0; left: 0; transition: transform 1s; transform-style: preserve-3d; }
   #banner-message .face {
@@ -18,8 +18,19 @@
   #banner-message.flipped .back { transform: rotateY(0deg); }
   #banner-message.flipped .front { transform: rotateY(180deg); }
 
+  @media (min-width: 768px) {
+    #banner { height: auto; background: none; }
+    #banner .container { position: relative; }
+    #banner > img { display: block; width: 100%; }
+    #banner > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+  }
+
   /* THIS PAGE */
-#banner-message { position: absolute; top: 20px; right: 20px; }
+#page-m1_t1_p1 #banner { background: url(content/images/t1_banner_sm.jpg); background-size: cover; }
+#page-m1_t1_p1 #banner-message { bottom: 1.5625%; left: 1.5625%; }
+@media (min-width: 768px) {
+  #page-m1_t1_p1 #banner-message { bottom: auto; left: auto; top: 20px; right: 20px; }
+}
 </style>
 <div id="banner">
   <img src="content/images/t1_banner.jpg" alt="" />
