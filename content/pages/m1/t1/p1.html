@@ -62,7 +62,7 @@
   .button-default:active { background: #590d2b; color: #fff; }
 
   .horizontal-panels { font-weight: 200; color: #3E3E3E; }
-  .horizontal-panels .row { padding: 15px 0; }
+  .horizontal-panels .row { padding: 30px 0; }
   /* .horizontal-panels .row p { max-width: 528px; } */
   .horizontal-panels h2 { color: #590D2B; font-size: 3rem; font-weight: bold; }
   .scrolldown-learn-more { display: flex; flex-direction: column; align-items: center; text-align: center; width: 150px; color: #a1121e; font-size: 2.1rem; font-weight: 500; }
@@ -168,20 +168,25 @@
     </div>
   </div>
   <style>
-    /* .icon-want-to-know-more-hands { fill:#590D2B; stroke:#590D2B; stroke-width:0.5; } */
-    /* .want-to-know-more-panel .icon { width: 84px; height: 84px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .want-to-know-more-panel .icon svg { width: 58.8px; width: 58.6px; } */
-    .want-to-know-more-panel svg { width: 84px; height: 84px; }
+    .want-to-know-more-panel ul { list-style: none; padding: 0; margin: 100px 0 0 0; }
+    .want-to-know-more-panel li { position: relative; margin: 100px 0 0 0; border: 2px dashed #590D2B; padding: 28px; }
+    .want-to-know-more-panel ul > li:first-child { margin-top: 0; }
+    .want-to-know-more-panel li svg { position: absolute; top: -70px; left: 50%; transform: translateX(-50%); width: 84px; height: 84px; }
+    @media (min-width: 992px) {
+      .want-to-know-more-panel ul { display: flex; align-items: flex-start; }
+      .want-to-know-more-panel li { flex: 1; margin: 0 0 0 50px; }
+      .want-to-know-more-panel ul > li:first-child { margin-left: 0; }
+      .want-to-know-more-panel li svg { left: -36px; transform: none; }
+    }
   </style>
   <div class="row bg-2 want-to-know-more-panel">
     <div class="col-sm-12">
       <h2>Want to know more?</h2>
-      <!-- <div class="icon">
-        <div data-svg="icon-want-to-know-more-hands"></div>
-      </div> -->
-      <div data-svg="icon-want-to-know-more-hands"></div>
-      <div data-svg="icon-want-to-know-more-computer"></div>
-      <div data-svg="icon-want-to-know-more-doc"></div>
+      <ul>
+        <li><div data-svg="icon-want-to-know-more-hands"></div>Get actively involved. Visit our four employee networks — Accessibility Matters, Mob@Post, PostPride and Women@Post.</li>
+        <li><div data-svg="icon-want-to-know-more-computer"></div>Go to <a class="external-link" target="_blank" href="https://ourpost.com.au/">OurPost.com.au</a> or our corporate intranet, <em>Isaac</em>, for more information.</li>
+        <li><div data-svg="icon-want-to-know-more-doc"></div>Read our Aboriginal and Torres Strait Islander Plan (ATSI Plan) and Accessibility Plan on <em>Isaac</em> to find out more about our wider commitments to inclusivity.</li>
+      </ul>
     </div>
   </div>
 
