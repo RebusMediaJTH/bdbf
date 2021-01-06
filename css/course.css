@@ -100,10 +100,10 @@
 #page-m1_t1_p1 #banner { background: url(../content/images/t1_banner_sm.jpg); background-size: cover; }
 #page-m1_t1_p1 #banner-message { bottom: 1.5625%; left: 1.5625%; }
 @media (min-width: 768px) {
-    #page-m1_t1_p1 #banner-message { left: auto; bottom: 5%; right: 5%; }
-  }
+    #page-m1_t1_p1 #banner-message { bottom: auto; left: auto; top: 4%; right: 20px; }
+}
 @media (min-width: 992px) {
-  #page-m1_t1_p1 #banner-message { bottom: auto; left: auto; top: 20px; right: 20px; }
+  
 }
 
 #page-m1_t2_p1 #banner { background: url(../content/images/t2_banner_xs.jpg); background-size: cover; }
@@ -115,6 +115,6 @@
     #page-m1_t2_p1 #banner { background: url(../content/images/t2_banner_sm.jpg); background-size: cover; }
     #page-m1_t2_p1 #banner-message { left: 250px; }
 }
-@media (min-width: 992px) {
-  #page-m1_t2_p1 #banner-message { bottom: auto; left: auto; top: 20px; right: 20px; }
+@media (min-width: 768px) {
+  #page-m1_t2_p1 #banner-message { bottom: auto; left: auto; top: 4%; right: 20px; }
 }
