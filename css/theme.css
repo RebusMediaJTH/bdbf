@@ -138,9 +138,9 @@ footer a:focus,
 footer a:active { color: #fff; }
 footer .topic-links { padding-left: 10px; }
 footer .topic-link,
-footer .save-link { display: flex; align-items: center; }
+footer .save-link { display: flex; align-items: flex-start; line-height: 2.5674rem; }
 footer .topic-link svg,
-footer .save-link svg { width: 25.674px; height: 25.674px; flex-shrink: 0; }
+footer .save-link svg { width: 2.5674rem; height: 2.5674rem; flex-shrink: 0; }
 footer .icon-topic-list,
 footer .icon-save { margin-right: 10px; }
 footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
