@@ -64,6 +64,21 @@
     </g>
   </g>
 
+  <!-- icon-want-to-know-more-computer -->
+  <g id="icon-want-to-know-more-computer" data-viewbox="0 0 84 84">
+    <g transform="translate(-354 -2438)">
+      <path d="M42,0A42,42,0,1,1,0,42,42,42,0,0,1,42,0Z" transform="translate(354 2438)" fill="#fff"/>
+      <g transform="translate(-98.22 -192.905)">
+        <path d="M9416.638,2888.4H9452.2" transform="translate(-8940.63 -195.435)" fill="none" stroke="#590d2b" stroke-width="3"/>
+        <g transform="translate(470.939 2650.443)">
+          <path d="M9395.94,2769.439v-20h45.952v23.528H9395.94v10.268h16.621v8.723" transform="translate(-9395.94 -2749.444)" fill="none" stroke="#590d2b" stroke-linejoin="round" stroke-width="3"/>
+          <path d="M9509.139,2840.278v5.853h-16.3v8.583" transform="translate(-9463.188 -2812.482)" fill="none" stroke="#590d2b" stroke-linejoin="round" stroke-width="3"/>
+          <circle cx="2.5" cy="2.5" r="2.5" transform="translate(20.28 28.461)" fill="#590d2b"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
   <!-- icon-postmark -->
   <g id="icon-postmark" data-viewbox="0 0 46.336 49.5">
     <defs>
