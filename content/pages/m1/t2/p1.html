@@ -1,109 +1,88 @@
-<style>
-    body { background-image: url('content/images/t2s1_bg_main.jpg'); background-size: cover; background-attachment: fixed; }
-
-    .row[data-idx="1"] .versus { position:absolute; top:50px; left:50%; margin-left:-20px; -ms-transform:translateX(-50%); -moz-transform:translateX(-50%); -webkit-transform:translateX(-50%); transform:translateX(-50%); }
-         
-    @media (min-width: 576px) {
-        .row[data-idx="1"] .versus { top:70px;  }
-    }
-
-    .activity-select-top-two { list-style: none; padding: 0; }
-    .activity-select-top-two > li { cursor: pointer; }
-    .activity-select-top-two > li { position: relative; border-radius: 10px; padding: 5px 40px 5px 20px; margin-bottom: 10px; color: #fff; font-size: 16px; font-size: 1.6rem; }
-    .activity-select-top-two .selected-indicator { display: none; position: absolute; top: 3px; right: 3px; }
-    .activity-select-top-two li[aria-selected="true"] .selected-indicator { display: block; } 
-    #activity-select-top-two-modal .modal-content { background-color: #A8CB6C; }
-    #activity-select-top-two-modal .modal-footer { border-top: none; }
-</style>
-<div class="horizontal-panels">
-    <div class="row first">
-        <h2 class="strip-header pos-abs-sm pos-top pos-left">We promote a safe work culture</h2>
-        <img src="content/images/t2s1p1_mowing.jpg" class="full-width" alt="" />
-        <div class="bubble bubble-b-r align-left align-bottom">
-            <blockquote class="styled">Being safe everywhere means we think about our safety, health and wellbeing not just at work, but also at home or out and about in the community.</blockquote>
-            <p class="lbl-scroll-down">Scroll down to <br />learn more</p>
+<div id="banner">
+    <img src="content/images/t2_banner.jpg" alt="" />
+    <div>
+      <div class="container">
+        <div id="banner-message">
+          <div>
+            <div class="faces">
+              <div class="face front"></div>
+              <div class="face back"><div>We <span>value</span> <br>difference</div></div>
+            </div>
+          </div>  
         </div>
+      </div>
     </div>
-    <div class="row bg-pink">
-        <div class="col-sm-12">
-            <div class="panel-wrap pos-rel">
-                <img class="img-responsive center-block" src="content/images/t2s1p1_thong_boot.png" alt="Beach footwear and a work boot" />
-                <blockquote class="styled xxxl grey text-center margin-top-md" style="padding-left: 20px;padding-right: 10px;">You know which choice is safer, but do your thoughts always match your actions?</blockquote>
-                <span class="versus f-lemon fs-xxxl" aria-hidden="true">Vs</span>
+  </div>
+  <div class="horizontal-panels container">
+    <div class="row bg-1 scrolldown-learn-more-panel">
+      <div class="col-sm-8">
+        <p>We work in teams that are as diverse as the communities in which we operate. We aim to create an inclusive environment where everyone feels safe, respected and able to be themselves at work. An environment where everyone can be their true self and feel like they belong.</p>
+      </div>
+      <div class="col-sm-4 last">
+        <div class="scrolldown-learn-more">
+          Scroll down to learn more
+          <div data-svg="icon-arrow-down"></div>
+        </div>
+      </div> 
+    </div>
+    <div class="row bg-1">
+      <div class="col-sm-12">
+        <h2>It’s important to us</h2>
+        <p><strong>Select</strong> Play to watch this video of our people talking about what diversity and inclusion means at Australia Post.</p>
+        <div class="video" data-transcript="ourcustomers_m2_t3_s3_p2" data-activity="video" data-mandatory="true">
+            <div class="embed-responsive embed-responsive-16by9">
+                <video controlsList="nodownload" src="content/video/M2_T3_S3_P2.mp4" controls="controls" poster="content/video/M2_T3_S3_P2.jpg">
+                    <track kind="subtitles" label="English subtitles" src="content/video/M2_T3_S3_P2.vtt" srclang="en" default />
+                </video>
             </div>
         </div>
+      </div>
     </div>
-    <div class="row bg-grey">
-        <div class="col-sm-12">
-            <div class="panel-wrap zero-padding-bottom">
-                <h2>We make decisions every day. What are the things that help us make better choices?</h2>
-                <div class="audio-control outset" data-audio-file="t2_s1_p3"></div>
-            </div>
-            <div class="panel-wrap less-h zero-padding-top">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <p>Think about the things that help you make better decisions in staying safe both at work and at home.</p>
-                    </div>
-                    <div class="col-sm-7">
-                        <p><strong>Select</strong> the <strong>top two</strong> statements that are the most helpful in making better safety decisions, then <strong>select</strong> Submit when done.</p>
-                        <ul class="activity-select-top-two">
-                            <li role="button" class="bg-turquoise">Always being on the lookout for hazards</li>
-                            <li role="button" class="bg-orange-bright">Having those around you set a good example</li>
-                            <li role="button" class="bg-pink">Feeling empowered to raise and discuss issues</li>
-                            <li role="button" class="bg-blue">Being involved in the process of improving safety</li>
-                            <li role="button" class="bg-grey-dark">Analysing and learning from previous incidents and accidents</li>
-                            <li role="button" class="bg-leaf">Being responsible for taking action to reduce risk where ever possible</li>
-                            <li role="button" class="bg-brown">Being trained in how to work safely</li>
-                            <li role="button" class="bg-orange">Knowing that working towards a safer workplace is celebrated</li>
-                            <li role="button" class="bg-blue-navy">Demonstrating leadership by role modelling our health and safety behaviours at all levels across our business</li>
-                        </ul>
-                        <button id="btn-submit-activity-select-top-two" disabled type="button" class="btn btn-red margin-top-sm" data-toggle="modal" data-target="#activity-select-top-two-modal">Submit</button>
-                    </div>
-                </div>
-            </div>
+    <div class="row bg-1 text-and-img reversed align-center">
+      <h2>Everyone should have a voice</h2>
+      <div class="col-md-5 img">
+        <img class="img-responsive center-block" src="content/images/t1_s1_p4.jpg" alt="Smiling girl wearing a hearing aid" />
+      </div>
+      <div class="col-md-7 text">
+        <h2>Everyone should have a voice</h2>
+        <p><strong>Read</strong> the scenario to learn more.</p>
+        <p>Sharon is deaf in one ear and hard of hearing in the other. </p>
+        <p>While you can’t tell from looking at her, for Sharon to be able to communicate in the weekly team meetings, she needs a meeting room with a hearing loop so that she can connect her hearing aid. She also needs to be able to see people’s faces so that she can lip read.</p>
+        <p>Last week, instead of the usual sit-down discussion in the meeting room, Sharon’s team organised a morning tea in the lunchroom to celebrate a birthday. Everyone was free to walk around, chat and eat.</p>
+        <p><strong>Select</strong> Play to join in the celebrations.</p>
+        <div class="audio-control" data-audio-file="t1_s1_p2"></div>
+      </div>
+    </div>
+    <div class="row bg-2">
+      <div class="col-sm-12">
+        <p>Couldn’t hear anything? Neither could we. That’s what it’s like for Sharon when her team doesn’t consider her needs when organising team events.</p>
+        <p>Day-to-day activities that you take for granted might not work for everyone in your team. To have an inclusive environment, you need to consider and respect everyone’s needs. Before you do something, think — is this going to work for everyone in my team?</p>
+      </div>
+    </div>
+    <div class="row bg-2 key-message-panel align right center">
+      <svg class="squiggle" xmlns="http://www.w3.org/2000/svg" width="1047.83" height="241.426" viewBox="0 0 1047.83 241.426">
+        <path d="M9011.791,2313.019s109.156-158.959,169.486-115.03-51.761,43.273,0-21.251,198.795,4.547,207.819-57.693-70.434-31.461-11.677-17.361,57.987-40.839,228.287-24.8,452.25,99.85,452.25,99.85" transform="translate(-9010.555 -2072.442)" />
+      </svg>
+      <div>
+        <div class="key-message">
+          <img src="content/images/key-message-quote.png" alt="" />
+          <p>Are you always thinking of the differences in your team?</p>
         </div>
+      </div>
     </div>
-</div>
-<div id="activity-select-top-two-modal" class="modal modal-template full-width max-width-content correct" data-audio-file="t2_s1_p3_fb" data-buttons="none" data-keyboard="false" data-backdrop="static">
-    <p>Did you find that task difficult? It was meant to be because...</p>
-    <p class="fs-xl">It's all important. It all helps create a safe work culture.</p>
-    <p>We have many policies to help you make better decisions at work. Should you want to know more about our safety culture, take a look at the core policy overviews at the end of this module.</p>
-    <button type="button" role="navigation" data-mark-page-as-complete-and-continue class="btn btn-red margin-top-md">Continue</button>
-</div>
-<div class="modal intro-page" data-audio-file="t2_s1_intro">
-    <p>While viewing this screen, think about what safety means to you.</p>
-    <p>From crossing the street to working around the house, the desire to keep ourselves and the people around us safe is at the heart of almost everything we do.</p>
-</div>
-<script>
-    function pageLoaded() {
-        var selectedCount = 0,
-            $btn = $('#btn-submit-activity-select-top-two');
-        $('.activity-select-top-two li').attr({ tabindex: 0, 'aria-selected': false }).append('<img class="selected-indicator" src="images/icon_tick_green.png" alt="" />');
-        $('body').on('click', '.activity-select-top-two li', function () {
-            var $this = $(this),
-                selected = $this.attr('aria-selected') === 'true';
-            if (selected) {
-                $this.attr('aria-selected', false);
-                selectedCount--;
-                if (selectedCount < 2) {
-                    $btn.prop('disabled', true);
-                }
-            }
-            else {
-                if (selectedCount < 2) {
-                    $this.attr('aria-selected', true);
-                    selectedCount++;
-                    if (selectedCount === 2) {
-                        $btn.prop('disabled', false);
-                    }
-                }
-            }
-        });
-        $('body').on('keydown', '.activity-select-top-two li', function (e) {
-            if (e.which === 13 || e.which === 32) {
-                $(this).trigger('click');
-                return false;
-            }
-        });
-    }
-</script>
+    <div class="row bg-2 want-to-know-more-panel">
+      <div class="col-sm-12">
+        <h2>Want to know more?</h2>
+        <ul>
+          <li><div data-svg="icon-want-to-know-more-hands"></div>Get actively involved. Visit our four employee networks — Accessibility Matters, Mob@Post, PostPride and Women@Post.</li>
+          <li><div data-svg="icon-want-to-know-more-computer"></div>Go to <a class="external-link" target="_blank" href="https://ourpost.com.au/">OurPost.com.au</a> or our corporate intranet, <em>Isaac</em>, for more information.</li>
+          <li><div data-svg="icon-want-to-know-more-doc"></div>Read our Aboriginal and Torres Strait Islander Plan (ATSI Plan) and Accessibility Plan on <em>Isaac</em> to find out more about our wider commitments to inclusivity.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row bg-1">
+      <div class="col-sm-12">
+        Ready for a new topic? <strong>Select</strong> from the list below.
+      </div>
+    </div>
+  </div>

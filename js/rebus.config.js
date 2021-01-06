@@ -41,35 +41,35 @@ rebus.config = {
                                   folder: 't1',
                                   title: 'Diversity and Inclusion',
                                   pages: [
-                                      { path: 'p1', title: 'Diversity and Inclusion', hideHeader: false }
+                                      { path: 'p1', title: 'Diversity and Inclusion' }
                                   ]
                               },
                               {
                                   folder: 't2',
                                   title: 'Work Health and Safety',
                                   pages: [
-                                      { path: 'p1', title: 'Work Health and Safety', hideHeader: true }
+                                      { path: 'p1', title: 'Work Health and Safety' }
                                   ]
                               },
                               {
                                   folder: 't3',
                                   title: 'Online Safety',
                                   pages: [
-                                      { path: 'p1', title: 'Online Safety', hideHeader: true }
+                                      { path: 'p1', title: 'Online Safety' }
                                   ]
                               },
                               {
                                 folder: 't4',
                                 title: 'Social Media',
                                 pages: [
-                                    { path: 'p1', title: 'Social Media', hideHeader: true }
+                                    { path: 'p1', title: 'Social Media' }
                                 ]
                             },
                             {
                                 folder: 't5',
                                 title: 'Harassment, Discrimination and Bullying',
                                 pages: [
-                                    { path: 'p1', title: 'Harassment, Discrimination and Bullying', hideHeader: true }
+                                    { path: 'p1', title: 'Harassment, Discrimination and Bullying' }
                                 ]
                             }
                           ]
