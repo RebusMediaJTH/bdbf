@@ -140,9 +140,7 @@ footer .topic-links { padding-left: 10px; }
 footer .topic-link,
 footer .save-link { display: flex; align-items: center; }
 footer .topic-link svg,
-footer .save-link svg { width: 25.674px; height: 25.674px; }
-footer .topic-link a,
-footer .save-link a { xxxxxxxxxflex: 1; }
+footer .save-link svg { width: 25.674px; height: 25.674px; flex-shrink: 0; }
 footer .icon-topic-list,
 footer .icon-save { margin-right: 10px; }
 footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
