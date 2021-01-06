@@ -101,6 +101,7 @@
     </div>
   </div>
   <style>
+    .text-and-img.reversed > h2 { padding: 0 15px; }
     .text-and-img.reversed .img { margin-bottom: 15px; }
     .text-and-img.reversed .text h2 { display: none; }
     @media (min-width: 992px) {
@@ -140,10 +141,16 @@
     .key-message-panel.align > div { display: flex }
     .key-message-panel.align.right > div { justify-content: flex-end; }
     .key-message-panel.align.center > div { align-items: center; }
-    .key-message { display: flex; align-items: center; font-size: 3.5rem; font-weight: 500; color: #590D2B; }
+    .key-message { font-size: 7.5vw; font-weight: 500; color: #590D2B; }
     
     .key-message img { margin-right: 19px; }
     .key-message p { max-width: 510px; margin: 0; }
+    @media (min-width: 467px) {
+      .key-message { font-size: 3.5rem; }
+    }
+    @media (min-width: 568px) {
+      .key-message { display: flex; align-items: center; }
+    }
     @media (min-width: 768px) {
       .key-message-panel > div { padding: 0 50px; }
     }
