@@ -1015,7 +1015,7 @@ rebus.pageInit = (function ($, undefined) {
                 btnContinue,
                 '</div>',
                 '<div class="video-wrapper"></div>'
-            ].join('\n')).find('.video-wrapper').append(html);
+            ].join('\n')).find('.video-wrapper').append(html).append('<button type="button" class="button button-default">Read the transcript</button>');
         });
 
         $('video').on('play', function () {
