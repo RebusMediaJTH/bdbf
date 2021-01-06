@@ -1,0 +1,5 @@
+#page-m1_t1_p1 #banner { background: url(content/images/t1_banner_sm.jpg); background-size: cover; }
+#page-m1_t1_p1 #banner-message { bottom: 1.5625%; left: 1.5625%; }
+@media (min-width: 768px) {
+  #page-m1_t1_p1 #banner-message { bottom: auto; left: auto; top: 20px; right: 20px; }
+}
