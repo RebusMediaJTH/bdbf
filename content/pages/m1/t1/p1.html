@@ -135,6 +135,7 @@
     </div>
   </div>
   <style>
+    .squiggle { fill: none; stroke: #d2d2d4; stroke-width: 3; }
     .key-message-panel { padding-left: 0 !important; padding-right: 0 !important; }
     .key-message-panel svg { position: relative; left: -2px; }
     .key-message-panel > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 15px; }
@@ -156,13 +157,26 @@
     }
   </style>
   <div class="row bg-2 key-message-panel align right center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1047.83" height="241.426" viewBox="0 0 1047.83 241.426">
-      <path id="Path_282" data-name="Path 282" d="M9011.791,2313.019s109.156-158.959,169.486-115.03-51.761,43.273,0-21.251,198.795,4.547,207.819-57.693-70.434-31.461-11.677-17.361,57.987-40.839,228.287-24.8,452.25,99.85,452.25,99.85" transform="translate(-9010.555 -2072.442)" fill="none" stroke="#d2d2d4" stroke-width="3"/>
+    <svg class="squiggle" xmlns="http://www.w3.org/2000/svg" width="1047.83" height="241.426" viewBox="0 0 1047.83 241.426">
+      <path d="M9011.791,2313.019s109.156-158.959,169.486-115.03-51.761,43.273,0-21.251,198.795,4.547,207.819-57.693-70.434-31.461-11.677-17.361,57.987-40.839,228.287-24.8,452.25,99.85,452.25,99.85" transform="translate(-9010.555 -2072.442)" />
     </svg>
     <div>
       <div class="key-message">
         <img src="content/images/key-message-quote.png" alt="" />
         <p>Are you always thinking of the differences in your team?</p>
+      </div>
+    </div>
+  </div>
+  <style>
+    .icon-want-to-know-more-hands { fill:#590D2B; stroke:#590D2B; stroke-width:0.5; }
+    .want-to-know-more-panel .icon { width: 84px; height: 84px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .want-to-know-more-panel .icon svg { width: 58.8px; width: 58.6px; }
+  </style>
+  <div class="row bg-2 want-to-know-more-panel">
+    <div class="col-sm-12">
+      <h2>Want to know more?</h2>
+      <div class="icon">
+        <div data-svg="icon-want-to-know-more-hands"></div>
       </div>
     </div>
   </div>
