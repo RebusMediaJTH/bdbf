@@ -75,37 +75,11 @@
             <p>John arrives at Carmel’s counter to collect his parcel. He ignores Carmel’s greeting and shoves his parcel details towards her. When Carmel requests John’s ID, he shouts at her to stop wasting his time. Carmel goes out the back to find John’s package, but can’t find it anywhere. She’s going to have to tell him that his parcel isn’t there.</p>
         </div>
     </div>
-    <style>
-        @media (min-width: 768px) {
-            .multi-choice-panel { padding: 0 !important; }
-            .multi-choice-panel > div { display: flex; }
-            .multi-choice-panel > div > div { padding: 50px; }
-            .multi-choice-panel .question { width: 58%; }
-            .multi-choice-panel .response { width: 42%; }
-            .multi-choice-panel.light-left .question,
-            .multi-choice-panel.light-right .response { background: #fcfcfc; }
-            .multi-choice-panel.light-left .response,
-            .multi-choice-panel.light-right .question { background: #f8f8f8; }
-            .multi-choice-panel .response { display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 200; }
-            .multi-choice-panel .response > div { display: flex; flex-direction: column; align-items: center; }
-            .multi-choice-panel .response svg { display: none; width: 105px; height: 105px; margin-bottom: 25px; }
-            [data-activity="multiple-choice-quiz"][data-correct="true"] .response .icon-thumb-up,
-            [data-activity="multiple-choice-quiz"][data-correct="false"] .response .icon-thumb-down { display: block; }
-        }
-    </style>
     <div class="row bg-3 multi-choice-panel light-left">
-        <style>
-            .icon-radio { width: 24px; height: 24px; stroke: #4D4D55; fill: #fff; }
-            .checked .icon-radio { fill: #a7627d; }
-        </style>
-        <div data-svg="icon-radio"></div>
-        <div class="checked">
-            <div data-svg="icon-radio"></div>
-        </div>
         <div data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit">
             <div class="question">
-                <p>Kyle has brought in his medical prescription and his passport. Which of these documents verifies Kyle’s identity?</p>
-                <p><strong>Select</strong> one.</p>
+                <p class="leader">Do you think this situation poses a health and safety risk to Carmel?</p>
+                <p><strong>Select</strong> your answer, then <strong>select</strong> Submit.</p>
                 <form class="multiple-choice-quiz margin-top-md">
                     <ul class="multiple-choice-quiz-options">
                         <li>There’s no health and safety risk here.</li>

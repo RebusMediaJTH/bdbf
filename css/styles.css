@@ -837,16 +837,19 @@ html.pdf-viewer-in.isNotApp.use-mozilla-pdf-viewer-for-browser body { overflow: 
     Multiple Choice
 */
 
-ul.multiple-choice-quiz-options { list-style: none; padding: 0 0 0 15px; } /* Padding required for the correct-indicator on v.small devices */
-.multiple-choice-quiz-options li { position: relative; clear: both; margin: 0; padding: 7px 0 7px 15px; border-radius: 5px; }
+ul.multiple-choice-quiz-options { list-style: none; padding: 0; }
+.multiple-choice-quiz-options li { position: relative; display: flex; margin: 0 0 10px 0; padding: 0; border-radius: 5px; }
 .multiple-choice-quiz-options input, .multiple-choice-quiz-options label { cursor: pointer; }
-.multiple-choice-quiz-options input[disabled], .multiple-choice-quiz-options input[disabled] + label { cursor: default; }
-.multiple-choice-quiz-options input { float: left; margin: 8px 0 0 0; position: relative; left: -10000px; }
+.multiple-choice-quiz-options input[disabled], 
+.multiple-choice-quiz-options input[disabled] + label { cursor: default; }
+.multiple-choice-quiz-options input { position: relative; top: 4px; width: 20px; margin: 0; -webkit-appearance: none; }
 .multiple-choice-quiz-options input:focus { outline: none !important; }
-.multiple-choice-quiz-options label { float: left; font-weight: 400; margin: 0 0 0 10px; width: calc(100% - 10px - 20px); }
-.multiple-choice-quiz-options .indicator { overflow: hidden; position: absolute; top: 10px; left: 13px; width: 16px; height: 16px; margin: 2px 20px 0 0; }
+.multiple-choice-quiz-options label { position: relative; left: -20px; display: flex; line-height: 24px; font-weight: 400; margin: 0; }
+.multiple-choice-quiz-options .indicator { width: 24px; height: 24px; margin: 0 8px 0 0; }
 /* pointer-events: none; ensures the indicator is clickable in IE11: https://stackoverflow.com/questions/20198137/image-label-for-input-in-a-form-not-clickable-in-ie11 */
-.multiple-choice-quiz-options .indicator > img { position: absolute; left: 0; top: 0; display: block; pointer-events: none; }
+/* .multiple-choice-quiz-options .indicator > img { position: absolute; left: 0; top: 0; display: block; pointer-events: none; } */
+.multiple-choice-quiz-options .indicator > svg { pointer-events: none; width: 24px; height: 24px; stroke: #4D4D55; fill: #fff; transition: fill 0.25s; }
+.multiple-choice-quiz-options li.checked .indicator > svg { fill: #a7627d; }
 .multiple-choice-quiz-options .correct-indicator { display: none; position: absolute; left: -10px; top: 10px; width: 20px; height: 20px; }
 .multiple-choice-quiz-options .correct-indicator > img { display: block; width: 100%; }
 .show-answer .multiple-choice-quiz-options [data-required="true"] .correct-indicator { display: block; }
@@ -854,11 +857,11 @@ ul.multiple-choice-quiz-options { list-style: none; padding: 0 0 0 15px; } /* Pa
 [data-activity="multiple-choice-quiz"] .triggers-input { cursor: pointer; }
 
 /* Radio */
-.multiple-choice-quiz-options.radio-list .indicator > img { left: -32px; }
-.multiple-choice-quiz-options.radio-list li.checked .indicator > img { left: -48px; }
+/* .multiple-choice-quiz-options.radio-list .indicator > img { left: -32px; }
+.multiple-choice-quiz-options.radio-list li.checked .indicator > img { left: -48px; } */
 
 /* Checkbox */
-.multiple-choice-quiz-options.checkbox-list li.checked .indicator > img { left: -16px; }
+/* .multiple-choice-quiz-options.checkbox-list li.checked .indicator > img { left: -16px; } */
 
 /* Inline feedback */
 .inline-feedback { display: none; float: left; margin-top: 10px; }

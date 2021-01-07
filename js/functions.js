@@ -2312,10 +2312,10 @@ rebus.pageInit = (function ($, undefined) {
                             else {
                                 inputHTML = '<input type="checkbox" data-idx="' + optionIdx + '" id="' + optionId + '" />';
                             }
-                            $li.addClass('clearfix').attr({ role: 'presentation', 'data-response': response }).empty().append([
+                            $li.attr({ role: 'presentation', 'data-response': response }).empty().append([
                                 inputHTML,
                                 '<label for="' + optionId + '">',
-                                '<span class="indicator" aria-hidden="true"><img src="images/multichoice.png" alt="" /></span>',
+                                '<span class="indicator" aria-hidden="true"><div data-svg="icon-radio"></div></span>',
                                 '<span class="correct-indicator" aria-hidden="true"><img src="images/icon_tick_green.png" alt="" /></span>',
                                 label,
                                 '</label>',
