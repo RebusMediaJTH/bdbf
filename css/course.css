@@ -149,3 +149,5 @@
 @media (min-width: 1200px) {
     #page-m1_t3_p1 #banner-message { right: 0; top: 50px; }
 }
+
+#page-m1_t3_p1 [data-idx="2"] .key-message p { max-width: 690px; }

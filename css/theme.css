@@ -184,14 +184,14 @@ transition: background-color 0.25s, color 0.25s;
 #banner-message.flipped .back { transform: rotateY(0deg); }
 #banner-message.flipped .front { transform: rotateY(180deg); }
 @media (min-width: 768px) {
-    #banner:not(.break-lg) { height: auto; background: none; }
+    #banner:not(.break-lg) { height: auto !important; background: none !important; }
     #banner:not(.break-lg) .container { position: relative; }
     #banner:not(.break-lg) > img { display: block; width: 100%; }
     #banner:not(.break-lg) > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
     #banner-message { width: 266px; font-size: 3.5rem; }
 }
 @media (min-width: 980px) {
-    #banner.break-lg { height: auto; background: none; }
+    #banner.break-lg { height: auto !important; background: none !important; }
     #banner.break-lg .container { position: relative; }
     #banner.break-lg > img { display: block; width: 100%; }
     #banner.break-lg > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
