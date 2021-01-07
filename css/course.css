@@ -133,3 +133,10 @@
 @media (min-width: 462px) {
     #page-m1_t2_p1 [data-idx="4"] .img ul { font-size: 1.8rem; }
 }
+
+#page-m1_t2_p1 [data-idx="5"] .key-message p { max-width: 580px; }
+@media (min-width: 768px) {
+    .key-message-panel > div:not(.lock-overlay) {
+        padding-left: 100px;
+    }
+}

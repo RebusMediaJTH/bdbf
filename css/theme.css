@@ -226,7 +226,7 @@ transition: background-color 0.25s, color 0.25s;
     .key-message { font-size: 3.5rem; }
 }
 @media (min-width: 568px) {
-    .key-message { display: flex; align-items: center; }
+    .key-message { display: flex; align-items: flex-start; }
 }
 @media (min-width: 768px) {
     .key-message-panel > div:not(.lock-overlay) { padding: 0 50px; }
