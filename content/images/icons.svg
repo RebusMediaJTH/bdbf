@@ -84,6 +84,38 @@
     </g>
   </g>
 
+  <!-- icon-want-to-know-more-magnifying-glass -->
+  <g id="icon-want-to-know-more-magnifying-glass" data-viewbox="0 0 84 84">
+    <g transform="translate(-354 -2350)">
+      <path d="M42,0A42,42,0,1,1,0,42,42,42,0,0,1,42,0Z" transform="translate(354 2350)" fill="#fff"/>
+      <g transform="translate(372.789 2368)">
+        <path d="M248.815,173.937l3.793,3.793,1.529-1.529a17.912,17.912,0,1,0-3.793-3.793Zm1.91-12.153a14.035,14.035,0,1,1,4.111,9.925A13.943,13.943,0,0,1,250.725,161.784Z" transform="translate(-236.67 -143.875)" fill="#590d2b"/>
+        <path d="M155.684,436.379,145.1,446.967a2.682,2.682,0,0,0,3.793,3.793l10.588-10.588Z" transform="translate(-144.312 -405.545)" fill="#590d2b"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- icon-want-to-know-more-envelope -->
+  <g id="icon-want-to-know-more-envelope" data-viewbox="0 0 84 84">
+    <g transform="translate(-665 -2350)">
+      <path d="M42,0A42,42,0,1,1,0,42,42,42,0,0,1,42,0Z" transform="translate(665 2350)" fill="#fff"/>
+      <g transform="translate(244 -158.461)">
+        <g transform="translate(439 2526)">
+          <path d="M115.461,135v29.855a3.062,3.062,0,0,1-3.062,3.062H71.062A3.062,3.062,0,0,1,68,164.855V135" transform="translate(-68 -120.455)" fill="none" stroke="#590d2b" stroke-linejoin="round" stroke-width="3"/>
+          <line x1="4.561" y2="2.904" transform="translate(0.031 11.597)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <path d="M104.56,120.595l-6.494-4.111a2.959,2.959,0,0,0-3.243,0l-6.453,4.109" transform="translate(-72.777 -116)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <line x1="4.561" y1="2.888" transform="translate(42.869 11.614)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <path d="M115.439,148.04,93.3,162.057a2.953,2.953,0,0,1-3.243,0L68.041,148.04" transform="translate(-68.01 -123.513)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <path d="M74,140.372V122h38.275v18.372" transform="translate(-69.407 -117.407)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          <g transform="translate(14.004 10.39)">
+            <path d="M97.963,150.128a13.144,13.144,0,0,1-7.957-2.3c-3.994-2.948-4.693-8.828-2.442-13.086a10.083,10.083,0,0,1,11-4.941,9.174,9.174,0,0,1,7.332,8.535c0,.123,0,.247,0,.37.15,8.792-6.815,5.68-6.815,3.408v-7.621" transform="translate(-86.294 -129.573)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            <path d="M99.982,136.68a5.582,5.582,0,0,0-3.815.164,5.453,5.453,0,0,0-2.665,6.333,3.8,3.8,0,0,0,2.451,2.613c2.456.756,3.854-.593,4.558-2.275" transform="translate(-87.938 -131.18)" fill="none" stroke="#590d2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
   <!-- icon-topic-list -->
   <g id="icon-topic-list" data-viewbox="0 0 25.674 25.674">
     <g transform="translate(-77.219 -2962.166)">

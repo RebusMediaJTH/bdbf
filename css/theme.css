@@ -156,6 +156,7 @@ transition: background-color 0.25s, color 0.25s;
 .bg-1 { background: #f8f2f4; }
 .bg-2 { background: #fafafa; }
 .bg-3 { background: #fbfbfb; }
+.bg-4 { background: #f8f8f8; }
 
 .horizontal-panels { font-weight: 200; color: #3E3E3E; }
 .horizontal-panels .row { padding: 30px 0; overflow: hidden; /* hide squiggle overflows */ }
