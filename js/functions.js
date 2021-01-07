@@ -277,6 +277,98 @@ rebus.progressModal = (function () {
     };
 })();
 
+/*
+    <div id="live-feedback" class="sr-only" aria-live="assertive" aria-atomic="true" data-clearafter="5000"></div>
+
+    var $fb = $('#live-feedback').liveFeedback({ clearafter: 5000 });
+    $fb.liveFeedback('value', '.....');
+    $fb.liveFeedback('value', '.....', { silent: true }); // aria-live is temporarily removed during the update
+ */
+(function (undefined) {
+    'use strict';
+
+    var defaults = {
+        clearafter: null
+    };
+
+    var setHTML = function ($fb, html, options) {
+        var old = $fb.html(),
+            data = $fb.data('rebus-live-feedback'),
+            sameContent = html === old,
+            ariaLive;
+        options = options || {};
+        window.clearTimeout(data.timeoutId);
+        if (options.silent) {
+            ariaLive = $fb.attr('aria-live');
+            $fb.removeAttr('aria-live');
+        }
+        if (sameContent) {
+            $fb.html('');
+        }
+        var setContent = function () {
+            $fb.html(html);
+            if (options.silent) {
+                data.timeoutId = window.setTimeout(function () {
+                    $fb.attr('aria-live', ariaLive);
+                }, 100);
+            }
+            if (data.settings.clearafter && html !== '') {
+                data.timeoutId = window.setTimeout(function () {
+                    $fb.empty();
+                }, data.settings.clearafter);
+            }
+        };
+        if (sameContent) {
+            window.setTimeout(setContent, 100);
+        }
+        else {
+            setContent();
+        }
+    };
+
+    $.fn.liveFeedback = function (options) {
+        var collectionSettings;
+
+        if (options === 'value') {
+            var value, opts;
+            if (arguments.length === 1) {
+                return $(this).html();
+            }
+            value = arguments[1];
+            opts = arguments.length > 2 ? arguments[2] : null;
+            return this.each(function () {
+                setHTML($(this), value, opts);
+            });
+        } else if (options === 'clearafter') {
+            var clearafter;
+            if (arguments.length === 1) {
+                return $(this).data('rebus-live-feedback').settings.clearafter;
+            }
+            clearafter = arguments[1];
+            return this.each(function () {
+                $(this).data('rebus-live-feedback').settings.clearafter = clearafter;
+            });
+        }
+
+        collectionSettings = $.extend({}, defaults, options);
+
+        return this.each(function () {
+            var settings = {},
+                $this = $(this);
+            $.each(collectionSettings, function (key, val) {
+                var value = $this.data(key);
+                settings[key] = value !== undefined ? value : val;
+            });
+            $this.data({
+                'rebus-live-feedback': {
+                    settings: settings,
+                    timeoutId: null
+                }
+            });
+        });
+    };
+}());
+
 rebus.pageInit = (function ($, undefined) {
     var $body,
         page, state;
@@ -2125,25 +2217,28 @@ rebus.pageInit = (function ($, undefined) {
 
             return {
                 init: function () {
-                    var keyboard;
-
+                    
                     var performSubmit = function ($submit, $activity) {
-                        var $checkedOption, correct, modalSelector;
+                        var $checkedOption, correct, //, modalSelector;
+                            responses;
                         $activity = $activity || $submit.closest('[data-activity="multiple-choice-quiz"]');
+                        responses = $activity.data('responses');
                         $checkedOption = $activity.find('input:checked').closest('li');
                         correct = isCorrect($activity);
-                        if ($checkedOption.find('.inline-feedback').length) {
-                            $activity.addClass('show-inline-feedback');
-                        }
-                        else {
-                            modalSelector = $checkedOption.data('feedback');
-                            modalTemplates.setFocusOnClosed($submit);
-                            if (!modalSelector) {
-                                modalSelector = '#' + $activity.attr('data-storeid') + '-modal-' + (correct ? 'correct' : 'incorrect');
-                            }
-                            $(modalSelector).modal();
-                        }
-                        $activity.find('.btn-tried').prop('disabled', correct);
+                        $activity.attr('data-correct', correct ? 'true' : 'false');
+                        // if ($checkedOption.find('.inline-feedback').length) {
+                        //     $activity.addClass('show-inline-feedback');
+                        // }
+                        // else {
+                        //     modalSelector = $checkedOption.data('feedback');
+                        //     modalTemplates.setFocusOnClosed($submit);
+                        //     if (!modalSelector) {
+                        //         modalSelector = '#' + $activity.attr('data-storeid') + '-modal-' + (correct ? 'correct' : 'incorrect');
+                        //     }
+                        //     $(modalSelector).modal();
+                        // }
+                        //$activity.find('.btn-tried').prop('disabled', correct);
+                        $activity.data('$fb').liveFeedback('value', responses[$checkedOption.attr('data-response')]);
                         if (correct || !$activity.data('mandatory') || $activity.data('mandatory') === 'partial') {
                             setAsComplete($activity);
                         }
@@ -2152,42 +2247,56 @@ rebus.pageInit = (function ($, undefined) {
                     $('[data-activity="multiple-choice-quiz"]').each(function () {
                         var $activity = $(this),
                             $ul = $activity.find('ul.multiple-choice-quiz-options'),
-                            $inlineFeedback,
+                            //$inlineFeedback,
                             details = rebus.stateHelper.getElementDetails($activity),
                             activityId = details.storeId,
                             optionsState = details.state,
                             optionsDefaultState = '',
                             type = $activity.data('type'),
-                            hasFeedback, hasGiveUpModal,
                             activityStarted;
 
                         $ul.addClass(type === 'radio' ? 'radio-list' : 'checkbox-list');
 
-                        $activity.find('.modal').each(function () {
-                            var $modal = $(this),
-                                btnText = $modal.hasClass('correct') ? 'Continue' : $modal.hasClass('incorrect') ? 'Continue' : 'OK, thank you. I understand.',
-                                modalId = activityId + '-' + $modal.attr('class').split(' ').join('-');
-                            hasFeedback = true;
-                            if ($modal.hasClass('no-answer')) {
-                                hasGiveUpModal = true;
-                            }
-                            $modal.detach().addClass('modal-template multiple-choice-quiz-modal').attr({ 'id': modalId, 'data-buttons': btnText }).appendTo($body);
+                        // $activity.find('.modal').each(function () {
+                        //     var $modal = $(this),
+                        //         btnText = $modal.hasClass('correct') ? 'Continue' : $modal.hasClass('incorrect') ? 'Continue' : 'OK, thank you. I understand.',
+                        //         modalId = activityId + '-' + $modal.attr('class').split(' ').join('-');
+                        //     hasFeedback = true;
+                        //     if ($modal.hasClass('no-answer')) {
+                        //         hasGiveUpModal = true;
+                        //     }
+                        //     $modal.detach().addClass('modal-template multiple-choice-quiz-modal').attr({ 'id': modalId, 'data-buttons': btnText }).appendTo($body);
+                        // });
+
+                        var responses = {};
+                        $activity.data('responses', responses);
+                        $('[data-response]', $activity).each(function () {
+                            var $response = $(this);
+                            responses[$response.attr('data-response')] = $response.html();
+                            $response.remove();
                         });
+                        // if (!hasFeedback) {
+                        //     $inlineFeedback = $activity.find('.inline-feedback');
+                        //     hasFeedback = !!$inlineFeedback.length;
+                        // }
 
-                        if (!hasFeedback) {
-                            $inlineFeedback = $activity.find('.inline-feedback');
-                            hasFeedback = !!$inlineFeedback.length;
-                        }
+                        //if (hasFeedback) {
+                            $ul.after('<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>');
+                            // if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
+                            //     $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
+                            // }
+                        //}
 
-                        if (hasFeedback) {
-                            $ul.after([
-                                '<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>',
-                                (hasGiveUpModal ? '<button type="button" class="btn btn-red btn-tried btn-block-lte-xs" disabled>I\'ve tried. I don\'t know</button>' : null)
-                            ].join('\n'));
-                            if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
-                                $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
-                            }
-                        }
+                        $('.question', $activity).after([
+                            '<div class="response">',
+                                '<div>',
+                                    '<div data-svg="icon-thumb-up"></div>',
+                                    '<div data-svg="icon-thumb-down"></div>',
+                                    '<div class="response-text" aria-live="assertive" aria-atomic="false"></div>',
+                                '</div>',
+                            '</div>'
+                        ].join('\n'));
+                        $activity.data('$fb', $('.response-text', $activity).liveFeedback());
 
                         $ul.find('li').each(function (optionIdx) {
                             var $li = $(this),
@@ -2195,6 +2304,7 @@ rebus.pageInit = (function ($, undefined) {
                                 appendAfter = $appendAfter.length ? $appendAfter[0].outerHTML : '',
                                 label = $li.html(),
                                 optionId = activityId + '_o' + optionIdx,
+                                response = $li.attr('data-response') | $li.attr('data-required') === 'true' ? 'correct' : 'incorrect',
                                 inputHTML;
                             if (type === 'radio') {
                                 inputHTML = '<input type="radio" data-idx="' + optionIdx + '" id="' + optionId + '" name="rg_' + activityId + '" />';
@@ -2202,7 +2312,7 @@ rebus.pageInit = (function ($, undefined) {
                             else {
                                 inputHTML = '<input type="checkbox" data-idx="' + optionIdx + '" id="' + optionId + '" />';
                             }
-                            $li.addClass('clearfix').attr({ 'role': 'presentation' }).empty().append([
+                            $li.addClass('clearfix').attr({ role: 'presentation', 'data-response': response }).empty().append([
                                 inputHTML,
                                 '<label for="' + optionId + '">',
                                 '<span class="indicator" aria-hidden="true"><img src="images/multichoice.png" alt="" /></span>',
@@ -2211,9 +2321,9 @@ rebus.pageInit = (function ($, undefined) {
                                 '</label>',
                                 appendAfter
                             ].join('\n'));
-                            if ($inlineFeedback && $inlineFeedback.length) {
-                                $inlineFeedback.eq(optionIdx).detach().appendTo($li);
-                            }
+                            // if ($inlineFeedback && $inlineFeedback.length) {
+                            //     $inlineFeedback.eq(optionIdx).detach().appendTo($li);
+                            // }
                             if (optionsState) {
                                 if ((type === 'checkbox' && optionsState.charAt(optionIdx) === '1') || (type === 'radio' && optionIdx + '' === optionsState)) {
                                     $li.addClass('checked');
@@ -2232,42 +2342,33 @@ rebus.pageInit = (function ($, undefined) {
                         if (activityStarted) {
                             panels.markActivityAsStarted($activity);
                             if ($activity.hasClass('activity-done')) {
+                                performSubmit(null, $activity);
                                 showAnswer($activity);
                             }
-                            if ($inlineFeedback && $inlineFeedback.length) {
-                                $activity.addClass('show-inline-feedback');
-                            }
+                            // if ($inlineFeedback && $inlineFeedback.length) {
+                            //     $activity.addClass('show-inline-feedback');
+                            // }
                         }
                         rebus.stateHelper.setElementState($activity, optionsState || optionsDefaultState);
                         setCheckAnswerBtnState($activity);
                     });
 
-                    $('body').on('mousedown touchstart', '.radio-list li', function () {
-                        keyboard = false;
-                    }).on('keydown', '.radio-list li', function () {
-                        keyboard = true;
-                    }).on('focus', '.radio-list input, .checkbox-list input', function () {
+                    $('body').on('focus', '.radio-list input, .checkbox-list input', function () {
                         $(this).closest('li').addClass('focussed-pseudo');
                     }).on('blur', '.radio-list input, .checkbox-list input', function () {
                         $(this).closest('li').removeClass('focussed-pseudo');
                     }).on('change', '.radio-list input', function (e) {
                         var $input = $(this),
                             $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
-                            $submit = $activity.find('.btn-check-multi-choice-answer'),
-                            instantFeedback = !keyboard && $activity.attr('data-instant-feedback-mouse') !== undefined;
-                        $activity.removeClass('show-inline-feedback');
+                            $submit = $activity.find('.btn-check-multi-choice-answer');
+                        $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
+                        //$activity.removeClass('show-inline-feedback');
                         $input.closest('.radio-list').find('.checked').removeClass('checked');
                         $input.closest('li').addClass('checked');
                         rebus.stateHelper.setElementState($activity, $input.data('idx') + '');
                         panels.markActivityAsStarted($activity);
                         rebus.stateHelper.save();
-                        if (instantFeedback) {
-                            $submit.attr('hidden', true);
-                            performSubmit($submit, $activity);
-                        }
-                        else {
-                            $submit.removeAttr('hidden');
-                        }
+                        $submit.removeAttr('hidden');
                         setTimeout(function () {
                             setCheckAnswerBtnState($activity);
                         }, 100);
@@ -2677,6 +2778,8 @@ rebus.pageInit = (function ($, undefined) {
             if (window.pageLoaded) {
                 window.pageLoaded();
             }
+
+            $('[data-svg]').svgInjector();
 
             if (rebus.screenReaderTest) {
                 rebus.screenReaderTest();

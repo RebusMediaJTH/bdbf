@@ -377,10 +377,7 @@ rebus.navigation = (function ($, undefined) {
             Track.setLessonCompleted();
         }
 
-        $.fn.svgInjector.init(function () {
-            $('[data-svg]').svgInjector();
-            callback();
-        });
+        $.fn.svgInjector.init(callback);
     };
 
     var loadPage = function (pageId, callback) {

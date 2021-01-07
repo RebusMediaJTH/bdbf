@@ -77,50 +77,40 @@
     </div>
     <style>
         @media (min-width: 768px) {
-            .multi-choice-panel { display: flex; padding: 0 !important; }
-            .multi-choice-panel > div { padding: 50px; }
-            .multi-choice-panel > :first-child { width: 58%; }
-            .multi-choice-panel > :last-child { width: 42%; }
-            .multi-choice-panel.light-left  > :first-child,
-            .multi-choice-panel.light-right  > :last-child { background: #fcfcfc; }
-            .multi-choice-panel.light-left  > :last-child,
-            .multi-choice-panel.light-right  > :first-child { background: #f8f8f8; }
+            .multi-choice-panel { padding: 0 !important; }
+            .multi-choice-panel > div { display: flex; }
+            .multi-choice-panel > div > div { padding: 50px; }
+            .multi-choice-panel .question { width: 58%; }
+            .multi-choice-panel .response { width: 42%; }
+            .multi-choice-panel.light-left .question,
+            .multi-choice-panel.light-right .response { background: #fcfcfc; }
+            .multi-choice-panel.light-left .response,
+            .multi-choice-panel.light-right .question { background: #f8f8f8; }
             .multi-choice-panel .response { display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 200; }
             .multi-choice-panel .response > div { display: flex; flex-direction: column; align-items: center; }
-            .multi-choice-panel .response svg { width: 105px; height: 105px; margin-bottom: 25px; }
+            .multi-choice-panel .response svg { display: none; width: 105px; height: 105px; margin-bottom: 25px; }
+            [data-activity="multiple-choice-quiz"][data-correct="true"] .response .icon-thumb-up,
+            [data-activity="multiple-choice-quiz"][data-correct="false"] .response .icon-thumb-down { display: block; }
         }
     </style>
     <div class="row bg-3 multi-choice-panel light-left">
-        <div>
-            <p>Kyle has brought in his medical prescription and his passport. Which of these documents verifies Kyle’s identity?</p>
-            <p><strong>Select</strong> one.</p>
-            <form class="multiple-choice-quiz margin-top-md" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit" data-instant-feedback="mouse">
-                <ul class="multiple-choice-quiz-options">
-                    <li>There’s no health and safety risk here.</li>
-                    <li>An angry customer isn’t a health and safety risk.</li>
-                    <li data-required="true">There’s definitely a health and safety risk here.</li>
-                </ul>
-                <div class="modal correct">
-                    <h1>That's right!</h1>
-                    <p>The passport is Kyle’s <strong>POI</strong> document. POI documents are used to verify an applicant’s <strong>identity</strong>.</p>
-                    <p>Not every official document is considered a valid POI document.</p>
-                </div>
-                <div class="modal incorrect">
-                    <h1>Actually...</h1>
-                    <p>A prescription from a doctor is not a POI document.</p>
-                    <p>Not every official document is considered a valid POI document.</p>
-                    <p>The passport is Kyle’s <strong>POI</strong> document. POI documents are the ones used to verify an applicant’s <strong>identity</strong>.</p>
-                </div>
-            </form>
-        </div>
-        <div class="response">
-            <div class="correct">
-                <div data-svg="icon-thumb-up"></div>
-                <p>You’re absolutely right. John’s already behaving aggressively, which could escalate once he discovers his parcel is missing. You can have long term physical and psychological effects from dealing with aggressive customers. Read on to see what happens next.</p>
-            </div>
-            <div class="incorrect">
-                <div data-svg="icon-thumb-down"></div>
-                <p>Actually, there is a risk. In interactions with aggressive customers, we can experience emotional distress and/or physical danger that can have long-term impacts on our physical and mental health. Read on to see what happens next.</p>
+        <div data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit">
+            <div class="question">
+                <p>Kyle has brought in his medical prescription and his passport. Which of these documents verifies Kyle’s identity?</p>
+                <p><strong>Select</strong> one.</p>
+                <form class="multiple-choice-quiz margin-top-md">
+                    <ul class="multiple-choice-quiz-options">
+                        <li>There’s no health and safety risk here.</li>
+                        <li>An angry customer isn’t a health and safety risk.</li>
+                        <li data-required="true">There’s definitely a health and safety risk here.</li>
+                    </ul>
+                    <div data-response="correct">
+                        <p>You’re absolutely right. John’s already behaving aggressively, which could escalate once he discovers his parcel is missing. You can have long term physical and psychological effects from dealing with aggressive customers. Read on to see what happens next.</p>
+                    </div>
+                    <div data-response="incorrect">
+                        <p>Actually, there is a risk. In interactions with aggressive customers, we can experience emotional distress and/or physical danger that can have long-term impacts on our physical and mental health. Read on to see what happens next.</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
