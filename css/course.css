@@ -141,13 +141,10 @@
 #page-m1_t3_p1 #banner { background: url(../content/images/t3_banner_sm.jpg); background-size: cover; background-position: 25%; }
 #page-m1_t3_p1 #banner-message { bottom: 5%; right: 5%; }
 @media (min-width: 980px) {
-    #page-m1_t3_p1 #banner-message { bottom: auto; right: 15px; left: auto; top: 3%; }
-}
-@media (min-width: 1024px) {
-    #page-m1_t3_p1 #banner-message { top: 15px; }
+    #page-m1_t3_p1 #banner-message { bottom: auto; right: 15px; left: auto; top: 50%; transform: translateY(-50%); }
 }
 @media (min-width: 1200px) {
-    #page-m1_t3_p1 #banner-message { right: 0; top: 50px; }
+    #page-m1_t3_p1 #banner-message { right: 0; top: 50px; transform: none; }
 }
 
 #page-m1_t3_p1 [data-idx="2"] .key-message p { max-width: 690px; }
