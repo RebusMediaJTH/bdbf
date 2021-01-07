@@ -152,3 +152,9 @@
 
 #page-m1_t3_p1 [data-idx="2"] .key-message p { max-width: 690px; }
 #page-m1_t3_p1 [data-idx="4"] .key-message p { max-width: 650px; }
+
+#page-m1_t4_p1 #banner { background: url(../content/images/t4_banner_sm.jpg); background-size: cover; background-position: 0; }
+#page-m1_t4_p1 #banner-message { left: 50%; transform: translateX(-50%); bottom: 5%; }
+@media (min-width: 980px) {
+    #page-m1_t4_p1 #banner-message { bottom: auto; right: auto; left: 15%; top: 50%; transform: translateY(-50%); }
+}
