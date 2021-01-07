@@ -106,9 +106,6 @@
 @media (min-width: 768px) {
     #page-m1_t1_p1 #banner-message { bottom: auto; left: auto; top: 4%; right: 20px; }
 }
-@media (min-width: 992px) {
-  
-}
 
 #page-m1_t2_p1 #banner { background: url(../content/images/t2_banner_xs.jpg); background-size: cover; }
 #page-m1_t2_p1 #banner-message { bottom: 10px; left: 86px; }
@@ -139,4 +136,16 @@
     .key-message-panel > div:not(.lock-overlay) {
         padding-left: 100px;
     }
+}
+
+#page-m1_t3_p1 #banner { background: url(../content/images/t3_banner_sm.jpg); background-size: cover; background-position: 25%; }
+#page-m1_t3_p1 #banner-message { bottom: 5%; right: 5%; }
+@media (min-width: 980px) {
+    #page-m1_t3_p1 #banner-message { bottom: auto; right: 15px; left: auto; top: 3%; }
+}
+@media (min-width: 1024px) {
+    #page-m1_t3_p1 #banner-message { top: 15px; }
+}
+@media (min-width: 1200px) {
+    #page-m1_t3_p1 #banner-message { right: 0; top: 50px; }
 }

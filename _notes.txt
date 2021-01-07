@@ -8,6 +8,11 @@
 Questions for client
 ====================
 
+> Squiggles
+  > We can't combine panels because maybe they should be locked - such as after a video
+  > So, we need to would need to break it up (tough time getting that to join for all panels!)
+  > or somehow apply it after the bg (we'd need a bg for the whole vertical columns) but before all the content is added. No idea how.
+  > even if we could do that, there's no way we could get it over the footer
 > http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t2_p1&initialised=true
   When you’re ready, select Continue to see how Carmel manages this risk.
   What do we do? Lock the panel?
