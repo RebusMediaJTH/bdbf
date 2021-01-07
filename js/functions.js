@@ -1932,6 +1932,99 @@ rebus.pageInit = (function ($, undefined) {
         };
 
         /*
+            <div data-activity="accordion" data-mandatory="true" class="default-accordion-style">
+                <div class="accordion-item" role="tablist" aria-multiselectable="true">
+	                <a class="accordion-tab">
+                        <h3>...</h3>
+	                    <span class="plus"></span>
+                        <img class="done-indicator" src="images/icon-tick-grey.png" alt="" />
+                    </a>
+	                <div class="accordion-panel">
+	                    ...
+	                </div>
+                </div>
+            </div>
+        */
+       var initAccordians = function () {
+            $('[data-activity="accordion"]').each(function (actIdx) {
+                var $activity = $(this),
+                    details = rebus.stateHelper.getElementDetails($activity),
+                    activityId = details.storeId,
+                    btnsState = details.state,
+                    btnsDefaultState = '',
+                    activityStarted;
+
+                $activity.find('.accordion-item').each(function (aIdx) {
+                    var cardid = 'act' + actIdx + '_c' + aIdx,
+                        tabid = cardid + '_tab' + aIdx,
+                        tabpanelid = cardid + '_tabpanel' + aIdx,
+                        $aCard = $(this),
+                        $aTab = $('.accordion-tab', $aCard),
+                        $aTabPanel = $('.accordion-panel', $aCard);
+
+                    $aCard.attr({
+                        id: cardid
+                    });
+
+                    $aTab.attr({
+                        'id': tabid,
+                        'role': 'tab',
+                        'data-idx': aIdx,
+                        'data-toggle': 'collapse',
+                        'data-parent': '#' + cardid,
+                        'href': '#' + tabpanelid,
+                        'aria-expanded': "false",
+                        'aria-controls': tabpanelid
+                    }).append('<span class="done-indicator sr-only">Visited</span>').addClass('collapsed');
+
+                    $aTabPanel.attr({
+                        'id': tabpanelid,
+                        'role': 'tabpanel',
+                        'aria-labelledby': tabid
+                    }).addClass('collapse');
+
+                    $aTab.append('<span class="done-indicator sr-only">Visited</span>');
+
+                    if (btnsState) {
+                        if (btnsState.charAt(aIdx) === '1') {
+                            $aTab.addClass('item-done');
+                            activityStarted = true;
+                        }
+                    }
+                    else {
+                        btnsDefaultState += '0';
+                    }
+                });
+
+                if (activityStarted) {
+                    panels.markActivityAsStarted($activity);
+                }
+
+                rebus.stateHelper.setElementState($activity, btnsState || btnsDefaultState);
+            });
+
+            $body.on('click', '.accordion-tab', function () {
+                var $btn = $(this),
+                    $activity = $btn.closest('[data-activity]'),
+                    mandatory = $activity.data('mandatory'),
+                    required = mandatory === true ? $activity.find('.accordion-tab').length : mandatory,
+                    feedback = $btn.data('accordion-panel');
+                $btn.addClass('item-done');
+                rebus.stateHelper.setElementState($activity, '1', $btn.data('idx'));
+                if ($activity.find('.item-done').length >= required) {
+                    panels.setActivityAsComplete($activity);
+                    if (feedback) {
+                        $(feedback).addClass('done');
+                    }
+                }
+                else {
+                    panels.markActivityAsStarted($activity);
+                }
+                rebus.stateHelper.save();
+            });
+        };
+
+        /*
             [data-show-answer]: Boolean
             [data-type]: 'checkbox' | 'radio'
             [data-answer]: 'any' | 'anyOrNone' - Use instead of individual [data-required] attributes on the items. Can be, used in the future, for more complex requirements
@@ -2277,6 +2370,7 @@ rebus.pageInit = (function ($, undefined) {
                 initMatchBtns();
                 initVideos();
                 initChooseHotspots();
+                initAccordians();
                 multiChoiceQuiz.init();
                 //initSortable();
             },

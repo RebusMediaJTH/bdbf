@@ -14,16 +14,89 @@
     </div>
   </div>
   <div class="horizontal-panels container">
-    <div class="row bg-1 scrolldown-learn-more-panel">
-      <div class="col-sm-8">
-        <p>We work in teams that are as diverse as the communities in which we operate. We aim to create an inclusive environment where everyone feels safe, respected and able to be themselves at work. An environment where everyone can be their true self and feel like they belong.</p>
-      </div>
-      <div class="col-sm-4 last">
-        <div class="scrolldown-learn-more">
-          Scroll down to learn more
-          <div data-svg="icon-arrow-down"></div>
+    <div class="row bg-3">
+      <div class="col-sm-12">
+        <p>How do we ensure we prioritise our physical and mental health every day and every moment?</p>
+        <p><strong>Select</strong> each item to find out.</p>
+        <style>
+            .accordion { background: #fff; }
+            .accordion-item { margin-bottom: 1px; }
+            .accordion-tab { 
+                display: flex; justify-content: space-between;
+                background: #A7627D; color: #fff !important;
+                font-size: 2rem; font-weight: 500; text-decoration: none !important;
+                padding: 20px 16px 6px 16px; 
+                transition: background-color 0.25s;
+            }
+            .accordion-tab:hover,
+            .accordion-tab:focus,
+            .accordion-tab:active { background: #590D2B; }
+            .accordion-tab > div { display: flex; align-items: center; }
+            .accordion-panel { font-weight: 200; }
+            .accordion-panel > div { padding: 10px 4px; }
+
+            .accordion-item .icon-plus { width: 16px; height: 16px; margin-right: 10px; stroke: #fff; }
+            .accordion-item .icon-plus { transition: transform 0.5s; transform-origin: center; }
+            .accordion-item .icon-plus { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px; }
+            .accordion-item .icon-plus .horizontal-line { transition: transform 0.5s; transform-origin: center; }
+
+            .accordion-item .expanding .icon-plus,
+            .accordion-item .expanded:not(.closing) .icon-plus { transform: rotate(90deg); }
+            .accordion-item .expanding .icon-plus .horizontal-line,
+            .accordion-item .expanded:not(.closing) .icon-plus .horizontal-line { transform: scale(0); }
+
+            .accordion-tab:not(.item-done) .done-indicator { display: none; }
+            .accordion-tab .icon-tick { width: 26px; height: 20px; margin-left: 10px; fill: #fff; }
+            @media (min-width: 768px) {
+                .accordion-panel > div { padding: 20px 34px; }
+            }
+        </style>
+        <div data-activity="accordion" data-mandatory="true" class="margin-top-md margin-bottom-md">
+            <div class="accordion-item" role="tablist" aria-multiselectable="true">
+                <a class="accordion-tab">
+                    <div>
+                        <div data-svg="icon-plus"></div>
+                        <h3>Proven Processes</h3>
+                    </div>
+                    <div class="done-indicator"><div data-svg="icon-tick"></div><span class="sr-only">Complete</span></div>
+                </a>
+                <div class="accordion-panel">
+                    <div>
+                        <p>Humans are not perfect. We all follow our work processes to guide us in the safest way of doing something during our busy and demanding workday.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" role="tablist" aria-multiselectable="true">
+                <a class="accordion-tab">
+                    <div>
+                        <div data-svg="icon-plus"></div>
+                        <h3>Your choice of actions</h3>
+                    </div>
+                    <div class="done-indicator"><div data-svg="icon-tick"></div><span class="sr-only">Complete</span></div>
+                </a>
+                <div class="accordion-panel">
+                    <div>
+                        <p>Every moment you can choose how you do something. Whether it’s how you lift a box, stand at the counter, pick something up, or how you react to your customers and colleagues, always choose the safe way to look after yourself and everyone around you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" role="tablist" aria-multiselectable="true">
+                <a class="accordion-tab">
+                    <div>
+                        <div data-svg="icon-plus"></div>
+                        <h3>Treating everyone with trust and respect</h3>
+                    </div>
+                    <div class="done-indicator"><div data-svg="icon-tick"></div><span class="sr-only">Complete</span></div>
+                </a>
+                <div class="accordion-panel">
+                    <div>
+                        <p>We all have a role in creating an inclusive workplace. We can’t underestimate the impact of checking in with each other and making sure everyone is included.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div> 
+        <p><strong>Read</strong> the following scenario to learn more.</p>
+      </div>
     </div>
     <div class="row bg-1">
       <div class="col-sm-12">
