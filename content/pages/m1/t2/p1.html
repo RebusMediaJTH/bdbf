@@ -18,39 +18,6 @@
       <div class="col-sm-12">
         <p>How do we ensure we prioritise our physical and mental health every day and every moment?</p>
         <p><strong>Select</strong> each item to find out.</p>
-        <style>
-            .accordion { background: #fff; }
-            .accordion-item { margin-bottom: 1px; }
-            .accordion-tab { 
-                display: flex; justify-content: space-between;
-                background: #A7627D; color: #fff !important;
-                font-size: 2rem; font-weight: 500; text-decoration: none !important;
-                padding: 20px 16px 6px 16px; 
-                transition: background-color 0.25s;
-            }
-            .accordion-tab:hover,
-            .accordion-tab:focus,
-            .accordion-tab:active { background: #590D2B; }
-            .accordion-tab > div { display: flex; align-items: center; }
-            .accordion-panel { font-weight: 200; }
-            .accordion-panel > div { padding: 10px 4px; }
-
-            .accordion-item .icon-plus { width: 16px; height: 16px; margin-right: 10px; stroke: #fff; }
-            .accordion-item .icon-plus { transition: transform 0.5s; transform-origin: center; }
-            .accordion-item .icon-plus { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px; }
-            .accordion-item .icon-plus .horizontal-line { transition: transform 0.5s; transform-origin: center; }
-
-            .accordion-item .expanding .icon-plus,
-            .accordion-item .expanded:not(.closing) .icon-plus { transform: rotate(90deg); }
-            .accordion-item .expanding .icon-plus .horizontal-line,
-            .accordion-item .expanded:not(.closing) .icon-plus .horizontal-line { transform: scale(0); }
-
-            .accordion-tab:not(.item-done) .done-indicator { display: none; }
-            .accordion-tab .icon-tick { width: 26px; height: 20px; margin-left: 10px; fill: #fff; }
-            @media (min-width: 768px) {
-                .accordion-panel > div { padding: 20px 34px; }
-            }
-        </style>
         <div data-activity="accordion" data-mandatory="true" class="margin-top-md margin-bottom-md">
             <div class="accordion-item" role="tablist" aria-multiselectable="true">
                 <a class="accordion-tab">
@@ -98,6 +65,63 @@
         <p><strong>Read</strong> the following scenario to learn more.</p>
       </div>
     </div>
+    <div class="row bg-3 text-and-img reversed align-center">
+        <h2>Our choices matter</h2>
+        <div class="col-md-5 img">
+            <img class="img-responsive center-block" src="content/images/t2_s1_p2.jpg" alt="APG employee serving customer" />
+        </div>
+        <div class="col-md-7 text">
+            <h2>Our choices matter</h2>
+            <p>John arrives at Carmel’s counter to collect his parcel. He ignores Carmel’s greeting and shoves his parcel details towards her. When Carmel requests John’s ID, he shouts at her to stop wasting his time. Carmel goes out the back to find John’s package, but can’t find it anywhere. She’s going to have to tell him that his parcel isn’t there.</p>
+        </div>
+    </div>
+    <style>
+        @media (min-width: 768px) {
+            .multi-choice-panel { display: flex; padding: 0 !important; }
+            .multi-choice-panel > div { padding: 50px; }
+            .multi-choice-panel > :first-child { width: 58%; }
+            .multi-choice-panel > :last-child { width: 42%; }
+            .multi-choice-panel.light-left  > :first-child,
+            .multi-choice-panel.light-right  > :last-child { background: #fcfcfc; }
+            .multi-choice-panel.light-left  > :last-child,
+            .multi-choice-panel.light-right  > :first-child { background: #f8f8f8; }
+            .multi-choice-panel .response { display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 200; }
+            .multi-choice-panel .response > div { display: flex; flex-direction: column; align-items: center; }
+            .multi-choice-panel .response svg { width: 105px; height: 105px; margin-bottom: 25px; }
+        }
+    </style>
+    <div class="row bg-3 multi-choice-panel light-left">
+        <div>
+            <p>Kyle has brought in his medical prescription and his passport. Which of these documents verifies Kyle’s identity?</p>
+            <p><strong>Select</strong> one.</p>
+            <form class="multiple-choice-quiz margin-top-md" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial" data-submit="Submit" data-instant-feedback="mouse">
+                <ul class="multiple-choice-quiz-options">
+                    <li>There’s no health and safety risk here.</li>
+                    <li>An angry customer isn’t a health and safety risk.</li>
+                    <li data-required="true">There’s definitely a health and safety risk here.</li>
+                </ul>
+                <div class="modal correct">
+                    <h1>That's right!</h1>
+                    <p>The passport is Kyle’s <strong>POI</strong> document. POI documents are used to verify an applicant’s <strong>identity</strong>.</p>
+                    <p>Not every official document is considered a valid POI document.</p>
+                </div>
+                <div class="modal incorrect">
+                    <h1>Actually...</h1>
+                    <p>A prescription from a doctor is not a POI document.</p>
+                    <p>Not every official document is considered a valid POI document.</p>
+                    <p>The passport is Kyle’s <strong>POI</strong> document. POI documents are the ones used to verify an applicant’s <strong>identity</strong>.</p>
+                </div>
+            </form>
+        </div>
+        <div class="response">
+            <div>
+                <div data-svg="icon-thumb-up"></div>
+                <p>You’re absolutely right. John’s already behaving aggressively, which could escalate once he discovers his parcel is missing. You can have long term physical and psychological effects from dealing with aggressive customers. Read on to see what happens next.</p>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row bg-1">
       <div class="col-sm-12">
         <h2>It’s important to us</h2>
@@ -109,21 +133,6 @@
                 </video>
             </div>
         </div>
-      </div>
-    </div>
-    <div class="row bg-1 text-and-img reversed align-center">
-      <h2>Everyone should have a voice</h2>
-      <div class="col-md-5 img">
-        <img class="img-responsive center-block" src="content/images/t1_s1_p4.jpg" alt="Smiling girl wearing a hearing aid" />
-      </div>
-      <div class="col-md-7 text">
-        <h2>Everyone should have a voice</h2>
-        <p><strong>Read</strong> the scenario to learn more.</p>
-        <p>Sharon is deaf in one ear and hard of hearing in the other. </p>
-        <p>While you can’t tell from looking at her, for Sharon to be able to communicate in the weekly team meetings, she needs a meeting room with a hearing loop so that she can connect her hearing aid. She also needs to be able to see people’s faces so that she can lip read.</p>
-        <p>Last week, instead of the usual sit-down discussion in the meeting room, Sharon’s team organised a morning tea in the lunchroom to celebrate a birthday. Everyone was free to walk around, chat and eat.</p>
-        <p><strong>Select</strong> Play to join in the celebrations.</p>
-        <div class="audio-control" data-audio-file="t1_s1_p2"></div>
       </div>
     </div>
     <div class="row bg-2">

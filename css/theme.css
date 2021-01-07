@@ -97,6 +97,43 @@ transition: background-color 0.25s, color 0.25s;
 .circle-btn:focus .front { transform: rotateY(180deg); }
 
 /*
+    COMPONENTS
+*/
+
+.accordion { background: #fff; }
+.accordion-item { margin-bottom: 1px; }
+.accordion-tab { 
+    display: flex; justify-content: space-between;
+    background: #A7627D; color: #fff !important;
+    font-size: 2rem; font-weight: 500; text-decoration: none !important;
+    padding: 20px 16px 6px 16px; 
+    transition: background-color 0.25s;
+}
+.accordion-tab:hover,
+.accordion-tab:focus,
+.accordion-tab:active { background: #590D2B; }
+.accordion-tab > div { display: flex; align-items: center; }
+.accordion-panel { font-weight: 200; }
+.accordion-panel > div { padding: 10px 4px; }
+
+.accordion-item .icon-plus { width: 16px; height: 16px; margin-right: 10px; stroke: #fff; }
+.accordion-item .icon-plus { transition: transform 0.5s; transform-origin: center; }
+.accordion-item .icon-plus { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px; }
+.accordion-item .icon-plus .horizontal-line { transition: transform 0.5s; transform-origin: center; }
+
+.accordion-item .expanding .icon-plus,
+.accordion-item .expanded:not(.closing) .icon-plus { transform: rotate(90deg); }
+.accordion-item .expanding .icon-plus .horizontal-line,
+.accordion-item .expanded:not(.closing) .icon-plus .horizontal-line { transform: scale(0); }
+
+.accordion-tab:not(.item-done) .done-indicator { display: none; }
+.accordion-tab .icon-tick { width: 26px; height: 20px; margin-left: 10px; fill: #fff; }
+
+@media (min-width: 768px) {
+    .accordion-panel > div { padding: 20px 34px; }
+}
+
+/*
     MISC
 */
 
