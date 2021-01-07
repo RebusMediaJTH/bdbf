@@ -2181,7 +2181,7 @@ rebus.pageInit = (function ($, undefined) {
 
                         if (hasFeedback) {
                             $ul.after([
-                                '<button type="button" class="btn btn-red btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button>',
+                                '<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>',
                                 (hasGiveUpModal ? '<button type="button" class="btn btn-red btn-tried btn-block-lte-xs" disabled>I\'ve tried. I don\'t know</button>' : null)
                             ].join('\n'));
                             if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
@@ -2340,27 +2340,6 @@ rebus.pageInit = (function ($, undefined) {
                 }
             };
         })();
-
-        /*
-            data-mandatory = true | partial
-            Note, not yet implemented; simply click the submit button to complete
-        */
-        //var initSortable = function () {
-        //    $('[data-activity="sortable"]').each(function () {
-        //        var $activity = $(this);
-        //        $activity.find('.activity-sortable').sortable().find('li').attr('tabindex', '0');
-        //        $activity.append('<button type="button" class="btn btn-red margin-top-xs btn-submit-sortable-activity">Submit</button>');
-        //        $activity.find('.modal').attr('id', $activity.attr('data-storeid') + '-modal').addClass('modal-template activity-sortable-modal').detach().appendTo($body);
-        //    });
-        //    $body.on('click', '.btn-submit-sortable-activity', function () {
-        //        var $btn = $(this),
-        //            $activity = $btn.closest('[data-activity]');
-        //        modalTemplates.setFocusOnClosed($btn);
-        //        $('#' + $activity.attr('data-storeid') + '-modal').modal();
-        //        panels.setActivityAsComplete($activity);
-        //        rebus.stateHelper.save();
-        //    });
-        //};
 
         return {
             init: function () {
