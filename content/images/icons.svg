@@ -142,4 +142,8 @@
     </g>
   </g>
 
+  <g id="icon-radio" data-viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" stroke-width="2" />
+  </g>
+
 </svg>
