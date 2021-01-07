@@ -199,16 +199,18 @@ transition: background-color 0.25s, color 0.25s;
     .scrolldown-learn-more-panel > div { float: none; }
 }
 
-.text-and-img.reversed > h2 { padding: 0 15px; }
+.text-and-img > h2 { padding: 0 15px; }
+.text-and-img .text h2 { display: none; }
+.text-and-img .img { margin-top: 15px; }
 .text-and-img.reversed .img { margin-bottom: 15px; }
-.text-and-img.reversed .text h2 { display: none; }
 @media (min-width: 992px) {
-    .text-and-img.reversed { display: flex; flex-direction: row-reverse; }
+    .text-and-img > h2 { display: none; }
+    .text-and-img .text h2 { display: block; }
+    .text-and-img { display: flex; }
     .text-and-img.align-center { align-items: center; }
-    .text-and-img.reversed > h2 { display: none; }
+    .text-and-img .img { margin: 0; }
+    .text-and-img.reversed { flex-direction: row-reverse; }
     .text-and-img.reversed > div { float: none; }
-    .text-and-img.reversed .text h2 { display: block; }
-    .text-and-img.reversed .img { margin-bottom: 0; }
 }
 
 .key-message-panel { padding-left: 0 !important; padding-right: 0 !important; }
@@ -219,7 +221,7 @@ transition: background-color 0.25s, color 0.25s;
 .key-message-panel.align.center > div:not(.lock-overlay) { align-items: center; }
 .key-message { font-size: 7.5vw; font-weight: 500; color: #590D2B; }
 .key-message img { margin-right: 19px; }
-.key-message p { max-width: 510px; margin: 0; }
+.key-message p { max-width: 510px; margin: 0; font-style: italic; }
 @media (min-width: 467px) {
     .key-message { font-size: 3.5rem; }
 }

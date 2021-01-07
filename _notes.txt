@@ -3,3 +3,11 @@
 > Audio control - can grab from iceberg
 > From menu, remove: $('html').addClass('topic-0-complete');
 > Compress bootstrap.min
+
+
+Questions for client
+====================
+
+> http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t2_p1&initialised=true
+  When you’re ready, select Continue to see how Carmel manages this risk.
+  What do we do? Lock the panel?
