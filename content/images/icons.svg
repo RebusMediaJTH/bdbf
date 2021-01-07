@@ -66,6 +66,24 @@
     </g>
   </g>
 
+  <!-- icon-want-to-know-more-talking -->
+  <g id="icon-want-to-know-more-talking" data-viewbox="0 0 84 84">
+    <g transform="translate(-77 -4052)">
+      <path d="M42,0A42,42,0,1,1,0,42,42,42,0,0,1,42,0Z" transform="translate(77 4052)" fill="#fff"/>
+      <g transform="translate(-2460.651 3029.853)">
+        <path d="M2581.137,1072.654a1.03,1.03,0,0,0,1.758-.728v-5.149h3.09a3.093,3.093,0,0,0,3.089-3.089v-20.6a3.093,3.093,0,0,0-3.089-3.089h-30.9a3.093,3.093,0,0,0-3.09,3.089v20.6a3.093,3.093,0,0,0,3.09,3.089h20.171Zm-27.078-8.967v-20.6a1.031,1.031,0,0,1,1.03-1.03h30.9a1.031,1.031,0,0,1,1.03,1.03v20.6a1.031,1.031,0,0,1-1.03,1.03h-4.12a1.03,1.03,0,0,0-1.03,1.03v3.693l-4.422-4.421a1.027,1.027,0,0,0-.728-.3h-20.6A1.031,1.031,0,0,1,2554.06,1063.687Z" transform="translate(0)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <path d="M2716.045,1152h-10.3a1.03,1.03,0,0,0,0,2.06h10.3a1.031,1.031,0,0,1,1.03,1.03v20.6a1.031,1.031,0,0,1-1.03,1.03h-22.657a1.028,1.028,0,0,0-.728.3l-4.421,4.421v-3.693a1.03,1.03,0,0,0-1.03-1.03h-4.119a1.031,1.031,0,0,1-1.03-1.03v-8.239a1.03,1.03,0,1,0-2.06,0v8.239a3.093,3.093,0,0,0,3.09,3.089h3.09v5.149a1.03,1.03,0,0,0,1.758.728l5.877-5.877h22.23a3.093,3.093,0,0,0,3.09-3.089v-20.6A3.093,3.093,0,0,0,2716.045,1152Z" transform="translate(-111.522 -97.582)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <circle cx="1" cy="1" r="1" transform="translate(2556.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <circle cx="1" cy="1" r="1" transform="translate(2561.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <ellipse cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(2565.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <circle cx="1" cy="1" r="1" transform="translate(2569.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <circle cx="1" cy="1" r="1" transform="translate(2573.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <circle cx="1" cy="1" r="1" transform="translate(2577.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+        <ellipse cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(2582.651 1051.147)" fill="#590d2b" stroke="#590d2b" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+
   <!-- icon-topic-list -->
   <g id="icon-topic-list" data-viewbox="0 0 25.674 25.674">
     <g transform="translate(-77.219 -2962.166)">
