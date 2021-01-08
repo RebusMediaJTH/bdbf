@@ -1482,7 +1482,7 @@ rebus.pageInit = (function ($, undefined) {
         var buildAudioControlBtn = function (fileid) {
             return [
                 '<button type="button" class="audio-btn" aria-label="Toggle audio" data-audio-file="' + fileid + '">',
-                '<img src="images/btn_listen.png" alt="" />',
+                    '<img src="images/btn_listen.png" alt="" />',
                 '</button>'
             ].join('\n');
         };
@@ -1935,6 +1935,41 @@ rebus.pageInit = (function ($, undefined) {
                 $('video').on('play', setActivityAsComplete);
                 $body.on('click', '.btn-read-transcript', setActivityAsComplete);
             }
+        };
+
+        var initAudios = function () {
+            var setActivityAsComplete = function (id) {
+                var $activity = $('[data-audio-file="' + id + '"]').closest('[data-activity="audio"]'),
+                    $panel;
+                if ($activity.length && $activity.data('mandatory')) {
+                    $panel = $activity.closest('.row[data-storeid]');
+                    if (rebus.stateHelper.getElementDetails($panel).state[$activity.data('mandatory-idx')] !== '1') {
+                        panels.setActivityAsComplete($activity, true);
+                    }
+                }
+            };
+            if (rebus.config.audioMustBePlayedThrough) {
+                $('body').on('audioend', function () {
+                    setActivityAsComplete(arguments[1].id);
+                });    
+                // $body.on('slid.bs.carousel', '.video-transcript .carousel', function () {
+                //     if ($('.item:last', this).hasClass('active')) {
+                //         setActivityAsComplete.call(this);
+                //     }
+                // });
+            }
+            else {
+                $('body').on('audioplay', function () {
+                    setActivityAsComplete(arguments[1].id);
+                });
+                //$body.on('click', '.btn-read-transcript', setActivityAsComplete);
+            }
+            //<div class="audio-control" data-audio-file="t1_s1_p2"></div>
+            // $('[data-activity="audio"]').each(function () {
+            //     var $activity = $(this),
+            //         id = $activity.data('audio-file');
+            //     $activity.append('<div class="audio-control" data-audio-file="' + id + '"></div>');
+            // });
         };
 
         var initChooseHotspots = function () {
@@ -2468,6 +2503,7 @@ rebus.pageInit = (function ($, undefined) {
                 initClickAreas();
                 initMatchBtns();
                 initVideos();
+                initAudios();
                 initChooseHotspots();
                 initAccordians();
                 multiChoiceQuiz.init();
@@ -2887,13 +2923,17 @@ rebus.audio = (function ($) {
                         $('html').removeClass('audio-buffering');
                         audio.off('end').on('end', function () {
                             activeAudio = null;
+                            $('body').trigger('audioend', { id: id });
                         }).play();
+                        $('body').trigger('audioplay', { id: id });
                     });
                 }
                 else {
                     audio.off('end').on('end', function () {
                         activeAudio = null;
+                        $('body').trigger('audioend', { id: id });
                     }).play();
+                    $('body').trigger('audioplay', { id: id });
                 }
                 activeAudio = audio;
             }
