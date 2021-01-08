@@ -2285,7 +2285,9 @@ rebus.pageInit = (function ($, undefined) {
                         // }
 
                         //if (hasFeedback) {
-                            $ul.after('<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>');
+                            if (!$('.btn-check-multi-choice-answer', $activity).length) {
+                                $ul.after('<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>');
+                            }
                             if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
                                 $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
                             }
