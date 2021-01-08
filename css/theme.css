@@ -276,3 +276,7 @@ transition: background-color 0.25s, color 0.25s;
     [data-activity="multiple-choice-quiz"] .response { width: 42%; }
     [data-activity="multiple-choice-quiz"] .response svg { margin-bottom: 25px; }
 }
+
+html.final-topic .final-panel .hide-when-almost-done,
+html:not(.final-topic) .final-panel .show-when-almost-done { display: none; }
+.final-panel .show-when-almost-done { font-weight: 500; }

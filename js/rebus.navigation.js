@@ -340,6 +340,16 @@ rebus.navigation = (function ($, undefined) {
                 $('.current-page').text(page.idxWithinTopic + 1);
                 $('.total-pages').text(page.topic.pages.length);
             }
+            var completedTopics = 0;
+            $.each(page.module.topics, function (i) {
+                //isTopicComplete: function (moduleIdx, topicIdx)
+                if (rebus.stateHelper.isTopicComplete(page.module.idx, i)) {
+                    completedTopics++;
+                }
+            });
+            if (completedTopics >= page.module.topics.length - 1) {
+                $html.addClass('final-topic');
+            }
         }
 
         if (page.location === 'module' || page.location === 'topic') {
