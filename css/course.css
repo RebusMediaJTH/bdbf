@@ -203,4 +203,9 @@
     #page-m1_t5_p1 [data-idx="2"] > div:not(.lock-overlay) { padding-left: 180px; }
 }
 
+@media (min-width: 768px) {
+    #page-m1_t5_p1 [data-idx="4"] { padding-top: 60px; }
+    #page-m1_t5_p1 [data-idx="4"] > div:not(.lock-overlay) { padding-left: 140px; }
+}
+
 
