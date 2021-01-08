@@ -1,4 +1,5 @@
 ﻿
+> Key messages animate in as they are scrolled into view
 > Videos - play icon. Will need autoplay from sydney trains
 > Audio control - can grab from iceberg
 > From menu, remove: $('html').addClass('topic-0-complete');
