@@ -2370,7 +2370,7 @@ rebus.pageInit = (function ($, undefined) {
                             $li.attr({ role: 'presentation', 'data-response': response }).empty().append([
                                 inputHTML,
                                 '<label for="' + optionId + '">',
-                                '<span class="indicator" aria-hidden="true"><div data-svg="icon-radio"></div></span>',
+                                '<span class="indicator" aria-hidden="true"><div data-svg="icon-' + type + '"></div></span>',
                                 '<span class="correct-indicator" aria-hidden="true"><img src="images/icon_tick_green.png" alt="" /></span>',
                                 label,
                                 '</label>',

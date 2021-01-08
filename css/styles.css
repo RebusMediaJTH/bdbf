@@ -849,8 +849,12 @@ ul.multiple-choice-quiz-options { list-style: none; padding: 0; }
 .multiple-choice-quiz-options .indicator { flex-shrink: 0; width: 24px; height: 24px; margin: 0 8px 0 0; }
 /* pointer-events: none; ensures the indicator is clickable in IE11: https://stackoverflow.com/questions/20198137/image-label-for-input-in-a-form-not-clickable-in-ie11 */
 /* .multiple-choice-quiz-options .indicator > img { position: absolute; left: 0; top: 0; display: block; pointer-events: none; } */
-.multiple-choice-quiz-options .indicator > svg { pointer-events: none; width: 24px; height: 24px; stroke: #4D4D55; fill: #fff; transition: fill 0.25s; }
-.multiple-choice-quiz-options li.checked .indicator > svg { fill: #a7627d; }
+.multiple-choice-quiz-options .indicator > svg { pointer-events: none; width: 24px; height: 24px; }
+.multiple-choice-quiz-options .indicator .icon-radio { stroke: #4D4D55; fill: #fff; transition: fill 0.25s; }
+.multiple-choice-quiz-options .indicator .icon-checkbox rect { stroke: #4D4D55; fill: #fff; }
+.multiple-choice-quiz-options .indicator .icon-checkbox path { fill: #fff; transition: fill 0.25s; }
+.multiple-choice-quiz-options li.checked .indicator .icon-radio { fill: #a7627d; }
+.multiple-choice-quiz-options li.checked .indicator .icon-checkbox path { fill: #590d2b; }
 .multiple-choice-quiz-options .correct-indicator { display: none; position: absolute; left: -10px; top: 10px; width: 20px; height: 20px; }
 .multiple-choice-quiz-options .correct-indicator > img { display: block; width: 100%; }
 .show-answer .multiple-choice-quiz-options [data-required="true"] .correct-indicator { display: block; }

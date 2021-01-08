@@ -204,6 +204,12 @@
   <g id="icon-radio" data-viewbox="0 0 24 24">
     <circle cx="12" cy="12" r="10" stroke-width="2" />
   </g>
+  
+  <!-- icon-checkbox -->
+  <g id="icon-checkbox" data-viewbox="0 0 97.6 97.6">
+    <rect x="3.8" y="3.8" class="st0" width="90" height="90" stroke-width="7.6056" />
+    <path class="st1" d="M37.7,74.3L14.3,50.7l6.9-6.9l16.5,16.6l40.8-41.1l6.9,6.9L37.7,74.3z"/>
+  </g>
 
   <!-- icon-emoji-clap -->
   <g id="icon-emoji-clap" data-viewbox="0 0 71 71">
