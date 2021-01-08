@@ -190,11 +190,17 @@
 .social-media-options li svg { width: 71px; height: 71px; }
 }
 
-#page-m1_t4_p1 [data-idx="2"] .key-message p { max-width:initial; max-width: unset; }
+#page-m1_t4_p1 [data-idx="2"] .key-message p { max-width: initial; max-width: unset; }
 
 #page-m1_t5_p1 #banner { background: url(../content/images/t5_banner_sm.jpg); background-size: cover; background-position: 25%; }
 #page-m1_t5_p1 #banner-message { font-size: 2.57rem; left: 10px; bottom: 10px; }
 @media (min-width: 768px) {
     #page-m1_t5_p1 #banner-message { font-size: 3rem; bottom: auto; right: auto; left: 55%; top: 50%; transform: translateY(-50%); }
 }
+
+#page-m1_t5_p1 [data-idx="2"] .key-message p { max-width: 610px; }
+@media (min-width: 768px) {
+    #page-m1_t5_p1 [data-idx="2"] > div:not(.lock-overlay) { padding-left: 180px; }
+}
+
 

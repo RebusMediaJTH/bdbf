@@ -230,6 +230,7 @@ transition: background-color 0.25s, color 0.25s;
 .key-message { font-size: 7.5vw; font-weight: 500; color: #590D2B; }
 .key-message img { margin-right: 19px; }
 .key-message p { max-width: 510px; margin: 0; font-style: italic; }
+.key-message p span { font-size: 85.7%; font-weight: 200; }
 @media (min-width: 467px) {
     .key-message { font-size: 3.5rem; }
 }
