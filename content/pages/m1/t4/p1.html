@@ -27,40 +27,46 @@
     </div>
 
     <style>
+      
+      .social-media-options .question { padding-left: 0; padding-right: 0; }
       .social-media-options .multiple-choice-quiz-options { display: flex; }
       .social-media-options li { margin: 0; }
       .social-media-options li .indicator { display: none; }
       .social-media-options li svg { width: 71px; height: 71px; }
       .social-media-options li svg .outer { opacity: 0; transition: opacity 0.25s; }
       .social-media-options li.checked svg .outer { opacity: 1; }
-      .social-media-options .response .first { font-weight: 500; text-align: center; }
+      .social-media-options .response .first { font-size: 2.4rem; font-weight: bold; text-align: center; }
       .keyboard-nav .social-media-options .multiple-choice-quiz-options .focussed-pseudo:before { top: -2px; left: -2px; width: 75px; height: 75px;}
+
+      .social-post { position: relative; }
+      .social-post > img { display: block; width: 100%; }
+      .social-post .multiple-choice-quiz { position: absolute; }
+      .social-post.fb-1 { max-width: 566px; }
+      .social-post .multiple-choice-quiz { left: 1.5%; bottom: 3%; }
     </style>
-    <div class="row bg-3 multi-choice-panel">
+    <div class="row bg-3 multi-choice-panel social-quiz-panel">
       <div data-activity="multiple-choice-quiz" class="social-media-options light-left" data-type="radio" data-instant-feedback-mouse="true" data-mandatory="partial" data-submit="Submit">
           <div class="question">
-              <h2>Social engineering</h2>
-              <p>It isn’t just online tactics that cyber criminals use to try and gain access to our networks. Consider the following real-life scenario.</p>
-              <p>You receive a call instore. The woman on the line says she is from Telstra and tells you that due to high volumes of emails and social media messages being sent through the AP network, the internet service will be disconnected. She starts walking you through steps at your computer to check the network activity.</p>
-              <p class="leader">What do you do?</p>
-              <p><strong>Select</strong> your answer, then <strong>select</strong> Submit.</p>
-              <form class="multiple-choice-quiz">
-                  <ul class="multiple-choice-quiz-options">
-                      <li><div data-svg="icon-emoji-clap"></div><span class="sr-only">Clap emoji</span></li>
-                      <li><div data-svg="icon-emoji-heart"></div><span class="sr-only">Heart emoji</span></li>
-                      <li><div data-svg="icon-emoji-laugh"></div><span class="sr-only">Laugh emoji</span></li>
-                      <li data-required="true"><div data-svg="icon-emoji-cry"></div><span class="sr-only">Cry emoji</span></li>
-                      <li data-required="true"><div data-svg="icon-emoji-think"></div><span class="sr-only">Think emoji</span></li>
-                  </ul>
-                  <div data-response="correct">
-                      <p class="first">We agree!</p>
-                      <p>Posting footage of customers instore without permission is a breach of privacy and can negatively impact our brand as well as our customer confidence.</p>
-                  </div>
-                  <div data-response="incorrect">
-                      <p class="first">Careful!</p>
-                      <p>Posting footage of customers instore without permission is a breach of privacy and can negatively impact our brand as well as our customer confidence.</p>
-                  </div>
-              </form>
+              <div class="social-post fb-1">
+                <img src="content/images/social-post-fb.jpg" alt="A facebook post by employee Mark. He says - Check it out... this customer’s been standing in the middle of the shop, staring into space for about 15 minutes!" />
+                <form class="multiple-choice-quiz">
+                    <ul class="multiple-choice-quiz-options">
+                        <li><div data-svg="icon-emoji-clap"></div><span class="sr-only">Clap emoji</span></li>
+                        <li><div data-svg="icon-emoji-heart"></div><span class="sr-only">Heart emoji</span></li>
+                        <li><div data-svg="icon-emoji-laugh"></div><span class="sr-only">Laugh emoji</span></li>
+                        <li data-required="true"><div data-svg="icon-emoji-cry"></div><span class="sr-only">Cry emoji</span></li>
+                        <li data-required="true"><div data-svg="icon-emoji-think"></div><span class="sr-only">Think emoji</span></li>
+                    </ul>
+                    <div data-response="correct">
+                        <p class="first">We agree!</p>
+                        <p>Posting footage of customers instore without permission is a breach of privacy and can negatively impact our brand as well as our customer confidence.</p>
+                    </div>
+                    <div data-response="incorrect">
+                        <p class="first">Careful!</p>
+                        <p>Posting footage of customers instore without permission is a breach of privacy and can negatively impact our brand as well as our customer confidence.</p>
+                    </div>
+                </form>
+              </div>
           </div>
       </div>
   </div>
