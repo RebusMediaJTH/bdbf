@@ -854,7 +854,7 @@ ul.multiple-choice-quiz-options { list-style: none; padding: 0; }
 .multiple-choice-quiz-options .correct-indicator { display: none; position: absolute; left: -10px; top: 10px; width: 20px; height: 20px; }
 .multiple-choice-quiz-options .correct-indicator > img { display: block; width: 100%; }
 .show-answer .multiple-choice-quiz-options [data-required="true"] .correct-indicator { display: block; }
-.keyboard-nav .multiple-choice-quiz-options .focussed-pseudo:before { top: 10px; left: 11px; width: 20px; height: 21px; }
+.keyboard-nav .multiple-choice-quiz-options .focussed-pseudo:before { top: -1px; left: -1px; width: 26px; height: 26px; }
 [data-activity="multiple-choice-quiz"] .triggers-input { cursor: pointer; }
 
 /* Radio */

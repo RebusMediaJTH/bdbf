@@ -2203,6 +2203,9 @@ rebus.pageInit = (function ($, undefined) {
                         return !!$activity.find('input[type="' + $activity.data('type') + '"]:checked').length;
                     }
                 }
+                if ($activity.data('type') === 'radio') {
+                    return !!$('input:checked', $activity).closest('li').data('required');
+                }
                 $activity.find('.multiple-choice-quiz-options li').each(function () {
                     var $this = $(this),
                         checked = $this.find('input').prop('checked'),
@@ -2270,7 +2273,7 @@ rebus.pageInit = (function ($, undefined) {
 
                         var responses = {};
                         $activity.data('responses', responses);
-                        $('[data-response]', $activity).each(function () {
+                        $('.multiple-choice-quiz > [data-response]', $activity).each(function () {
                             var $response = $(this);
                             responses[$response.attr('data-response')] = $response.html();
                             $response.remove();
@@ -2304,7 +2307,7 @@ rebus.pageInit = (function ($, undefined) {
                                 appendAfter = $appendAfter.length ? $appendAfter[0].outerHTML : '',
                                 label = $li.html(),
                                 optionId = activityId + '_o' + optionIdx,
-                                response = $li.attr('data-response') | $li.attr('data-required') === 'true' ? 'correct' : 'incorrect',
+                                response = $li.attr('data-response') || $li.attr('data-required') === 'true' ? 'correct' : 'incorrect',
                                 inputHTML;
                             if (type === 'radio') {
                                 inputHTML = '<input type="radio" data-idx="' + optionIdx + '" id="' + optionId + '" name="rg_' + activityId + '" />';
