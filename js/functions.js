@@ -2444,6 +2444,7 @@ rebus.pageInit = (function ($, undefined) {
                         var $input = $(this),
                             $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
                             $option = $input.closest('li');
+                        $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
                         if ($option.hasClass('checked')) {
                             $option.removeClass('checked');
                         }
