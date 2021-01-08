@@ -75,53 +75,7 @@ rebus.config = {
                             }
                           ]
                       },
-                      { path: 'completion', title: 'Completion', type: 'completion', hideHeader: true }
-                  ]
-              },
-              {
-                  folder: 'm2',
-                  title: 'Better Decisions for a Better Future - Retail. Part 2.',
-                  pages: [
-                      { path: '../course-tips', title: 'Module tips', hideHeaderTitle: true },
-                      { path: '../audio-preferences', title: 'Audio preferences', hideHeaderTitle: true },
-                      { path: 'video', title: 'Introduction video', type: 'video', hideHeaderTitle: true },
-                      { path: 'menu', title: 'Menu', type: 'menu', hideHeaderTitle: true },
-                      {
-                          type: 'topics',
-                          topics: [
-                              {
-                                  folder: 't1',
-                                  title: 'We value our customers',
-                                  pages: [{ path: 'p1', title: 'Our customers are at the centre of everything we do' }]
-                              },
-                              {
-                                  folder: 't2',
-                                  title: 'We delight our customers',
-                                  pages: [
-                                      { path: 'p1', title: 'We delight our customers' },
-                                      { path: 'p2', title: 'We\'re always improving' }]
-                              },
-                              {
-                                  folder: 't3',
-                                  title: 'We protect our customers',
-                                  pages: [
-                                      { path: 'p1', title: 'We protect our customers\' Personal Information and its use' },
-                                      { path: 'p2', title: 'Privacy' },
-                                      { path: 'p3', title: 'We play our part in protecting the community' }
-                                  ]
-                              },
-                              {
-                                  folder: 't4',
-                                  title: 'We are accountable',
-                                  pages: [
-                                      { path: 'p1', title: 'We work within the Law' },
-                                      { path: 'p2', title: 'We make sure our people are properly trained' },
-                                      { path: 'p3', title: 'We work within the Law when dealing with customers' }
-                                  ]
-                              }
-                          ]
-                      },
-                      { path: 'completion', title: 'Completion', type: 'completion', hideHeaderTitle: true }
+                      { path: 'completion', title: 'One last thing', type: 'completion' }
                   ]
               }
           ]
