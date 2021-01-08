@@ -2220,7 +2220,8 @@ rebus.pageInit = (function ($, undefined) {
 
             return {
                 init: function () {
-                    
+                    var keyboard = true;
+
                     var performSubmit = function ($submit, $activity) {
                         var $checkedOption, correct, //, modalSelector;
                             responses;
@@ -2285,9 +2286,9 @@ rebus.pageInit = (function ($, undefined) {
 
                         //if (hasFeedback) {
                             $ul.after('<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>');
-                            // if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
-                            //     $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
-                            // }
+                            if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
+                                $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
+                            }
                         //}
 
                         $('.question', $activity).after([
@@ -2356,14 +2357,19 @@ rebus.pageInit = (function ($, undefined) {
                         setCheckAnswerBtnState($activity);
                     });
 
-                    $('body').on('focus', '.radio-list input, .checkbox-list input', function () {
+                    $('body').on('mousedown touchstart', '.radio-list li', function () {
+                        keyboard = false;
+                    }).on('keydown', '.radio-list li', function () {
+                        keyboard = true;
+                    }).on('focus', '.radio-list input, .checkbox-list input', function () {
                         $(this).closest('li').addClass('focussed-pseudo');
                     }).on('blur', '.radio-list input, .checkbox-list input', function () {
                         $(this).closest('li').removeClass('focussed-pseudo');
                     }).on('change', '.radio-list input', function (e) {
                         var $input = $(this),
                             $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
-                            $submit = $activity.find('.btn-check-multi-choice-answer');
+                            $submit = $activity.find('.btn-check-multi-choice-answer'),
+                            instantFeedback = !keyboard && $activity.attr('data-instant-feedback-mouse') !== undefined;
                         $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
                         //$activity.removeClass('show-inline-feedback');
                         $input.closest('.radio-list').find('.checked').removeClass('checked');
@@ -2371,7 +2377,13 @@ rebus.pageInit = (function ($, undefined) {
                         rebus.stateHelper.setElementState($activity, $input.data('idx') + '');
                         panels.markActivityAsStarted($activity);
                         rebus.stateHelper.save();
-                        $submit.removeAttr('hidden');
+                        if (instantFeedback) {
+                            $submit.attr('hidden', true);
+                            performSubmit($submit, $activity);
+                        }
+                        else {
+                            $submit.removeAttr('hidden');
+                        }
                         setTimeout(function () {
                             setCheckAnswerBtnState($activity);
                         }, 100);
