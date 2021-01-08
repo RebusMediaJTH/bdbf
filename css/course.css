@@ -208,4 +208,7 @@
     #page-m1_t5_p1 [data-idx="4"] > div:not(.lock-overlay) { padding-left: 140px; }
 }
 
-
+#page-m1_t5_p1 [data-idx="10"] .key-message p { max-width: 750px; }
+@media (min-width: 768px) {
+    #page-m1_t5_p1 [data-idx="10"] > div:not(.lock-overlay) { padding-left: 60px; }
+}
