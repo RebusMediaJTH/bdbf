@@ -2379,10 +2379,12 @@ rebus.pageInit = (function ($, undefined) {
                         rebus.stateHelper.save();
                         if (instantFeedback) {
                             $submit.attr('hidden', true);
+                            $activity.removeClass('submit-visible');
                             performSubmit($submit, $activity);
                         }
                         else {
                             $submit.removeAttr('hidden');
+                            $activity.addClass('submit-visible');
                         }
                         setTimeout(function () {
                             setCheckAnswerBtnState($activity);
