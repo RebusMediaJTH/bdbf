@@ -1510,9 +1510,7 @@ rebus.pageInit = (function ($, undefined) {
                     rebus.audio.toggle($(this).data('audio-file'));
                 }).on('click', '.btn-read-audio-transcript', function () {
                     var $btn = $(this),
-                        id = $btn.data('transcript'),
-                        $audio = $('.audio-control[data-transcript="' + id + '"]'),
-                        audioId = $audio.data('audio-file');
+                        id = $btn.data('transcript');
                     rebus.audio.pause();
                     $.get("content/transcripts/" + id + ".html", function (data) {
                         rebus.controls.modal.show({
@@ -1962,9 +1960,9 @@ rebus.pageInit = (function ($, undefined) {
         };
 
         var initAudios = function () {
-            var setActivityAsComplete = function (id) {
-                var $activity = $('[data-audio-file="' + id + '"]').closest('[data-activity="audio"]'),
-                    $panel;
+            var setActivityAsComplete = function ($activity, id) {
+                var $panel;
+                $activity = $activity || $('[data-audio-file="' + id + '"]').closest('[data-activity="audio"]');
                 if ($activity.length && $activity.data('mandatory')) {
                     $panel = $activity.closest('.row[data-storeid]');
                     if (rebus.stateHelper.getElementDetails($panel).state[$activity.data('mandatory-idx')] !== '1') {
@@ -1974,26 +1972,18 @@ rebus.pageInit = (function ($, undefined) {
             };
             if (rebus.config.audioMustBePlayedThrough) {
                 $('body').on('audioend', function () {
-                    setActivityAsComplete(arguments[1].id);
-                });    
-                // $body.on('slid.bs.carousel', '.video-transcript .carousel', function () {
-                //     if ($('.item:last', this).hasClass('active')) {
-                //         setActivityAsComplete.call(this);
-                //     }
-                // });
+                    setActivityAsComplete(null, arguments[1].id);
+                }).on('click', '.btn-read-audio-transcript', function () {
+                    setActivityAsComplete($(this).closest('[data-activity="audio"]'));
+                });
             }
             else {
                 $('body').on('audioplay', function () {
                     setActivityAsComplete(arguments[1].id);
+                }).on('click', '.btn-read-audio-transcript', function () {
+                    setActivityAsComplete($(this).closest('[data-activity="audio"]'));
                 });
-                //$body.on('click', '.btn-read-transcript', setActivityAsComplete);
             }
-            //<div class="audio-control" data-audio-file="t1_s1_p2"></div>
-            // $('[data-activity="audio"]').each(function () {
-            //     var $activity = $(this),
-            //         id = $activity.data('audio-file');
-            //     $activity.append('<div class="audio-control" data-audio-file="' + id + '"></div>');
-            // });
         };
 
         var initChooseHotspots = function () {
