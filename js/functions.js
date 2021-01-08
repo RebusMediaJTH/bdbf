@@ -1479,12 +1479,16 @@ rebus.pageInit = (function ($, undefined) {
     })();
 
     var audioButtons = (function () {
-        var buildAudioControlBtn = function (fileid) {
-            return [
+        var buildAudioControlBtn = function (fileid, transcriptId) {
+            var html = [
                 '<button type="button" class="audio-btn" aria-label="Toggle audio" data-audio-file="' + fileid + '">',
                     '<img src="images/btn_listen.png" alt="" />',
                 '</button>'
-            ].join('\n');
+            ];
+            // if (transcriptId) {
+            //     html.push('<div class="margin-top-sm"><button type="button" class="button button-default btn-read-audio-transcript">Read the transcript</button></div>');
+            // }
+            return html.join('\n');
         };
         return {
             init: function () {
@@ -1494,12 +1498,32 @@ rebus.pageInit = (function ($, undefined) {
                 });
                 $('.audio-control').each(function () {
                     var $this = $(this),
-                        id = $this.data('audio-file');
+                        id = $this.data('audio-file'),
+                        transcript = $this.data('transcript');
                     rebus.audio.add(id);
-                    $this.removeAttr('data-audio-file').append(buildAudioControlBtn(id));
+                    $this.removeAttr('data-audio-file').append(buildAudioControlBtn(id, transcript));
+                    if (transcript) {
+                        $this.after('<div class="margin-top-sm"><button type="button" data-transcript="' + transcript + '" class="button button-default btn-read-audio-transcript">Read the transcript</button></div>');
+                    }
                 });
                 $body.on('click', '[data-audio-file]', function () {
                     rebus.audio.toggle($(this).data('audio-file'));
+                }).on('click', '.btn-read-audio-transcript', function () {
+                    var $btn = $(this),
+                        id = $btn.data('transcript'),
+                        $audio = $('.audio-control[data-transcript="' + id + '"]'),
+                        audioId = $audio.data('audio-file');
+                    rebus.audio.pause();
+                    $.get("content/transcripts/" + id + ".html", function (data) {
+                        rebus.controls.modal.show({
+                            class: 'audio-transcript-modal',
+                            header: 'Audio transcript', 
+                            body: data,
+                            footer: '<button type="button" class="button button-default" data-dismiss="modal">Close</button>',
+                            focusOnOpened: 'modal',
+                            focusOnClosed: $btn
+                        });
+                    });
                 });
             }
         };
@@ -3067,7 +3091,12 @@ rebus.controls = (function ($) {
                     rebus.appFixes.disableExternalLinksIfApp($modal);
                 }).on('shown.bs.modal', function () {
                     if (options.focusOnOpened) {
-                        options.focusOnOpened[0].focus();
+                        if (options.focusOnOpened === 'modal') {
+                            $modal[0].focus();
+                        }
+                        else {
+                            options.focusOnOpened[0].focus();
+                        }
                     }
                     if (onShown) {
                         onShown();
