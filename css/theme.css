@@ -28,7 +28,8 @@ section.main { padding-top: 65px; }
 */
 
 footer { display: none; max-width: 1920px; margin: 0 auto; padding: 30px 0; background: #590D2B; }
-.in-topic-page footer { display: block; }
+.in-topic-page footer,
+[data-type="completion"] footer { display: block; }
 footer .primary { font-weight: 500; }
 footer ul { list-style: none; padding: 0; }
 footer li { margin: 8px 0; }
@@ -66,7 +67,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     BUTTONS
 */
 
-.button { background: none; border: none; padding: 0; margin: 0; border-radius: 0; }
+.button { background: none; border: none; padding: 0; border-radius: 0; }
 
 .button-default {
 padding: 13px 30px;
@@ -284,3 +285,6 @@ transition: background-color 0.25s, color 0.25s;
 html.final-topic .final-panel .hide-when-almost-done,
 html:not(.final-topic) .final-panel .show-when-almost-done { display: none; }
 .final-panel .show-when-almost-done { font-weight: 500; }
+@media (min-width: 568px) {
+    .final-panel button { margin-left: 25px; }
+}

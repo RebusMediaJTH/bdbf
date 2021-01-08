@@ -218,3 +218,8 @@
 @media (min-width: 980px) {
     #page-m1_completion #banner-message { bottom: auto; right: auto; left: 63%; top: 50%; transform: translateY(-50%); }
 }
+
+@media (min-width: 568px) {
+    #page-m1_completion .btns { display: flex; }
+    #page-m1_completion .btns > button { margin-left: 25px; }
+}

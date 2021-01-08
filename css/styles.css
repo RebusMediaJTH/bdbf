@@ -358,7 +358,7 @@ ul.list-style-none { list-style: none; }
 .pos-abs { position: absolute; }
 .pos-rel { position: relative; }
 
-@media (min-width: 1px) and (max-width: 575px) {
+@media (min-width: 1px) and (max-width: 567px) {
     .btn-block-lte-xs { float: none; display: block; width: 100%; }
 }
 
