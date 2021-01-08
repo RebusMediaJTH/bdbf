@@ -189,3 +189,5 @@
 @media (min-width: 1045px) {
 .social-media-options li svg { width: 71px; height: 71px; }
 }
+
+#page-m1_t4_p1 [data-idx="2"] .key-message p { max-width:initial; max-width: unset; }
