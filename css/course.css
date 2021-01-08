@@ -212,3 +212,7 @@
 @media (min-width: 768px) {
     #page-m1_t5_p1 [data-idx="10"] > div:not(.lock-overlay) { padding-left: 60px; }
 }
+
+@media (min-width: 768px) {
+    #page-m1_completion #banner-message { bottom: auto; right: auto; left: 63%; top: 50%; transform: translateY(-50%); }
+}

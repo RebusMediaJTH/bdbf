@@ -185,6 +185,10 @@ transition: background-color 0.25s, color 0.25s;
 #banner-message .back { transform: rotateY(-180deg); }
 #banner-message.flipped .back { transform: rotateY(0deg); }
 #banner-message.flipped .front { transform: rotateY(180deg); }
+#banner-message.reversed { color: #fff; }
+#banner-message.reversed span { color: #e1cad4; }
+#banner-message.reversed .front { background: #fff; border: 4px solid #590d2b; }
+#banner-message.reversed .back { background: #590d2b; }
 @media (min-width: 768px) {
     #banner:not(.break-lg) { height: auto !important; background: none !important; }
     #banner:not(.break-lg) .container { position: relative; }
