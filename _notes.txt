@@ -4,7 +4,7 @@
 > Audio control - can grab from iceberg
 > http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t4_p1&initialised=true
   > convert to slides and change leader text from scroll to select arrow
-> From menu, remove: $('html').addClass('topic-0-complete');
+  > or put in seperate panels - save first version to make easier converting to slides
 > Compress bootstrap.min
 
 
