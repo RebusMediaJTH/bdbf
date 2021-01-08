@@ -845,8 +845,8 @@ ul.multiple-choice-quiz-options { list-style: none; padding: 0; }
 .multiple-choice-quiz-options input[disabled] + label { cursor: default; }
 .multiple-choice-quiz-options input { position: relative; top: 4px; width: 20px; margin: 0; -webkit-appearance: none; }
 .multiple-choice-quiz-options input:focus { outline: none !important; }
-.multiple-choice-quiz-options label { position: relative; left: -20px; display: flex; line-height: 24px; font-weight: 400; margin: 0; }
-.multiple-choice-quiz-options .indicator { width: 24px; height: 24px; margin: 0 8px 0 0; }
+.multiple-choice-quiz-options label { flex: 1; position: relative; left: -20px; display: flex; line-height: 24px; font-weight: 400; margin: 0; }
+.multiple-choice-quiz-options .indicator { flex-shrink: 0; width: 24px; height: 24px; margin: 0 8px 0 0; }
 /* pointer-events: none; ensures the indicator is clickable in IE11: https://stackoverflow.com/questions/20198137/image-label-for-input-in-a-form-not-clickable-in-ie11 */
 /* .multiple-choice-quiz-options .indicator > img { position: absolute; left: 0; top: 0; display: block; pointer-events: none; } */
 .multiple-choice-quiz-options .indicator > svg { pointer-events: none; width: 24px; height: 24px; stroke: #4D4D55; fill: #fff; transition: fill 0.25s; }
