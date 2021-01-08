@@ -319,7 +319,7 @@ rebus.progressModal = (function () {
             }
         };
         if (sameContent) {
-            window.setTimeout(setContent, 100);
+            data.timeoutId = window.setTimeout(setContent, 100);
         }
         else {
             setContent();

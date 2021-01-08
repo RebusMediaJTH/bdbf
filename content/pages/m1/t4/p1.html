@@ -40,15 +40,20 @@
 
       .social-post { position: relative; }
       .social-post > img { display: block; width: 100%; }
-      .social-post .multiple-choice-quiz { position: absolute; }
+      .social-post .multiple-choice-quiz { position: absolute; left: 1.5% }
       .social-post.fb-1 { max-width: 566px; }
-      .social-post .multiple-choice-quiz { left: 1.5%; bottom: 3%; }
+      .social-post.fb-1 .multiple-choice-quiz { bottom: 3%; }
+      .social-post.twitter { max-width: 600px; }
+      .social-post.twitter .multiple-choice-quiz { bottom: 3%; }
+      .social-post.insta { max-width: 566px; }
+      .social-post.insta .multiple-choice-quiz { bottom: 17.5%; }
     </style>
     <div class="row bg-3 multi-choice-panel social-quiz-panel">
+      <!--Slide 1-->
       <div data-activity="multiple-choice-quiz" class="social-media-options light-left" data-type="radio" data-instant-feedback-mouse="true" data-mandatory="partial" data-submit="Submit">
           <div class="question">
               <div class="social-post fb-1">
-                <img src="content/images/social-post-fb.jpg" alt="A facebook post by employee Mark. He says - Check it out... this customer’s been standing in the middle of the shop, staring into space for about 15 minutes!" />
+                <img src="content/images/social-post-fb.jpg" alt="A facebook post by employee Mark with a picture of a customer. He says - Check it out... this customer’s been standing in the middle of the shop, staring into space for about 15 minutes!" />
                 <form class="multiple-choice-quiz">
                     <ul class="multiple-choice-quiz-options">
                         <li><div data-svg="icon-emoji-clap"></div><span class="sr-only">Clap emoji</span></li>
@@ -69,6 +74,56 @@
               </div>
           </div>
       </div>
+      <!--Slide 2-->
+      <div data-activity="multiple-choice-quiz" class="social-media-options light-right" data-type="radio" data-instant-feedback-mouse="true" data-mandatory="partial" data-submit="Submit">
+        <div class="question">
+            <div class="social-post twitter">
+              <img src="content/images/social-post-twitter.jpg" alt="An twitter post by employee Iman. She says - It’d be great if my stupid manager would hire more staff so that we could actually leave on time. Hash Tag another shitty day at work" />
+              <form class="multiple-choice-quiz">
+                  <ul class="multiple-choice-quiz-options">
+                      <li><div data-svg="icon-emoji-clap"></div><span class="sr-only">Clap emoji</span></li>
+                      <li><div data-svg="icon-emoji-heart"></div><span class="sr-only">Heart emoji</span></li>
+                      <li><div data-svg="icon-emoji-laugh"></div><span class="sr-only">Laugh emoji</span></li>
+                      <li data-required="true"><div data-svg="icon-emoji-cry"></div><span class="sr-only">Cry emoji</span></li>
+                      <li data-required="true"><div data-svg="icon-emoji-think"></div><span class="sr-only">Think emoji</span></li>
+                  </ul>
+                  <div data-response="correct">
+                      <p class="first">We agree!</p>
+                      <p>While her post doesn’t mention any names, she’s made a derogatory comment about her manager that’s available for many people to see. If you post online about our workplace, always treat others with respect.</p>
+                  </div>
+                  <div data-response="incorrect">
+                      <p class="first">Careful!</p>
+                      <p>While her post doesn’t mention any names, she’s made a derogatory comment about her manager that’s available for many people to see. If you post online about our workplace, always treat others with respect.</p>
+                  </div>
+              </form>
+            </div>
+        </div>
+    </div>
+      <!--Slide 3-->
+      <div data-activity="multiple-choice-quiz" class="social-media-options light-left" data-type="radio" data-instant-feedback-mouse="true" data-mandatory="partial" data-submit="Submit">
+        <div class="question">
+            <div class="social-post insta">
+              <img src="content/images/social-post-insta.jpg" alt="An instagram post by Katie with a picture of a dog dressed up and playing a guitar. She says - Another interesting day at work. A lady brought her dog to the shop dressed like this... I had to take a picture!" />
+              <form class="multiple-choice-quiz">
+                  <ul class="multiple-choice-quiz-options">
+                      <li data-required="true"><div data-svg="icon-emoji-clap"></div><span class="sr-only">Clap emoji</span></li>
+                      <li data-required="true"><div data-svg="icon-emoji-heart"></div><span class="sr-only">Heart emoji</span></li>
+                      <li data-required="true"><div data-svg="icon-emoji-laugh"></div><span class="sr-only">Laugh emoji</span></li>
+                      <li><div data-svg="icon-emoji-cry"></div><span class="sr-only">Cry emoji</span></li>
+                      <li><div data-svg="icon-emoji-think"></div><span class="sr-only">Think emoji</span></li>
+                  </ul>
+                  <div data-response="correct">
+                      <p class="first">We agree!</p>
+                      <p>Kate isn’t hurting anyone by posting general commentary about her day. If she posts about things that happen at work, she just needs to take care not to say anything that can negatively impact our brand or reputation.</p>
+                  </div>
+                  <div data-response="incorrect">
+                      <p class="first">Careful!</p>
+                      <p>Kate isn’t hurting anyone by posting general commentary about her day. If she posts about things that happen at work, she just needs to take care not to say anything that can negatively impact our brand or reputation.</p>
+                  </div>
+              </form>
+            </div>
+        </div>
+    </div>
   </div>
 
     <div class="row bg-1 key-message-panel align left center">
