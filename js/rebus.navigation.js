@@ -284,6 +284,12 @@ rebus.navigation = (function ($, undefined) {
 
         $html.attr('id', 'page-' + pageId).attr('data-url', page.url);
 
+        if (page.path === 'menu' && rebus.stateHelper.get().showmenu) {
+            $('#welcome-page').attr('aria-hidden', true);
+            $('#menu-page').removeAttr('aria-hidden');
+            $('#slide-pages-container').addClass('menu-in');
+        }
+
         if (rebus.config.includeProgressModal) {
             $html.addClass('progress-modal-enabled');
         }

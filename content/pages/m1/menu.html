@@ -1,52 +1,114 @@
-﻿<style>
-    @media (max-width: 767px) {
-        body { background: url(content/images/menu.jpg); background-size: cover; }
-    }
-</style>
-<div class="container" id="menu-page">
-    <div class="row">
-        <div class="img-and-overlay lg">
-            <img src="content/images/menu.jpg" alt="" />
-            <div>
-                <ul class="topic-mnu">
-                    <li class="topic-mnu-item topic-0">
-                        <button type="button" role="navigation" data-navigate="topic 0">
-                            Diversity and inclusion
-                            <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
-                            <span class="done-indicator sr-only">Complete</span>
+﻿<div id="slide-pages-container">
+    <div>
+        <div id="welcome-page">
+            <div class="row">
+                <div class="img-and-overlay">
+                    <img src="content/images/landing.jpg" alt="" />
+                    <div>
+                        <div class="title">
+                            <h1>Better decisions <br>for a better future</h1>
+                            <h2>Retail - Part 1</h2>
+                        </div>
+                        <div class="overlay lg">
+                            <h3>Welcome</h3>
+                            <p>At Australia Post Group (APG), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
+                        </div>
+                        <button class="btn-continue-to-menu circle-btn" role="navigation">
+                            <div>
+                                <div class="faces">
+                                    <div class="face front">Begin</div>
+                                    <div class="face back" aria-hidden="true">Begin</div>
+                                </div>
+                            </div>
                         </button>
-                    </li>
-                    <li class="topic-mnu-item topic-2">
-                        <button type="button" role="navigation" data-navigate="topic 2">
-                            Online safety
-                            <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
-                            <span class="done-indicator sr-only">Complete</span>
-                        </button>
-                    </li>
-                    <li role="presentation"></li>
-                    <li class="topic-mnu-item topic-4">
-                        <button type="button" role="navigation" data-navigate="topic 4">
-                            Harassment, discrimination and bullying
-                            <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
-                            <span class="done-indicator sr-only">Complete</span>
-                        </button>
-                    </li>
-                    <li class="topic-mnu-item topic-1">
-                        <button type="button" role="navigation" data-navigate="topic 1">
-                            Work health and safety
-                            <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
-                            <span class="done-indicator sr-only">Complete</span>
-                        </button>
-                    </li>
-                    <li class="topic-mnu-item topic-3">
-                        <button type="button" role="navigation" data-navigate="topic 3">
-                            Social media
-                            <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
-                            <span class="done-indicator sr-only">Complete</span>
-                        </button>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <div class="sm">
+                    <div class="title">
+                        <h1>Better decisions <br>for a better future</h1>
+                        <h2>Retail - Part 1</h2>
+                    </div>
+                    <div class="overlay sm">
+                        <div>
+                            <h3>Welcome</h3>
+                            <p>At Australia Post Group (APG), we support you to do the right thing. Take 20 minutes to understand our basic requirements and expectations that’ll help you make the right decisions at work.</p>
+                        </div>
+                        <div>
+                            <button class="btn-continue-to-menu circle-btn" role="navigation">
+                                <div>
+                                    <div class="faces">
+                                        <div class="face front">Begin</div>
+                                        <div class="face back" aria-hidden="true">Begin</div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="menu-page" aria-hidden="true">
+            <div class="row">
+                <div class="img-and-overlay lg">
+                    <img src="content/images/menu.jpg" alt="" />
+                    <div>
+                        <p class="sr-only" tabindex="-1" id="sr-only-menu-title">Menu</p>
+                        <ul class="topic-mnu">
+                            <li class="topic-mnu-item topic-0">
+                                <button type="button" role="navigation" data-navigate="topic 0">
+                                    Diversity and inclusion
+                                    <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
+                                    <span class="done-indicator sr-only">Complete</span>
+                                </button>
+                            </li>
+                            <li class="topic-mnu-item topic-2">
+                                <button type="button" role="navigation" data-navigate="topic 2">
+                                    Online safety
+                                    <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
+                                    <span class="done-indicator sr-only">Complete</span>
+                                </button>
+                            </li>
+                            <li role="presentation"></li>
+                            <li class="topic-mnu-item topic-4">
+                                <button type="button" role="navigation" data-navigate="topic 4">
+                                    Harassment, discrimination and bullying
+                                    <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
+                                    <span class="done-indicator sr-only">Complete</span>
+                                </button>
+                            </li>
+                            <li class="topic-mnu-item topic-1">
+                                <button type="button" role="navigation" data-navigate="topic 1">
+                                    Work health and safety
+                                    <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
+                                    <span class="done-indicator sr-only">Complete</span>
+                                </button>
+                            </li>
+                            <li class="topic-mnu-item topic-3">
+                                <button type="button" role="navigation" data-navigate="topic 3">
+                                    Social media
+                                    <div class="done-indicator svg"><div data-svg="icon-postmark"></div></div>
+                                    <span class="done-indicator sr-only">Complete</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(function () {
+        $('.btn-continue-to-menu').on('click', function () {
+            rebus.stateHelper.get().showmenu = '1';
+            rebus.stateHelper.save();
+            rebus.utils.onTransitionEnd($('#slide-pages-container.menu-in > div'), 400, function () {
+                $('html, body').animate({scrollTop:0}, 100);
+                $('#sr-only-menu-title')[0].focus();
+                $('#welcome-page').attr('aria-hidden', true);
+            });
+            $('#menu-page').removeAttr('aria-hidden');
+            $('#page-m1_menu #slide-pages-container').addClass('menu-in');
+        });
+    });
+</script>

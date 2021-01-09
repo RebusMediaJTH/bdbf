@@ -13,7 +13,7 @@ var rebus = rebus || {};
 */
 rebus.config = {
   title: 'Better Decisions for a Better Future - Retail', // Used my progress modal
-  id: 'bdbf', // Used for generating a unique cookie for local testing
+  id: 'bdbf_m1', // Used for generating a unique cookie for local testing
   useLMS: false,
   debug: true,
   debugTypes: '*',
@@ -33,7 +33,6 @@ rebus.config = {
                   folder: 'm1',
                   title: 'Better Decisions for a Better Future - Retail. Part 1.',
                   pages: [
-                      { path: 'welcome', title: 'Welcome', hideHeader: true },
                       { path: 'menu', title: 'Menu', type: 'menu', hideHeader: true },
                       {
                           type: 'topics',
