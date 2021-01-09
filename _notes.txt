@@ -1,6 +1,4 @@
-﻿> BEFORE NEXT COURSE - NEED TO SCROLL MENU IN!!!
-  Combine the first 2 pages into one. See other course for how I scroll it. Can add temp stuff to html, body etc.
-> Key messages animate in as they are scrolled into view
+﻿> Key messages animate in as they are scrolled into view
 > Videos - play icon. Will need autoplay from sydney trains
 > Audio control - can grab from iceberg
 > http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t4_p1&initialised=true
