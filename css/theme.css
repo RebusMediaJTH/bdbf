@@ -175,7 +175,7 @@ transition: background-color 0.25s, color 0.25s;
 .bg-5 { background: #fcfcfc; }
 
 .horizontal-panels { font-weight: 200; color: #3E3E3E; }
-.horizontal-panels .row { padding: 30px 0; overflow: hidden; /* hide squiggle overflows */ }
+.horizontal-panels .row { padding: 25px 0; overflow: hidden; /* hide squiggle overflows */ }
 .horizontal-panels h2 { color: #590D2B; font-size: 3rem; font-weight: bold; }
 @media (min-width: 768px) {
     .horizontal-panels .row { padding: 25px; }

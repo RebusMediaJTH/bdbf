@@ -1,4 +1,4 @@
-﻿BEFORE QUIZ! key-message quote svg
+﻿
 
 > Key messages animate in as they are scrolled into view
 > Videos - play icon. Will need autoplay from sydney trains

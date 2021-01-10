@@ -169,7 +169,7 @@
 
 .social-quiz-panel .instructions { padding: 15px; }
 .social-media-options .question { padding-left: 0; padding-right: 0; }
-.social-media-options .multiple-choice-quiz-options { display: flex; }
+.social-media-options .multiple-choice-quiz-options { display: flex; margin: 0; }
 .social-media-options li { margin: 0; }
 .social-media-options li .indicator { display: none; }
 .social-media-options li svg { width: 71px; height: 71px; }
@@ -179,17 +179,17 @@
 .social-media-options .response .first { font-size: 2.4rem; font-weight: bold; text-align: center; }
 .keyboard-nav .social-media-options .multiple-choice-quiz-options .focussed-pseudo:before { top: -2px; left: -2px; width: 75px; height: 75px;}
 .social-media-options .btn-check-multi-choice-answer { margin: 15px 15px 0 0; }
-.social-post { position: relative; margin: 0 auto; }
+.social-post { position: relative; max-width: 600px; margin: 0 auto; }
 .social-post > img { display: block; width: 100%; }
-.social-post .multiple-choice-quiz { position: absolute; left: 1.5% }
-.social-post.fb-1 { max-width: 566px; }
-.social-post.fb-1 .multiple-choice-quiz { bottom: 3%; }
-.social-post.twitter { max-width: 600px; }
-.social-post.twitter .multiple-choice-quiz { bottom: 3%; }
-.social-post.insta { max-width: 566px; }
-.social-post.insta .multiple-choice-quiz { bottom: 17.5%; }
-.social-post.fb-2 { max-width: 566px; }
-.social-post.fb-2 .multiple-choice-quiz { bottom: 3%; }
+.social-post .multiple-choice-quiz { position: absolute; left: 3.5%; margin: 0; }
+.social-post.fb-1 .multiple-choice-quiz { bottom: 9%; }
+.social-post.twitter .multiple-choice-quiz { bottom: 35%; }
+.social-post.insta .multiple-choice-quiz { bottom: 23%; }
+.social-post.fb-2 .multiple-choice-quiz { bottom: 1%; }
+#carousel-1 .carousel-indicators-container,
+#carousel-1 .carousel-nav { background: #f8f8f8; }
+#carousel-1 .carousel-indicators-container { margin-top: 0; padding-top: 8px; }
+#carousel-1 .carousel-nav { padding-bottom: 25px; }
 @media (min-width: 711px) {
 .social-media-options li svg { width: 71px; height: 71px; }
 }
@@ -197,8 +197,11 @@
 .social-quiz-panel .instructions { padding: 50px; }
 .social-media-options li svg { width: 6.8vw; height: 6.8vw; }
 }
+@media (min-width: 992px) {
+    #carousel-1 .carousel-nav { padding-bottom: 50px; }
+}
 @media (min-width: 1045px) {
-.social-media-options li svg { width: 71px; height: 71px; }
+    .social-media-options li svg { width: 71px; height: 71px; }
 }
 
 #page-m1_t4_p1 [data-idx="2"] .key-message p { max-width: initial; max-width: unset; }
