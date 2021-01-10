@@ -369,6 +369,22 @@ rebus.progressModal = (function () {
     };
 }());
 
+$.fn.accessibleCarousel = function () {
+    return this.each(function () {
+      var $carousel = $(this),
+        $fb = $('<div class="sr-only" aria-live="assertive" aria-atomic="true" data-clearafter="5000"></div>'),
+        slideCount = $('.item', $carousel).length;
+      $('.item', $carousel).each(function (i) {
+        $(this).prepend('<p class="sr-only">Slide ' + (i + 1) + '</p>')
+      });
+      $carousel.append($fb);
+      $fb.liveFeedback();
+      $carousel.on('slid.bs.carousel', function (e) {
+        $fb.liveFeedback('value', 'Slide ' + ($(e.relatedTarget).index() + 1) + ' of ' + slideCount + '. See content above.');
+      });
+    });
+};
+
 rebus.pageInit = (function ($, undefined) {
     var $body,
         page, state;
@@ -2209,287 +2225,164 @@ rebus.pageInit = (function ($, undefined) {
 
             The image will be appended after the label and, since .triggers-input is included, a click will be triggered on the input when the element is clicked.
         */
-        var multiChoiceQuiz = (function () {
+       var multiChoiceQuiz = (function () {
 
-            var setCheckAnswerBtnState = function ($activity) {
-                var requiredSelections = $activity.attr('data-required-selections'),
-                    selected = $activity.find('input[type="' + $activity.data('type') + '"]:checked').length,
-                    enable;
-                if (requiredSelections === undefined) {
-                    enable = selected > 0;
+        var setCheckAnswerBtnState = function ($activity) {
+            var requiredSelections = $activity.attr('data-required-selections'),
+                selected = $activity.find('input[type="' + $activity.data('type') + '"]:checked').length,
+                enable;
+            if (requiredSelections === undefined) {
+                enable = selected > 0;
+            }
+            else {
+                requiredSelections = requiredSelections.split(':');
+                if (requiredSelections.length > 1) {
+                    enable = selected >= parseInt(requiredSelections[1], 10);
                 }
                 else {
-                    requiredSelections = requiredSelections.split(':');
-                    if (requiredSelections.length > 1) {
-                        enable = selected >= parseInt(requiredSelections[1], 10);
+                    enable = selected === parseInt(requiredSelections[0], 10);
+                }
+            }
+            $activity.find('.btn-check-multi-choice-answer, .btn-submit-assessment-answer').prop('disabled', !enable);
+        };
+
+        var showAnswer = function ($activity) {
+            if ($activity.data('show-answer')) {
+                $activity.addClass('show-answer');
+            }
+        };
+
+        var setAsComplete = function ($activity) {
+            showAnswer($activity);
+            panels.setActivityAsComplete($activity, true);
+        };
+
+        var isCorrect = function ($activity) {
+            var correct = true,
+                globalAnswer = $activity.data('answer');
+            if (globalAnswer) {
+                if (globalAnswer === 'anyOrNone') {
+                    return true;
+                }
+                if (globalAnswer === 'any') {
+                    return !!$activity.find('input[type="' + $activity.data('type') + '"]:checked').length;
+                }
+            }
+            if ($activity.data('type') === 'radio') {
+                return !!$('input:checked', $activity).closest('li').data('required');
+            }
+            $activity.find('.multiple-choice-quiz-options li').each(function () {
+                var $this = $(this),
+                    checked = $this.find('input').prop('checked'),
+                    required = $this.attr('data-required') === 'true';
+                if (checked !== required) {
+                    correct = false;
+                    return false;
+                }
+            });
+            return correct;
+        };
+
+        return {
+            init: function () {
+                var keyboard = true;
+
+                var performSubmit = function ($submit, $activity, announce) {
+                    var $checkedOption, correct, //, modalSelector;
+                        responses;
+                    $activity = $activity || $submit.closest('[data-activity="multiple-choice-quiz"]');
+                    responses = $activity.data('responses');
+                    $checkedOption = $activity.find('input:checked').closest('li');
+                    correct = isCorrect($activity);
+                    $activity.attr('data-correct', correct ? 'true' : 'false');
+                    // if ($checkedOption.find('.inline-feedback').length) {
+                    //     $activity.addClass('show-inline-feedback');
+                    // }
+                    // else {
+                    //     modalSelector = $checkedOption.data('feedback');
+                    //     modalTemplates.setFocusOnClosed($submit);
+                    //     if (!modalSelector) {
+                    //         modalSelector = '#' + $activity.attr('data-storeid') + '-modal-' + (correct ? 'correct' : 'incorrect');
+                    //     }
+                    //     $(modalSelector).modal();
+                    // }
+                    //$activity.find('.btn-tried').prop('disabled', correct);
+                    $activity.data('$fb').liveFeedback('value', responses[$checkedOption.attr('data-response')], { silent: !announce });
+                    if (correct || !$activity.data('mandatory') || $activity.data('mandatory') === 'partial') {
+                        setAsComplete($activity);
+                    }
+                };
+
+                $('[data-activity="multiple-choice-quiz"]').each(function () {
+                    var $activity = $(this),
+                        $ul = $activity.find('ul.multiple-choice-quiz-options'),
+                        //$inlineFeedback,
+                        details = rebus.stateHelper.getElementDetails($activity),
+                        activityId = details.storeId,
+                        optionsState = details.state,
+                        optionsDefaultState = '',
+                        type = $activity.data('type'),
+                        activityStarted;
+
+                    $ul.addClass(type === 'radio' ? 'radio-list' : 'checkbox-list');
+
+                    // $activity.find('.modal').each(function () {
+                    //     var $modal = $(this),
+                    //         btnText = $modal.hasClass('correct') ? 'Continue' : $modal.hasClass('incorrect') ? 'Continue' : 'OK, thank you. I understand.',
+                    //         modalId = activityId + '-' + $modal.attr('class').split(' ').join('-');
+                    //     hasFeedback = true;
+                    //     if ($modal.hasClass('no-answer')) {
+                    //         hasGiveUpModal = true;
+                    //     }
+                    //     $modal.detach().addClass('modal-template multiple-choice-quiz-modal').attr({ 'id': modalId, 'data-buttons': btnText }).appendTo($body);
+                    // });
+
+                    var responses = {};
+                    $activity.data('responses', responses);
+                    $('.multiple-choice-quiz > [data-response]', $activity).each(function () {
+                        var $response = $(this);
+                        responses[$response.attr('data-response')] = $response.html();
+                        $response.remove();
+                    });
+                    // if (!hasFeedback) {
+                    //     $inlineFeedback = $activity.find('.inline-feedback');
+                    //     hasFeedback = !!$inlineFeedback.length;
+                    // }
+
+                    //if (hasFeedback) {
+                        if (!$('.btn-check-multi-choice-answer', $activity).length) {
+                            $ul.after('<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>');
+                        }
+                        if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
+                            $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
+                        }
+                    //}
+
+                    var $response = $([
+                        '<div class="response">',
+                            '<div>',
+                                '<div data-svg="icon-thumb-up"></div>',
+                                '<div data-svg="icon-thumb-down"></div>',
+                                '<div class="response-text" aria-live="assertive" aria-atomic="false"></div>',
+                            '</div>',
+                        '</div>'
+                    ].join('\n'));
+                    if ($activity.data('append-response-to')) {
+                        $($activity.data('append-response-to')).append($response);
                     }
                     else {
-                        enable = selected === parseInt(requiredSelections[0], 10);
+                        $('.question', $activity).after($response);
+                        //////////////////$activity.addClass('contains-response');
                     }
-                }
-                $activity.find('.btn-check-multi-choice-answer, .btn-submit-assessment-answer').prop('disabled', !enable);
-            };
+                    $activity.data('$fb', $('.response-text', $response).liveFeedback());
 
-            var showAnswer = function ($activity) {
-                if ($activity.data('show-answer')) {
-                    $activity.addClass('show-answer');
-                }
-            };
-
-            var setAsComplete = function ($activity) {
-                showAnswer($activity);
-                panels.setActivityAsComplete($activity, true);
-            };
-
-            var isCorrect = function ($activity) {
-                var correct = true,
-                    globalAnswer = $activity.data('answer');
-                if (globalAnswer) {
-                    if (globalAnswer === 'anyOrNone') {
-                        return true;
-                    }
-                    if (globalAnswer === 'any') {
-                        return !!$activity.find('input[type="' + $activity.data('type') + '"]:checked').length;
-                    }
-                }
-                if ($activity.data('type') === 'radio') {
-                    return !!$('input:checked', $activity).closest('li').data('required');
-                }
-                $activity.find('.multiple-choice-quiz-options li').each(function () {
-                    var $this = $(this),
-                        checked = $this.find('input').prop('checked'),
-                        required = $this.attr('data-required') === 'true';
-                    if (checked !== required) {
-                        correct = false;
-                        return false;
-                    }
-                });
-                return correct;
-            };
-
-            return {
-                init: function () {
-                    var keyboard = true;
-
-                    var performSubmit = function ($submit, $activity) {
-                        var $checkedOption, correct, //, modalSelector;
-                            responses;
-                        $activity = $activity || $submit.closest('[data-activity="multiple-choice-quiz"]');
-                        responses = $activity.data('responses');
-                        $checkedOption = $activity.find('input:checked').closest('li');
-                        correct = isCorrect($activity);
-                        $activity.attr('data-correct', correct ? 'true' : 'false');
-                        // if ($checkedOption.find('.inline-feedback').length) {
-                        //     $activity.addClass('show-inline-feedback');
-                        // }
-                        // else {
-                        //     modalSelector = $checkedOption.data('feedback');
-                        //     modalTemplates.setFocusOnClosed($submit);
-                        //     if (!modalSelector) {
-                        //         modalSelector = '#' + $activity.attr('data-storeid') + '-modal-' + (correct ? 'correct' : 'incorrect');
-                        //     }
-                        //     $(modalSelector).modal();
-                        // }
-                        //$activity.find('.btn-tried').prop('disabled', correct);
-                        $activity.data('$fb').liveFeedback('value', responses[$checkedOption.attr('data-response')]);
-                        if (correct || !$activity.data('mandatory') || $activity.data('mandatory') === 'partial') {
-                            setAsComplete($activity);
-                        }
-                    };
-
-                    $('[data-activity="multiple-choice-quiz"]').each(function () {
-                        var $activity = $(this),
-                            $ul = $activity.find('ul.multiple-choice-quiz-options'),
-                            //$inlineFeedback,
-                            details = rebus.stateHelper.getElementDetails($activity),
-                            activityId = details.storeId,
-                            optionsState = details.state,
-                            optionsDefaultState = '',
-                            type = $activity.data('type'),
-                            activityStarted;
-
-                        $ul.addClass(type === 'radio' ? 'radio-list' : 'checkbox-list');
-
-                        // $activity.find('.modal').each(function () {
-                        //     var $modal = $(this),
-                        //         btnText = $modal.hasClass('correct') ? 'Continue' : $modal.hasClass('incorrect') ? 'Continue' : 'OK, thank you. I understand.',
-                        //         modalId = activityId + '-' + $modal.attr('class').split(' ').join('-');
-                        //     hasFeedback = true;
-                        //     if ($modal.hasClass('no-answer')) {
-                        //         hasGiveUpModal = true;
-                        //     }
-                        //     $modal.detach().addClass('modal-template multiple-choice-quiz-modal').attr({ 'id': modalId, 'data-buttons': btnText }).appendTo($body);
-                        // });
-
-                        var responses = {};
-                        $activity.data('responses', responses);
-                        $('.multiple-choice-quiz > [data-response]', $activity).each(function () {
-                            var $response = $(this);
-                            responses[$response.attr('data-response')] = $response.html();
-                            $response.remove();
-                        });
-                        // if (!hasFeedback) {
-                        //     $inlineFeedback = $activity.find('.inline-feedback');
-                        //     hasFeedback = !!$inlineFeedback.length;
-                        // }
-
-                        //if (hasFeedback) {
-                            if (!$('.btn-check-multi-choice-answer', $activity).length) {
-                                $ul.after('<div class="text-right"><button type="button" class="button button-default btn-check-multi-choice-answer btn-block-lte-xs" disabled>' + ($activity.data('submit') || 'Check my answer') + '</button></div>');
-                            }
-                            if ($activity.attr('data-instant-feedback-mouse') !== undefined) {
-                                $activity.find('.btn-check-multi-choice-answer').attr('hidden', true);
-                            }
-                        //}
-
-                        $('.question', $activity).after([
-                            '<div class="response">',
-                                '<div>',
-                                    '<div data-svg="icon-thumb-up"></div>',
-                                    '<div data-svg="icon-thumb-down"></div>',
-                                    '<div class="response-text" aria-live="assertive" aria-atomic="false"></div>',
-                                '</div>',
-                            '</div>'
-                        ].join('\n'));
-                        $activity.data('$fb', $('.response-text', $activity).liveFeedback());
-
-                        $ul.find('li').each(function (optionIdx) {
-                            var $li = $(this),
-                                $appendAfter = $li.find('.append-after').removeClass('append-after').detach(),
-                                appendAfter = $appendAfter.length ? $appendAfter[0].outerHTML : '',
-                                label = $li.html(),
-                                optionId = activityId + '_o' + optionIdx,
-                                response = $li.attr('data-response') || $li.attr('data-required') === 'true' ? 'correct' : 'incorrect',
-                                inputHTML;
-                            if (type === 'radio') {
-                                inputHTML = '<input type="radio" data-idx="' + optionIdx + '" id="' + optionId + '" name="rg_' + activityId + '" />';
-                            }
-                            else {
-                                inputHTML = '<input type="checkbox" data-idx="' + optionIdx + '" id="' + optionId + '" />';
-                            }
-                            $li.attr({ role: 'presentation', 'data-response': response }).empty().append([
-                                inputHTML,
-                                '<label for="' + optionId + '">',
-                                '<span class="indicator" aria-hidden="true"><div data-svg="icon-' + type + '"></div></span>',
-                                '<span class="correct-indicator" aria-hidden="true"><img src="images/icon_tick_green.png" alt="" /></span>',
-                                label,
-                                '</label>',
-                                appendAfter
-                            ].join('\n'));
-                            // if ($inlineFeedback && $inlineFeedback.length) {
-                            //     $inlineFeedback.eq(optionIdx).detach().appendTo($li);
-                            // }
-                            if (optionsState) {
-                                if ((type === 'checkbox' && optionsState.charAt(optionIdx) === '1') || (type === 'radio' && optionIdx + '' === optionsState)) {
-                                    $li.addClass('checked');
-                                    $li.find('input').prop('checked', true);
-                                    setCheckAnswerBtnState($activity);
-                                    activityStarted = true;
-                                }
-                            }
-                            else if (type === 'checkbox') {
-                                optionsDefaultState += '0';
-                            }
-                            else {
-                                optionsDefaultState = '-1';
-                            }
-                        });
-                        if (activityStarted) {
-                            panels.markActivityAsStarted($activity);
-                            if ($activity.hasClass('activity-done')) {
-                                performSubmit(null, $activity);
-                                showAnswer($activity);
-                            }
-                            // if ($inlineFeedback && $inlineFeedback.length) {
-                            //     $activity.addClass('show-inline-feedback');
-                            // }
-                        }
-                        rebus.stateHelper.setElementState($activity, optionsState || optionsDefaultState);
-                        setCheckAnswerBtnState($activity);
-                    });
-
-                    $('body').on('mousedown touchstart', '.radio-list li', function () {
-                        keyboard = false;
-                    }).on('keydown', '.radio-list li', function () {
-                        keyboard = true;
-                    }).on('focus', '.radio-list input, .checkbox-list input', function () {
-                        $(this).closest('li').addClass('focussed-pseudo');
-                    }).on('blur', '.radio-list input, .checkbox-list input', function () {
-                        $(this).closest('li').removeClass('focussed-pseudo');
-                    }).on('change', '.radio-list input', function (e) {
-                        var $input = $(this),
-                            $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
-                            $submit = $activity.find('.btn-check-multi-choice-answer'),
-                            instantFeedback = !keyboard && $activity.attr('data-instant-feedback-mouse') !== undefined;
-                        $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
-                        //$activity.removeClass('show-inline-feedback');
-                        $input.closest('.radio-list').find('.checked').removeClass('checked');
-                        $input.closest('li').addClass('checked');
-                        rebus.stateHelper.setElementState($activity, $input.data('idx') + '');
-                        panels.markActivityAsStarted($activity);
-                        rebus.stateHelper.save();
-                        if (instantFeedback) {
-                            $submit.attr('hidden', true);
-                            $activity.removeClass('submit-visible');
-                            performSubmit($submit, $activity);
-                        }
-                        else {
-                            $submit.removeAttr('hidden');
-                            $activity.addClass('submit-visible');
-                        }
-                        setTimeout(function () {
-                            setCheckAnswerBtnState($activity);
-                        }, 100);
-                    }).on('click', '.checkbox-list input', function () {
-                        var $input = $(this),
-                            $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
-                            $option = $input.closest('li');
-                        $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
-                        if ($option.hasClass('checked')) {
-                            $option.removeClass('checked');
-                        }
-                        else {
-                            $option.addClass('checked');
-                        }
-                        rebus.stateHelper.setElementState($activity, $input.is(":checked") ? '1' : '0', $input.data('idx'));
-                        panels.markActivityAsStarted($activity);
-                        rebus.stateHelper.save();
-                        setTimeout(function () {
-                            setCheckAnswerBtnState($input.closest('[data-activity="multiple-choice-quiz"]'));
-                        }, 100);
-                    }).on('click', '.btn-check-multi-choice-answer', function () {
-                        performSubmit($(this));
-                        return false;
-                    }).on('click', '.btn-tried', function () {
-                        var $btn = $(this),
-                            $activity = $btn.closest('[data-activity="multiple-choice-quiz"]');
-                        //$btn.prop('disabled', true); We can't disable it because we focus on it after the modal is closed
-                        modalTemplates.setFocusOnClosed($btn);
-                        $('#' + $activity.attr('data-storeid') + '-modal-no-answer').modal();
-                        setAsComplete($activity);
-                    }).on('click', '.triggers-input', function () {
-                        $(this).closest('li').find('input').trigger('click');
-                    });
-                },
-                isCorrect: isCorrect,
-                //reset: function ($quiz) {
-                //    $quiz.find('input:checked').prop('checked', false);
-                //    $quiz.find('.checked').removeClass('checked');
-                //    return this;
-                //},
-                rebuildOptions: function ($activity) {
-                    var details = rebus.stateHelper.getElementDetails($activity),
-                        activityId = details.storeId,
-                        type = $activity.data('type');
-
-                    state[$activity.data('storeid')] = '-1';
-                    $activity.find('input:checked').prop('checked', false);
-                    $activity.find('.checked').removeClass('checked');
-
-                    $activity.find('ul.multiple-choice-quiz-options li').each(function (optionIdx) {
+                    $ul.find('li').each(function (optionIdx) {
                         var $li = $(this),
+                            $appendAfter = $li.find('.append-after').removeClass('append-after').detach(),
+                            appendAfter = $appendAfter.length ? $appendAfter[0].outerHTML : '',
                             label = $li.html(),
                             optionId = activityId + '_o' + optionIdx,
+                            response = $li.attr('data-response') || $li.attr('data-required') === 'true' ? 'correct' : 'incorrect',
                             inputHTML;
                         if (type === 'radio') {
                             inputHTML = '<input type="radio" data-idx="' + optionIdx + '" id="' + optionId + '" name="rg_' + activityId + '" />';
@@ -2497,19 +2390,149 @@ rebus.pageInit = (function ($, undefined) {
                         else {
                             inputHTML = '<input type="checkbox" data-idx="' + optionIdx + '" id="' + optionId + '" />';
                         }
-                        $li.addClass('clearfix').attr({ 'role': 'presentation' }).empty().append([
+                        $li.attr({ role: 'presentation', 'data-response': response }).empty().append([
                             inputHTML,
                             '<label for="' + optionId + '">',
-                            '<span class="indicator" aria-hidden="true"><img src="images/multichoice.png" alt="" /></span>',
-                            '<span class="correct-indicator" aria-hidden="true"><img src="images/icon_tick_red.png" alt="" /></span>',
+                            '<span class="indicator" aria-hidden="true"><div data-svg="icon-' + type + '"></div></span>',
+                            '<span class="correct-indicator" aria-hidden="true"><img src="images/icon_tick_green.png" alt="" /></span>',
                             label,
-                            '</label>'
+                            '</label>',
+                            appendAfter
                         ].join('\n'));
+                        // if ($inlineFeedback && $inlineFeedback.length) {
+                        //     $inlineFeedback.eq(optionIdx).detach().appendTo($li);
+                        // }
+                        if (optionsState) {
+                            if ((type === 'checkbox' && optionsState.charAt(optionIdx) === '1') || (type === 'radio' && optionIdx + '' === optionsState)) {
+                                $li.addClass('checked');
+                                $li.find('input').prop('checked', true);
+                                setCheckAnswerBtnState($activity);
+                                activityStarted = true;
+                            }
+                        }
+                        else if (type === 'checkbox') {
+                            optionsDefaultState += '0';
+                        }
+                        else {
+                            optionsDefaultState = '-1';
+                        }
                     });
-                    return this;
-                }
-            };
-        })();
+                    if (activityStarted) {
+                        panels.markActivityAsStarted($activity);
+                        if ($activity.hasClass('activity-done')) {
+                            performSubmit(null, $activity);
+                            showAnswer($activity);
+                        }
+                        // if ($inlineFeedback && $inlineFeedback.length) {
+                        //     $activity.addClass('show-inline-feedback');
+                        // }
+                    }
+                    rebus.stateHelper.setElementState($activity, optionsState || optionsDefaultState);
+                    setCheckAnswerBtnState($activity);
+                });
+
+                $('body').on('mousedown touchstart', '.radio-list li', function () {
+                    keyboard = false;
+                }).on('keydown', '.radio-list li', function () {
+                    keyboard = true;
+                }).on('focus', '.radio-list input, .checkbox-list input', function () {
+                    $(this).closest('li').addClass('focussed-pseudo');
+                }).on('blur', '.radio-list input, .checkbox-list input', function () {
+                    $(this).closest('li').removeClass('focussed-pseudo');
+                }).on('change', '.radio-list input', function (e) {
+                    var $input = $(this),
+                        $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
+                        $submit = $activity.find('.btn-check-multi-choice-answer'),
+                        instantFeedback = !keyboard && $activity.attr('data-instant-feedback-mouse') !== undefined;
+                    $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
+                    //$activity.removeClass('show-inline-feedback');
+                    $input.closest('.radio-list').find('.checked').removeClass('checked');
+                    $input.closest('li').addClass('checked');
+                    rebus.stateHelper.setElementState($activity, $input.data('idx') + '');
+                    panels.markActivityAsStarted($activity);
+                    rebus.stateHelper.save();
+                    if (instantFeedback) {
+                        $submit.attr('hidden', true);
+                        $activity.removeClass('submit-visible');
+                        performSubmit($submit, $activity, true);
+                    }
+                    else {
+                        $submit.removeAttr('hidden');
+                        $activity.addClass('submit-visible');
+                    }
+                    setTimeout(function () {
+                        setCheckAnswerBtnState($activity);
+                    }, 100);
+                }).on('click', '.checkbox-list input', function () {
+                    var $input = $(this),
+                        $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
+                        $option = $input.closest('li');
+                    $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
+                    if ($option.hasClass('checked')) {
+                        $option.removeClass('checked');
+                    }
+                    else {
+                        $option.addClass('checked');
+                    }
+                    rebus.stateHelper.setElementState($activity, $input.is(":checked") ? '1' : '0', $input.data('idx'));
+                    panels.markActivityAsStarted($activity);
+                    rebus.stateHelper.save();
+                    setTimeout(function () {
+                        setCheckAnswerBtnState($input.closest('[data-activity="multiple-choice-quiz"]'));
+                    }, 100);
+                }).on('click', '.btn-check-multi-choice-answer', function () {
+                    performSubmit($(this), null, true);
+                    return false;
+                }).on('click', '.btn-tried', function () {
+                    var $btn = $(this),
+                        $activity = $btn.closest('[data-activity="multiple-choice-quiz"]');
+                    //$btn.prop('disabled', true); We can't disable it because we focus on it after the modal is closed
+                    modalTemplates.setFocusOnClosed($btn);
+                    $('#' + $activity.attr('data-storeid') + '-modal-no-answer').modal();
+                    setAsComplete($activity);
+                }).on('click', '.triggers-input', function () {
+                    $(this).closest('li').find('input').trigger('click');
+                });
+            },
+            isCorrect: isCorrect,
+            //reset: function ($quiz) {
+            //    $quiz.find('input:checked').prop('checked', false);
+            //    $quiz.find('.checked').removeClass('checked');
+            //    return this;
+            //},
+            rebuildOptions: function ($activity) {
+                var details = rebus.stateHelper.getElementDetails($activity),
+                    activityId = details.storeId,
+                    type = $activity.data('type');
+
+                state[$activity.data('storeid')] = '-1';
+                $activity.find('input:checked').prop('checked', false);
+                $activity.find('.checked').removeClass('checked');
+
+                $activity.find('ul.multiple-choice-quiz-options li').each(function (optionIdx) {
+                    var $li = $(this),
+                        label = $li.html(),
+                        optionId = activityId + '_o' + optionIdx,
+                        inputHTML;
+                    if (type === 'radio') {
+                        inputHTML = '<input type="radio" data-idx="' + optionIdx + '" id="' + optionId + '" name="rg_' + activityId + '" />';
+                    }
+                    else {
+                        inputHTML = '<input type="checkbox" data-idx="' + optionIdx + '" id="' + optionId + '" />';
+                    }
+                    $li.addClass('clearfix').attr({ 'role': 'presentation' }).empty().append([
+                        inputHTML,
+                        '<label for="' + optionId + '">',
+                        '<span class="indicator" aria-hidden="true"><img src="images/multichoice.png" alt="" /></span>',
+                        '<span class="correct-indicator" aria-hidden="true"><img src="images/icon_tick_red.png" alt="" /></span>',
+                        label,
+                        '</label>'
+                    ].join('\n'));
+                });
+                return this;
+            }
+        };
+    })();
 
         return {
             init: function () {
@@ -2849,6 +2872,8 @@ rebus.pageInit = (function ($, undefined) {
                 window.pageLoaded();
             }
 
+            $('.carousel').accessibleCarousel();
+            
             $('[data-svg]').svgInjector();
 
             if (rebus.screenReaderTest) {

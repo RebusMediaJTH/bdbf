@@ -75,9 +75,10 @@ border: 2px solid #590d2b; border-radius: 4px; background: #fff; color: #590D2B;
 font-size: 1.8rem; font-weight: 500;
 transition: background-color 0.25s, color 0.25s;
 }
-.button-default:hover,
-.button-default:focus,
-.button-default:active { background: #590d2b; color: #fff; }
+.button-default:disabled { opacity: 0.5; }
+.button-default:not(:disabled):hover,
+.button-default:not(:disabled):focus,
+.button-default:not(:disabled):active { background: #590d2b; color: #fff; }
 
 .circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: 500; perspective: 1000px; }
 .circle-btn > div { height: 0; padding-top: 100%; perspective: 1000px; transform-style: preserve-3d; }
@@ -136,6 +137,19 @@ transition: background-color 0.25s, color 0.25s;
     .accordion-panel > div { padding: 20px 34px; }
 }
 
+.carousel-indicators-container { display: flex; justify-content: center; margin-top: 8px; }
+.carousel-indicators { position: static; margin-left: 0; width: auto;  }
+.carousel-nav { display: flex; justify-content: center; }
+.carousel-nav > div { display: flex; }
+.carousel-nav a { display: block; }
+.carousel-nav [data-slide="prev"] { margin-right: 15px; }
+.carousel a svg { width: 42.19px; height: 42.19px; }
+.carousel-indicators li,
+.carousel-indicators li.active { width: 14px; height: 14px; margin: 1px; background: none; }
+.carousel-indicators li { padding: 3px; border-radius: 50%; border: 1px solid #d2d2d4; }
+.carousel-indicators li > div { height: 100%; border-radius: 50%; background: none; transition: background-color 0.25s; }
+.carousel-indicators li.active > div { background: #590d2b; }
+
 /*
     MISC
 */
@@ -164,6 +178,9 @@ transition: background-color 0.25s, color 0.25s;
 .horizontal-panels .row { padding: 30px 0; overflow: hidden; /* hide squiggle overflows */ }
 .horizontal-panels h2 { color: #590D2B; font-size: 3rem; font-weight: bold; }
 @media (min-width: 768px) {
+    .horizontal-panels .row { padding: 25px; }
+}
+@media (min-width: 992px) {
     .horizontal-panels .row { padding: 50px; }
 }
 
@@ -274,12 +291,15 @@ transition: background-color 0.25s, color 0.25s;
 [data-activity="multiple-choice-quiz"][data-correct="false"] .response .icon-thumb-down { display: block; }
 
 @media (min-width: 768px) {
-    
     [data-activity="multiple-choice-quiz"] { display: flex; }
-    [data-activity="multiple-choice-quiz"] > div { padding: 50px; }
+    [data-activity="multiple-choice-quiz"] > div { padding: 25px; }
     [data-activity="multiple-choice-quiz"] .question { width: 58%; }
     [data-activity="multiple-choice-quiz"] .response { width: 42%; }
     [data-activity="multiple-choice-quiz"] .response svg { margin-bottom: 25px; }
+}
+
+@media (min-width: 992px) {
+    [data-activity="multiple-choice-quiz"] > div { padding: 50px; }
 }
 
 html.final-topic .final-panel .hide-when-almost-done,
@@ -287,4 +307,9 @@ html:not(.final-topic) .final-panel .show-when-almost-done { display: none; }
 .final-panel .show-when-almost-done { font-weight: 500; }
 @media (min-width: 568px) {
     .final-panel button { margin-left: 25px; }
+}
+
+@media (min-width: 568px) {
+    #page-m1_completion .btns { display: flex; }
+    #page-m1_completion .btns > button { margin-left: 25px; }
 }
