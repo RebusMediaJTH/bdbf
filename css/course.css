@@ -190,12 +190,23 @@
 #carousel-1 .carousel-nav { background: #f8f8f8; }
 #carousel-1 .carousel-indicators-container { margin-top: 0; padding-top: 8px; }
 #carousel-1 .carousel-nav { padding-bottom: 25px; }
+.social-media-options .response { min-height: 436px; }
+@media (min-width: 375px) {
+    .social-media-options .response { min-height: 408px; }
+}
+@media (min-width: 414px) {
+    .social-media-options .response { min-height: 380px; }
+}
+@media (min-width: 576px) {
+    .social-media-options .response { min-height: 324px; }
+}
 @media (min-width: 711px) {
-.social-media-options li svg { width: 71px; height: 71px; }
+    .social-media-options li svg { width: 71px; height: 71px; }
 }
 @media (min-width: 768px) {
-.social-quiz-panel .instructions { padding: 50px; }
-.social-media-options li svg { width: 6.8vw; height: 6.8vw; }
+    .social-media-options .response { min-height: unset; min-height: none;  }
+    .social-quiz-panel .instructions { padding: 50px; }
+    .social-media-options li svg { width: 6.8vw; height: 6.8vw; }
 }
 @media (min-width: 992px) {
     #carousel-1 .carousel-nav { padding-bottom: 50px; }
