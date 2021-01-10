@@ -125,16 +125,9 @@
     #page-m1_t1_p1 #banner-message { bottom: auto; left: auto; top: 4%; right: 20px; }
 }
 
-#page-m1_t2_p1 #banner { background: url(../content/images/t2_banner_xs.jpg); background-size: cover; }
-#page-m1_t2_p1 #banner-message { bottom: 10px; left: 86px; }
-@media (min-width: 375px) {
-    #page-m1_t2_p1 #banner-message { left: 105px; }
-}
-@media (min-width: 479px) {
-    #page-m1_t2_p1 #banner { background: url(../content/images/t2_banner_sm.jpg); background-size: cover; }
-    #page-m1_t2_p1 #banner-message { left: 250px; }
-}
-@media (min-width: 768px) {
+#page-m1_t2_p1 #banner { background: url(../content/images/t2_banner_sm.jpg); background-size: cover; background-position: 50%; }
+#page-m1_t2_p1 #banner-message { bottom: 3%; left: 3%; }
+@media (min-width: 980px) {
   #page-m1_t2_p1 #banner-message { bottom: auto; left: auto; top: 4%; right: 20px; }
 }
 
