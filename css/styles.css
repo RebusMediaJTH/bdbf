@@ -1006,7 +1006,7 @@ video { max-width: 100%; height: auto !important; }
     .transcript-carousel .carousel-indicators, .transcript-carousel .carousel-control { display: none; }
     .transcript-carousel .item { background-color: #fff; }
     .transcript-carousel p,
-    .transcript-carousel ul { color: #000; }
+    .transcript-carousel ul { color: #3E3E3E; }
     .transcript-carousel .transcript-text, .transcript-carousel .transcript-image { padding: 0; }
     .transcript-carousel .carousel-inner > .item {  display: block; }
     .transcript-carousel, .transcript-carousel .item { height: auto; }

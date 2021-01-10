@@ -1,3 +1,5 @@
+body { color: #3E3E3E; }
+
 /*
     HEADER
 */
@@ -138,17 +140,17 @@ transition: background-color 0.25s, color 0.25s;
 }
 
 .carousel-indicators-container { display: flex; justify-content: center; margin-top: 8px; }
-.carousel-indicators { position: static; margin-left: 0; width: auto;  }
+.carousel-indicators-container .carousel-indicators { position: static; margin-left: 0; width: auto;  }
 .carousel-nav { display: flex; justify-content: center; }
 .carousel-nav > div { display: flex; }
 .carousel-nav a { display: block; }
 .carousel-nav [data-slide="prev"] { margin-right: 15px; }
 .carousel a svg { width: 42.19px; height: 42.19px; }
-.carousel-indicators li,
-.carousel-indicators li.active { width: 14px; height: 14px; margin: 1px; background: none; }
-.carousel-indicators li { padding: 3px; border-radius: 50%; border: 1px solid #d2d2d4; }
-.carousel-indicators li > div { height: 100%; border-radius: 50%; background: none; transition: background-color 0.25s; }
-.carousel-indicators li.active > div { background: #590d2b; }
+.carousel-indicators-container .carousel-indicators li,
+.carousel-indicators-container .carousel-indicators li.active { width: 14px; height: 14px; margin: 1px; background: none; }
+.carousel-indicators-container .carousel-indicators li { padding: 3px; border-radius: 50%; border: 1px solid #d2d2d4; }
+.carousel-indicators-container .carousel-indicators li > div { height: 100%; border-radius: 50%; background: none; transition: background-color 0.25s; }
+.carousel-indicators-container .carousel-indicators li.active > div { background: #590d2b; }
 
 /*
     MISC
