@@ -178,6 +178,8 @@
 .social-quiz-panel .instructions { padding: 15px; }
 .social-media-options .question { padding-left: 0; padding-right: 0; }
 .social-media-options .multiple-choice-quiz-options { display: flex; margin: 0; }
+.browser-ie .social-media-options ul { margin-left: 30px; }
+.browser-ie .social-media-options li { display: block; }
 .social-media-options li { margin: 0; }
 .social-media-options li .indicator { display: none; }
 .social-media-options li svg { width: 71px; height: 71px; }

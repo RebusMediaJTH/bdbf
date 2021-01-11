@@ -211,6 +211,7 @@ transition: background-color 0.25s, color 0.25s;
 }
 
 .scrolldown-learn-more { display: flex; flex-direction: column; align-items: center; text-align: center; width: 150px; color: #a1121e; font-size: 2.1rem; font-weight: 500; }
+.browser-ie .scrolldown-learn-more { display: block; }
 .scrolldown-learn-more svg { width: 36px; height: 21.41772px; fill: #a1121e; margin-top: 8px; }
 .scrolldown-learn-more-panel .last { display: flex; align-items: flex-end; justify-content: center; }
 @media (min-width: 768px) {
@@ -284,10 +285,13 @@ transition: background-color 0.25s, color 0.25s;
 }
 
 .want-to-know-more-panel .boxes { list-style: none; padding: 0; margin: 100px 0 0 0; }
-.want-to-know-more-panel .boxes > li { position: relative; margin: 100px 0 0 0; border: 2px dashed #590D2B; padding: 28px; }
+.want-to-know-more-panel .boxes > li {
+    position: relative; margin: 100px 0 0 0; border: 2px dashed #590D2B; padding: 28px;
+    white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word;
+}
 .want-to-know-more-panel .boxes > li:first-child { margin-top: 0; }
 .want-to-know-more-panel .boxes > li svg { position: absolute; top: -70px; left: 50%; transform: translateX(-50%); width: 84px; height: 84px; }
-.want-to-know-more-panel .boxes li ul { padding-left: 20px; }
+.want-to-know-more-panel .boxes li ul { padding-left: 20px; margin-bottom: 10px; }
 @media (min-width: 992px) {
     .want-to-know-more-panel .boxes { display: flex; align-items: flex-start; }
     .want-to-know-more-panel .boxes > li { flex: 1; margin: 0 0 0 50px; }
@@ -309,6 +313,10 @@ transition: background-color 0.25s, color 0.25s;
 [data-activity="multiple-choice-quiz"] .response svg { display: none; flex-shrink: 0; width: 105px; height: 105px; margin-bottom: 15px; }
 [data-activity="multiple-choice-quiz"][data-correct="true"] .response .icon-thumb-up,
 [data-activity="multiple-choice-quiz"][data-correct="false"] .response .icon-thumb-down { display: block; }
+
+.browser-ie [data-activity="multiple-choice-quiz"] .response,
+.browser-ie [data-activity="multiple-choice-quiz"] .response > div { display: block; }
+.browser-ie [data-activity="multiple-choice-quiz"] .response svg { margin-left: auto; margin-right: auto; }
 
 @media (min-width: 768px) {
     [data-activity="multiple-choice-quiz"] { display: flex; }
