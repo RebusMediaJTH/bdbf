@@ -2169,7 +2169,7 @@ rebus.pageInit = (function ($, undefined) {
 
         /*
             <div data-activity="accordion" data-mandatory="true" class="default-accordion-style">
-                <div class="accordion-item" role="tablist" aria-multiselectable="true">
+                <div class="accordion-item">
 	                <a class="accordion-tab">
                         <h3>...</h3>
 	                    <span class="plus"></span>
@@ -2184,13 +2184,14 @@ rebus.pageInit = (function ($, undefined) {
        var initAccordians = function () {
             $('[data-activity="accordion"]').each(function (actIdx) {
                 var $activity = $(this),
+                    id = $activity.attr('id') || 'accordion_' + actIdx,
                     details = rebus.stateHelper.getElementDetails($activity),
                     activityId = details.storeId,
                     btnsState = details.state,
                     btnsDefaultState = '',
                     activityStarted;
 
-                $activity.find('.accordion-item').each(function (aIdx) {
+                $activity.attr({id: id, role: 'tablist', 'aria-multiselectable': 'true'}).find('.accordion-item').each(function (aIdx) {
                     var cardid = 'act' + actIdx + '_c' + aIdx,
                         tabid = cardid + '_tab' + aIdx,
                         tabpanelid = cardid + '_tabpanel' + aIdx,
@@ -2207,7 +2208,7 @@ rebus.pageInit = (function ($, undefined) {
                         'role': 'tab',
                         'data-idx': aIdx,
                         'data-toggle': 'collapse',
-                        'data-parent': '#' + cardid,
+                        'data-parent': '#' + id,
                         'href': '#' + tabpanelid,
                         'aria-expanded': "false",
                         'aria-controls': tabpanelid
