@@ -1,5 +1,7 @@
 ﻿
 > Key messages animate in as they are scrolled into view
+if (!$element.closest('.locked-panel').length && isElementInView($element, true)) {
+
 > Videos - play icon. Will need autoplay from sydney trains
 > Audio control - can grab from iceberg
 > http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t4_p1&initialised=true

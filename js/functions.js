@@ -846,7 +846,7 @@ rebus.pageInit = (function ($, undefined) {
                         if ($monitorElements.length) {
                             $.each($monitorElements, function () {
                                 var $element = $(this);
-                                if (isElementInView($element, true)) {
+                                if (!$element.closest('.locked-panel').length && isElementInView($element, true)) {
                                     $element.closest('.row').addClass($element.data('detect-when-in-view') + '-in-view');
                                     $element.removeAttr('data-detect-when-in-view');
                                     $monitorElements = $('[data-detect-when-in-view]');
