@@ -3,7 +3,7 @@
 #page-m1_menu #slide-pages-container.menu-in > div { transform: translateX(-50%); }
 #page-m1_menu #slide-pages-container > div > div { position: relative; width: 50%; padding: 0 15px; }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     #page-m1_menu body,
     #page-m1_menu #slide-pages-container,
     #page-m1_menu #slide-pages-container > div,
@@ -40,18 +40,17 @@
     #welcome-page .title { font-size: 4.5rem; }
 }
 @media (min-width: 768px) {
-    #welcome-page { background: none; }
     #welcome-page .title { padding: 7.8125% 0 0 12.207%; }
     #welcome-page h2 { margin: 3.8% 0; }
+    #welcome-page .overlay.lg h3 { font-size: 100%; }
+    #welcome-page .overlay.lg p { font-size: 72%; }
+}
+@media (min-width: 1024px) {
+    #welcome-page { background: none; }
     #welcome-page .img-and-overlay { display: block; }
     #welcome-page .sm { display: none; }
     #welcome-page .overlay.lg { position: absolute; top: 50%; left: 60%; width: 33.5%; padding: 0 1% 0 1%; font-size: 2.43vw; }
-    #welcome-page .overlay.lg h3 { font-size: 100%; }
-    #welcome-page .overlay.lg p { font-size: 72%; }
-    #welcome-page .circle-btn { position: absolute; bottom: 3%; right: 7%; }
-}
-@media (min-width: 1024px) {
-    #welcome-page .circle-btn { bottom: 4%; right: 9%; }
+    #welcome-page .circle-btn { position: absolute; bottom: 4%; right: 9%; }
 }
 @media (min-width: 1029px) {
     #welcome-page .overlay.lg { font-size: 2.5rem; }
@@ -95,7 +94,7 @@
 .topic-mnu-item button:active {
     background: #fff !important; color: #590d2b;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     #menu-page { background: none; }
     #menu-page .img-and-overlay > div { display: flex; flex-direction: column; justify-content: center; }
     .topic-mnu { padding: 0 44px; display: flex; flex-wrap: wrap; }
@@ -109,8 +108,6 @@
     .topic-4-complete .topic-mnu-item.topic-4 button {
         border-color: #a7627d;
     }
-}
-@media (min-width: 1024px) {
     #menu-page .img-and-overlay > div { display: block; padding-top: 22%; }
 }
 

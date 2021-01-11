@@ -1120,30 +1120,41 @@ rebus.pageInit = (function ($, undefined) {
             $.each($html.find('div'), function (i) {
                 if (rebus.config.videosMustBePlayedThrough) {
                     // Non clickable indicators
-                    indicators.push('<li ' + (i === 0 ? ' class="active"' : '') + '></li>');
+                    indicators.push('<li ' + (i === 0 ? ' class="active"' : '') + '><div></div></li>');
                 }
                 else {
-                    indicators.push('<li data-target="#' + carouselId + '" data-slide-to="' + i + '"' + (i === 0 ? ' class="active"' : '') + '></li>');
+                    indicators.push('<li data-target="#' + carouselId + '" data-slide-to="' + i + '"' + (i === 0 ? ' class="active"' : '') + '><div></div></li>');
                 }
                 panels.push('<div class="item' + (i === 0 ? ' active' : '') + '">\n' + this.outerHTML + '\n</div>');
             });
 
             return [
                 '<div id="' + carouselId + '" class="transcript-carousel carousel slide" data-interval="false">',
-                '<ol class="carousel-indicators">',
-                indicators.join('\n'),
-                '</ol>',
-                '<div class="carousel-inner" role="listbox">',
-                panels.join('\n'),
-                '</div>',
-                '<a class="left carousel-control" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
-                '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-                '<span class="sr-only">Previous</span>',
-                '</a>',
-                '<a class="right carousel-control" href="#' + carouselId + '" role="button" data-slide="next">',
-                '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
-                '<span class="sr-only">Next</span>',
-                '</a>',
+                    // '<ol class="carousel-indicators">',
+                    //     indicators.join('\n'),
+                    // '</ol>',
+                    '<div class="carousel-inner" role="listbox">',
+                        panels.join('\n'),
+                    '</div>',
+                    // '<a class="left carousel-control" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
+                    //     '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+                    //     '<span class="sr-only">Previous</span>',
+                    // '</a>',
+                    // '<a class="right carousel-control" href="#' + carouselId + '" role="button" data-slide="next">',
+                    //     '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
+                    //     '<span class="sr-only">Next</span>',
+                    // '</a>',
+                    '<div class="carousel-indicators-container" aria-hidden="true">',
+                    '<ol class="carousel-indicators">',
+                        indicators.join('\n'),
+                    '</ol>',
+                    '</div>',
+                    '<div class="carousel-nav">',
+                        '<div>',
+                            '<a href="#' + carouselId + '" role="button" data-slide="prev"><div data-svg="icon-arrownav-left"></div><span class="sr-only">Previous</span></a>',
+                            '<a href="#' + carouselId + '" role="button" data-slide="next"><div data-svg="icon-arrownav-right"></div><span class="sr-only">Next</span></a>',
+                        '</div>',
+                    '</div>',
                 '</div>'
             ].join('\n');
         };
@@ -1209,29 +1220,30 @@ rebus.pageInit = (function ($, undefined) {
                     var carouselId = 'transcript-carousel-' + $container.attr('data-video-idx'),
                         $transcript = $([
                             '<div class="video-transcript">',
-                            '<div class="video-transcript-header">',
-                            '<button type="button" class="close" data-dismiss="transcript" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
-                            '<p class="video-transcript-title">Video transcript</p>',
-                            '</div>',
-                            '<div class="video-transcript-body"></div>',
-                            '<div class="video-transcript-footer">',
-                            '<div class="video-transcript-btns">',
-                            '<a class="mobile-carousel-nav left" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
-                            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-                            '<span class="sr-only">Previous</span>',
-                            '</a>',
-                            '<a class="mobile-carousel-nav right" href="#' + carouselId + '" role="button" data-slide="next">',
-                            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
-                            '<span class="sr-only">Next</span>',
-                            '</a>',
-                            '<button type="button" class="non-stacked button button-default" data-dismiss="transcript">Close</button>',
-                            '<button type="button" class="stacked button button-default" ' + (rebus.config.videosMustBePlayedThrough ? 'data-set-activity-complete ' : '') + 'data-dismiss="transcript">Close</button>',
-                            '</div>',
-                            '</div>',
+                                '<div class="video-transcript-header">',
+                                    '<button type="button" class="close" data-dismiss="transcript" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
+                                    '<p class="video-transcript-title">Video transcript</p>',
+                                '</div>',
+                                '<div class="video-transcript-body"></div>',
+                                '<div class="video-transcript-footer">',
+                                    '<div class="video-transcript-btns">',
+                                        // '<a class="mobile-carousel-nav left" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
+                                        //     '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+                                        //     '<span class="sr-only">Previous</span>',
+                                        // '</a>',
+                                        // '<a class="mobile-carousel-nav right" href="#' + carouselId + '" role="button" data-slide="next">',
+                                        //     '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
+                                        //     '<span class="sr-only">Next</span>',
+                                        // '</a>',
+                                        '<button type="button" class="non-stacked button button-default" data-dismiss="transcript">Close</button>',
+                                        '<button type="button" class="stacked button button-default" ' + (rebus.config.videosMustBePlayedThrough ? 'data-set-activity-complete ' : '') + 'data-dismiss="transcript">Close</button>',
+                                    '</div>',
+                                '</div>',
                             '</div>'
                         ].join('\n'));
                     $transcript.find('.video-transcript-body').append(buildTranscriptCarousel(carouselId, data));
                     $container.append($transcript).addClass('show-video-transcript');
+                    $('[data-svg]', $transcript).svgInjector();
                 });
             }
             else {
