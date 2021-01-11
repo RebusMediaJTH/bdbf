@@ -1,15 +1,6 @@
 ﻿
-> http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t3_p1&initialised=true
-  accordion
-  
-> Key messages animate in as they are scrolled into view
-if (!$element.closest('.locked-panel').length && isElementInView($element, true)) {
-
 > Videos - play icon. Will need autoplay from sydney trains
 > Audio control - can grab from iceberg
-> http://127.0.0.1/VSCodeRepos/RebusMedia/TLHBDBF/index.html?page=m1_t4_p1&initialised=true
-  > convert to slides and change leader text from scroll to select arrow
-  > or put in seperate panels - save first version to make easier converting to slides
 > Compress bootstrap.min
 
 
@@ -21,3 +12,8 @@ Questions for client
   > So, we need to would need to break it up (tough time getting that to join for all panels!)
   > or somehow apply it after the bg (we'd need a bg for the whole vertical columns) but before all the content is added. No idea how.
   > even if we could do that, there's no way we could get it over the footer
+
+M1 > T2 > no squiggles on final 2 panels - can't do footer
+M1 > the twitter image was missing from the designs so i...
+M2 > Need version of T3S1P4 image at least 604px tall - only way i could get it to look good next to carousel
+M0 > Need more info icon for animation Q1
