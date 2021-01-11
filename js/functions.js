@@ -2199,7 +2199,7 @@ rebus.pageInit = (function ($, undefined) {
                         $aTab = $('.accordion-tab', $aCard),
                         $aTabPanel = $('.accordion-panel', $aCard);
 
-                    $aCard.attr({
+                    $aCard.addClass('panel').attr({
                         id: cardid
                     });
 

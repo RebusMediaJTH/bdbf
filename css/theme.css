@@ -105,7 +105,11 @@ transition: background-color 0.25s, color 0.25s;
 */
 
 .accordion { background: #fff; }
-.accordion-item { margin-bottom: 1px; }
+.accordion-item { 
+    margin-bottom: 1px;
+    /* Reset .panel styles */
+    padding: 0; border-radius: 0; background: none; border: none; box-shadow: none;
+}
 .accordion-tab { 
     display: flex; justify-content: space-between;
     background: #A7627D; color: #fff !important;
@@ -116,6 +120,7 @@ transition: background-color 0.25s, color 0.25s;
 .accordion-tab:hover,
 .accordion-tab:focus,
 .accordion-tab:active { background: #590D2B; }
+.accordion-tab h3 { font-size: 2rem; font-weight: 500; color: #fff; margin: 0; }
 .accordion-tab > div { display: flex; align-items: center; }
 .accordion-panel { font-weight: 200; }
 .accordion-panel > div { padding: 10px 4px; }
