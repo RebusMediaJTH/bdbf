@@ -255,8 +255,8 @@ transition: background-color 0.25s, color 0.25s;
 .key-message { animation-duration: 1s; animation-fill-mode: forwards; }
 .key-message.from-left { transform: translateX(-200%); }
 .key-message.from-right { transform: translateX(200%); }
-.key-message.from-top { transform: translateY(-200%); }
-.key-message.from-bottom { transform: translateY(200%); }
+.key-message.from-top { transform: translateY(-500%); }
+.key-message.from-bottom { transform: translateY(500%); }
 .key-message-in-view .key-message.from-left { animation-name: from-left; }
 .key-message-in-view .key-message.from-right { animation-name: from-right; }
 .key-message-in-view .key-message.from-top { animation-name: from-top; }
@@ -273,13 +273,13 @@ transition: background-color 0.25s, color 0.25s;
     100% { transform: translateX(0); animation-timing-function: ease-out; }
 }
 @keyframes from-top {
-    0% { transform: translateY(-200%) }
-    70% { transform: translateY(10%);  animation-timing-function: ease-in-out; }
+    0% { transform: translateY(-500%) }
+    70% { transform: translateY(50%);  animation-timing-function: ease-in-out; }
     100% { transform: translateY(0); animation-timing-function: ease-out; }
 }
 @keyframes from-bottom {
-    0% { transform: translateY(200%) }
-    70% { transform: translateY(-10%);  animation-timing-function: ease-in-out; }
+    0% { transform: translateY(500%) }
+    70% { transform: translateY(-50%);  animation-timing-function: ease-in-out; }
     100% { transform: translateY(0); animation-timing-function: ease-out; }
 }
 

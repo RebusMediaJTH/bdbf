@@ -1120,41 +1120,30 @@ rebus.pageInit = (function ($, undefined) {
             $.each($html.find('div'), function (i) {
                 if (rebus.config.videosMustBePlayedThrough) {
                     // Non clickable indicators
-                    indicators.push('<li ' + (i === 0 ? ' class="active"' : '') + '><div></div></li>');
+                    indicators.push('<li ' + (i === 0 ? ' class="active"' : '') + '></li>');
                 }
                 else {
-                    indicators.push('<li data-target="#' + carouselId + '" data-slide-to="' + i + '"' + (i === 0 ? ' class="active"' : '') + '><div></div></li>');
+                    indicators.push('<li data-target="#' + carouselId + '" data-slide-to="' + i + '"' + (i === 0 ? ' class="active"' : '') + '></li>');
                 }
                 panels.push('<div class="item' + (i === 0 ? ' active' : '') + '">\n' + this.outerHTML + '\n</div>');
             });
 
             return [
                 '<div id="' + carouselId + '" class="transcript-carousel carousel slide" data-interval="false">',
-                    // '<ol class="carousel-indicators">',
-                    //     indicators.join('\n'),
-                    // '</ol>',
-                    '<div class="carousel-inner" role="listbox">',
-                        panels.join('\n'),
-                    '</div>',
-                    // '<a class="left carousel-control" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
-                    //     '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-                    //     '<span class="sr-only">Previous</span>',
-                    // '</a>',
-                    // '<a class="right carousel-control" href="#' + carouselId + '" role="button" data-slide="next">',
-                    //     '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
-                    //     '<span class="sr-only">Next</span>',
-                    // '</a>',
-                    '<div class="carousel-indicators-container" aria-hidden="true">',
-                    '<ol class="carousel-indicators">',
-                        indicators.join('\n'),
-                    '</ol>',
-                    '</div>',
-                    '<div class="carousel-nav">',
-                        '<div>',
-                            '<a href="#' + carouselId + '" role="button" data-slide="prev"><div data-svg="icon-arrownav-left"></div><span class="sr-only">Previous</span></a>',
-                            '<a href="#' + carouselId + '" role="button" data-slide="next"><div data-svg="icon-arrownav-right"></div><span class="sr-only">Next</span></a>',
-                        '</div>',
-                    '</div>',
+                '<ol class="carousel-indicators">',
+                indicators.join('\n'),
+                '</ol>',
+                '<div class="carousel-inner" role="listbox">',
+                panels.join('\n'),
+                '</div>',
+                '<a class="left carousel-control" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
+                '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+                '<span class="sr-only">Previous</span>',
+                '</a>',
+                '<a class="right carousel-control" href="#' + carouselId + '" role="button" data-slide="next">',
+                '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
+                '<span class="sr-only">Next</span>',
+                '</a>',
                 '</div>'
             ].join('\n');
         };
@@ -1220,30 +1209,29 @@ rebus.pageInit = (function ($, undefined) {
                     var carouselId = 'transcript-carousel-' + $container.attr('data-video-idx'),
                         $transcript = $([
                             '<div class="video-transcript">',
-                                '<div class="video-transcript-header">',
-                                    '<button type="button" class="close" data-dismiss="transcript" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
-                                    '<p class="video-transcript-title">Video transcript</p>',
-                                '</div>',
-                                '<div class="video-transcript-body"></div>',
-                                '<div class="video-transcript-footer">',
-                                    '<div class="video-transcript-btns">',
-                                        // '<a class="mobile-carousel-nav left" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
-                                        //     '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-                                        //     '<span class="sr-only">Previous</span>',
-                                        // '</a>',
-                                        // '<a class="mobile-carousel-nav right" href="#' + carouselId + '" role="button" data-slide="next">',
-                                        //     '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
-                                        //     '<span class="sr-only">Next</span>',
-                                        // '</a>',
-                                        '<button type="button" class="non-stacked button button-default" data-dismiss="transcript">Close</button>',
-                                        '<button type="button" class="stacked button button-default" ' + (rebus.config.videosMustBePlayedThrough ? 'data-set-activity-complete ' : '') + 'data-dismiss="transcript">Close</button>',
-                                    '</div>',
-                                '</div>',
+                            '<div class="video-transcript-header">',
+                            '<button type="button" class="close" data-dismiss="transcript" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
+                            '<p class="video-transcript-title">Video transcript</p>',
+                            '</div>',
+                            '<div class="video-transcript-body"></div>',
+                            '<div class="video-transcript-footer">',
+                            '<div class="video-transcript-btns">',
+                            '<a class="mobile-carousel-nav left" href="#' + carouselId + '" role="button" data-slide="prev" hidden>',
+                            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+                            '<span class="sr-only">Previous</span>',
+                            '</a>',
+                            '<a class="mobile-carousel-nav right" href="#' + carouselId + '" role="button" data-slide="next">',
+                            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
+                            '<span class="sr-only">Next</span>',
+                            '</a>',
+                            '<button type="button" class="non-stacked button button-default" data-dismiss="transcript">Close</button>',
+                            '<button type="button" class="stacked button button-default" ' + (rebus.config.videosMustBePlayedThrough ? 'data-set-activity-complete ' : '') + 'data-dismiss="transcript">Close</button>',
+                            '</div>',
+                            '</div>',
                             '</div>'
                         ].join('\n'));
                     $transcript.find('.video-transcript-body').append(buildTranscriptCarousel(carouselId, data));
                     $container.append($transcript).addClass('show-video-transcript');
-                    $('[data-svg]', $transcript).svgInjector();
                 });
             }
             else {
@@ -1714,6 +1702,57 @@ rebus.pageInit = (function ($, undefined) {
                     panels.markActivityAsStarted($activity);
                 }
                 rebus.stateHelper.save();
+            });
+        };
+
+        var initFlipCards = function () {
+            $('[data-activity="flip-cards"]').each(function () {
+                var $activity = $(this),
+                    details = rebus.stateHelper.getElementDetails($activity),
+                    btnsState = details.state,
+                    btnsDefaultState = '',
+                    activityStarted;
+                $activity.find('.flip-card').each(function (li_idx) {
+                    var $btn = $(this);
+                    $btn.attr({ 'data-idx': li_idx });
+                    $btn.append('<span class="done-indicator sr-only">Visited</span>');
+                    if (btnsState) {
+                        if (btnsState.charAt(li_idx) === '1') {
+                            $btn.addClass('flipped');
+                            $('.front', $btn).attr('aria-hidden', true);
+                            $('.back', $btn).removeAttr('aria-hidden');
+                            activityStarted = true;
+                        }
+                    }
+                    else {
+                        btnsDefaultState += '0';
+                    }
+                });
+                if (activityStarted) {
+                    panels.markActivityAsStarted($activity);
+                }
+                rebus.stateHelper.setElementState($activity, btnsState || btnsDefaultState);
+            });
+
+            $body.on('click', '.flip-card', function () {
+                var $btn = $(this),
+                    $activity = $btn.closest('[data-activity]'),
+                    mandatory = $activity.data('mandatory'),
+                    required = mandatory === true ? $activity.find('.flip-card').length : mandatory;
+                $btn.addClass('flipped');
+                rebus.stateHelper.setElementState($activity, '1', $btn.data('idx'));
+                if ($activity.find('.flipped').length >= required) {
+                    panels.setActivityAsComplete($activity);
+                }
+                else {
+                    panels.markActivityAsStarted($activity);
+                }
+                rebus.stateHelper.save();
+                $('.back', $btn).removeAttr('aria-hidden');
+                window.setTimeout(function () {
+                    $('.back [tabindex="-1"]', $btn)[0].focus();
+                    $('.front', $btn).attr('aria-hidden', true);
+                }, 0);
             });
         };
 
@@ -2566,6 +2605,7 @@ rebus.pageInit = (function ($, undefined) {
             init: function () {
                 initGenericActivities();
                 initClickButtons();
+                initFlipCards();
                 initClickAreas();
                 initMatchBtns();
                 initVideos();
