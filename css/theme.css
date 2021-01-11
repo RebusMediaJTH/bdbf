@@ -153,19 +153,6 @@ transition: background-color 0.25s, color 0.25s;
 .carousel-indicators-container .carousel-indicators li.active > div { background: #590d2b; }
 
 /*
-    MISC
-*/
-
-.img-and-overlay { position: relative; }
-.img-and-overlay:not(.lg) > img { display: block; width: 100%; }
-.img-and-overlay:not(.lg) > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-.img-and-overlay.lg > img { display: none; }
-@media (min-width: 768px) {
-    .img-and-overlay.lg > img { display: block; width: 100%; }
-    .img-and-overlay.lg > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-}
-
-/*
     PANELS
 */
 
