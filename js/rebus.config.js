@@ -21,7 +21,7 @@ rebus.config = {
   takeTopicsInOrder: false,
   takePagesInOrder: true,
   includeProgressModal: false,
-  videosMustBePlayedThrough: false,
+  videosMustBePlayedThrough: true,
   audioMustBePlayedThrough: true,
   useDefaultPDFViewerForBrowser: false,
   mozillaPDFViewerLinks: 'disabled', // 'disabled' | 'open-new-window'. If not set, they will be active and open in the current window.
