@@ -834,22 +834,38 @@ rebus.pageInit = (function ($, undefined) {
                 return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
         };
         return {
-            markPageAsCompleteWhenAtBottom: function () {
-                var $footer = $('footer');
+            start: function (markPageAsComplete) {
+                var $footer = $('footer'),
+                    monitorLockedPanels,
+                    $monitorElements = $('[data-detect-when-in-view]');
+                if (markPageAsComplete) {
                     monitorLockedPanels = !!$('.locked-panel').length;
-                $(window).on('scroll.rebus.monitor', function () {
-                    if (monitorLockedPanels) {
-                        if ($('.locked-panel').length) {
-                            return;
+                }
+                if ($monitorElements.length || markPageAsComplete) {
+                    $(window).on('scroll.rebus.monitor', function () {
+                        if ($monitorElements.length) {
+                            $.each($monitorElements, function () {
+                                var $element = $(this);
+                                if (isElementInView($element, true)) {
+                                    $element.closest('.row').addClass($element.data('detect-when-in-view') + '-in-view');
+                                    $element.removeAttr('data-detect-when-in-view');
+                                    $monitorElements = $('[data-detect-when-in-view]');
+                                }
+                            });
                         }
-                        monitorLockedPanels = false;
-                    }
-                    if (isElementInView($footer)) {
-                        $(window).off('scroll.rebus.monitor');
-                        rebus.stateHelper.setPageAsComplete(page).save();
-                        $('html').addClass('topic-' + page.topic.idx + '-complete');
-                    }
-                });
+                        if (monitorLockedPanels) {
+                            if ($('.locked-panel').length) {
+                                return;
+                            }
+                            monitorLockedPanels = false;
+                        }
+                        if (isElementInView($footer)) {
+                            $(window).off('scroll.rebus.monitor');
+                            rebus.stateHelper.setPageAsComplete(page).save();
+                            $('html').addClass('topic-' + page.topic.idx + '-complete');
+                        }
+                    });    
+                }
             }
         };
     })();
@@ -911,14 +927,14 @@ rebus.pageInit = (function ($, undefined) {
                 if ($modal) {
                     $modal.modal();
                 }
-                var $bannerMessage = $('#banner-message');
+                var $bannerMessage = $('.banner-message').eq(0);
                 if ($bannerMessage.length) {
                     window.setTimeout(function() {
                         $bannerMessage.addClass('flipped');
                     }, 500);
                 }
-                if (page.topic && !rebus.stateHelper.isPageComplete(page)) {
-                    scroller.markPageAsCompleteWhenAtBottom();
+                if (page.topic) {
+                    scroller.start(!rebus.stateHelper.isPageComplete(page));
                 }
             }
         };
