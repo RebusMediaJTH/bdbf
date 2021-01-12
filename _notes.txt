@@ -13,7 +13,8 @@ Questions for client
   > or somehow apply it after the bg (we'd need a bg for the whole vertical columns) but before all the content is added. No idea how.
   > even if we could do that, there's no way we could get it over the footer
 
+Set config LMS
 M1 > T2 > no squiggles on final 2 panels - can't do footer
-M1 > the twitter image was missing from the designs so i...
+***M1 > the twitter image was missing from the designs so i...
 M2 > Need version of T3S1P4 image at least 604px tall - only way i could get it to look good next to carousel
-M0 > Need more info icon for animation Q1
+***M0 > Need more info icon for animation Q1

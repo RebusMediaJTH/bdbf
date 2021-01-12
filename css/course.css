@@ -152,7 +152,7 @@
 
 #page-m1_t2_p1 [data-idx="5"] .key-message p { max-width: 580px; }
 @media (min-width: 768px) {
-    .key-message-panel > div:not(.lock-overlay) {
+    .key-message-panel .container > div {
         padding-left: 100px;
     }
 }
@@ -235,17 +235,17 @@
 
 #page-m1_t5_p1 [data-idx="1"] .key-message p { max-width: 610px; }
 @media (min-width: 768px) {
-    #page-m1_t5_p1 [data-idx="1"] > div:not(.lock-overlay) { padding-left: 180px; }
+    #page-m1_t5_p1 [data-idx="1"] .container > div { padding-left: 180px; }
 }
 
 @media (min-width: 768px) {
-    #page-m1_t5_p1 [data-idx="3"] { padding-top: 60px; }
-    #page-m1_t5_p1 [data-idx="3"] > div:not(.lock-overlay) { padding-left: 140px; }
+    #page-m1_t5_p1 [data-idx="3"] .container { padding-top: 60px; }
+    #page-m1_t5_p1 [data-idx="3"] .container > div { padding-left: 140px; }
 }
 
 #page-m1_t5_p1 [data-idx="9"] .key-message p { max-width: 750px; }
 @media (min-width: 768px) {
-    #page-m1_t5_p1 [data-idx="9"] > div:not(.lock-overlay) { padding-left: 60px; }
+    #page-m1_t5_p1 [data-idx="9"] .container > div { padding-left: 60px; }
 }
 
 #page-m1_completion #banner { background: url(../content/images/completion_sm.jpg); background-size: cover; background-position: 25%; }

@@ -180,12 +180,13 @@ rebus.logger = (function ($, undefined) {
 			localStorageLogKey = options.namespace ? options.namespace + '.log' : 'log';
             types = options.types;
             prefixType = options.prefixType;
-
             if (types) {
                 window.onerror = function (msg, url, line, col, error) {
-                    var e = { msg: msg, url: url, line: line, col: col, error: error };
-                    log('type=error', e.msg, e);
-                    throw e;
+                    if (msg !== 'ResizeObserver loop limit exceeded') {
+                        var e = { msg: msg, url: url, line: line, col: col, error: error };
+                        log('type=error', e.msg, e);
+                        throw e;
+                    }
                 };
             }
 		},
