@@ -17,6 +17,7 @@ rebus.config = {
   useLMS: false,
   debug: true,
   debugTypes: '*',
+  waitUntilImagesAreLoaded: true,
   takeModulesInOrder: false,
   takeTopicsInOrder: false,
   takePagesInOrder: true,

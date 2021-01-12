@@ -120,8 +120,6 @@ rebus.stateHelper = (function (undefined) {
 rebus.navigation = (function ($, undefined) {
     "use strict";
 
-    var WAIT_UNTIL_IMAGES_ARE_LOADED = false;
-
     var pages = rebus.config.pages,
         page,
         pagesFlat = [],
@@ -411,7 +409,7 @@ rebus.navigation = (function ($, undefined) {
             if (data) {
                 $('title').text(page.htmlTitle || page.title);
                 $('article.content').append(data);
-                if (WAIT_UNTIL_IMAGES_ARE_LOADED) {
+                if (rebus.config.waitUntilImagesAreLoaded) {
                     waitUntilImagesAreLoaded(data, function () {
                         postProcessPage(callback);
                     });
