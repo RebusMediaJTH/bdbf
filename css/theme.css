@@ -30,23 +30,17 @@ section.main { padding-top: 65px; }
 */
 
 footer { display: none; max-width: 1920px; margin: 0 auto; padding: 30px 0; background: #590D2B; }
-.in-topic-page footer,
-[data-type="completion"] footer { display: block; }
-footer .primary { font-weight: 500; }
-footer ul { list-style: none; padding: 0; }
+.in-topic-page footer { display: block; }
+footer ul { list-style: none; padding: 0 0 0 10px; }
 footer li { margin: 8px 0; }
 footer,
 footer a,
 footer a:hover,
 footer a:focus,
 footer a:active { color: #fff; }
-footer .topic-links { padding-left: 10px; }
-footer .topic-link,
-footer .save-link { display: flex; align-items: flex-start; line-height: 2.5674rem; }
-footer .topic-link svg,
-footer .save-link svg { width: 2.5674rem; height: 2.5674rem; flex-shrink: 0; }
-footer .icon-topic-list,
-footer .icon-save { margin-right: 10px; }
+footer .topic-link { display: flex; align-items: flex-start; line-height: 2.5674rem; }
+footer .topic-link svg { width: 2.5674rem; height: 2.5674rem; flex-shrink: 0; }
+footer .icon-topic-list { margin-right: 10px; }
 footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .topic-0-complete footer .topic-0 .icon-topic-list,
 .topic-1-complete footer .topic-1 .icon-topic-list,
@@ -60,6 +54,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .topic-3-complete footer .topic-3 .icon-topic-list-complete,
 .topic-4-complete footer .topic-4 .icon-topic-list-complete,
 .topic-5-complete footer .topic-5 .icon-topic-list-complete { visibility: visible; }
+.topic-0-complete.topic-1-complete.topic-2-complete.topic-3-complete.topic-4-complete footer .icon-topic-list { display: none; }
 
 @media (min-width: 768px) {
     footer { padding: 50px; }
@@ -339,13 +334,14 @@ transition: background-color 0.25s, color 0.25s;
 
 [data-activity="generic"].activity-done [data-set-activity-complete] { display: none; }
 
-html.final-topic .final-panel .hide-when-almost-done,
-html:not(.final-topic) .final-panel .show-when-almost-done { display: none; }
-.final-panel .show-when-almost-done { font-weight: 500; }
+html.final-topic .hide-when-almost-done,
+html:not(.final-topic) .show-when-almost-done { display: none; }
+.final-panel p { font-weight: 500; }
 @media (min-width: 568px) {
     .final-panel button { margin-left: 25px; }
 }
 
+#page-m1_completion body { background: #f8f2f4; }
 @media (min-width: 568px) {
     #page-m1_completion .btns { display: flex; }
     #page-m1_completion .btns > button { margin-left: 25px; }
