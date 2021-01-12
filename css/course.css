@@ -156,12 +156,18 @@ html.menu-in #menu-overlay { opacity: 1; }
 @media (min-width: 462px) {
     #page-m1_t2_p1 [data-idx="4"] .img ul { font-size: 1.8rem; }
 }
-
 #page-m1_t2_p1 [data-idx="5"] .key-message p { max-width: 580px; }
 @media (min-width: 768px) {
     .key-message-panel .container > div {
         padding-left: 100px;
     }
+}
+
+.panel-squiggle { display: none; pointer-events: none; position: absolute; top: 0; left: 0; transform: translateX(0px) translateY(100px); }
+[data-idx="6"] .btn-read-transcript { position: relative; }
+[data-idx="7"] .want-to-know-more-panel .boxes > li { background: #f8f2f4; }
+@media (min-width: 1024px) {
+    #page-m1_t2_p1 .panel-squiggle { display: block; }
 }
 
 #page-m1_t3_p1 #banner { background: url(../content/images/t3_banner_sm.jpg); background-size: cover; background-position: 25%; }

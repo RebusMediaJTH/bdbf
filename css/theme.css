@@ -29,7 +29,8 @@ section.main { padding-top: 65px; }
     FOOTER
 */
 
-footer { display: none; max-width: 1920px; margin: 0 auto; padding: 30px 0; background: #590D2B; }
+footer { display: none; max-width: 1920px; margin: 0 auto; padding: 0; background: #590D2B; }
+footer .container { position: relative; overflow: hidden; padding: 30px 0; }
 .in-topic-page footer { display: block; }
 footer ul { list-style: none; padding: 0 0 0 10px; }
 footer li { margin: 8px 0; }
@@ -57,7 +58,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .topic-0-complete.topic-1-complete.topic-2-complete.topic-3-complete.topic-4-complete footer .icon-topic-list { display: none; }
 
 @media (min-width: 768px) {
-    footer { padding: 50px; }
+    footer .container { padding: 50px; }
 }
 
 /*
@@ -339,6 +340,16 @@ html:not(.final-topic) .show-when-almost-done { display: none; }
 .final-panel p { font-weight: 500; }
 @media (min-width: 568px) {
     .final-panel button { margin-left: 25px; }
+}
+.want-to-know-more-panel .show-when-almost-done p { font-weight: 500; padding-top: 15px; }
+@media (min-width: 568px) {
+    .want-to-know-more-panel .show-when-almost-done button { margin-left: 25px; }
+}
+@media (min-width: 768px) {
+    .want-to-know-more-panel .show-when-almost-done p { padding-top: 25px; }
+}
+@media (min-width: 992px) {
+    .want-to-know-more-panel .show-when-almost-done p { padding-top: 50px; }
 }
 
 #page-m1_completion body { background: #f8f2f4; }

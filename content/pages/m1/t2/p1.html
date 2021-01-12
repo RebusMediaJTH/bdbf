@@ -149,8 +149,13 @@
     </div>
     <div class="row bg-1">
       <div class="container">
-        <h2>We make it work</h2>
-        <p><strong>Select</strong> Play to see how we’ve enhanced physical and mental wellbeing through our safe way of working.</p>
+        <img class="panel-squiggle" src="content/images/panel_squiggle.svg" alt="" />
+        <div class="row">
+          <div class="col-sm-9">
+            <h2>We make it work</h2>
+            <p><strong>Select</strong> Play to see how we’ve enhanced physical and mental wellbeing through our safe way of working.</p>
+          </div>
+        </div>
         <div class="video" data-transcript="t2_s1_p7" data-activity="video" data-mandatory="true">
             <div class="embed-responsive embed-responsive-16by9">
                 <video controlsList="nodownload" src="content/video/t2_s1_p7.mp4" controls="controls" poster="content/video/t2_s1_p7.jpg">
@@ -162,17 +167,14 @@
     </div>
     <div class="row bg-1 want-to-know-more-panel">
       <div class="container">
+        <img class="panel-squiggle" src="content/images/panel_squiggle.svg" alt="" />
         <h2>Want to know more?</h2>
         <ul class="boxes">
           <li><div data-svg="icon-want-to-know-more-talking"></div>If you ever need to talk to someone after encountering Aggressive Customer Behaviour, use our Employee Assistance Program on 1300 OUR EAP (1300 687 327).</li>
           <li><div data-svg="icon-want-to-know-more-computer"></div>Visit <a class="external-link" target="_blank" href="https://ourpost.com.au/">OurPost.com.au</a> for useful safety resources or to further understand your obligations under the Work Health and Safety Policy, visit our corporate intranet, <em>Isaac</em>.</li>
         </ul>
-      </div>
-    </div>
-    <div class="row bg-1 final-panel show-when-almost-done">
-      <div class="container">
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-sm-9 show-when-almost-done">
             <p>Almost done, just one more thing!</p>
             <div class="margin-top-md">
               <button type="button" role="navigation" class="button button-default btn-block-lte-xs" data-mark-page-as-complete-and-continue>Continue</button>
@@ -182,3 +184,11 @@
       </div>
     </div>
   </div>
+  <script>
+    function pageLoaded() {
+      var p6Height = $('.row[data-idx="6"]').height(),
+          p7Height = $('.row[data-idx="7"]').height();
+      $('.row[data-idx="7"] .panel-squiggle').css({ top: -p6Height + 'px' });
+      $('footer .panel-squiggle').css({ top: -(p6Height + p7Height) + 'px' });
+    }
+  </script>
