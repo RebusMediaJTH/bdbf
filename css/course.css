@@ -18,7 +18,7 @@
     LANDING PAGE
 */
 
-#welcome-page { background: url(../content/images/landing_portrait.jpg); background-size: cover; }
+#welcome-page { background: url(../content/images/menu_portrait.jpg); background-size: cover; }
 
 #welcome-page .title { padding: 5px 15px 15px 15px; font-size: 11vw; }
 #welcome-page h1, 
@@ -26,15 +26,16 @@
 #welcome-page h1 { font-size: 100%; font-weight: 500; }
 #welcome-page h2 { margin: 3.2% 0; font-size: 63%; }
 #welcome-page .img-and-overlay { display: none; }
-#welcome-page .overlay { color: #fff; }
+#welcome-page .overlay { color: #fff; background: rgba(0,0,0,0.6); padding: 20px; }
+#welcome-page .overlay > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
 #welcome-page .overlay h3 { line-height: 1; margin-bottom: 10px; }
+#welcome-page .overlay.lg > div:last-child { text-align: right; margin-top: 20px; }
 #welcome-page .overlay.sm { 
     display: flex; flex-direction: column; align-items: center;
-    background: rgba(0,0,0,0.6); padding: 20px; margin: 0 0 0 15px;
+    margin: 0 0 0 15px;
 }
 #welcome-page .overlay.sm h3 { font-size: 2.5rem; }
 #welcome-page .overlay.sm p { font-size: 1.8rem; margin-bottom: 0; }
-#welcome-page .overlay.sm > div:first-child { border-left: 4px solid #e62234; padding-left: 20px; }
 #welcome-page .overlay.sm .circle-btn { margin-top: 10%; }
 @media (min-width: 375px) {
     #welcome-page .title { padding-top: 15px; }
@@ -58,8 +59,7 @@
     #welcome-page { background: none; }
     #welcome-page .img-and-overlay { display: block; }
     #welcome-page .sm { display: none; }
-    #welcome-page .overlay.lg { position: absolute; top: 50%; left: 60%; width: 33.5%; padding: 0 1% 0 1%; font-size: 2.43vw; }
-    #welcome-page .circle-btn { position: absolute; bottom: 4%; right: 9%; }
+    #welcome-page .overlay.lg { position: absolute; bottom: 0%; left: 60%; width: 33.5%; font-size: 2.43vw; }
 }
 @media (min-width: 1029px) {
     #welcome-page .overlay.lg { font-size: 2.5rem; }
@@ -70,7 +70,7 @@
 */
 
 #menu-page { background: url(../content/images/menu_portrait.jpg); background-size: cover; }
-
+#menu-page .img-and-overlay { background: rgba(255,255,255,0.5); }
 #menu-page .img-and-overlay > img { display: none; }
 
 .topic-mnu li[role="presentation"] { display: none; }
@@ -120,6 +120,10 @@
     .topic-4-complete .topic-mnu-item.topic-4 button {
         border-color: #a7627d;
     }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+    #page-m1_menu body { background: url(../content/images/menu.jpg); background-size: cover; }
 }
 
 /*
