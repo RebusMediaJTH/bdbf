@@ -288,6 +288,7 @@ rebus.navigation = (function ($, undefined) {
             $('#welcome-page').attr('aria-hidden', true);
             $('#menu-page').removeAttr('aria-hidden');
             $('#slide-pages-container').addClass('menu-in');
+            $('html').addClass('menu-in');
         }
 
         if (rebus.config.includeProgressModal) {

@@ -1,3 +1,10 @@
+#menu-overlay {
+    display: none; pointer-events: none;
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(255,255,255,0.5); opacity: 0; transition: opacity 0.4s;
+}
+html.menu-in #menu-overlay { opacity: 1; }
+
 #page-m1_menu #slide-pages-container { overflow-x: hidden; max-width: 1024px; margin: 0 auto; }
 #page-m1_menu #slide-pages-container > div { width: 200%; display: flex; transition: transform 0.4s ease-out; }
 #page-m1_menu #slide-pages-container.menu-in > div { transform: translateX(-50%); }
@@ -17,6 +24,7 @@
 #page-m1_menu body { background: url(../content/images/menu_portrait.jpg); background-size: cover; }
 @media (min-width: 1024px) and (orientation: landscape) {
     #page-m1_menu body { background: url(../content/images/menu.jpg); background-size: cover; }
+    #page-m1_menu #menu-overlay { display: block; }
 }
 
 /*
@@ -71,7 +79,6 @@
     MENU
 */
 
-#menu-page .img-and-overlay { background: rgba(255,255,255,0.5); }
 #menu-page .img-and-overlay > img { display: none; }
 
 .topic-mnu li[role="presentation"] { display: none; }
