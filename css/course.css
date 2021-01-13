@@ -27,6 +27,12 @@ html.menu-in #menu-overlay { opacity: 1; }
     #page-m1_menu #menu-overlay { display: block; }
 }
 
+#menu-squiggle { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: url("../content/images/menu_squiggle.svg"); background-size: cover; }
+#page-m1_menu #menu-squiggle { display: block; }
+@media (orientation: portrait) {
+    #menu-squiggle { transform: translateY(23%); }
+}
+
 /*
     LANDING PAGE
 */
