@@ -214,6 +214,8 @@ html.menu-in #menu-overlay { opacity: 1; }
 #carousel-1 .carousel-indicators-container { margin-top: 0; padding-top: 8px; }
 #carousel-1 .carousel-nav { padding-bottom: 25px; }
 .social-media-options .response { min-height: 436px; }
+[data-activity="multiple-choice-quiz"][data-correct="false"] li[data-required="true"] { outline: none; }
+[data-activity="multiple-choice-quiz"][data-correct="false"] li[data-required="true"] svg { outline: 2px solid #00ADA5; }
 @media (min-width: 375px) {
     .social-media-options .response { min-height: 408px; }
 }

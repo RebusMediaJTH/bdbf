@@ -30,9 +30,11 @@ section.main { padding-top: 65px; }
 */
 
 footer { display: none; max-width: 1920px; margin: 0 auto; padding: 0; background: #590D2B; }
-footer .container { position: relative; overflow: hidden; padding: 30px 0; }
+footer .container { position: relative; overflow: hidden; padding: 25px 15px; }
 .in-topic-page footer { display: block; }
-footer ul { list-style: none; padding: 0 0 0 10px; }
+footer ul { list-style: none; padding: 0 0 0 10px; margin-bottom: 20px; }
+footer .show-when-almost-done,
+footer .hide-when-almost-done { margin-bottom: 20px; }
 footer li { margin: 8px 0; }
 footer,
 footer a,
@@ -56,8 +58,16 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .topic-4-complete footer .topic-4 .icon-topic-list-complete,
 .topic-5-complete footer .topic-5 .icon-topic-list-complete { visibility: visible; }
 .topic-0-complete.topic-1-complete.topic-2-complete.topic-3-complete.topic-4-complete footer .icon-topic-list { display: none; }
-
+.topic-0 footer .topic-0,
+.topic-1 footer .topic-1,
+.topic-2 footer .topic-2,
+.topic-3 footer .topic-3,
+.topic-4 footer .topic-4,
+.topic-5 footer .topic-5 { display: none; }
 @media (min-width: 768px) {
+    footer .container { padding: 25px 40px; }
+}
+@media (min-width: 992px) {
     footer .container { padding: 50px; }
 }
 
@@ -68,17 +78,17 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .button { background: none; border: none; padding: 0; border-radius: 0; }
 
 .button-default {
-padding: 13px 30px;
-border: 2px solid #590d2b; border-radius: 4px; background: #fff; color: #590D2B;
-font-size: 1.8rem; font-weight: 500;
-transition: background-color 0.25s, color 0.25s;
+    padding: 13px 30px;
+    border: 2px solid #590d2b; border-radius: 4px; background: #fff; color: #590D2B;
+    font-size: 1.8rem; font-weight: 500;
+    transition: background-color 0.25s, color 0.25s;
 }
 .button-default:disabled { opacity: 0.5; }
 .button-default:not(:disabled):hover,
 .button-default:not(:disabled):focus,
 .button-default:not(:disabled):active { background: #590d2b; color: #fff; }
 
-.circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-weight: 500; perspective: 1000px; }
+.circle-btn { position: relative; padding: 0; border: none; background: none; width: 8rem; font-size: 1.8rem; font-weight: 500; perspective: 1000px; }
 .circle-btn > div { height: 0; padding-top: 100%; perspective: 1000px; transform-style: preserve-3d; }
 .circle-btn .faces { position: absolute; top: 0; right: 0; bottom: 0; left: 0; transition: transform 0.6s; transform-style: preserve-3d; }
 .circle-btn .face { 
@@ -244,8 +254,8 @@ transition: background-color 0.25s, color 0.25s;
 .key-message-panel.align.center .container > div { align-items: center; }
 .key-message { font-size: 7.5vw; font-weight: 500; color: #590D2B; }
 .key-message svg { width: 79px; height: 65.65px; margin-right: 19px; }
-.key-message p { max-width: 510px; margin: 0; font-style: italic; }
-.key-message p span { font-size: 85.7%; font-weight: 200; }
+.key-message p { max-width: 510px; margin: 0; }
+.key-message p span { font-size: 85.7%; font-weight: 200; font-style: italic; }
 @media (min-width: 467px) {
     .key-message { font-size: 3.5rem; }
 }
@@ -289,7 +299,7 @@ transition: background-color 0.25s, color 0.25s;
 
 .want-to-know-more-panel .boxes { list-style: none; padding: 0; margin: 100px 0 0 0; }
 .want-to-know-more-panel .boxes > li {
-    position: relative; margin: 100px 0 0 0; border: 2px dashed #590D2B; padding: 28px;
+    position: relative; margin: 100px 0 0 0; border: 2px dashed #dc1928; padding: 28px;
     word-wrap: break-word;
 }
 .want-to-know-more-panel .boxes > li:first-child { margin-top: 0; }
