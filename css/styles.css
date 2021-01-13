@@ -1451,51 +1451,21 @@
        Audio Control 
    */
    
-   .audio-control { position: relative; height: 42px; padding-left: 65px; width: 50%; margin: .8em 0; }
-   .audio-control.center-block { margin-left: auto; margin-right: auto; }
-   .audio-control::after,
-   .audio-control::before { content: ""; position: absolute; top: 50%; height: 3px; width: 70%; background-color: #D41A31; }
-   .audio-control::after { background-color: #807371; right: 0; width: 35%; }
-   .audio-control .audio-btn { 
-       overflow: hidden; 
-       position: absolute; left: 0; 
-       display: inline-block; 
-       height: 42px; width: 50px; 
-       background: none; border: none; padding: 0;
-       cursor: pointer; 
-   }
-   
-   .audio-control .audio-btn img { display: block; position: absolute; top: 0; left: 0; }
-   .audio-control .audio-btn:hover img { top: -42px; }
-   .audio-control.white .audio-btn img { top: 0; left: -132px; }
-   .audio-control.white .audio-btn:hover img { top: -42px; left: 0; }
-   .audio-control.grey .audio-btn img { left: -182px; }
-   .audio-control.grey .audio-btn:hover img { left: 0; top: -42px; }
-   
-   .audio-control.basic { width: 83px; height: 73px; padding: 0; }
-   .audio-control.basic::before, .audio-control.basic::after { content: none; }
-   
-   .audio-control.large .audio-btn { width: 83px; height: 73px; }
-   .audio-control.large .audio-btn img { left: -49px;  }
-   .audio-control.large .audio-btn:hover img { top: -73px; }
-   
+   .audio-control button { background: none; border: none; padding: 0; position: relative; width: 84px; height: 84px; margin-top: .8em; }
+   .audio-control svg { width: 100%; height: 100%; }
+   .audio-control svg circle { fill: #fff; transition: fill 0.25s; }
+   .audio-control svg path { fill: none; stroke: #590d2b; transition: stroke 0.25s; }
+   .audio-control button:hover svg circle,
+   .audio-control button:focus svg circle,
+   .audio-control button:active svg circle { fill: #590d2b; }
+   .audio-control button:hover svg path,
+   .audio-control button:focus svg path,
+   .audio-control button:active svg path { stroke: #fff; }
    #audio-buffering-spinner { margin: 8px 0 0 20px; }
    .show-when-audio-buffering span { position: relative; top: 5px; display: inline-block; color: #fff; margin-left: 5px; }
    .show-when-audio-buffering { display: none !important; }
    .audio-buffering .show-when-audio-buffering { display: block !important; }
    .audio-buffering .hide-when-audio-buffering { display: none !important; }
-   
-   @media (max-width:767px) {
-       .audio-control { width: 100%; }
-   }
-   
-   @media (min-width: 768px) {
-       .audio-control.outset { left: -60px; }
-   }
-   
-   @media (min-width: 992px) {
-       .audio-control.outset-md { left: -60px; }
-   }
    
    /*
        Left image button

@@ -1526,7 +1526,7 @@ rebus.pageInit = (function ($, undefined) {
         var buildAudioControlBtn = function (fileid, transcriptId) {
             var html = [
                 '<button type="button" class="audio-btn" aria-label="Toggle audio" data-audio-file="' + fileid + '">',
-                    '<img src="images/btn_listen.png" alt="" />',
+                    '<div data-svg="icon-audio"></div>',
                 '</button>'
             ];
             // if (transcriptId) {

@@ -120,7 +120,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     display: flex; justify-content: space-between;
     background: #A7627D; color: #fff !important;
     font-size: 2rem; font-weight: 500; text-decoration: none !important;
-    padding: 20px 16px 6px 16px; 
+    padding: 16px; 
     transition: background-color 0.25s;
 }
 .accordion-tab:hover,
@@ -177,7 +177,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .horizontal-panels { font-weight: 200; color: #3E3E3E; }
 .horizontal-panels > .row { padding: 0; max-width: 1920px; margin: 0 auto; }
 .horizontal-panels > .row > .container { position: relative; padding: 25px 15px; overflow: hidden; }
-.horizontal-panels h2 { color: #590D2B; font-size: 3rem; font-weight: bold; }
+.horizontal-panels h2 { color: #a1121e; font-size: 3rem; font-weight: bold; }
 @media (min-width: 768px) {
     .horizontal-panels > .row > .container { padding: 25px 40px; }
 }
@@ -364,6 +364,6 @@ html:not(.final-topic) .show-when-almost-done { display: none; }
 
 #page-m1_completion body { background: #f8f2f4; }
 @media (min-width: 568px) {
-    #page-m1_completion .btns { display: flex; }
-    #page-m1_completion .btns > button { margin-left: 25px; }
+    #page-m1_completion .btns { text-align: right; }
+    /* #page-m1_completion .btns > button { margin-left: 25px; } */
 }
