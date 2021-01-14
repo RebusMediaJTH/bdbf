@@ -212,7 +212,11 @@ html.menu-in #menu-overlay { opacity: 1; }
 .social-media-options li svg { width: 71px; height: 71px; }
 .social-media-options li svg { width: 10vw; height: 10vw; }
 .social-media-options li svg .outer { opacity: 0; transition: opacity 0.25s; }
-.social-media-options li.checked svg .outer { opacity: 1; }
+/* .social-media-options li.checked svg .outer { opacity: 1; } */
+.social-media-options[data-correct="false"] li[data-required="true"] svg .outer,
+.social-media-options[data-correct="true"] li[data-required="true"] svg .outer { opacity: 1; }
+.social-media-options[data-correct="false"] li[data-required="true"],
+.social-media-options[data-correct="true"] li[data-required="true"] { background: none; padding: 0; }
 .social-media-options .response .first { font-size: 2.4rem; font-weight: bold; text-align: center; }
 .keyboard-nav .social-media-options .multiple-choice-quiz-options .focussed-pseudo:before { top: -2px; left: -2px; width: 75px; height: 75px;}
 .social-media-options .btn-check-multi-choice-answer { margin: 15px 15px 0 0; }
@@ -228,17 +232,23 @@ html.menu-in #menu-overlay { opacity: 1; }
 #carousel-1 .carousel-indicators-container { margin-top: 0; padding-top: 8px; }
 #carousel-1 .carousel-nav { padding-bottom: 25px; }
 .social-media-options .response { min-height: 436px; }
-.social-media-options[data-correct="false"] li[data-required="true"] { outline: none; }
-.social-media-options[data-correct="false"] li[data-required="true"] svg { outline: 2px solid #00ADA5; }
 .social-media-options svg .transition { transition: fill 0.25s; }
 .icon-emoji-cry:hover ellipse.transition,
+.social-media-options li.checked .icon-emoji-cry ellipse.transition,
 .icon-emoji-think:hover circle.transition, 
+.social-media-options li.checked .icon-emoji-think circle.transition,
 .icon-emoji-laugh:hover circle.transition,
+.social-media-options li.checked .icon-emoji-laugh circle.transition,
 .icon-emoji-heart:hover circle.transition,
-.icon-emoji-clap:hover circle.transition { fill: #FFD500; }
+.social-media-options li.checked .icon-emoji-heart circle.transition,
+.icon-emoji-clap:hover circle.transition,
+.social-media-options li.checked .icon-emoji-clap circle.transition { fill: #FFD500; }
 .icon-emoji-laugh:hover .mouth,
+.social-media-options li.checked .icon-emoji-laugh .mouth,
 .icon-emoji-think:hover .hand,
-.icon-emoji-clap:hover .hand { fill: #FFf; }
+.social-media-options li.checked .icon-emoji-think .hand,
+.icon-emoji-clap:hover .hand,
+.social-media-options li.checked .icon-emoji-clap .hand { fill: #FFf; }
 @media (min-width: 375px) {
     .social-media-options .response { min-height: 408px; }
 }

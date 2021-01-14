@@ -157,6 +157,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .carousel-nav a { display: block; }
 .carousel-nav [data-slide="prev"] { margin-right: 15px; }
 .carousel a svg { width: 42.19px; height: 42.19px; }
+.carousel a[aria-disabled="true"] { opacity: 0.5; cursor: default; }
 .carousel-indicators-container .carousel-indicators li,
 .carousel-indicators-container .carousel-indicators li.active { width: 14px; height: 14px; margin: 1px; background: none; }
 .carousel-indicators-container .carousel-indicators li { padding: 3px; border-radius: 50%; border: 1px solid #d2d2d4; }

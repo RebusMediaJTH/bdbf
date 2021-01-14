@@ -375,12 +375,16 @@ $.fn.accessibleCarousel = function () {
         $fb = $('<div class="sr-only" aria-live="assertive" aria-atomic="true" data-clearafter="5000"></div>'),
         slideCount = $('.item', $carousel).length;
       $('.item', $carousel).each(function (i) {
-        $(this).prepend('<p class="sr-only">Slide ' + (i + 1) + '</p>')
+        $(this).prepend('<p class="sr-only">Slide ' + (i + 1) + '</p>');
       });
+      $('[data-slide="prev"]', $carousel).attr('aria-disabled', true);
       $carousel.append($fb);
       $fb.liveFeedback();
       $carousel.on('slid.bs.carousel', function (e) {
-        $fb.liveFeedback('value', 'Slide ' + ($(e.relatedTarget).index() + 1) + ' of ' + slideCount + '. See content above.');
+        var i = $(e.relatedTarget).index();
+        $('[data-slide="prev"]', $carousel).attr('aria-disabled', i === 0);
+        $('[data-slide="next"]', $carousel).attr('aria-disabled', i === slideCount - 1);
+        $fb.liveFeedback('value', 'Slide ' + (i + 1) + ' of ' + slideCount + '. See content above.');
       });
     });
 };
