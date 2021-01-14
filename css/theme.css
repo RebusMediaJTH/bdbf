@@ -267,6 +267,24 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     .key-message-panel > div:not(.lock-overlay) { padding: 0 50px; }
 }
 
+.horizontal-panels > .key-message-panel-xxx { padding: 25px 0; }
+.horizontal-panels > .key-message-panel-xxx .container { padding: 0 15px; height: 100%; overflow: hidden; }
+.key-message-panel-xxx .squiggle-container { position: relative; overflow: hidden; max-width: 1920px; margin: 0 auto; }
+.key-message-panel-xxx .squiggle-container svg { position: absolute; left: 50%; transform: translateX(-50%); }
+.key-message-panel-xxx .text { position: absolute; top: 0; right: 0; bottom: 0; left: 0;  }
+.key-message-panel-xxx.align .container { display: flex }
+.key-message-panel-xxx.align.h-right .container { justify-content: flex-end; }
+.key-message-panel-xxx.align.h-center .container { justify-content: center; }
+.key-message-panel-xxx.align.v-center .container { align-items: center; }
+@media (min-width: 768px) {
+    .horizontal-panels > .key-message-panel-xxx { padding: 25px 0; }
+    .horizontal-panels > .key-message-panel-xxx .container { padding: 0 40px; }
+}
+@media (min-width: 992px) {
+    .horizontal-panels > .key-message-panel-xxx { padding: 50px 0; }
+    .horizontal-panels > .key-message-panel-xxx .container { padding: 0 50px; }
+}
+
 .key-message { animation-duration: 1s; animation-fill-mode: forwards; }
 .key-message.from-left { transform: translateX(-200%); }
 .key-message.from-right { transform: translateX(200%); }
