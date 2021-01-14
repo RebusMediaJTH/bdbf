@@ -232,18 +232,18 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     .scrolldown-learn-more-panel > div { float: none; }
 }
 
-.text-and-img .container > h2 { padding: 0 15px; }
+.text-and-img .container > h2 { padding: 0; }
 .text-and-img .text h2 { display: none; }
 .text-and-img .img { margin-top: 15px; }
 .text-and-img.reversed .img { margin-bottom: 15px; }
 @media (min-width: 992px) {
     .text-and-img .container > h2 { display: none; }
     .text-and-img .text h2 { display: block; }
-    .text-and-img { display: flex; }
-    .text-and-img.align-center { align-items: center; }
+    .text-and-img .container .row { display: flex; }
+    .text-and-img.align-center .container .row { align-items: center; }
     .text-and-img .img { margin: 0; }
-    .text-and-img.reversed { flex-direction: row-reverse; }
-    .text-and-img.reversed > div { float: none; }
+    .text-and-img.reversed .container .row { flex-direction: row-reverse; }
+    .text-and-img.reversed .container .row > div { float: none; }
 }
 
 .key-message-panel .container { padding-left: 0 !important; padding-right: 0 !important; }
