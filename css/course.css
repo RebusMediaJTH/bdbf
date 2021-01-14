@@ -224,7 +224,7 @@ html.menu-in #menu-overlay { opacity: 1; }
 .social-post > img { display: block; width: 100%; }
 .social-post .multiple-choice-quiz { position: absolute; left: 3.5%; margin: 0; }
 .social-post.fb-1 .multiple-choice-quiz { bottom: 9%; }
-.social-post.twitter .multiple-choice-quiz { bottom: 35%; }
+.social-post.twitter .multiple-choice-quiz { bottom: 3%; }
 .social-post.insta .multiple-choice-quiz { bottom: 23%; }
 .social-post.fb-2 .multiple-choice-quiz { bottom: 1%; }
 #carousel-1 .carousel-indicators-container,
