@@ -299,7 +299,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 
 .want-to-know-more-panel .boxes { list-style: none; padding: 0; margin: 100px 0 0 0; }
 .want-to-know-more-panel .boxes > li {
-    position: relative; margin: 100px 0 0 0; border: 2px dashed #dc1928; padding: 28px;
+    position: relative; margin: 100px 0 0 0; border: 2px dashed #a1121e; padding: 28px;
     word-wrap: break-word;
 }
 .want-to-know-more-panel .boxes > li:first-child { margin-top: 0; }

@@ -228,8 +228,8 @@ html.menu-in #menu-overlay { opacity: 1; }
 #carousel-1 .carousel-indicators-container { margin-top: 0; padding-top: 8px; }
 #carousel-1 .carousel-nav { padding-bottom: 25px; }
 .social-media-options .response { min-height: 436px; }
-[data-activity="multiple-choice-quiz"][data-correct="false"] li[data-required="true"] { outline: none; }
-[data-activity="multiple-choice-quiz"][data-correct="false"] li[data-required="true"] svg { outline: 2px solid #00ADA5; }
+.social-media-options[data-correct="false"] li[data-required="true"] { outline: none; }
+.social-media-options[data-correct="false"] li[data-required="true"] svg { outline: 2px solid #00ADA5; }
 .social-media-options svg .transition { transition: fill 0.25s; }
 .icon-emoji-cry:hover ellipse.transition,
 .icon-emoji-think:hover circle.transition, 
