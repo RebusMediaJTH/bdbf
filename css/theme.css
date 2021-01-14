@@ -246,13 +246,14 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     .text-and-img.reversed .container .row > div { float: none; }
 }
 
-.key-message-panel .container { padding-left: 0 !important; padding-right: 0 !important; }
-.key-message-panel svg { position: relative; left: -2px; }
-.key-message-panel .container > div { padding: 0 15px; }
-.key-message-panel:not(.static) .container > div { position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 15px; }
-.key-message-panel.align .container > div { display: flex }
-.key-message-panel.align.right .container > div { justify-content: flex-end; }
-.key-message-panel.align.center .container > div { align-items: center; }
+.horizontal-panels > .key-message-panel { padding: 25px 0; }
+.horizontal-panels > .key-message-panel .container { padding: 0 15px; height: 100%; overflow: hidden; }
+.key-message-panel .squiggle-container { display: none; position: relative; overflow: hidden; max-width: 1920px; margin: 0 auto; }
+.key-message-panel .squiggle-container svg { position: absolute; left: 50%; transform: translateX(-50%); }
+.key-message-panel.align .container { display: flex }
+.key-message-panel.align.h-right .container { justify-content: flex-end; }
+.key-message-panel.align.h-center .container { justify-content: center; }
+.key-message-panel.align.v-center .container { align-items: center; }
 .key-message { font-size: 7.5vw; font-weight: 500; color: #590D2B; }
 .key-message svg { width: 79px; height: 65.65px; margin-right: 19px; }
 .key-message p { max-width: 510px; margin: 0; }
@@ -264,25 +265,14 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     .key-message { display: flex; align-items: flex-start; }
 }
 @media (min-width: 768px) {
-    .key-message-panel > div:not(.lock-overlay) { padding: 0 50px; }
-}
-
-.horizontal-panels > .key-message-panel-xxx { padding: 25px 0; }
-.horizontal-panels > .key-message-panel-xxx .container { padding: 0 15px; height: 100%; overflow: hidden; }
-.key-message-panel-xxx .squiggle-container { position: relative; overflow: hidden; max-width: 1920px; margin: 0 auto; }
-.key-message-panel-xxx .squiggle-container svg { position: absolute; left: 50%; transform: translateX(-50%); }
-.key-message-panel-xxx .text { position: absolute; top: 0; right: 0; bottom: 0; left: 0;  }
-.key-message-panel-xxx.align .container { display: flex }
-.key-message-panel-xxx.align.h-right .container { justify-content: flex-end; }
-.key-message-panel-xxx.align.h-center .container { justify-content: center; }
-.key-message-panel-xxx.align.v-center .container { align-items: center; }
-@media (min-width: 768px) {
-    .horizontal-panels > .key-message-panel-xxx { padding: 25px 0; }
-    .horizontal-panels > .key-message-panel-xxx .container { padding: 0 40px; }
+    .horizontal-panels > .key-message-panel { padding: 25px 0; }
+    .horizontal-panels > .key-message-panel .container { padding: 0 40px; }
+    .key-message-panel .squiggle-container { display: block; }
+    .key-message-panel:not(.static) .text { position: absolute; top: 0; right: 0; bottom: 0; left: 0;  }
 }
 @media (min-width: 992px) {
-    .horizontal-panels > .key-message-panel-xxx { padding: 50px 0; }
-    .horizontal-panels > .key-message-panel-xxx .container { padding: 0 50px; }
+    .horizontal-panels > .key-message-panel { padding: 50px 0; }
+    .horizontal-panels > .key-message-panel .container { padding: 0 50px; }
 }
 
 .key-message { animation-duration: 1s; animation-fill-mode: forwards; }
