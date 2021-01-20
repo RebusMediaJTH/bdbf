@@ -334,7 +334,10 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 [data-activity="multiple-choice-quiz"] .response > div { display: flex; flex-direction: column; align-items: center; }
 [data-activity="multiple-choice-quiz"] .response svg { display: none; flex-shrink: 0; width: 105px; height: 105px; margin-bottom: 15px; }
 [data-activity="multiple-choice-quiz"][data-correct="true"] .response .icon-thumb-up,
-[data-activity="multiple-choice-quiz"][data-correct="false"] .response .icon-thumb-down { display: block; }
+[data-activity="multiple-choice-quiz"][data-correct="false"] .response .icon-thumb-down,
+[data-activity="multiple-choice-quiz"][data-correct="partial"] .response .icon-emoji-think { display: block; }
+[data-activity="multiple-choice-quiz"] .response .icon-emoji-think .outer { fill: none; stroke: none; }
+[data-activity="multiple-choice-quiz"] .response .first { font-weight: 500; }
 
 .browser-ie [data-activity="multiple-choice-quiz"] .response,
 .browser-ie [data-activity="multiple-choice-quiz"] .response > div { display: block; }

@@ -2316,7 +2316,8 @@ rebus.pageInit = (function ($, undefined) {
                 selected = $activity.find('input[type="' + $activity.data('type') + '"]:checked').length,
                 enable;
             if (requiredSelections === undefined) {
-                enable = selected > 0;
+                //enable = selected > 0;
+                enable = selected === $('[data-required="true"]', $activity).length;
             }
             else {
                 requiredSelections = requiredSelections.split(':');
@@ -2341,9 +2342,9 @@ rebus.pageInit = (function ($, undefined) {
             panels.setActivityAsComplete($activity, true);
         };
 
-        var isCorrect = function ($activity) {
-            var correct = true,
-                globalAnswer = $activity.data('answer');
+        // Returns true | false | 'partial' (for checkboxes)
+        var getResult = function ($activity) {
+            var globalAnswer = $activity.data('answer');
             if (globalAnswer) {
                 if (globalAnswer === 'anyOrNone') {
                     return true;
@@ -2355,16 +2356,16 @@ rebus.pageInit = (function ($, undefined) {
             if ($activity.data('type') === 'radio') {
                 return !!$('input:checked', $activity).closest('li').data('required');
             }
-            $activity.find('.multiple-choice-quiz-options li').each(function () {
+            var requiredCount = 0,
+                correctCount = 0;
+            $('.multiple-choice-quiz-options li', $activity).each(function () {
                 var $this = $(this),
                     checked = $this.find('input').prop('checked'),
                     required = $this.attr('data-required') === 'true';
-                if (checked !== required) {
-                    correct = false;
-                    return false;
-                }
+                requiredCount += required ? 1 : 0;
+                correctCount += required && checked === required ? 1 : 0;
             });
-            return correct;
+            return correctCount === requiredCount ? true : correctCount > 0 ? 'partial' : false;
         };
 
         return {
@@ -2372,13 +2373,15 @@ rebus.pageInit = (function ($, undefined) {
                 var keyboard = true;
 
                 var performSubmit = function ($submit, $activity, announce) {
-                    var $checkedOption, correct, //, modalSelector;
-                        responses;
+                    var $checkedOption, res,
+                        responses, response,
+                        showPartialCorrect;
                     $activity = $activity || $submit.closest('[data-activity="multiple-choice-quiz"]');
+                    showPartialCorrect = $activity.hasClass('show-partial-correct');
                     responses = $activity.data('responses');
                     $checkedOption = $activity.find('input:checked').closest('li');
-                    correct = isCorrect($activity);
-                    $activity.attr('data-correct', correct ? 'true' : 'false');
+                    res = getResult($activity);
+                    $activity.attr('data-correct', res === true ? 'true' : showPartialCorrect ? res : 'false');
                     // if ($checkedOption.find('.inline-feedback').length) {
                     //     $activity.addClass('show-inline-feedback');
                     // }
@@ -2391,8 +2394,12 @@ rebus.pageInit = (function ($, undefined) {
                     //     $(modalSelector).modal();
                     // }
                     //$activity.find('.btn-tried').prop('disabled', correct);
-                    $activity.data('$fb').liveFeedback('value', responses[$checkedOption.attr('data-response')], { silent: !announce });
-                    if (correct || !$activity.data('mandatory') || $activity.data('mandatory') === 'partial') {
+                    response = responses[$checkedOption.attr('data-response')];
+                    if (showPartialCorrect && res === 'partial') {
+                        response = '<p class="first" aria-hidden="true">Nearly there</p>' + response;
+                    }
+                    $activity.data('$fb').liveFeedback('value', response, { silent: !announce });
+                    if (res === true || !$activity.data('mandatory') || $activity.data('mandatory') === 'partial') {
                         setAsComplete($activity);
                     }
                 };
@@ -2447,6 +2454,7 @@ rebus.pageInit = (function ($, undefined) {
                             '<div>',
                                 '<div data-svg="icon-thumb-up"></div>',
                                 '<div data-svg="icon-thumb-down"></div>',
+                                '<div data-svg="icon-emoji-think"></div>',
                                 '<div class="response-text" aria-live="assertive" aria-atomic="false"></div>',
                             '</div>',
                         '</div>'
@@ -2528,7 +2536,7 @@ rebus.pageInit = (function ($, undefined) {
                         $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
                         $submit = $activity.find('.btn-check-multi-choice-answer'),
                         instantFeedback = !keyboard && $activity.attr('data-instant-feedback-mouse') !== undefined;
-                    $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
+                    $activity.removeAttr('data-correct data-partially-correct').data('$fb').liveFeedback('value', '');
                     //$activity.removeClass('show-inline-feedback');
                     $input.closest('.radio-list').find('.checked').removeClass('checked');
                     $input.closest('li').addClass('checked');
@@ -2551,7 +2559,7 @@ rebus.pageInit = (function ($, undefined) {
                     var $input = $(this),
                         $activity = $input.closest('[data-activity="multiple-choice-quiz"]'),
                         $option = $input.closest('li');
-                    $activity.removeAttr('data-correct').data('$fb').liveFeedback('value', '');
+                    $activity.removeAttr('data-correct data-partially-correct').data('$fb').liveFeedback('value', '');
                     if ($option.hasClass('checked')) {
                         $option.removeClass('checked');
                     }
@@ -2578,7 +2586,7 @@ rebus.pageInit = (function ($, undefined) {
                     $(this).closest('li').find('input').trigger('click');
                 });
             },
-            isCorrect: isCorrect,
+            getResult: getResult,
             //reset: function ($quiz) {
             //    $quiz.find('input:checked').prop('checked', false);
             //    $quiz.find('.checked').removeClass('checked');
@@ -2686,7 +2694,7 @@ rebus.pageInit = (function ($, undefined) {
             var correctAmount = 0;
             $('.assessement-total-amount').text(noOfQuestions);
             $questionPanels.each(function () {
-                if (interactiveControls.multiChoiceQuiz.isCorrect($(this).find('[data-activity="multiple-choice-quiz"]'))) {
+                if (interactiveControls.multiChoiceQuiz.getResult($(this).find('[data-activity="multiple-choice-quiz"]')) === true) {
                     correctAmount++;
                 }
             });
@@ -2816,7 +2824,7 @@ rebus.pageInit = (function ($, undefined) {
                         $questionPanels.each(function (i) {
                             var $panel = $(this),
                                 $quiz = $panel.find('[data-activity="multiple-choice-quiz"]');
-                            if (!interactiveControls.multiChoiceQuiz.isCorrect($quiz)) {
+                            if (interactiveControls.multiChoiceQuiz.getResult($quiz) !== true) {
                                 activityState.rowAttempt[i]++;
                                 state[$panel.data('storeid')] = '0';
                                 $panel.removeClass('panel-done panel-started');

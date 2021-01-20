@@ -235,7 +235,7 @@ html.menu-in #menu-overlay { opacity: 1; }
 .social-media-options svg .transition { transition: fill 0.25s; }
 .icon-emoji-cry:hover ellipse.transition,
 .social-media-options li.checked .icon-emoji-cry ellipse.transition,
-.icon-emoji-think:hover circle.transition, 
+.social-media-options .icon-emoji-think:hover circle.transition, 
 .social-media-options li.checked .icon-emoji-think circle.transition,
 .icon-emoji-laugh:hover circle.transition,
 .social-media-options li.checked .icon-emoji-laugh circle.transition,
@@ -245,7 +245,7 @@ html.menu-in #menu-overlay { opacity: 1; }
 .social-media-options li.checked .icon-emoji-clap circle.transition { fill: #FFD500; }
 .icon-emoji-laugh:hover .mouth,
 .social-media-options li.checked .icon-emoji-laugh .mouth,
-.icon-emoji-think:hover .hand,
+.social-media-options .icon-emoji-think:hover .hand,
 .social-media-options li.checked .icon-emoji-think .hand,
 .icon-emoji-clap:hover .hand,
 .social-media-options li.checked .icon-emoji-clap .hand { fill: #FFf; }
