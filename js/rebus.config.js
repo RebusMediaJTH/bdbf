@@ -12,7 +12,7 @@ var rebus = rebus || {};
                                         otherwise the course will be set as complete when all modules are complete
 */
 rebus.config = {
-  title: 'Better Decisions for a Better Future - Retail. Part 1', // Used my progress modal
+  title: 'Better Decisions - Part 2. Post Office Network.', // Used my progress modal
   id: 'bdbf_m1', // Used for generating a unique cookie for local testing
   useLMS: false,
   debug: true,
@@ -32,7 +32,7 @@ rebus.config = {
           modules: [
               {
                   folder: 'm1',
-                  title: 'Better Decisions for a Better Future - Retail. Part 1.',
+                  title: 'Better Decisions - Part 2. Post Office Network.',
                   pages: [
                       { path: 'menu', title: 'Menu', type: 'menu', hideHeader: true },
                       {
