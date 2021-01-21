@@ -1531,7 +1531,8 @@ rebus.pageInit = (function ($, undefined) {
             var html = [
                 '<button type="button" class="audio-btn" aria-label="Toggle audio" data-audio-file="' + fileid + '">',
                     '<div data-svg="icon-audio"></div>',
-                '</button>'
+                '</button>',
+                '<div><div></div></div>'
             ];
             // if (transcriptId) {
             //     html.push('<div class="margin-top-sm"><button type="button" class="button button-default btn-read-audio-transcript">Read the transcript</button></div>');
@@ -1549,7 +1550,7 @@ rebus.pageInit = (function ($, undefined) {
                         id = $this.data('audio-file'),
                         transcript = $this.data('transcript');
                     rebus.audio.add(id);
-                    $this.removeAttr('data-audio-file').append(buildAudioControlBtn(id, transcript));
+                    $this.attr('data-id', id).removeAttr('data-audio-file').append(buildAudioControlBtn(id, transcript));
                     if (transcript) {
                         $this.after('<div class="margin-top-sm"><button type="button" data-transcript="' + transcript + '" class="button button-default btn-read-audio-transcript">Read the transcript</button></div>');
                     }
@@ -1570,6 +1571,9 @@ rebus.pageInit = (function ($, undefined) {
                             focusOnClosed: $btn
                         });
                     });
+                }).on('timeupdate', function () {
+                    var e = arguments[1];
+                    $('.audio-control[data-id="' + e.id + '"] > div > div').css('transform', 'scaleX(' + e.ratio + ')');
                 });
             }
         };
@@ -3034,11 +3038,37 @@ rebus.audio = (function ($) {
             activeAudio = null;
         }
     };
+    var timeUpdate = function (id, ended) {
+        var that = this;
+        if (ended) {
+            $('body').trigger('timeupdate', { id: id, time: this.duration(), ratio: 1 });
+        }
+        else {
+            // if the time is 0, ignore because it resets to 0 when the audio ends.
+            var seek = this.seek();
+            if (seek) {
+                $('body').trigger('timeupdate', { id: id, time: seek, ratio: seek / this.duration() });
+            }
+        }if (!ended && this.playing()) {
+            requestAnimationFrame(function () {
+                timeUpdate.call(that, id);
+            });
+        }
+    };
     Howler.mobileAutoEnable = true;
     return {
         add: function (id) {
             if (!audioFiles[id]) {
-                audioFiles[id] = new Howl({ src: 'content/audio/' + id + '.mp3', html5: rebus.features.iOS() });
+                audioFiles[id] = new Howl({ 
+                    src: 'content/audio/' + id + '.mp3',
+                    html5: rebus.features.iOS(),
+                    onplay: function () {
+                        var that = this;
+                        requestAnimationFrame(function () {
+                            timeUpdate.call(that, id);
+                        });   
+                    }
+                });
             }
         },
         toggle: function (id) {
@@ -3057,6 +3087,7 @@ rebus.audio = (function ($) {
                         audio.off('end').on('end', function () {
                             activeAudio = null;
                             $('body').trigger('audioend', { id: id });
+                            timeUpdate.call(this, id, true);
                         }).play();
                         $('body').trigger('audioplay', { id: id });
                     });
@@ -3065,6 +3096,7 @@ rebus.audio = (function ($) {
                     audio.off('end').on('end', function () {
                         activeAudio = null;
                         $('body').trigger('audioend', { id: id });
+                        timeUpdate.call(this, id, true);
                     }).play();
                     $('body').trigger('audioplay', { id: id });
                 }

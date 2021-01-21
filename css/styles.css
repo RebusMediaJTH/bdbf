@@ -1451,7 +1451,10 @@
        Audio Control 
    */
    
-   .audio-control button { background: none; border: none; padding: 0; position: relative; width: 84px; height: 84px; margin-top: .8em; }
+   .audio-control { display: flex; align-items: center; margin-top: .8em; }
+   .audio-control button { background: none; border: none; padding: 0; position: relative; width: 84px; height: 84px; }
+   .audio-control > div { flex: 1; max-width: 240px; height: 10px; border: 1px solid #a1121e; border-radius: 3px; margin-left: 10px; }
+   .audio-control > div > div { background: #a1121e; height: 100%; transform: scaleX(0); transform-origin: left; }
    .audio-control svg { width: 100%; height: 100%; }
    .audio-control svg circle { fill: #fff; transition: fill 0.25s; }
    .audio-control svg path { fill: none; stroke: #590d2b; transition: stroke 0.25s; }
