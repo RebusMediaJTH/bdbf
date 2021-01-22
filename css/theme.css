@@ -20,6 +20,7 @@ header.masthead ul.components > li { float: none; }
 .audio-buffering .show-when-audio-buffering { display: flex !important; align-items: center; }
 .logo-lg { display: none; }
 section.main { padding-top: 65px; }
+.show-topic-page-nav #topic-page-nav { display: none; }
 @media (min-width: 768px) {
     .logo-sm { display: none; }
     .logo-lg { display: block; }
@@ -275,10 +276,12 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
     .horizontal-panels > .key-message-panel .container { padding: 0 40px; }
     .key-message-panel .squiggle-container { display: block; }
     .key-message-panel:not(.static) .text { position: absolute; top: 0; right: 0; bottom: 0; left: 0;  }
+    .key-message-panel.align:not(.static).v-top .text { top: 25px; }
 }
 @media (min-width: 992px) {
     .horizontal-panels > .key-message-panel { padding: 50px 0; }
     .horizontal-panels > .key-message-panel .container { padding: 0 50px; }
+    .key-message-panel.align:not(.static).v-top .text { top: 50px; }
 }
 
 .key-message { animation-duration: 1s; animation-fill-mode: forwards; }

@@ -128,7 +128,8 @@ rebus.navigation = (function ($, undefined) {
         modules = [],
         // { startPageIdx: Number, module: Object }
         topics = [],
-        returningFromBookmark;
+        returningFromBookmark,
+        pageAnchor;
 
     // relativeToPath: [String] eg. ['m1', 't1']
     // page: String eg. 'p1' or '../p1' (back one) or '/p1' (root)
@@ -435,15 +436,19 @@ rebus.navigation = (function ($, undefined) {
     };
 
     var loadCurrentPage = function (callback) {
-        var pageId;
+        var pageId,
+            anchor;
         if (rebus.utils.extractQueryStringArg('initialised') == 'true') {
             pageId = rebus.utils.extractQueryStringArg('page');
             returningFromBookmark = false;
+            anchor = rebus.utils.extractQueryStringArg('pa');
         } else {
             pageId = Track.getData('cmi.core.lesson_location');
             returningFromBookmark = !!pageId;
         }
-        loadPage(pageId || pagesFlat[0].id, callback);
+        loadPage(pageId || pagesFlat[0].id, function () {
+            callback({ anchor: anchor });
+        });
     };
 
     var showPageNotCompleteModal = function ($focusOnClosed) {
@@ -473,7 +478,7 @@ rebus.navigation = (function ($, undefined) {
             if (nextPage.redirectIfTopicComplete && rebus.stateHelper.isTopicComplete(nextPage.module.idx, nextPage.topic.idx)) {
                 id = getIdOfPagePath(nextPage, nextPage.redirectIfTopicComplete);
             }
-            window.location = 'index.html?page=' + id + '&initialised=true';
+            window.location = 'index.html?page=' + id + '&initialised=true' + (pageAnchor ? '&pa=' + pageAnchor : '');
         };
         var gotoPageByIdx = function (idx) {
             gotoPageById(pagesFlat[idx].id);
@@ -522,6 +527,11 @@ rebus.navigation = (function ($, undefined) {
                             showPageNotCompleteModal($(this));
                             return false;
                         }
+                    }
+                    var parts = url.split(' ');
+                    url = parts[0];
+                    if (parts.length > 1) {
+                        pageAnchor = parts[1];
                     }
                     gotoPageById(getPageIdFromUrl(url));
                     return false;

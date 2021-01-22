@@ -833,6 +833,7 @@ rebus.pageInit = (function ($, undefined) {
                 elementTop = $element.offset().top,
                 elementBottom = elementTop + $element.height();
                 if (fullyInView) {
+                    console.log('((pageTop < elementTop) && (pageBottom > elementBottom))', pageTop, elementTop, pageBottom, elementBottom);
                     return ((pageTop < elementTop) && (pageBottom > elementBottom));
                 }
                 return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
@@ -840,6 +841,7 @@ rebus.pageInit = (function ($, undefined) {
         return {
             start: function (markPageAsComplete) {
                 var $footer = $('footer'),
+                    footerVisible = $footer.css('display') !== 'none',
                     monitorLockedPanels,
                     $monitorElements = $('[data-detect-when-in-view]');
                 if (markPageAsComplete) {
@@ -863,7 +865,7 @@ rebus.pageInit = (function ($, undefined) {
                             }
                             monitorLockedPanels = false;
                         }
-                        if (isElementInView($footer)) {
+                        if (footerVisible && isElementInView($footer)) {
                             $(window).off('scroll.rebus.monitor');
                             rebus.stateHelper.setPageAsComplete(page).save();
                             $('html').addClass('topic-' + page.topic.idx + '-complete');
@@ -1658,7 +1660,7 @@ rebus.pageInit = (function ($, undefined) {
                     btnsState = details.state,
                     btnsDefaultState = '',
                     activityStarted;
-                $activity.find('.click-btn').each(function (li_idx) {
+                $activity.find('button').each(function (li_idx) {
                     var $btn = $(this),
                         $li = $btn.closest('li').length ? $btn.closest('li') : $btn,
                         $modal = $li.find('.modal'),
@@ -1703,12 +1705,12 @@ rebus.pageInit = (function ($, undefined) {
                 rebus.stateHelper.setElementState($activity, btnsState || btnsDefaultState);
             });
 
-            $body.on('click', '.click-btn', function () {
+            $body.on('click', '[data-activity="click-btns"] button', function () {
                 var $btn = $(this),
                     $li = $btn.closest('li').length ? $btn.closest('li') : $btn,
                     $activity = $li.closest('[data-activity]'),
                     mandatory = $activity.data('mandatory'),
-                    required = mandatory === true ? $activity.find('.click-btn').length : mandatory,
+                    required = mandatory === true ? $activity.find('button').length : mandatory,
                     feedback = $btn.data('feedback');
                 $li.addClass('item-done');
                 rebus.stateHelper.setElementState($activity, '1', $li.data('idx'));
@@ -2885,7 +2887,7 @@ rebus.pageInit = (function ($, undefined) {
     })();
 
     return {
-        init: function () {
+        init: function (obj) {
             $body = $('body');
             page = rebus.navigation.getPage();
             state = rebus.stateHelper.get();
@@ -2982,6 +2984,15 @@ rebus.pageInit = (function ($, undefined) {
             rebus.utils.scrollTop();
             window.setTimeout(function () {
                 $body.removeClass('page-loading-mask-in');
+                if (obj.anchor) {
+                    var $anchor = $('[data-anchor="' + obj.anchor + '"]');
+                    // Doesn't take into account the header
+                    //$('[data-anchor="' + obj.anchor + '"]')[0].scrollIntoView(true);
+                    var top = $anchor[0].offsetTop - $('header').height();
+                    //window.scrollTo(0, top);
+                    $('body, html').animate({scrollTop: top}, 1000);
+                    $anchor[0].focus();
+                }
                 if (rebus.config.includeProgressModal && rebus.navigation.isReturningFromBookmark()) {
                     rebus.progressModal.show({
                         page: page,

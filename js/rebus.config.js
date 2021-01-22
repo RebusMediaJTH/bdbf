@@ -70,7 +70,10 @@ rebus.config = {
                                 folder: 't5',
                                 title: 'Harassment, Discrimination and Bullying',
                                 pages: [
-                                    { path: 'p1', title: 'Harassment, Discrimination and Bullying' }
+                                    { path: 'p1', title: 'Harassment, Discrimination and Bullying' },
+                                    { path: 'p2', title: 'Harassment, Discrimination and Bullying' },
+                                    { path: 'p3', title: 'Harassment, Discrimination and Bullying' },
+                                    { path: 'p4', title: 'Harassment, Discrimination and Bullying' }
                                 ]
                             }
                           ]

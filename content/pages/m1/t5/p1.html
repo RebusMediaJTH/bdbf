@@ -48,175 +48,78 @@
         </div>
       </div>
     </div>
-    <div class="row bg-1">
+    <style>
+      .tiles { list-style: none; padding: 0; display: flex; flex-wrap: wrap; }
+      .xxxtiles button {
+        display: flex; align-items: flex-end; 
+        margin: 10px;
+        color: #fff; font-weight: 500; font-size: 2rem;
+        background: #590d2b; padding: 50px; border: 2px solid #590d2b; border-radius: 4px;
+        transition: background-color 0.25s, color 0.25s;
+      }
+      .tiles li { margin: 10px; }
+      .tiles button {
+          position: relative;
+          /*display: flex; align-items: flex-end; text-align: left;*/
+          width: 100%; min-width: 175px; height: 113px;
+          padding: 14px;
+          background: #590d2b; border: 2px solid #590d2b; border-radius: 4px;
+          color: #fff; font-size: 2rem; font-weight: 400;
+          transition: background-color 0.25s, color 0.25s;
+      }
+      .tiles button:hover,
+      .tiles button:focus,
+      .tiles button:active { background: #fff; color: #590d2b; }
+      .tiles button svg { position: absolute; top: 8px; right: 8px; width: 26px; height: 20px; fill: #fff; transition: fill 0.25s; }
+      .tiles button:hover svg,
+      .tiles button:focus svg,
+      .tiles button:active svg { fill: #590d2b; }
+      .tiles li:not(.item-done) .done-indicator { display: none; }
+    </style>
+    <div tabindex="-1" data-anchor="tiles" class="row bg-1">
       <div class="container">
         <div class="row">
-          <div class="col-sm-9">
-            <h2>What is harassment?</h2>
-            <p>You’re more than likely harassing someone if:</p>
-            <ul class="list-style-1">
-              <li>you make fun of their disability, sex, race, colour, religion or any other traits</li>
-              <li>the other person doesn’t like it and doesn’t return it</li>
-              <li>it offends, insults, humiliates, intimidates or embarrasses, and</li>
-              <li>it’s obvious to most people that what you said or did would be offensive, humiliating or intimidating.</li>
+          <div class="col-sm-12">
+            <p><strong>Select</strong> each tile to learn more about harassment, discrimination and bullying.</p>
+            <ul class="tiles" aria-label="Tiles" data-activity="click-btns" data-mandatory="true">
+              <li><button type="button" data-navigate="p2">Harassment <span class="done-indicator"><div data-svg="icon-tick"></div></span></button></li>
+              <li><button type="button" data-navigate="p3">Discrimination <span class="done-indicator"><div data-svg="icon-tick"></div></span></button></li>
+              <li><button type="button" data-navigate="p4">Bullying <span class="done-indicator"><div data-svg="icon-tick"></div></span></button></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="row multi-choice-panel bg-1">
+    <div class="row bg-4 text-and-img align-center">
       <div class="container">
-        <div data-activity="multiple-choice-quiz" class="light-left show-partial-correct" data-type="checkbox" data-mandatory="partial" data-submit="Submit">
-          <div class="question">
-              <h2>Your turn</h2>
-              <p class="leader">Which of the following are examples of harassment?</p>
-              <p><strong>Select</strong> the three correct answers and then <strong>select</strong> Submit.</p>
-              <form class="multiple-choice-quiz">
-                  <ul class="multiple-choice-quiz-options">
-                      <li data-required="true">Sharing a meme that makes fun of a specific religion</li>
-                      <li data-required="true">Imitating the way a team member pronounces certain words because of their accent</li>
-                      <li data-required="true">Repeated requests for a colleague to ‘add you’ on social media</li>
-                      <li>A manager repeatedly requesting you meet deadlines</li>
-                  </ul>
-                  <div data-response="correct">
-                      <p class="sr-only">Correct!</p>
-                      <p>Harassment includes:</p>
-                      <ul class="list-style-1">
-                        <li>intrusive or inappropriate questioning</li>
-                        <li>derogatory name-calling</li>
-                        <li>offensive remarks, jokes, or making fun of someone’s personal circumstances or appearance</li>
-                      </ul>
-                      <p>Unreasonable harassing behaviours aren’t just limited to this list.</p>
-                  </div>
-                  <div data-response="incorrect">
-                    <p class="sr-only">Not quite</p>
-                    <p>Harassment includes:</p>
-                    <ul class="list-style-1">
-                      <li>intrusive or inappropriate questioning</li>
-                      <li>derogatory name-calling</li>
-                      <li>offensive remarks, jokes, or making fun of someone’s personal circumstances or appearance</li>
-                    </ul>
-                    <p>Unreasonable harassing behaviours aren’t just limited to this list.</p>
-                  </div>
-              </form>
-          </div>
-      </div>
+        <h2>What are the consequences?</h2>
+        <div class="row">
+          <div class="col-md-7 text">
+            <p>Harassment, discrimination and bullying can lead to a range of serious consequences, such as:</p>
+            <ul class="list-style-1">
+              <li>disciplinary action for the perpetrator, including termination of employment</li>
+              <li>payment of financial damages to the victim</li>
+              <li>negative impacts on the victim’s health and wellbeing 
+              <li>negative publicity and brand damage to Australia Post.</li>
+            </ul>
+        </div>
+        <div class="col-md-5 img">
+            <img class="img-responsive center-block" src="content/images/t5_s1_p5.jpg" alt="" />
+        </div>
+        </div>
       </div>
     </div>
-    <div class="row bg-1 key-message-panel align h-left v-center">
+    <div class="row bg-4 key-message-panel align h-left v-top">
       <div class="squiggle-container">
-        <svg class="squiggle" xmlns="http://www.w3.org/2000/svg" width="2239.453" height="246.698" viewBox="0 0 2239.453 246.698">
-          <path d="M9851.328,3172.375c27.668,188.7,633.582,242.844,803.016,234.391s137.2-24.871,121.168-22.133-24.848,42.008,71.922,30.66,200.2-50.766,289.531-30.66,121.414-7.77,136.563-62.859,815.613,28.586,815.613,28.586" transform="translate(-9849.844 -3172.157)"/>
+        <svg class="squiggle" xmlns="http://www.w3.org/2000/svg" width="2339.275" height="295.714" viewBox="0 0 2339.275 295.714">
+          <path d="M9749.266,3123.359c27.668,188.7,735.645,291.859,905.078,283.406s137.2-24.871,121.168-22.133-24.848,42.008,71.922,30.66,200.2-50.766,289.531-30.66,121.414-7.77,136.563-62.859,813.426,0,813.426,0" transform="translate(-9747.781 -3123.142)"/>
         </svg>
       </div>
       <div class="text">
         <div class="container">
           <div class="key-message from-right" data-detect-when-in-view="key-message">
             <div data-svg="icon-quote"></div>
-            <p>A person’s silence does not make your actions ok. Silence is not acceptance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row bg-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-9">
-            <h2>What is discrimination?</h2>
-            <p>You’re more than likely discriminating if you’re treating a person or group of people unfairly or less favourably than others because of their sex, race, disability, age or some other trait. It’s important to note that unreasonable discriminating behaviours aren’t just limited to this list.</p>
-            <p>Discrimination can even occur if you don’t intend to discriminate.</p>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="row bg-4 text-and-img align-center">
-      <div class="container">
-        <h2>Your turn</h2>
-        <div class="row">
-          <div class="col-md-7 text" data-activity="generic" data-mandatory="true">
-            <h2>Your turn</h2>
-            <p>Consider the following situation.</p>
-            <p>You’re reviewing the rosters for an upcoming holiday period. Andrea and Gabrielle have both requested the same time off, but you need one of them to work. Andrea has a husband and three young children and wants to spend a few days down the Coast. Gabrielle is looking forward to spending the time relaxing at home with her partner.</p>
-            <p>Who would you roster on to work?</p>
-            <p><strong>Select</strong> Continue to find out.</p>
-            <div class="text-right margin-top-md"><button type="button" class="button button-default" data-set-activity-complete="true">Continue</button></div>
-        </div>
-        <div class="col-md-5 img">
-            <img class="img-responsive center-block" src="content/images/t5_s1_p7.jpg" alt="APG employee reviewing a roster" />
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="row bg-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-9">
-            <p>Discrimination can be direct or indirect. Since you’ve only been given information about Andrea and Gabrielle’s personal circumstances, making your rostering decision based solely on this would be a form of discrimination. To make a fair decision, you’d need to consider things such as who’s worked more holiday periods, who’s taken more leave in the past twelve months, or who submitted their leave request first.</p>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="row bg-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-9">
-            <h2>What is Bullying?</h2>
-            <p>You’re more than likely bullying someone or a group of people if you:</p>
-            <ul class="list-style-1">
-              <li>use abusive, insulting or offensive language</li>
-              <li>spread misinformation or rumours</li>
-              <li>use frightening behaviour</li>
-              <li>criticise via yelling</li>
-              <li>make jokes</li>
-            </ul>
-            <p>And it:</p>
-            <ul class="list-style-1">
-              <li>happens more than once</li>
-              <li>is obvious to most people that you’re victimising, humiliating or threatening.</li>
-            </ul>
-            <p>It’s not bullying if a supervisor or manager directs someone’s work or conducts a performance or behaviour conversation with someone — that’s their job. As long as the supervisor or manager communicates the directive in line with the minimum behavioural expectations outlined in Our Ethics, they are doing things the right way.</p>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="row multi-choice-panel bg-4">
-      <div class="container">
-        <div data-activity="multiple-choice-quiz" class="light-left show-partial-correct" data-type="checkbox" data-mandatory="partial" data-submit="Submit">
-          <div class="question">
-              <h2>Your turn</h2>
-              <p class="leader">Which of the following are examples of bullying?</p>
-              <p><strong>Select</strong> the two correct answers and then <strong>select</strong> Submit.</p>
-              <form class="multiple-choice-quiz">
-                  <ul class="multiple-choice-quiz-options">
-                      <li>A supervisor or manager directing someone’s work or providing feedback on their performance</li>
-                      <li data-required="true">Excluding one team member from workplace activities</li>
-                      <li>Calling out someone’s poor behaviour in front of the team</li>
-                      <li data-required="true">Continued denial of requests for time off without an appropriate reason</li>
-                  </ul>
-                  <div data-response="correct">
-                      <p class="sr-only">Correct!</p>
-                      <p>It’s important to be able to distinguish between someone performing their role requirements, someone speaking up about poor behaviour and someone who is bullying. Excluding a team member from an activity or denying them time off is not the same as conducting performance or behaviour discussions. One is part of the job while the others are actively victimising.</p>
-                  </div>
-                  <div data-response="incorrect">
-                    <p class="sr-only">Not quite</p>
-                    <p>It’s important to be able to distinguish between someone performing their role requirements, someone speaking up about poor behaviour and someone who is bullying. Excluding a team member from an activity or denying them time off is not the same as conducting performance or behaviour discussions. One is part of the job while the others are actively victimising.</p>
-                  </div>
-              </form>
-          </div>
-      </div>
-      </div>
-    </div>
-    <div class="row bg-4 key-message-panel align h-center v-center">
-      <div class="squiggle-container">
-        <svg class="squiggle" xmlns="http://www.w3.org/2000/svg" width="2388.035" height="245.744" viewBox="0 0 2388.035 245.744">
-          <path d="M13535.922,2012.816s-1198.785-14.945-1211.16,5.316,27.871,43.23,26.07,18.082-272.531-43.594-290.75-23.4-99.566,42.262-100.332,12.762-215.5-48.609-169.105-7.445-74.117,243.754,24.863,216.5-667.586-18.574-667.586-18.574" transform="translate(-11147.905 -1992.891)"/>
-        </svg>
-      </div>
-      <div class="text">
-        <div class="container">
-          <div class="key-message from-left" data-detect-when-in-view="key-message">
-            <div data-svg="icon-quote"></div>
-            <p>Seen or heard something that wasn’t right? It’s your duty to report it.</p>
+            <p>As a people leader It’s your job to actively foster a workplace culture that’s free of harassment, discrimination and bullying. <br><span>Managers must investigate all breaches of the policy.</span></p>
           </div>
         </div>
       </div>

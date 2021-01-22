@@ -260,8 +260,8 @@
                 if (!Track.init()) {
                     return;
                 }
-                rebus.navigation.loadCurrentPage(function () {
-                    rebus.pageInit.init();
+                rebus.navigation.loadCurrentPage(function (obj) {
+                    rebus.pageInit.init(obj);
                     rebus.navigation.addHandlers();
                     if (Track.environmentCheck.isRequired() && !rebus.features.isSupportedEnvironment()) {
                         $('#environment-warning-modal').modal();
