@@ -969,7 +969,7 @@
    /* .video-transcript-footer { padding: 0 15px 10px 15px; } */
    
    /* .transcript-carousel, .transcript-carousel .item { height: 500px; } */
-   .transcript-carousel .item { background-color: #777; height: 500px; }
+   .transcript-carousel .item { background-color: #777; height: 400px; }
    .transcript-carousel p,
    .transcript-carousel ul { color: #fff; }
    .transcript-carousel .transcript-text { padding: 20px 70px 50px 70px; }
