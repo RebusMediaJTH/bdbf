@@ -129,7 +129,9 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .accordion-tab h3 { font-size: 2rem; font-weight: 500; color: #fff; margin: 0; }
 .accordion-tab > div { display: flex; align-items: center; }
 .accordion-panel { font-weight: 200; }
-.accordion-panel > div { padding: 10px 4px; }
+.accordion-panel:not(.with-image) > div { padding: 10px 4px; }
+.accordion-panel.with-image > div > div:last-of-type { padding: 10px 4px; }
+.accordion-panel.with-image img { display: block; width: 100%; max-width: 303px; margin: 10px auto 0 auto; }
 
 .accordion-item .icon-plus { 
     flex-shrink: 0; width: 16px; height: 16px; margin-right: 10px; stroke: #fff;
@@ -147,7 +149,11 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .accordion-tab .icon-tick { width: 26px; height: 20px; margin-left: 10px; fill: #fff; }
 
 @media (min-width: 768px) {
-    .accordion-panel > div { padding: 20px 34px; }
+    .accordion-panel:not(.with-image) > div { padding: 20px 34px; }
+    .accordion-panel.with-image > div { display: flex; align-items: center; }
+    .accordion-panel.with-image > div > div:first-of-type { width: 34%; }
+    .accordion-panel.with-image > div > div:last-of-type { width: 66%; padding: 25px; }
+    .accordion-panel.with-image img { margin: 0; }
 }
 
 .carousel-indicators-container { display: flex; justify-content: center; margin-top: 8px; }
