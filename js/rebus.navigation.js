@@ -515,7 +515,15 @@ rebus.navigation = (function ($, undefined) {
         };
         var getPageIdFromUrl = function (url) {
             var idx = getPageIdxFromUrl(url);
-            return idx === null ? getIdOfPagePath(page, url) : pagesFlat[idx].id;
+            if (idx !== null) {
+                return pagesFlat[idx].id;
+            }
+            var parts = url.split(' ');
+            url = parts[0];
+            if (parts.length > 1) {
+                pageAnchor = parts[1];
+            }
+            return getIdOfPagePath(page, url);
         };
         return {
             addHandlers: function () {
@@ -527,11 +535,6 @@ rebus.navigation = (function ($, undefined) {
                             showPageNotCompleteModal($(this));
                             return false;
                         }
-                    }
-                    var parts = url.split(' ');
-                    url = parts[0];
-                    if (parts.length > 1) {
-                        pageAnchor = parts[1];
                     }
                     gotoPageById(getPageIdFromUrl(url));
                     return false;
