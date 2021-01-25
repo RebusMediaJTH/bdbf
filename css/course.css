@@ -283,33 +283,6 @@ html.menu-in #menu-overlay { opacity: 1; }
 @media (min-width: 768px) {
     #page-m1_t5_p1 .banner-message { font-size: 3rem; bottom: auto; right: auto; left: 55%; top: 50%; transform: translateY(-50%); }
 }
-
-#page-m1_t5_p3 .row[data-idx="1"] .container { padding-left: 0; padding-right: 0; padding-bottom: 0; }
-#page-m1_t5_p3 .row[data-idx="1"] .large-img { display: none; }
-#page-m1_t5_p3 .row[data-idx="1"] .container > div:first-of-type { padding: 15px; background: #f8f8f8; }
-#page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 450px; }
-#page-m1_t5_p3 .row[data-idx="1"] .carousel-nav { padding-bottom: 0 !important; }
-@media (min-width: 375px) {
-    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 394px; }
-}
-@media (min-width: 414px) {
-    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 366px; }
-}
-@media (min-width: 576px) {
-    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 282px; }
-}
-@media (min-width: 768px) {
-    #page-m1_t5_p3 .row[data-idx="1"] .container { padding: 0 !important; display: flex; }
-    #page-m1_t5_p3 .row[data-idx="1"] .container > div:first-of-type { width: 58%; padding: 25px; background: #f8f8f8; }
-    #page-m1_t5_p3 .row[data-idx="1"] .small-img { display: none; }
-    #page-m1_t5_p3 .row[data-idx="1"] .large-img { display: block; width: 42%; background: #f8f8f8; background: url(../content/images/t5_s3_carousel_lg.jpg); background-size: cover; }
-    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 406px; }
-}
-@media (min-width: 992px) {
-    #page-m1_t5_p3 .row[data-idx="1"] .container > div:first-of-type { padding: 50px; }
-    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 310px; }
-}
-
 #page-m1_t5_p1 [data-idx="1"] .squiggle-container { height: 312px; }
 #page-m1_t5_p1 [data-idx="1"] .key-message p { max-width: 610px; }
 @media (min-width: 768px) {
@@ -356,12 +329,34 @@ html.menu-in #menu-overlay { opacity: 1; }
 
 #page-m1_t5_p3 footer { display: none; }
 #page-m1_t5_p3 #banner { background: url(../content/images/t5_s3_banner_sm.jpg); background-size: cover; background-position: 23%; }
-#page-m1_t5_p3 .row[data-idx="3"] > .container:first-of-type { padding: 0 !important; }
-#page-m1_t5_p3 .key-message-panel .squiggle-container { height: 296px; }
-#page-m1_t5_p3 .key-message-panel .key-message p { max-width: unset; max-width: none; }
-@media (min-width: 768px) and (max-width: 1023px) {
-    #page-m1_t5_p3 .key-message-panel { padding-top: 100px; }
+#page-m1_t5_p3 .row[data-idx="1"] .container { padding-left: 0; padding-right: 0; padding-bottom: 0; }
+#page-m1_t5_p3 .row[data-idx="1"] .large-img { display: none; }
+#page-m1_t5_p3 .row[data-idx="1"] .container > div:first-of-type { padding: 15px; background: #f8f8f8; }
+#page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 450px; }
+#page-m1_t5_p3 .row[data-idx="1"] .carousel-nav { padding-bottom: 0 !important; }
+@media (min-width: 375px) {
+    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 394px; }
 }
+@media (min-width: 414px) {
+    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 366px; }
+}
+@media (min-width: 576px) {
+    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 282px; }
+}
+@media (min-width: 768px) {
+    #page-m1_t5_p3 .row[data-idx="1"] .container { padding: 0 !important; display: flex; }
+    #page-m1_t5_p3 .row[data-idx="1"] .container > div:first-of-type { width: 58%; padding: 25px; background: #f8f8f8; }
+    #page-m1_t5_p3 .row[data-idx="1"] .small-img { display: none; }
+    #page-m1_t5_p3 .row[data-idx="1"] .large-img { display: block; width: 42%; background: #f8f8f8; background: url(../content/images/t5_s3_carousel_lg.jpg); background-size: cover; }
+    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 406px; }
+}
+@media (min-width: 992px) {
+    #page-m1_t5_p3 .row[data-idx="1"] .container > div:first-of-type { padding: 50px; }
+    #page-m1_t5_p3 .row[data-idx="1"] .item { min-height: 310px; }
+}
+#page-m1_t5_p3 .row[data-idx="3"] > .container:first-of-type { padding: 0 !important; }
+#page-m1_t5_p3 .key-message-panel .squiggle-container { height: 250.818px; }
+#page-m1_t5_p3 .key-message-panel .key-message p { max-width: 560px; }
 
 #page-m1_t5_p4 footer { display: none; }
 #page-m1_t5_p4 #banner { background: url(../content/images/t5_s4_banner_sm.jpg); background-size: cover; background-position: 80%; }
