@@ -48,34 +48,6 @@
         </div>
       </div>
     </div>
-    <style>
-      .tiles { list-style: none; padding: 0; display: flex; flex-wrap: wrap; }
-      .xxxtiles button {
-        display: flex; align-items: flex-end; 
-        margin: 10px;
-        color: #fff; font-weight: 500; font-size: 2rem;
-        background: #590d2b; padding: 50px; border: 2px solid #590d2b; border-radius: 4px;
-        transition: background-color 0.25s, color 0.25s;
-      }
-      .tiles li { margin: 10px; }
-      .tiles button {
-          position: relative;
-          /*display: flex; align-items: flex-end; text-align: left;*/
-          width: 100%; min-width: 175px; height: 113px;
-          padding: 14px;
-          background: #590d2b; border: 2px solid #590d2b; border-radius: 4px;
-          color: #fff; font-size: 2rem; font-weight: 400;
-          transition: background-color 0.25s, color 0.25s;
-      }
-      .tiles button:hover,
-      .tiles button:focus,
-      .tiles button:active { background: #fff; color: #590d2b; }
-      .tiles button svg { position: absolute; top: 8px; right: 8px; width: 26px; height: 20px; fill: #fff; transition: fill 0.25s; }
-      .tiles button:hover svg,
-      .tiles button:focus svg,
-      .tiles button:active svg { fill: #590d2b; }
-      .tiles li:not(.item-done) .done-indicator { display: none; }
-    </style>
     <div tabindex="-1" data-anchor="tiles" class="row bg-1">
       <div class="container">
         <div class="row">
@@ -95,6 +67,7 @@
         <h2>What are the consequences?</h2>
         <div class="row">
           <div class="col-md-7 text">
+            <h2>What are the consequences?</h2>
             <p>Harassment, discrimination and bullying can lead to a range of serious consequences, such as:</p>
             <ul class="list-style-1">
               <li>disciplinary action for the perpetrator, including termination of employment</li>
@@ -119,7 +92,7 @@
         <div class="container">
           <div class="key-message from-right" data-detect-when-in-view="key-message">
             <div data-svg="icon-quote"></div>
-            <p>As a people leader It’s your job to actively foster a workplace culture that’s free of harassment, discrimination and bullying. <br><span>Managers must investigate all breaches of the policy.</span></p>
+            <p>Are you a people leader? It’s your job to actively foster a workplace culture that’s free of harassment, discrimination and bullying. <br><span>Managers must investigate all breaches of the policy.</span></p>
           </div>
         </div>
       </div>
@@ -144,7 +117,7 @@
           <div class="col-sm-12 show-when-almost-done">
             <p>Almost done, just one more thing!</p>
             <div class="text-right margin-top-md">
-              <button type="button" role="navigation" class="button button-default btn-block-lte-xs" data-mark-page-as-complete-and-continue>Continue</button>
+              <button type="button" role="navigation" class="button button-default btn-block-lte-xs" data-mark-page-as-complete data-navigate="completion">Continue</button>
             </div>
           </div>
         </div>

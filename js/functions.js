@@ -833,7 +833,6 @@ rebus.pageInit = (function ($, undefined) {
                 elementTop = $element.offset().top,
                 elementBottom = elementTop + $element.height();
                 if (fullyInView) {
-                    console.log('((pageTop < elementTop) && (pageBottom > elementBottom))', pageTop, elementTop, pageBottom, elementBottom);
                     return ((pageTop < elementTop) && (pageBottom > elementBottom));
                 }
                 return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
@@ -2271,6 +2270,49 @@ rebus.pageInit = (function ($, undefined) {
             });
         };
 
+        var initCarousels = function () {
+            $('[data-activity="carousel"]').each(function () {
+                var $activity = $(this),
+                    $slides = $('.item', $activity),
+                    details = rebus.stateHelper.getElementDetails($activity),
+                    state = details.state,
+                    defaultState = '',
+                    activityStarted;
+                $slides.each(function (i) {
+                    var $slide = $(this);
+                    $slide.attr('data-idx', i);
+                    if (i === $slides.length - 1) {
+                        $slide.addClass('final-slide');
+                    }
+                    if (state) {
+                        if (state.charAt(i) === '1') {
+                            $slide.addClass('item-done');
+                            activityStarted = true;
+                        }
+                    }
+                    else {
+                        defaultState += '0';
+                    }
+                });
+                if (activityStarted) {
+                    panels.markActivityAsStarted($activity);
+                }
+                rebus.stateHelper.setElementState($activity, state || defaultState);
+            });
+            $body.on('slid.bs.carousel', '[data-activity="carousel"]', function (e) {
+                var $activity = $(this),
+                    $slide = $(e.relatedTarget).addClass('item-done');
+                rebus.stateHelper.setElementState($activity, '1', $slide.data('idx'));
+                if ($slide.hasClass('final-slide')) {
+                    panels.setActivityAsComplete($activity);
+                }
+                else {
+                    panels.markActivityAsStarted($activity);
+                }
+                rebus.stateHelper.save();
+            });
+        };
+
         /*
             [data-show-answer]: Boolean
             [data-type]: 'checkbox' | 'radio'
@@ -2643,6 +2685,7 @@ rebus.pageInit = (function ($, undefined) {
                 initAudios();
                 initChooseHotspots();
                 initAccordians();
+                initCarousels();
                 multiChoiceQuiz.init();
                 //initSortable();
             },

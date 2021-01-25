@@ -168,6 +168,7 @@ footer .icon-topic-list-complete { visibility: hidden; margin-left: 10px; }
 .carousel-indicators-container .carousel-indicators li,
 .carousel-indicators-container .carousel-indicators li.active { width: 14px; height: 14px; margin: 1px; background: none; }
 .carousel-indicators-container .carousel-indicators li { padding: 3px; border-radius: 50%; border: 1px solid #d2d2d4; }
+.carousel-indicators-container .carousel-indicators li:not([data-slide-to]) { cursor: default; }
 .carousel-indicators-container .carousel-indicators li > div { height: 100%; border-radius: 50%; background: none; transition: background-color 0.25s; }
 .carousel-indicators-container .carousel-indicators li.active > div { background: #590d2b; }
 

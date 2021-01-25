@@ -511,6 +511,9 @@ rebus.navigation = (function ($, undefined) {
             if (url.indexOf('topic') === 0) {
                 return page.module.topics[parseInt(url.split(' ')[1], 10)].startPageIdx;
             }
+            if (url === 'completion') {
+                return page.module.completionPageIdx;
+            }
             return null;
         };
         var getPageIdFromUrl = function (url) {
