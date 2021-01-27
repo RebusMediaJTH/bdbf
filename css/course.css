@@ -307,6 +307,7 @@ html.menu-in #menu-overlay { opacity: 1; }
 #page-m1_t5_p1 .tiles button:focus svg,
 #page-m1_t5_p1 .tiles button:active svg { fill: #590d2b; }
 #page-m1_t5_p1 .tiles li:not(.item-done) .done-indicator { display: none; }
+#page-m1_t5_p1 .row[data-idx="3"] > .container:first-of-type { padding: 0 !important; }
 #page-m1_t5_p1 .row[data-idx="4"] .squiggle-container { height: 296px; }
 #page-m1_t5_p1 .row[data-idx="4"] .key-message p { max-width: unset; max-width: none; }
 @media (min-width: 768px) and (max-width: 1023px) {
